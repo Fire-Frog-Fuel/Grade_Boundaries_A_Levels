@@ -27,5 +27,6 @@ function loadCSV(file, tableId, headId, bodyId) {
         });
 }
 
-loadCSV('people.csv', 'peopleTable', 'people-head', 'people-body');
-loadCSV('products.csv', 'productsTable', 'products-head', 'products-body');
+loadCSV('CIE.csv', 'CIETable', 'CIE-head', 'CIE-body');
+loadCSV('Edexcel.csv', 'EdexcelTable', 'Edexcel-head', 'Edexcel-body');
+loadCSV('OxfordAqa.csv', 'OxfordAqaTable', 'OxfordAqa-head', 'OxfordAqa-body');
