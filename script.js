@@ -27,6 +27,9 @@ function loadCSV(file, tableId, headId, bodyId) {
         });
 }
 
-loadCSV('CIE.csv', 'CIETable', 'CIE-head', 'CIE-body');
-loadCSV('Edexcel.csv', 'EdexcelTable', 'Edexcel-head', 'Edexcel-body');
-loadCSV('OxfordAqa.csv', 'OxfordAqaTable', 'OxfordAqa-head', 'OxfordAqa-body');
+document.addEventListener("DOMContentLoaded", () => {
+    loadCSV('CIE.csv', 'CIETable', 'CIE-head', 'CIE-body');
+    loadCSV('Edexcel.csv', 'EdexcelTable', 'Edexcel-head', 'Edexcel-body');
+    loadCSV('OxfordAqa.csv', 'OxfordAqaTable', 'OxfordAqa-head', 'OxfordAqa-body');
+});
+
