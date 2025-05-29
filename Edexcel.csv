@@ -1,0 +1,1515 @@
+year,session,code,unit,max_mark,a*,a,b,c,d,e,u
+2015,Jun,WAC01,Unit 1: The Accounting System and,200,,145,128,111,94,78,0
+2015,Jun,WAC02,Unit 2: Corporate and Management,200,166.0,149,132,115,98,82,0
+2015,Jun,WBI01,"Lifestyle, Transport, Genes and Health",80,,60,55,50,46,42,0
+2015,Jun,WBI02,"Development, Plants and the Environment",80,,59,55,51,47,43,0
+2015,Jun,WBI03,Practical Biology and Research Skills,40,,34,31,28,25,23,0
+2015,Jun,WBI04,The Natural Environment and Species,90,63.0,59,55,51,48,45,0
+2015,Jun,WBI05,"Energy, Exercise and Coordination",90,68.0,63,58,53,49,45,0
+2015,Jun,WBI06,Practical Biology and Investigative Skills,50,46.0,42,36,31,26,21,0
+2015,Jun,WBS01,Business Enterprise,80,,52,47,42,37,33,0
+2015,Jun,WBS02,Business Structures and Processes,80,,50,46,42,39,36,0
+2015,Jun,WBS03,Strategic Business Decisions,80,61.0,56,51,47,43,39,0
+2015,Jun,WBS04,Business in a Global Context,80,64.0,57,50,44,38,32,0
+2015,Jun,WCH01,Core Principles Of Chemistry,80,,67,60,53,47,41,0
+2015,Jun,WCH02,Application of Core Principles of Chemistry,80,,57,51,45,39,34,0
+2015,Jun,WCH03,Chemistry Laboratory Skills I,50,,30,26,22,18,15,0
+2015,Jun,WCH04,"General Principles Of Chemistry I: Rates,",90,73.0,68,63,58,53,48,0
+2015,Jun,WCH05,General Principles Of Chemistry II –,90,66.0,60,54,48,42,36,0
+2015,Jun,WCH06,Chemistry Laboratory Skills II,50,37.0,34,31,28,25,22,0
+2015,Jun,WDM01,Decision Mathematics D1,75,,59,53,47,42,37,0
+2015,Jun,WEC01,Markets in Action,80,,62,55,49,43,37,0
+2015,Jun,WEC02,Macroeconomic Performance and Policy,80,,56,50,45,40,35,0
+2015,Jun,WEC03,Business Behavior,80,61.0,55,49,43,38,33,0
+2015,Jun,WEC04,Developments in the Global Economy,80,67.0,60,53,47,41,35,0
+2015,Jun,WFM01,Further Pure Mathematics F1,75,,59,52,45,38,32,0
+2015,Jun,WFM02,Further Pure Mathematics F2,75,69.0,64,56,49,42,35,0
+2015,Jun,WFM03,Further Pure Mathematics F3,75,60.0,54,48,42,36,30,0
+2015,Jun,WMA01,Core Mathematics C12,125,,99,87,75,63,52,0
+2015,Jun,WMA02,Core Mathematics C34,125,101.0,89,77,65,53,41,0
+2015,Jun,WME01,Mechanics M1,75,,59,53,47,41,36,0
+2015,Jun,WME02,Mechanics M2,75,68.0,61,54,47,40,33,0
+2015,Jun,WME03,Mechanics M3,75,68.0,62,55,48,41,35,0
+2015,Jun,WPH01,Physics On The Go,80,,50,47,44,41,38,0
+2015,Jun,WPH02,Physics At Work,80,,51,45,40,35,30,0
+2015,Jun,WPH03,Exploring Physics,40,,33,30,27,24,22,0
+2015,Jun,WPH04,Physics On The Move,80,68.0,62,56,51,46,41,0
+2015,Jun,WPH05,Physics from Creation to Collapse,80,57.0,52,47,43,39,35,0
+2015,Jun,WPH06,Experimental Physics,40,32.0,29,26,23,20,18,0
+2015,Jun,WST01,Statistics S1,75,,56,49,42,35,29,0
+2015,Jun,WST02,Statistics S2,75,67.0,60,52,44,37,30,0
+2015,Jun,WST03,Statistics S3,75,70.0,65,58,51,44,38,0
+2015,Jun,YLA0,International A level Law,100,62.0,57,52,47,42,37,0
+2016,Jan,WAC01,Unit 1: The Accounting System and,200,,149,130,111,92,74,0
+2016,Jan,WAC02,Unit 2: Corporate and Management,200,165.0,147,129,111,93,75,0
+2016,Jan,WBI01,"Lifestyle, Transport, Genes and Health",80,,57,51,45,39,33,0
+2016,Jan,WBI02,"Development, Plants and the Environment",80,,54,49,44,40,36,0
+2016,Jan,WBI03,Practical Biology and Research Skills,40,,29,25,21,18,15,0
+2016,Jan,WBI04,The Natural Environment and Species,90,61.0,56,51,46,41,36,0
+2016,Jan,WBI05,"Energy, Exercise and Coordination",90,69.0,64,59,54,49,45,0
+2016,Jan,WBI06,Practical Biology and Investigative Skills,50,38.0,33,28,23,18,14,0
+2016,Jan,WBS01,Business Enterprise,80,,53,47,41,36,31,0
+2016,Jan,WBS02,Business Structures and Processes,80,,51,47,43,39,35,0
+2016,Jan,WBS03,Strategic Business Decisions,80,62.0,57,52,47,43,39,0
+2016,Jan,WBS04,Business in a Global Context,80,64.0,58,52,46,41,36,0
+2016,Jan,WCH01,Core Principles Of Chemistry,80,,68,62,56,50,44,0
+2016,Jan,WCH02,Application of Core Principles of Chemistry,80,,63,58,53,48,43,0
+2016,Jan,WCH03,Chemistry Laboratory Skills I,50,,31,27,24,21,18,0
+2016,Jan,WCH04,"General Principles Of Chemistry I: Rates,",90,80.0,73,66,59,53,47,0
+2016,Jan,WCH05,General Principles Of Chemistry II –,90,66.0,60,54,48,42,37,0
+2016,Jan,WCH06,Chemistry Laboratory Skills II,50,31.0,28,25,22,19,16,0
+2016,Jan,WDM01,Decision Mathematics D1,75,,60,54,48,43,38,0
+2016,Jan,WEC01,Markets in Action,80,,64,57,50,43,37,0
+2016,Jan,WEC02,Macroeconomic Performance and Policy,80,,56,50,45,40,35,0
+2016,Jan,WEC03,Business Behavior,80,65.0,59,53,47,41,36,0
+2016,Jan,WEC04,Developments in the Global Economy,80,62.0,56,50,44,38,32,0
+2016,Jan,WFM01,Further Pure Mathematics F1,75,,61,54,47,41,35,0
+2016,Jan,WMA01,Core Mathematics C12,125,,99,86,74,62,50,0
+2016,Jan,WMA02,Core Mathematics C34,125,115.0,105,92,79,67,55,0
+2016,Jan,WME01,Mechanics M1,75,,62,56,50,44,38,0
+2016,Jan,WME02,Mechanics M2,75,68.0,61,53,46,39,32,0
+2016,Jan,WME03,Mechanics M3,75,67.0,60,53,46,39,32,0
+2016,Jan,WPH01,Physics On The Go,80,,53,49,45,41,37,0
+2016,Jan,WPH02,Physics At Work,80,,47,42,37,33,29,0
+2016,Jan,WPH03,Exploring Physics,40,,30,26,22,19,16,0
+2016,Jan,WPH04,Physics On The Move,80,64.0,59,54,49,44,40,0
+2016,Jan,WPH05,Physics from Creation to Collapse,80,66.0,60,54,48,42,36,0
+2016,Jan,WPH06,Experimental Physics,40,31.0,28,25,22,20,18,0
+2016,Jan,WST01,Statistics S1,75,,58,51,45,39,33,0
+2016,Jan,WST02,Statistics S2,75,70.0,65,57,49,42,35,0
+2016,Oct,WAC01,Unit 1: The Accounting System and,200,,143,126,109,93,77,0
+2016,Oct,WAC02,Unit 2: Corporate and Management,200,165.0,148,131,114,97,80,0
+2016,Oct,WAC11,Unit 1: The Accounting System and,200,,135,120,105,91,77,0
+2016,Oct,WBI01,"Lifestyle, Transport, Genes and Health",80,,55,50,45,40,35,0
+2016,Oct,WBI02,"Development, Plants and the Environment",80,,58,54,51,48,45,0
+2016,Oct,WBI03,Practical Biology and Research Skills,40,,29,26,23,20,18,0
+2016,Oct,WBS01,Business Enterprise,80,,55,49,43,38,33,0
+2016,Oct,WBS02,Business Structures and Processes,80,,53,48,43,39,35,0
+2016,Oct,WCH01,Core Principles Of Chemistry,80,,62,56,51,46,41,0
+2016,Oct,WCH02,Application of Core Principles of Chemistry,80,,62,56,50,45,40,0
+2016,Oct,WCH03,Chemistry Laboratory Skills I,50,,30,26,22,18,15,0
+2016,Oct,WEC01,Markets in Action,80,,63,56,49,42,35,0
+2016,Oct,WEC02,Macroeconomic Performance and Policy,80,,54,49,45,41,37,0
+2016,Oct,WHI01,"France in Revolution, 1774-99",50,,39,34,29,25,21,0
+2016,Oct,WMA01,Core Mathematics C12,125,,100,88,76,64,52,0
+2016,Oct,WME01,Mechanics M1,75,,62,54,47,40,33,0
+2016,Oct,WME02,Mechanics M2,75,68.0,62,54,47,40,33,0
+2016,Oct,WPH01,Physics On The Go,80,,51,47,43,40,37,0
+2016,Oct,WPH02,Physics At Work,80,,54,49,44,39,34,0
+2016,Oct,WPH03,Exploring Physics,40,,34,31,28,25,23,0
+2016,Oct,WPS01,Social and cognitive psychology,64,,35,31,27,23,19,0
+2016,Oct,WPS02,"Biological psychology, learning theories",96,,55,48,41,34,28,0
+2016,Oct,WST01,Statistics S1,75,,59,52,45,38,31,0
+2016,Oct,WST02,Statistics S2,75,68.0,61,54,47,40,33,0
+2016,Oct,YLA0,International A level Law,100,62.0,56,50,45,40,35,0
+2017,Oct,WAC11,Unit 1: The Accounting System and Costing,200,,138,122,106,90,75,0
+2017,Oct,WAC12,Unit 2: Corporate and Management,200,153.0,136,119,102,86,70,0
+2017,Oct,WBI01,"Lifestyle, Transport, Genes and Health",80,,57,51,45,39,34,0
+2017,Oct,WBI02,"Development, Plants and the Environment",80,,56,52,48,44,40,0
+2017,Oct,WBI03,Practical Biology and Research Skills,40,,30,26,22,19,16,0
+2017,Oct,WBI04,The Natural Environment and Species,90,54.0,50,46,42,38,35,0
+2017,Oct,WBI05,"Energy, Exercise and Coordination",90,64.0,57,50,44,38,32,0
+2017,Oct,WBI06,Practical Biology and Investigative Skills,50,37.0,33,29,25,21,17,0
+2017,Oct,WBS01,Business Enterprise,80,,55,50,45,40,35,0
+2017,Oct,WBS02,Business Structures and Processes,80,,52,47,42,38,34,0
+2017,Oct,WBS03,Strategic Business Decisions,80,63.0,58,53,48,43,38,0
+2017,Oct,WBS04,Business in a Global Context,80,65.0,59,53,47,41,35,0
+2017,Oct,WCH01,Core Principles Of Chemistry,80,,58,52,46,40,34,0
+2017,Oct,WCH02,Application of Core Principles of Chemistry,80,,65,58,51,45,39,0
+2017,Oct,WCH03,Chemistry Laboratory Skills I,50,,35,31,27,24,21,0
+2017,Oct,WCH04,"General Principles Of Chemistry I: Rates,",90,69.0,63,57,52,47,42,0
+2017,Oct,WCH05,General Principles Of Chemistry II –,90,63.0,57,51,45,40,35,0
+2017,Oct,WCH06,Chemistry Laboratory Skills II,50,34.0,30,26,22,19,16,0
+2017,Oct,WEC01,Markets in Action,80,,62,55,48,41,34,0
+2017,Oct,WEC02,Macroeconomic Performance and Policy,80,,53,48,43,38,34,0
+2017,Oct,WEC03,Business Behavior,80,57.0,51,45,40,35,30,0
+2017,Oct,WEC04,Developments in the Global Economy,80,67.0,61,55,49,44,39,0
+2017,Oct,WHI01,"A - France in Revolution, 1774-99",50,,39,34,29,25,21,0
+2017,Oct,WHI02,"C - Russia, 1917–91: From Lenin to Yeltsin",50,,34,31,28,25,22,0
+2017,Oct,WHI03,"C - Germany: United, Divided and",50,38.0,34,30,27,24,21,0
+2017,Oct,WHI04,C - The World Divided: Superpower,50,38.0,34,30,27,24,21,0
+2017,Oct,WMA01,Core Mathematics C12,125,,105,93,82,71,60,0
+2017,Oct,WMA02,Core Mathematics C34,125,112.0,100,87,74,62,50,0
+2017,Oct,WME01,Mechanics M1,75,,62,54,46,39,32,0
+2017,Oct,WME02,Mechanics M2,75,69.0,63,56,49,42,36,0
+2017,Oct,WPH01,Physics On The Go,80,,51,47,44,41,38,0
+2017,Oct,WPH02,Physics At Work,80,,48,42,37,32,27,0
+2017,Oct,WPH03,Exploring Physics,40,,32,29,27,25,23,0
+2017,Oct,WPH04,Physics On The Move,80,70.0,63,56,50,44,38,0
+2017,Oct,WPH05,Physics from Creation to Collapse,80,61.0,56,51,46,41,36,0
+2017,Oct,WPH06,Experimental Physics,40,33.0,30,27,24,21,18,0
+2017,Oct,WPS01,Social and cognitive psychology,64,,35,31,27,24,21,0
+2017,Oct,WPS02,"Biological psychology, learning theories and",96,,46,40,34,29,24,0
+2017,Oct,WPS03,Applications of Psychology,64,41.0,36,31,27,23,19,0
+2017,Oct,WPS04,Clinical Psychology and Psychological,96,53.0,46,39,32,26,20,0
+2017,Oct,WST01,Statistics S1,75,,59,50,42,34,26,0
+2017,Oct,WST02,Statistics S2,75,63.0,56,49,42,35,29,0
+2017,Oct,YLA1,International A level Law,200,112.0,101,90,79,69,59,0
+2018,Jun,WAA01,Understanding and Written Response,80,,56,48,40,33,26,0
+2018,Jun,WAA02,"Research, Writing and Research",80,62.0,54,46,39,32,25,0
+2018,Jun,WAC11,Unit 1: The Accounting System and Costing,200,,133,114,96,78,60,0
+2018,Jun,WAC12,Unit 2: Corporate and Management Accounting,200,174.0,156,138,120,103,86,0
+2018,Jun,WBI01,"Lifestyle, Transport, Genes and Health",80,,54,48,43,38,33,0
+2018,Jun,WBI02,"Development, Plants and the Environment",80,,56,52,49,46,43,0
+2018,Jun,WBI03,Practical Biology and Research Skills,40,,36,33,30,27,24,0
+2018,Jun,WBI04,The Natural Environment and Species Survival,90,56.0,53,50,47,44,42,0
+2018,Jun,WBI05,"Energy, Exercise and Coordination",90,62.0,58,54,50,47,44,0
+2018,Jun,WBI06,Practical Biology and Investigative Skills,50,44.0,41,38,35,32,29,0
+2018,Jun,WBS01,Business Enterprise,80,,58,53,48,43,39,0
+2018,Jun,WBS02,Business Structures and Processes,80,,53,48,44,40,36,0
+2018,Jun,WBS03,Strategic Business Decisions,80,65.0,59,53,48,43,38,0
+2018,Jun,WBS04,Business in a Global Context,80,65.0,59,53,47,41,36,0
+2018,Jun,WCH01,Core Principles Of Chemistry,80,,59,53,47,41,35,0
+2018,Jun,WCH02,Application of Core Principles of Chemistry,80,,64,57,50,43,37,0
+2018,Jun,WCH03,Chemistry Laboratory Skills I,50,,38,34,30,26,22,0
+2018,Jun,WCH04,"General Principles Of Chemistry I: Rates,",90,73.0,67,61,56,51,46,0
+2018,Jun,WCH05,General Principles Of Chemistry II – Transition,90,78.0,71,64,58,52,46,0
+2018,Jun,WCH06,Chemistry Laboratory Skills II,50,38.0,35,32,29,26,23,0
+2018,Jun,WDM01,Decision Mathematics D1,75,,57,51,46,41,36,0
+2018,Jun,WEC01,Markets in Action,80,,57,52,47,42,38,0
+2018,Jun,WEC02,Macroeconomic Performance and Policy,80,,56,51,46,42,38,0
+2018,Jun,WEC03,Business Behavior,80,58.0,52,46,40,35,30,0
+2018,Jun,WEC04,Developments in the Global Economy,80,66.0,60,54,49,44,39,0
+2018,Jun,WEN01,Language: Context and Identity,50,,36,31,26,21,16,0
+2018,Jun,WEN02,Language in Transition,50,,36,31,26,21,16,0
+2018,Jun,WEN03,Crafting Language (Writing),50,39.0,34,29,24,19,14,0
+2018,Jun,WEN04,Investigating Language,50,42.0,36,30,25,20,15,0
+2018,Jun,WET01,Post-2000 Poetry and Prose,50,,38,34,30,27,24,0
+2018,Jun,WET02,Drama,50,,33,29,25,22,19,0
+2018,Jun,WET03,Poetry and Prose,50,42.0,37,32,27,22,18,0
+2018,Jun,WET04,Shakespeare and Pre-1900 Poetry,50,41.0,37,33,29,25,21,0
+2018,Jun,WFM01,Further Pure Mathematics F1,75,,64,57,50,44,38,0
+2018,Jun,WFM02,Further Pure Mathematics F2,75,71.0,68,61,54,47,41,0
+2018,Jun,WFM03,Further Pure Mathematics F3,75,67.0,59,51,44,37,30,0
+2018,Jun,WFR01,Spoken Expression and Response,40,,32,27,23,19,15,0
+2018,Jun,WFR02,Understanding and Written Response,90,,67,61,55,49,44,0
+2018,Jun,WFR03,Understanding and Spoken Response,40,37.0,34,29,24,20,16,0
+2018,Jun,WFR04,"Research, Understanding and Written Response",90,81.0,72,63,54,45,36,0
+2018,Jun,WGE01,Global Challenges,90,,60,56,52,48,45,0
+2018,Jun,WGE02,Geographical Investigations,60,,47,44,41,38,35,0
+2018,Jun,WGE03,Contested Planet,90,70.0,64,58,52,46,40,0
+2018,Jun,WGE04,Researching Geography,60,54.0,48,42,36,30,24,0
+2018,Jun,WGK01,Understanding and Written Response,80,,60,52,44,36,29,0
+2018,Jun,WGK02,Writing and Research,80,69.0,61,53,45,38,31,0
+2018,Jun,WGN01,Spoken Expression and Response,40,,32,28,24,20,17,0
+2018,Jun,WGN02,Understanding and Written Response,90,,64,56,48,40,33,0
+2018,Jun,WGN03,Understanding and Spoken Response,40,36.0,33,28,24,20,16,0
+2018,Jun,WGN04,"Research, Understanding and Written Response",90,74.0,66,58,50,42,34,0
+2018,Jun,WHI01,"A - France in Revolution, 1774-99",50,,39,34,29,25,21,0
+2018,Jun,WHI01,"B - Russia in Revolution, 1881-1917",50,,39,34,29,25,21,0
+2018,Jun,WHI01,"C - Germany, 1918-45",50,,39,34,29,25,21,0
+2018,Jun,WHI01,"D - Britain, 1964-90",50,,39,34,29,25,21,0
+2018,Jun,WHI02,"A - India, 1857-1948: The Raj to Partition",50,,34,31,28,25,22,0
+2018,Jun,WHI02,"B - China, 1900-76",50,,34,31,28,25,22,0
+2018,Jun,WHI02,"C - Russia, 1917-91: From Lenin to Yeltsin",50,,34,31,28,25,22,0
+2018,Jun,WHI02,"D - South Africa, 1948-2014",50,,34,31,28,25,22,0
+2018,Jun,WHI03,"A - The USA, Independence to Civil War,",50,38.0,34,30,27,24,21,0
+2018,Jun,WHI03,"B - The British Experience of Warfare, 1803–1945",50,38.0,34,30,27,24,21,0
+2018,Jun,WHI03,"C - Germany: United, Divided and Reunited,",50,38.0,34,30,27,24,21,0
+2018,Jun,WHI03,"D - Civil Rights and Race Relations in the USA,",50,38.0,34,30,27,24,21,0
+2018,Jun,WHI04,"A - The Making of Modern Europe, 1805–71",50,38.0,34,30,27,24,21,0
+2018,Jun,WHI04,"B - The World in Crisis, 1879–1945",50,38.0,34,30,27,24,21,0
+2018,Jun,WHI04,"C - The World Divided: Superpower Relations,",50,38.0,34,30,27,24,21,0
+2018,Jun,WHI04,"D - The Cold War and Hot War in Asia, 1945–90",50,38.0,34,30,27,24,21,0
+2018,Jun,WIT01,The Information Age,60,,52,47,42,37,33,0
+2018,Jun,WIT02,The Digital Economy,60,,51,46,41,37,33,0
+2018,Jun,WIT03,The Knowledge Worker,90,,66,59,53,47,41,0
+2018,Jun,WIT04,Using Database Software,90,77.0,69,61,54,47,40,0
+2018,Jun,WIT05,Managing ICT Projects,60,56.0,53,48,43,38,33,0
+2018,Jun,WIT06,Using Multimedia Software,60,56.0,53,48,43,38,33,0
+2018,Jun,WIT07,Using Spreadsheet Software,60,54.0,48,42,37,32,27,0
+2018,Jun,WIT08,Customising Applications,60,52.0,46,40,35,30,25,0
+2018,Jun,WMA01,Core Mathematics C12,125,,105,92,79,67,55,0
+2018,Jun,WMA02,Core Mathematics C34,125,112.0,100,88,76,64,53,0
+2018,Jun,WME01,Mechanics M1,75,,64,58,52,46,40,0
+2018,Jun,WME02,Mechanics M2,75,65.0,59,53,47,41,36,0
+2018,Jun,WME03,Mechanics M3,75,69.0,64,57,50,43,37,0
+2018,Jun,WPH01,Physics On The Go,80,,50,46,42,38,35,0
+2018,Jun,WPH02,Physics At Work,80,,51,46,41,36,31,0
+2018,Jun,WPH03,Exploring Physics,40,,30,27,24,21,18,0
+2018,Jun,WPH04,Physics On The Move,80,64.0,58,52,47,42,37,0
+2018,Jun,WPH05,Physics from Creation to Collapse,80,56.0,53,50,47,44,41,0
+2018,Jun,WPH06,Experimental Physics,40,36.0,33,29,25,21,18,0
+2018,Jun,WPS01,Social and cognitive psychology,64,,32,29,26,23,20,0
+2018,Jun,WPS02,"Biological psychology, learning theories and",96,,49,42,35,29,23,0
+2018,Jun,WPS03,Applications of Psychology,64,39.0,35,31,27,23,19,0
+2018,Jun,WPS04,Clinical Psychology and Psychological Skills,96,55.0,48,41,34,27,21,0
+2018,Jun,WSP01,Spoken Expression and Response,40,,31,27,23,19,16,0
+2018,Jun,WSP02,Understanding and Written Response,90,,72,63,54,45,37,0
+2018,Jun,WSP03,Understanding and Spoken Response,40,30.0,27,24,22,20,18,0
+2018,Jun,WSP04,"Research, Understanding and Written Response",90,81.0,72,63,54,46,38,0
+2018,Jun,WST01,Statistics S1,75,,61,53,45,37,30,0
+2018,Jun,WST02,Statistics S2,75,68.0,61,53,45,37,29,0
+2018,Jun,WST03,Statistics S3,75,67.0,60,53,46,40,34,0
+2018,Jun,YLA1,International A level Law,200,107.0,98,89,80,71,62,0
+2018,Oct,WAC11,The accounting system and costing,200,,132,117,102,87,72,0
+2018,Oct,WAC12,Corporate and management accounting,200,161.0,144,127,110,94,78,0
+2018,Oct,WBI01,"Lifestyle, transport, genes and health",80,,62,56,50,44,39,0
+2018,Oct,WBI02,"Development, plants and the environment",80,,51,47,43,40,37,0
+2018,Oct,WBI03,Practical biology and research skills,40,,33,30,27,24,22,0
+2018,Oct,WBI04,The natural environment and species survival,90,57.0,52,47,43,39,35,0
+2018,Oct,WBI05,"Energy, exercise and coordination",90,69.0,62,55,49,43,37,0
+2018,Oct,WBI06,Practical biology and investigative skills,50,44.0,40,36,32,28,25,0
+2018,Oct,WBS01,Business Enterprise,80,,55,50,45,40,35,0
+2018,Oct,WBS02,Business structures and processes,80,,51,47,43,39,35,0
+2018,Oct,WBS03,Strategic business decisions,80,65.0,59,53,48,43,38,0
+2018,Oct,WBS04,Business in a global context,80,65.0,59,53,47,42,37,0
+2018,Oct,WCH01,Core principles of chemistry,80,,59,53,47,41,35,0
+2018,Oct,WCH02,Application of core principles of chemistry,80,,61,54,48,42,36,0
+2018,Oct,WCH03,Chemistry laboratory skills I,50,,29,26,23,20,17,0
+2018,Oct,WCH04,"General principles of chemistry I: Rates, equilibria and",90,76.0,71,66,61,56,51,0
+2018,Oct,WCH05,General principles of chemirty II: Transition metals,90,65.0,59,53,47,41,36,0
+2018,Oct,WCH06,Chemistry laboratory skills II,50,28.0,25,22,19,17,15,0
+2018,Oct,WEC01,Markets In Action,80,,62,54,46,39,32,0
+2018,Oct,WEC02,Macroeconomic performance and policy,80,,54,49,44,39,34,0
+2018,Oct,WEC03,Business behaviour,80,57.0,52,47,42,37,33,0
+2018,Oct,WEC04,Developments in the global economy,80,66.0,61,56,51,46,41,0
+2018,Oct,WHI01,"A - France in revolution, 1774-1779",50,,39,34,29,25,21,0
+2018,Oct,WHI02,"C - Russia, 1917-1991: From Lenin to Yeltsin",50,,34,31,28,25,22,0
+2018,Oct,WHI03,"C - Germany: United, divided and reunited, 1870-1990",50,38.0,34,30,27,24,21,0
+2018,Oct,WHI04,"C - The world divided: Superpower relations, 1943-1990",50,38.0,34,30,27,24,21,0
+2018,Oct,WMA01,Core Mathematics C12,125,,106,93,80,68,56,0
+2018,Oct,WMA02,Core Mathematics C34,125,114.0,104,91,78,66,54,0
+2018,Oct,WME01,Mechanics M1,75,,62,54,46,39,32,0
+2018,Oct,WME02,Mechanics M2,75,64.0,57,50,43,36,30,0
+2018,Oct,WPH01,Physics on the go,80,,46,42,38,34,31,0
+2018,Oct,WPH02,Physics at work,80,,49,44,39,34,29,0
+2018,Oct,WPH03,Exploring physics,40,,31,28,25,22,20,0
+2018,Oct,WPH04,Physics on the move,80,60.0,54,48,42,37,32,0
+2018,Oct,WPH05,Physics from creation to collapse,80,66.0,61,56,51,46,41,0
+2018,Oct,WPH06,Experimental physics,40,33.0,29,25,22,19,16,0
+2018,Oct,WPS01,Social and cognitive psychology,64,,32,29,26,23,20,0
+2018,Oct,WPS02,"Biological psychology, learning theories and",96,,49,42,35,29,23,0
+2018,Oct,WPS03,Applications of psychology,64,39.0,35,31,27,23,19,0
+2018,Oct,WPS04,Clinical psychology and psychological skills,96,55.0,48,41,34,27,21,0
+2018,Oct,WST01,Statistics S1,72,,54,46,38,31,24,0
+2018,Oct,WST02,Statistics S2,75,68.0,61,53,46,39,32,0
+2018,Oct,YLA1,English Legal System,200,103.0,94,85,77,69,61,0
+2019,Jan,WAA01,Understanding and Written Response,80,,59,50,41,32,23,0
+2019,Jan,WAA02,"Research, Writing and Research",80,60.0,53,46,39,32,25,0
+2019,Jan,WAC11,Unit 1: The Accounting System and Costing,200,,125,107,89,71,54,0
+2019,Jan,WAC12,Unit 2: Corporate and Management Accounting,200,146.0,126,106,87,68,49,0
+2019,Jan,WBI01,"Lifestyle, Transport, Genes and Health",80,,60,54,48,42,36,0
+2019,Jan,WBI02,"Development, Plants and the Environment",80,,52,48,44,40,36,0
+2019,Jan,WBI03,Practical Biology and Research Skills,40,,31,28,25,22,19,0
+2019,Jan,WBI04,The Natural Environment and Species Survival,90,62.0,58,54,50,46,42,0
+2019,Jan,WBI05,"Energy, Exercise and Coordination",90,57.0,53,49,46,43,40,0
+2019,Jan,WBI06,Practical Biology and Investigative Skills,50,46.0,42,37,33,29,25,0
+2019,Jan,WBI11,"Unit 1: Molecules, Diet, Transport and Health",80,,49,44,39,34,29,0
+2019,Jan,WBS01,Business Enterprise,80,,54,48,43,38,33,0
+2019,Jan,WBS02,Business Structures and Processes,80,,53,48,44,40,36,0
+2019,Jan,WBS03,Strategic Business Decisions,80,64.0,58,52,47,42,37,0
+2019,Jan,WBS04,Business in a Global Context,80,65.0,59,53,47,41,35,0
+2019,Jan,WBS11,Marketing and People,80,,56,50,44,38,33,0
+2019,Jan,WCH01,Core Principles Of Chemistry,80,,57,52,47,42,37,0
+2019,Jan,WCH02,Application of Core Principles of Chemistry,80,,65,59,53,47,42,0
+2019,Jan,WCH03,Chemistry Laboratory Skills I,50,,36,32,28,25,22,0
+2019,Jan,WCH04,"General Principles Of Chemistry I: Rates, Equilibria and",90,78.0,72,66,60,55,50,0
+2019,Jan,WCH05,General Principles Of Chemistry II – Transition Metals,90,75.0,69,63,57,52,47,0
+2019,Jan,WCH06,Chemistry Laboratory Skills II,50,41.0,37,33,29,25,22,0
+2019,Jan,WCH11,"Structure, Bonding and Introduction to Organic Chemistry",80,,60,54,48,43,38,0
+2019,Jan,WDM01,Decision Mathematics D1,75,,58,53,48,43,38,0
+2019,Jan,WEC01,Markets in Action,80,,60,54,48,42,37,0
+2019,Jan,WEC02,Macroeconomic Performance and Policy,80,,52,47,42,37,33,0
+2019,Jan,WEC03,Business Behavior,80,57.0,52,47,42,38,34,0
+2019,Jan,WEC04,Developments in the Global Economy,80,63.0,57,51,45,39,33,0
+2019,Jan,WEC11,Markets in Action,80,,59,53,47,41,35,0
+2019,Jan,WEN01,Language: Context and Identity,50,,38,32,27,22,17,0
+2019,Jan,WEN02,Language in Transition,50,,33,28,23,18,13,0
+2019,Jan,WEN03,Crafting Language (Writing),50,40.0,35,30,25,20,16,0
+2019,Jan,WEN04,Investigating Language,50,42.0,37,32,27,23,19,0
+2019,Jan,WET01,Post-2000 Poetry and Prose,50,,37,33,29,25,22,0
+2019,Jan,WET02,Drama,50,,36,32,28,25,22,0
+2019,Jan,WET03,Poetry and Prose,50,41.0,36,31,27,23,19,0
+2019,Jan,WET04,Shakespeare and Pre-1900 Poetry,50,41.0,37,33,29,25,21,0
+2019,Jan,WFM01,Further Pure Mathematics F1,75,,64,59,54,49,44,0
+2019,Jan,WFR01,Spoken Expression and Response,40,,32,28,24,20,16,0
+2019,Jan,WFR02,Understanding and Written Response,90,,65,58,52,46,40,0
+2019,Jan,WFR03,Understanding and Spoken Response,40,37.0,34,29,24,20,16,0
+2019,Jan,WFR04,"Research, Understanding and Written Response",90,81.0,72,63,54,45,36,0
+2019,Jan,WGE01,Global Challenges,90,,56,52,48,44,41,0
+2019,Jan,WGE02,Geographical Investigations,60,,46,43,40,37,34,0
+2019,Jan,WGE03,Contested Planet,90,70.0,63,56,50,44,38,0
+2019,Jan,WGE04,Researching Geography,60,54.0,48,42,36,30,24,0
+2019,Jan,WGK01,Understanding and Written Response,80,,60,52,44,36,29,0
+2019,Jan,WGK02,Writing and Research,80,69.0,61,53,45,38,31,0
+2019,Jan,WGN01,Spoken Expression and Response,40,,32,28,24,20,17,0
+2019,Jan,WGN02,Understanding and Written Response,90,,64,56,48,40,33,0
+2019,Jan,WGN03,Understanding and Spoken Response,40,36.0,33,28,24,20,16,0
+2019,Jan,WGN04,"Research, Understanding and Written Response",90,74.0,66,58,50,42,34,0
+2019,Jan,WHI01,"A - France in Revolution, 1774-99",50,,39,34,29,25,21,0
+2019,Jan,WHI01,"B - Russia in Revolution, 1881-1917",50,,39,34,29,25,21,0
+2019,Jan,WHI01,"C - Germany, 1918-45",50,,39,34,29,24,19,0
+2019,Jan,WHI01,"D - Britain, 1964-90",50,,39,34,29,25,21,0
+2019,Jan,WHI02,"A - India, 1857-1948: The Raj to Partition",50,,34,31,28,25,22,0
+2019,Jan,WHI02,"B - China, 1900-76",50,,34,31,28,25,22,0
+2019,Jan,WHI02,"C - Russia, 1917-91: From Lenin to Yeltsin",50,,34,31,28,25,22,0
+2019,Jan,WHI02,"D - South Africa, 1948-2014",50,,34,31,28,25,22,0
+2019,Jan,WHI03,"A - The USA, Independence to Civil War, 1775–1865",50,38.0,34,30,27,24,21,0
+2019,Jan,WHI03,"B - The British Experience of Warfare, 1803–1945",50,38.0,34,30,27,24,21,0
+2019,Jan,WHI03,"C - Germany: United, Divided and Reunited, 1870–1990",50,38.0,34,30,27,24,21,0
+2019,Jan,WHI03,"D - Civil Rights and Race Relations in the USA, 1865–2009",50,38.0,34,30,27,24,21,0
+2019,Jan,WHI04,"B - The World in Crisis, 1879–1945",50,38.0,34,30,27,24,21,0
+2019,Jan,WHI04,"C - The World Divided: Superpower Relations, 1943–90",50,38.0,34,30,27,24,21,0
+2019,Jan,WMA01,Core Mathematics C12,125,,98,85,72,60,48,0
+2019,Jan,WMA02,Core Mathematics C34,125,107.0,95,83,71,60,49,0
+2019,Jan,WMA11,Pure Mathematics 1,75,,55,47,39,32,25,0
+2019,Jan,WME01,Mechanics M1,75,,60,53,46,39,33,0
+2019,Jan,WME02,Mechanics M2,75,68.0,62,55,48,41,35,0
+2019,Jan,WME03,Mechanics M3,75,71.0,67,60,53,46,39,0
+2019,Jan,WPH01,Physics On The Go,80,,55,51,48,45,42,0
+2019,Jan,WPH02,Physics At Work,80,,50,44,39,34,29,0
+2019,Jan,WPH03,Exploring Physics,40,,27,24,21,18,15,0
+2019,Jan,WPH04,Physics On The Move,80,59.0,54,49,44,40,36,0
+2019,Jan,WPH05,Physics from Creation to Collapse,80,63.0,58,53,48,44,40,0
+2019,Jan,WPH06,Experimental Physics,40,33.0,29,25,22,19,16,0
+2019,Jan,WPH11,Mechanics and Materials,80,,43,39,35,31,27,0
+2019,Jan,WPS01,Social and cognitive psychology,64,,34,30,26,22,19,0
+2019,Jan,WPS02,"Biological psychology, learning theories and",96,,49,42,35,29,23,0
+2019,Jan,WPS03,Applications of Psychology,64,41.0,36,31,27,23,19,0
+2019,Jan,WPS04,Clinical Psychology and Psychological Skills,96,55.0,48,41,34,27,21,0
+2019,Jan,WSP01,Spoken Expression and Response,40,,32,28,24,21,18,0
+2019,Jan,WSP02,Understanding and Written Response,90,,72,64,56,48,40,0
+2019,Jan,WSP03,Understanding and Spoken Response,40,36.0,32,28,25,22,19,0
+2019,Jan,WSP04,"Research, Understanding and Written Response",90,81.0,72,63,54,46,38,0
+2019,Jan,WST01,Statistics S1,75,,58,50,42,35,28,0
+2019,Jan,WST02,Statistics S2,75,67.0,59,51,43,35,27,0
+2019,Jun,WAA01,Understanding and Written Response,80,,54,46,38,30,23,0
+2019,Jun,WAA02,"Research, Writing and Research",80,67.0,59,51,43,35,27,0
+2019,Jun,WAC11,Unit 1: The Accounting System and Costing,200,,131,112,93,74,55,0
+2019,Jun,WAC12,Unit 2: Corporate and Management Accounting,200,149.0,133,117,102,87,72,0
+2019,Jun,WBI01,"Lifestyle, Transport, Genes and Health",80,,57,52,47,43,39,0
+2019,Jun,WBI02,"Development, Plants and the Environment",80,,49,46,43,40,37,0
+2019,Jun,WBI03,Practical Biology and Research Skills,40,,33,30,27,24,21,0
+2019,Jun,WBI04,The Natural Environment and Species Survival,90,58.0,56,54,52,50,48,0
+2019,Jun,WBI05,"Energy, Exercise and Coordination",90,57.0,54,51,48,45,42,0
+2019,Jun,WBI06,Practical Biology and Investigative Skills,50,47.0,45,41,38,35,32,0
+2019,Jun,WBI11,"Unit 1: Molecules, Diet, Transport and Health",80,,47,43,39,35,31,0
+2019,Jun,WBI12,"Cells, Development, Biodiversity and Conservation",80,,50,46,42,39,36,0
+2019,Jun,WBI13,Practical Skills in Biology I,50,,36,32,28,25,22,0
+2019,Jun,WBS01,Business Enterprise,80,,55,49,44,39,34,0
+2019,Jun,WBS02,Business Structures and Processes,80,,52,47,43,39,35,0
+2019,Jun,WBS03,Strategic Business Decisions,80,62.0,57,52,47,43,39,0
+2019,Jun,WBS04,Business in a Global Context,80,66.0,60,54,48,42,36,0
+2019,Jun,WBS11,Marketing and People,80,,57,52,47,42,37,0
+2019,Jun,WBS12,Managing business activities,80,,52,47,43,39,35,0
+2019,Jun,WCH01,Core Principles Of Chemistry,80,,60,53,47,41,35,0
+2019,Jun,WCH02,Application of Core Principles of Chemistry,80,,58,51,45,39,33,0
+2019,Jun,WCH03,Chemistry Laboratory Skills I,50,,38,34,30,26,22,0
+2019,Jun,WCH04,"General Principles Of Chemistry I: Rates, Equilibria and",90,80.0,73,66,60,54,48,0
+2019,Jun,WCH05,General Principles Of Chemistry II – Transition Metals and,90,72.0,65,58,51,45,39,0
+2019,Jun,WCH06,Chemistry Laboratory Skills II,50,43.0,39,35,32,29,26,0
+2019,Jun,WCH11,"Structure, Bonding and Introduction to Organic Chemistry",80,,62,56,50,44,39,0
+2019,Jun,WCH12,"Energetics, Group Chemistry, Halogenoalkanes an",80,,57,50,44,38,32,0
+2019,Jun,WCH13,Practical Skills in Chemistry,50,,34,30,26,22,18,0
+2019,Jun,WDM01,Decision Mathematics D1,75,,58,53,48,43,39,0
+2019,Jun,WDM11,Mathematics: Decision D1 (New),75,,59,53,47,42,37,0
+2019,Jun,WEC01,Markets in Action,80,,61,55,50,45,40,0
+2019,Jun,WEC02,Macroeconomic Performance and Policy,80,,52,47,43,39,35,0
+2019,Jun,WEC03,Business Behavior,80,58.0,52,46,41,36,31,0
+2019,Jun,WEC04,Developments in the Global Economy,80,66.0,60,54,48,43,38,0
+2019,Jun,WEC11,Markets in Action,80,,57,51,45,40,35,0
+2019,Jun,WEC12,Macroeconomic performance and policy,80,,56,50,45,40,35,0
+2019,Jun,WEN01,Language: Context and Identity,50,,36,31,26,21,16,0
+2019,Jun,WEN02,Language in Transition,50,,36,31,26,21,16,0
+2019,Jun,WEN03,Crafting Language (Writing),50,39.0,34,29,24,20,16,0
+2019,Jun,WEN04,Investigating Language,50,39.0,34,29,24,20,16,0
+2019,Jun,WET01,Post-2000 Poetry and Prose,50,,35,31,27,23,20,0
+2019,Jun,WET02,Drama,50,,36,32,28,24,21,0
+2019,Jun,WET03,Poetry and Prose,50,41.0,36,31,26,22,18,0
+2019,Jun,WET04,Shakespeare and Pre-1900 Poetry,50,41.0,37,33,29,25,21,0
+2019,Jun,WFM01,Further Pure Mathematics F1,75,,61,54,47,40,34,0
+2019,Jun,WFM02,Further Pure Mathematics F2,75,71.0,68,61,54,47,40,0
+2019,Jun,WFM03,Further Pure Mathematics F3,75,71.0,67,60,54,48,42,0
+2019,Jun,WFR01,Spoken Expression and Response,40,,32,27,23,19,15,0
+2019,Jun,WFR02,Understanding and Written Response,90,,69,62,56,50,44,0
+2019,Jun,WFR03,Understanding and Spoken Response,40,36.0,33,28,24,20,16,0
+2019,Jun,WFR04,"Research, Understanding and Written Response",90,77.0,68,59,50,42,34,0
+2019,Jun,WGE01,Global Challenges,90,,61,57,53,49,46,0
+2019,Jun,WGE02,Geographical Investigations,60,,49,46,43,40,37,0
+2019,Jun,WGE03,Contested Planet,90,70.0,63,56,49,43,37,0
+2019,Jun,WGE04,Researching Geography,60,54.0,49,43,37,31,25,0
+2019,Jun,WGK01,Understanding and Written Response,80,,60,52,44,36,29,0
+2019,Jun,WGK02,Writing and Research,80,69.0,61,53,45,38,31,0
+2019,Jun,WGN01,Spoken Expression and Response,40,,32,28,24,20,17,0
+2019,Jun,WGN02,Understanding and Written Response,90,,63,55,47,40,33,0
+2019,Jun,WGN03,Understanding and Spoken Response,40,36.0,33,28,24,20,16,0
+2019,Jun,WGN04,"Research, Understanding and Written Response",90,72.0,64,56,48,41,34,0
+2019,Jun,WHI01,"A - France in Revolution, 1774-99",50,,39,34,29,25,21,0
+2019,Jun,WHI01,"B - Russia in Revolution, 1881-1917",50,,39,34,29,25,21,0
+2019,Jun,WHI01,"C - Germany, 1918-45",50,,38,33,28,24,20,0
+2019,Jun,WHI01,"D - Britain, 1964-90",50,,39,34,29,25,21,0
+2019,Jun,WHI02,"A - India, 1857-1948: The Raj to Partition",50,,34,31,28,25,22,0
+2019,Jun,WHI02,"B - China, 1900-76",50,,34,31,28,25,22,0
+2019,Jun,WHI02,"C - Russia, 1917-91: From Lenin to Yeltsin",50,,33,30,27,24,21,0
+2019,Jun,WHI02,"D - South Africa, 1948-2014",50,,34,31,28,25,22,0
+2019,Jun,WHI03,"A - The USA, Independence to Civil War, 1775–1865",50,38.0,34,30,27,24,21,0
+2019,Jun,WHI03,"B - The British Experience of Warfare, 1803–1945",50,38.0,34,30,27,24,21,0
+2019,Jun,WHI03,"C - Germany: United, Divided and Reunited, 1870–1990",50,38.0,34,30,27,24,21,0
+2019,Jun,WHI03,"D - Civil Rights and Race Relations in the USA,",50,38.0,34,30,27,24,21,0
+2019,Jun,WHI04,"A - The Making of Modern Europe, 1805–71",50,38.0,34,30,27,24,21,0
+2019,Jun,WHI04,"B - The World in Crisis, 1879–1945",50,38.0,34,30,27,24,21,0
+2019,Jun,WHI04,"C - The World Divided: Superpower Relations, 1943–90",50,38.0,34,30,27,24,21,0
+2019,Jun,WHI04,"D - The Cold War and Hot War in Asia, 1945–90",50,38.0,34,30,27,24,21,0
+2019,Jun,WIT01,The Information Age,60,,52,47,42,37,33,0
+2019,Jun,WIT02,The Digital Economy,60,,51,46,41,37,33,0
+2019,Jun,WIT03,The Knowledge Worker,90,,67,60,54,48,42,0
+2019,Jun,WIT04,Using Database Software,90,79.0,72,65,58,51,44,0
+2019,Jun,WIT05,Managing ICT Projects,60,56.0,53,48,43,38,33,0
+2019,Jun,WIT06,Using Multimedia Software,60,56.0,53,48,43,38,33,0
+2019,Jun,WIT07,Using Spreadsheet Software,60,54.0,48,42,37,32,27,0
+2019,Jun,WIT08,Customising Applications,60,52.0,46,40,35,30,25,0
+2019,Jun,WIT11,Unit 1 - International Advanced Subsidiary Level,80,,52,45,38,32,26,0
+2019,Jun,WIT12,Unit 2 - International Advanced Subsidiary Level,80,,57,49,41,34,27,0
+2019,Jun,WMA01,Core Mathematics C12,125,,98,85,72,60,48,0
+2019,Jun,WMA02,Core Mathematics C34,125,115.0,105,94,83,72,62,0
+2019,Jun,WMA11,Pure Mathematics 1,75,,58,51,44,38,32,0
+2019,Jun,WMA12,Mathematics : Pure Maths P2 (New),75,,60,53,46,40,34,0
+2019,Jun,WME01,Mechanics M1,75,,63,56,49,43,37,0
+2019,Jun,WME02,Mechanics M2,75,65.0,58,51,44,38,32,0
+2019,Jun,WME03,Mechanics M3,75,69.0,64,57,51,45,39,0
+2019,Jun,WPH01,Physics On The Go,80,,49,45,41,38,35,0
+2019,Jun,WPH02,Physics At Work,80,,50,45,40,35,30,0
+2019,Jun,WPH03,Exploring Physics,40,,29,26,23,20,18,0
+2019,Jun,WPH04,Physics On The Move,80,69.0,64,59,54,50,46,0
+2019,Jun,WPH05,Physics from Creation to Collapse,80,63.0,60,57,54,51,48,0
+2019,Jun,WPH06,Experimental Physics,40,33.0,29,25,22,19,16,0
+2019,Jun,WPH11,Mechanics and Materials,80,,42,38,34,30,27,0
+2019,Jun,WPH12,Waves and Electricity,80,,50,44,38,32,27,0
+2019,Jun,WPH13,Practical Skills in Physics I,50,,32,28,25,22,19,0
+2019,Jun,WPS01,Social and cognitive psychology,64,,28,25,22,20,18,0
+2019,Jun,WPS02,"Biological psychology, learning theories and development",96,,47,40,33,26,20,0
+2019,Jun,WPS03,Applications of Psychology,64,41.0,37,33,29,25,21,0
+2019,Jun,WPS04,Clinical Psychology and Psychological Skills,96,50.0,44,38,32,26,20,0
+2019,Jun,WSP01,Spoken Expression and Response,40,,31,27,23,19,16,0
+2019,Jun,WSP02,Understanding and Written Response,90,,74,64,55,46,37,0
+2019,Jun,WSP03,Understanding and Spoken Response,40,33.0,30,27,24,21,18,0
+2019,Jun,WSP04,"Research, Understanding and Written Response",90,81.0,73,64,55,46,38,0
+2019,Jun,WST01,Statistics S1,75,,50,43,36,30,24,0
+2019,Jun,WST02,Statistics S2,75,67.0,59,51,43,36,29,0
+2019,Jun,WST03,Statistics S3,75,71.0,67,60,53,46,40,0
+2019,Jun,YLA1,Law (Papers 1 & 2),200,122.0,111,100,89,79,69,0
+2019,Oct,WAC11,Unit 1: The Accounting System and Costing,200,,124,108,92,76,60,0
+2019,Oct,WAC12,Unit 2: Corporate and Management Accounting,200,165.0,152,139,127,115,103,0
+2019,Oct,WBI04,The Natural Environment and Species Survival,90,55.0,50,45,41,37,33,0
+2019,Oct,WBI05,"Energy, Exercise and Coordination",90,66.0,60,54,48,42,37,0
+2019,Oct,WBI06,Practical Biology and Investigative Skills,50,39.0,35,31,27,23,19,0
+2019,Oct,WBI11,"Unit 1: Molecules, Diet, Transport and Health",80,,50,46,42,39,36,0
+2019,Oct,WBI12,"Unit 2: Cells, Development, Biodiversity and Conservation",80,,52,48,44,41,38,0
+2019,Oct,WBI13,Unit 3: Practical Skills in Biology I,50,,37,33,29,25,22,0
+2019,Oct,WBS03,Strategic Business Decisions,80,66.0,60,54,48,43,38,0
+2019,Oct,WBS04,Business in a Global Context,80,61.0,56,51,46,41,37,0
+2019,Oct,WBS11,Marketing and People,80,,56,51,46,41,36,0
+2019,Oct,WBS12,Managing business activities,80,,51,46,42,38,34,0
+2019,Oct,WCH04,"General Principles Of Chemistry I: Rates, Equilibria and",90,76.0,70,64,58,53,48,0
+2019,Oct,WCH05,General Principles Of Chemistry II – Transition Metals and,90,75.0,69,63,57,51,46,0
+2019,Oct,WCH06,Chemistry Laboratory Skills II,50,36.0,33,30,27,24,21,0
+2019,Oct,WCH11,"Structure, Bonding and Introduction to Organic Chemistry",80,,64,58,52,46,40,0
+2019,Oct,WCH12,"Energetics, Group Chemistry, Halogenoalkanes an Alcohol",80,,60,54,49,44,39,0
+2019,Oct,WCH13,Practical Skills in Chemistry,50,,37,33,29,25,22,0
+2019,Oct,WEC03,Business Behavior,80,57.0,52,47,42,37,33,0
+2019,Oct,WEC04,Developments in the Global Economy,80,64.0,59,54,49,45,41,0
+2019,Oct,WEC11,Markets in Action,80,,59,52,46,40,34,0
+2019,Oct,WEC12,Macroeconomic performance and policy,80,,57,51,45,40,35,0
+2019,Oct,WHI01,"A - France in revolution, 1774-1779",50,,39,34,29,25,21,0
+2019,Oct,WHI02,"C - Russia, 1917-1991: From Lenin to Yeltsin",50,,34,31,28,25,22,0
+2019,Oct,WHI03,"C - Germany: United, divided and reunited, 1870-1990",50,38.0,34,30,27,24,21,0
+2019,Oct,WHI04,"C - The world divided: Superpower relations, 1943-1990",50,38.0,34,30,27,24,21,0
+2019,Oct,WMA01,Core Mathematics C12,125,,98,87,76,66,56,0
+2019,Oct,WMA02,Core Mathematics C34,125,106.0,94,82,71,60,49,0
+2019,Oct,WMA11,Mathematics : Pure Maths P1 (New),75,,52,45,38,31,25,0
+2019,Oct,WMA12,Mathematics : Pure Maths P2 (New),75,,56,48,41,34,27,0
+2019,Oct,WME01,Mechanics M1,75,,55,48,41,34,27,0
+2019,Oct,WME02,Mechanics M2,75,68.0,61,54,47,41,35,0
+2019,Oct,WPH04,Physics On The Move,80,59.0,54,49,44,40,36,0
+2019,Oct,WPH05,Physics from Creation to Collapse,80,69.0,63,57,52,47,42,0
+2019,Oct,WPH06,Experimental Physics,40,30.0,27,24,21,18,16,0
+2019,Oct,WPH11,Unit 1: Mechanics and Materials,80,,44,40,36,32,28,0
+2019,Oct,WPH12,Unit 2: Waves and Electricity,80,,50,45,40,36,32,0
+2019,Oct,WPH13,Unit 3: Practical Skills in Physics I,50,,28,25,22,20,18,0
+2019,Oct,WPS01,Social and cognitive psychology,64,,30,27,24,21,18,0
+2019,Oct,WPS02,"Biological psychology, learning theories and development",96,,47,40,33,26,20,0
+2019,Oct,WPS03,Applications of Psychology,64,39.0,35,31,27,23,19,0
+2019,Oct,WPS04,Clinical Psychology and Psychological Skills,96,50.0,44,38,32,26,20,0
+2019,Oct,WST01,Statistics S1,75,,54,46,39,32,25,0
+2019,Oct,WST02,Statistics S2,75,69.0,63,56,49,42,36,0
+2019,Oct,YLA1,Law (Papers 1 & 2),200,108.0,98,88,78,68,59,0
+2020,Jan,WAA01,Understanding and Written Response,80,,54,46,38,30,23,0
+2020,Jan,WAA02,"Research, Writing and Research",80,58.0,50,42,34,26,19,0
+2020,Jan,WAC11,Unit 1: The Accounting System and Costing,200,,134,116,99,82,65,0
+2020,Jan,WAC12,Unit 2: Corporate and Management Accounting,200,145.0,128,111,94,78,62,0
+2020,Jan,WBI11,"Unit 1: Molecules, Diet, Transport and Health",80,,48,43,38,33,29,0
+2020,Jan,WBI12,"Unit 2: Cells, Development, Biodiversity and Conservation",80,,47,43,39,35,31,0
+2020,Jan,WBI13,Unit 3: Practical Skills in Biology I,50,,37,33,29,25,22,0
+2020,Jan,WBI14,"Unit 4: Energy, Environment, Microbiology and Immunity",90,59.0,55,51,47,43,40,0
+2020,Jan,WBS11,Marketing and People,80,,54,48,43,38,33,0
+2020,Jan,WBS12,Managing business activities,80,,51,45,40,35,30,0
+2020,Jan,WBS13,Unit 3: Business decisions and strategy,80,54.0,49,44,39,34,29,0
+2020,Jan,WCH11,"Structure, Bonding and Introduction to Organic Chemistry",80,,59,53,47,42,37,0
+2020,Jan,WCH12,"Energetics, Group Chemistry, Halogenoalkanes and Alcohols",80,,55,49,43,38,33,0
+2020,Jan,WCH13,Practical Skills in Chemistry I,50,,36,32,28,25,22,0
+2020,Jan,WCH14,"Rates, Equilibria and Further Organic Chemistry",90,73.0,67,61,55,50,45,0
+2020,Jan,WDM01,Decision Mathematics D1,75,,56,50,44,39,34,0
+2020,Jan,WDM11,Mathematics: Decision D1 (New),75,,55,49,43,38,33,0
+2020,Jan,WEC11,Markets in Action,80,,58,52,46,40,35,0
+2020,Jan,WEC12,Macroeconomic performance and policy,80,,57,51,45,40,35,0
+2020,Jan,WEC13,Business Behaviour,80,55.0,50,45,40,36,32,0
+2020,Jan,WEN01,Language: Context and Identity,50,,37,32,27,22,17,0
+2020,Jan,WEN02,Language in Transition,50,,33,28,23,18,13,0
+2020,Jan,WEN03,Crafting Language (Writing),50,42.0,36,30,25,20,15,0
+2020,Jan,WEN04,Investigating Language,50,42.0,37,32,27,23,19,0
+2020,Jan,WET01,Post-2000 Poetry and Prose,50,,36,32,28,25,22,0
+2020,Jan,WET02,Drama,50,,35,31,28,25,22,0
+2020,Jan,WET03,Poetry and Prose,50,40.0,36,32,28,24,20,0
+2020,Jan,WET04,Shakespeare and Pre-1900 Poetry,50,40.0,36,32,28,24,20,0
+2020,Jan,WFM01,Further Pure Mathematics F1,75,,65,60,55,50,46,0
+2020,Jan,WFR01,Spoken Expression and Response,40,,32,28,24,20,16,0
+2020,Jan,WFR02,Understanding and Written Response,90,,63,57,51,45,40,0
+2020,Jan,WFR03,Understanding and Spoken Response,40,36.0,33,28,24,20,16,0
+2020,Jan,WFR04,"Research, Understanding and Written Response",90,81.0,72,63,54,45,36,0
+2020,Jan,WGE01,Global Challenges,90,,58,54,50,46,42,0
+2020,Jan,WGE02,Geographical Investigations,60,,46,42,39,36,33,0
+2020,Jan,WGE03,Contested Planet,90,66.0,60,54,48,43,38,0
+2020,Jan,WGE04,Researching Geography,60,54.0,48,42,36,30,24,0
+2020,Jan,WGK01,Understanding and Written Response,80,,60,52,44,36,29,0
+2020,Jan,WGK02,Writing and Research,80,69.0,61,53,45,38,31,0
+2020,Jan,WGN01,Spoken Expression and Response,40,,32,28,24,20,17,0
+2020,Jan,WGN02,Understanding and Written Response,90,,64,56,48,40,33,0
+2020,Jan,WGN03,Understanding and Spoken Response,40,36.0,33,28,24,20,16,0
+2020,Jan,WGN04,"Research, Understanding and Written Response",90,72.0,64,56,48,41,34,0
+2020,Jan,WHI01,"A - France in Revolution, 1774-99",50,,39,34,29,25,21,0
+2020,Jan,WHI01,"B - Russia in Revolution, 1881-1917",50,,39,34,29,25,21,0
+2020,Jan,WHI01,"C - Germany, 1918-45",50,,39,34,29,24,20,0
+2020,Jan,WHI01,"D - Britain, 1964-90",50,,39,34,29,25,21,0
+2020,Jan,WHI02,"A - India, 1857-1948: The Raj to Partition",50,,34,31,28,25,22,0
+2020,Jan,WHI02,"B - China, 1900-76",50,,34,31,28,25,22,0
+2020,Jan,WHI02,"C - Russia, 1917-91: From Lenin to Yeltsin",50,,34,31,28,25,22,0
+2020,Jan,WHI02,"D - South Africa, 1948-2014",50,,34,31,28,25,22,0
+2020,Jan,WHI03,"A - The USA, Independence to Civil War, 1775–1865",50,38.0,34,30,27,24,21,0
+2020,Jan,WHI03,"B - The British Experience of Warfare, 1803–1945",50,38.0,34,30,27,24,21,0
+2020,Jan,WHI03,"C - Germany: United, Divided and Reunited, 1870–1990",50,38.0,34,30,27,24,21,0
+2020,Jan,WHI03,"D - Civil Rights and Race Relations in the USA, 1865–2009",50,38.0,34,30,27,24,21,0
+2020,Jan,WHI04,"B - The World in Crisis, 1879–1945",50,38.0,34,30,27,24,21,0
+2020,Jan,WHI04,"C - The World Divided: Superpower Relations, 1943–90",50,38.0,34,30,27,24,21,0
+2020,Jan,WHI04,"D - The Cold War and Hot War in Asia, 1945–90",50,38.0,34,30,27,24,21,0
+2020,Jan,WMA01,Core Mathematics C12,125,,88,76,64,52,41,0
+2020,Jan,WMA02,Core Mathematics C34: Paper 01,125,108.0,96,84,72,61,50,0
+2020,Jan,WMA02,Core Mathematics C34: Paper 01C,125,113.0,102,89,76,63,51,0
+2020,Jan,WMA11,Mathematics : Pure Maths P1 (New),75,,55,46,37,29,21,0
+2020,Jan,WMA12,Mathematics : Pure Maths P2 (New),75,,52,46,40,34,28,0
+2020,Jan,WMA13,Mathematics: Pure Maths P3 (New),75,63.0,57,51,45,39,33,0
+2020,Jan,WME01,Mechanics M1,75,,60,53,46,39,32,0
+2020,Jan,WME02,Mechanics M2,75,64.0,56,48,40,32,25,0
+2020,Jan,WME03,Mechanics M3,75,69.0,64,56,48,40,32,0
+2020,Jan,WPH11,Unit 1: Mechanics and Materials,80,,48,44,40,37,34,0
+2020,Jan,WPH12,Unit 2: Waves and Electricity,80,,55,49,44,39,34,0
+2020,Jan,WPH13,Unit 3: Practical Skills in Physics I,50,,31,27,24,21,18,0
+2020,Jan,WPH14,"Unit 4: Further Mechanics, Fields and Particles",90,61.0,56,51,46,41,37,0
+2020,Jan,WPS01,Social and cognitive psychology,64,,33,29,25,22,19,0
+2020,Jan,WPS02,"Biological psychology, learning theories and development",96,,47,40,33,26,20,0
+2020,Jan,WPS03,Applications of Psychology,64,39.0,35,31,27,23,19,0
+2020,Jan,WPS04,Clinical Psychology and Psychological Skills,96,50.0,44,38,32,26,20,0
+2020,Jan,WSP01,Spoken Expression and Response,40,,30,27,24,21,18,0
+2020,Jan,WSP02,Understanding and Written Response,90,,72,64,56,48,40,0
+2020,Jan,WSP03,Understanding and Spoken Response,40,33.0,30,27,24,21,19,0
+2020,Jan,WSP04,"Research, Understanding and Written Response",90,81.0,72,63,54,46,38,0
+2020,Jan,WST01,Statistics S1,75,,52,45,38,31,25,0
+2020,Jan,WST02,Statistics S2,75,69.0,64,56,48,40,32,0
+2021,Jan,WAA01,Understanding and Written Response,80,,50,39,29,19,9,0
+2021,Jan,WAA02,"Research, Writing and Research",80,59.0,50,41,32,23,15,0
+2021,Jan,WAC11,Unit 1: The Accounting System and Costing,200,,105,85,66,47,28,0
+2021,Jan,WAC12,Unit 2: Corporate and Management Accounting,200,128.0,98,81,64,47,31,0
+2021,Jan,WBI11,"Unit 1: Molecules, Diet, Transport and Health",80,,40,33,26,19,13,0
+2021,Jan,WBI12,"Unit 2: Cells, Development, Biodiversity and Conservation",80,,43,36,29,22,16,0
+2021,Jan,WBI13,Unit 3: Practical Skills in Biology I,50,,33,28,23,19,15,0
+2021,Jan,WBI14,"Unit 4: Energy, Environment, Microbiology and Immunity",90,58.0,49,40,31,22,13,0
+2021,Jan,WBI15,"Unit 5: Respiration, Internal Environment, Coordination and",90,55.0,47,38,30,22,14,0
+2021,Jan,WBI16,Unit 6: Practical Skills in Biology II,50,43.0,38,31,24,17,11,0
+2021,Jan,WBS11,Marketing and People,80,,47,38,29,21,13,0
+2021,Jan,WBS12,Managing business activities,80,,48,39,30,21,13,0
+2021,Jan,WBS13,Unit 3: Business decisions and strategy,80,61.0,55,44,34,24,14,0
+2021,Jan,WBS14,Unit 4: Global business,80,62.0,55,45,36,27,18,0
+2021,Jan,WCH11,"Structure, Bonding and Introduction to Organic Chemistry",80,,55,46,38,30,22,0
+2021,Jan,WCH12,"Energetics, Group Chemistry, Halogenoalkanes and Alcohols",80,,45,38,31,24,17,0
+2021,Jan,WCH13,Practical Skills in Chemistry I,50,,31,26,22,18,14,0
+2021,Jan,WCH14,"Rates, Equilibria and Further Organic Chemistry",90,76.0,63,52,41,30,19,0
+2021,Jan,WCH15,Transition Metals and Organic Nitrogen Chemistry,90,64.0,52,43,35,27,19,0
+2021,Jan,WCH16,Practical Skills in Chemistry II,50,43.0,35,30,25,20,15,0
+2021,Jan,WDM11,Mathematics: Decision D1 (New),75,,46,38,30,22,14,0
+2021,Jan,WEC11,Markets in Action,80,,50,41,32,23,15,0
+2021,Jan,WEC12,Macroeconomic performance and policy,80,,52,43,35,27,19,0
+2021,Jan,WEC13,Business Behaviour,80,56.0,47,38,29,20,11,0
+2021,Jan,WEC14,Developments in the Global Economy,80,60.0,52,44,36,29,22,0
+2021,Jan,WEN01,Language: Context and Identity,50,,33,28,23,18,14,0
+2021,Jan,WEN02,Language in Transition,50,,26,21,16,11,6,0
+2021,Jan,WEN03,Crafting Language (Writing),50,33.0,26,21,16,12,8,0
+2021,Jan,WEN04,Investigating Language,50,33.0,27,22,17,13,9,0
+2021,Jan,WET01,Post-2000 Poetry and Prose,50,,30,25,20,16,12,0
+2021,Jan,WET02,Drama,50,,33,28,23,19,15,0
+2021,Jan,WET03,Poetry and Prose,50,38.0,31,26,21,16,11,0
+2021,Jan,WET04,Shakespeare and Pre-1900 Poetry,50,37.0,32,26,20,15,10,0
+2021,Jan,WFM01,Further Pure Mathematics F1,75,,52,44,36,28,20,0
+2021,Jan,WFM02,Further Pure Mathematics F2,75,61.0,52,43,34,25,16,0
+2021,Jan,WFM03,Further Pure Mathematics F3,75,64.0,53,41,30,19,8,0
+2021,Jan,WFR01,Spoken Expression and Response,40,,31,25,19,14,9,0
+2021,Jan,WFR02,Understanding and Written Response,90,,63,52,42,32,22,0
+2021,Jan,WFR03,Understanding and Spoken Response,40,35.0,29,23,18,13,8,0
+2021,Jan,WFR04,"Research, Understanding and Written Response",90,76.0,65,52,40,28,16,0
+2021,Jan,WGE01,Global Challenges,90,,58,49,41,33,25,0
+2021,Jan,WGE02,Geographical Investigations,60,,45,39,33,27,21,0
+2021,Jan,WGE03,Contested Planet,90,65.0,55,46,37,28,20,0
+2021,Jan,WGE04,Researching Geography,60,51.0,44,36,29,22,15,0
+2021,Jan,WGK01,Understanding and Written Response,80,,58,50,42,34,26,0
+2021,Jan,WGK02,Writing and Research,80,63.0,54,46,38,30,23,0
+2021,Jan,WGN01,Spoken Expression and Response,40,,29,24,20,16,12,0
+2021,Jan,WGN02,Understanding and Written Response,90,,49,41,33,26,19,0
+2021,Jan,WGN03,Understanding and Spoken Response,40,34.0,30,26,22,18,14,0
+2021,Jan,WGN04,"Research, Understanding and Written Response",90,71.0,57,47,37,27,17,0
+2021,Jan,WHI01,"1A - France in Revolution, 1774-99",50,,36,31,26,21,16,0
+2021,Jan,WHI01,"1B - Russia in Revolution, 1881-1917",50,,36,31,26,21,16,0
+2021,Jan,WHI01,"1C - Germany, 1918-45",50,,36,31,26,21,16,0
+2021,Jan,WHI01,"1D - Britain, 1964-90",50,,36,31,26,21,16,0
+2021,Jan,WHI02,"1A - India, 1857-1948: The Raj to Partition",50,,29,25,22,19,16,0
+2021,Jan,WHI02,"1B - China, 1900-76",50,,29,25,22,19,16,0
+2021,Jan,WHI02,"1C - Russia, 1917-91: From Lenin to Yeltsin",50,,29,25,22,19,16,0
+2021,Jan,WHI02,"1D - South Africa, 1948-2014",50,,29,25,22,19,16,0
+2021,Jan,WHI03,"1A - The USA, Independence to Civil War, 1763–1865",50,33.0,29,25,22,19,16,0
+2021,Jan,WHI03,"1B - The British Experience of Warfare, 1803–1945",50,33.0,29,25,22,19,16,0
+2021,Jan,WHI03,"1C - Germany: United, Divided and Reunited, 1870–1990",50,33.0,29,25,22,19,16,0
+2021,Jan,WHI03,"1D - Civil Rights and Race Relations in the USA, 1865–2009",50,33.0,29,25,22,19,16,0
+2021,Jan,WHI04,"1A - The Making of Modern Europe, 1805–71",50,34.0,30,26,22,19,16,0
+2021,Jan,WHI04,"1B - The World in Crisis, 1879–1945",50,34.0,30,26,22,19,16,0
+2021,Jan,WHI04,"1C - The World Divided: Superpower Relations, 1943–90",50,34.0,30,26,22,19,16,0
+2021,Jan,WHI04,"1D - The Cold War and Hot War in Asia, 1945–90",50,34.0,30,26,22,19,16,0
+2021,Jan,WMA11,Mathematics : Pure Maths P1 (New),75,,51,40,30,20,10,0
+2021,Jan,WMA12,Mathematics : Pure Maths P2 (New),75,,55,43,31,20,9,0
+2021,Jan,WMA13,Mathematics: Pure Maths P3 (New),75,64.0,53,42,31,20,9,0
+2021,Jan,WMA14,Mathematics: Pure Maths P4 (New),75,64.0,53,41,30,19,8,0
+2021,Jan,WME01,Mechanics M1,75,,49,38,27,16,6,0
+2021,Jan,WME02,Mechanics M2,75,58.0,48,38,28,18,8,0
+2021,Jan,WME03,Mechanics M3,75,61.0,52,42,33,24,15,0
+2021,Jan,WPH11,Unit 1: Mechanics and Materials,80,,37,33,29,25,22,0
+2021,Jan,WPH12,Unit 2: Waves and Electricity,80,,42,37,32,27,23,0
+2021,Jan,WPH13,Unit 3: Practical Skills in Physics I,50,,27,24,21,18,16,0
+2021,Jan,WPH14,"Unit 4: Further Mechanics, Fields and Particles",90,64.0,55,48,41,34,28,0
+2021,Jan,WPH16,Unit 6: Practical skills in Physics II,50,34.0,29,25,21,17,14,0
+2021,Jan,WPS01,Social and cognitive psychology,64,,24,20,16,12,8,0
+2021,Jan,WPS02,"Biological psychology, learning theories and development",96,,40,32,24,17,10,0
+2021,Jan,WPS03,Applications of Psychology,64,38.0,31,24,18,12,6,0
+2021,Jan,WPS04,Clinical Psychology and Psychological Skills,96,45.0,37,29,22,15,8,0
+2021,Jan,WSP01,Spoken Expression and Response,40,,29,25,21,17,13,0
+2021,Jan,WSP02,Understanding and Written Response,90,,69,59,49,39,29,0
+2021,Jan,WSP03,Understanding and Spoken Response,40,32.0,28,23,19,15,11,0
+2021,Jan,WSP04,"Research, Understanding and Written Response",90,76.0,65,53,41,29,18,0
+2021,Jan,WST01,Statistics S1,75,,44,35,26,17,9,0
+2021,Jan,WST02,Statistics S2,75,57.0,47,37,28,19,10,0
+2021,Jan,WST03,Statistics S3,75,64.0,55,44,34,24,14,0
+2021,Oct,WAA01,Understanding and Written Response,80,,47,38,29,20,12,0
+2021,Oct,WAA02,"Research, Writing and Research",80,56.0,47,39,32,25,18,0
+2021,Oct,WAC11,Unit 1: The Accounting System and Costing,200,,101,81,62,43,24,0
+2021,Oct,WAC12,Unit 2: Corporate and Management Accounting,200,128.0,98,81,64,47,31,0
+2021,Oct,WBI11,"Unit 1: Molecules, Diet, Transport and Health",80,,37,31,26,21,16,0
+2021,Oct,WBI12,"Unit 2: Cells, Development, Biodiversity and Conservation",80,,38,32,26,21,16,0
+2021,Oct,WBI13,Unit 3: Practical Skills in Biology I,50,,27,23,19,16,13,0
+2021,Oct,WBI14,"Unit 4: Energy, Environment, Microbiology and Immunity",90,54.0,45,37,29,21,14,0
+2021,Oct,WBI15,"Unit 5: Respiration, Internal Environment, Coordination and",90,50.0,41,34,27,20,13,0
+2021,Oct,WBI16,Unit 6: Practical Skills in Biology II,50,42.0,39,32,25,19,13,0
+2021,Oct,WBS11,Marketing and People,80,,43,36,29,22,15,0
+2021,Oct,WBS12,Managing business activities,80,,46,38,30,23,16,0
+2021,Oct,WBS13,Unit 3: Business decisions and strategy,80,61.0,55,46,37,28,19,0
+2021,Oct,WBS14,Unit 4: Global business,80,63.0,56,47,39,31,23,0
+2021,Oct,WCH11,"Structure, Bonding and Introduction to Organic Chemistry",80,,51,43,36,29,22,0
+2021,Oct,WCH12,"Energetics, Group Chemistry, Halogenoalkanes and Alcohols",80,,45,38,31,25,19,0
+2021,Oct,WCH13,Practical Skills in Chemistry I,50,,27,23,19,15,12,0
+2021,Oct,WCH14,"Rates, Equilibria and Further Organic Chemistry",90,71.0,59,49,39,29,19,0
+2021,Oct,WCH15,Transition Metals and Organic Nitrogen Chemistry,90,60.0,48,40,32,24,16,0
+2021,Oct,WCH16,Practical Skills in Chemistry II,50,41.0,34,28,22,17,12,0
+2021,Oct,WDM11,Mathematics: Decision D1,75,,46,38,30,22,14,0
+2021,Oct,WEC11,Markets in Action,80,,50,42,35,28,21,0
+2021,Oct,WEC12,Macroeconomic performance and policy,80,,50,42,34,27,20,0
+2021,Oct,WEC13,Business Behaviour,80,53.0,44,36,28,21,14,0
+2021,Oct,WEC14,Developments in the Global Economy,80,61.0,52,45,38,31,24,0
+2021,Oct,WFM01,Further Pure Mathematics F1,75,,50,43,36,29,22,0
+2021,Oct,WFM02,Further Pure Mathematics F2,75,55.0,42,33,25,17,9,0
+2021,Oct,WFM03,Further Pure Mathematics F3,75,64.0,53,41,30,19,8,0
+2021,Oct,WIT11,Unit 1 - International Advanced Subsidiary Level,80,,30,23,17,11,5,0
+2021,Oct,WIT12,Unit 2 - International Advanced Subsidiary Level,80,,38,29,21,13,5,0
+2021,Oct,WIT13,Unit 3 - International Advanced Level,80,41.0,33,26,19,12,5,0
+2021,Oct,WIT14,Unit 4 - International Advanced Level,80,42.0,34,26,19,12,5,0
+2021,Oct,WMA11,Mathematics: Pure Maths P1,75,,48,39,30,21,12,0
+2021,Oct,WMA12,Mathematics: Pure Maths P2,75,,51,40,29,18,8,0
+2021,Oct,WMA13,Mathematics: Pure Maths P3,75,63.0,50,39,28,18,8,0
+2021,Oct,WMA14,Mathematics: Pure Maths P4,75,64.0,53,42,31,20,9,0
+2021,Oct,WME01,Mechanics M1,75,,46,36,26,16,6,0
+2021,Oct,WME02,Mechanics M2,75,58.0,48,38,28,18,9,0
+2021,Oct,WME03,Mechanics M3,75,55.0,45,35,26,17,8,0
+2021,Oct,WPH11,Unit 1: Mechanics and Materials,80,,38,34,30,27,24,0
+2021,Oct,WPH12,Unit 2: Waves and Electricity,80,,42,37,32,28,24,0
+2021,Oct,WPH13,Unit 3: Practical Skills in Physics I,50,,28,25,22,20,18,0
+2021,Oct,WPH14,"Unit 4: Further Mechanics, Fields and Particles",90,66.0,55,49,43,37,31,0
+2021,Oct,WPH15,"Unit 5: Thermodynamics, Radiation, Oscillations and Cosmology",90,65.0,54,49,44,39,34,0
+2021,Oct,WPH16,Unit 6: Practical Skills in Physics II,50,35.0,29,25,22,19,16,0
+2021,Oct,WST01,Statistics S1,75,,37,29,21,14,7,0
+2021,Oct,WST02,Statistics S2,75,59.0,49,39,30,21,12,0
+2021,Oct,WST03,Statistics S3,75,62.0,53,43,33,24,15,0
+2022,Jan,WAA01,Understanding and Written Response,80,,46,37,28,20,12,0
+2022,Jan,WAA02,"Research, Writing and Research",80,56.0,46,39,32,25,18,0
+2022,Jan,WAC11,Unit 1: The Accounting System and Costing,200,,101,81,62,43,24,0
+2022,Jan,WAC12,Unit 2: Corporate and Management Accounting,200,128.0,98,81,64,47,31,0
+2022,Jan,WBI11,"Unit 1: Molecules, Diet, Transport and Health",80,,37,31,26,21,16,0
+2022,Jan,WBI12,"Unit 2: Cells, Development, Biodiversity and Conservation",80,,38,32,26,21,16,0
+2022,Jan,WBI13,Unit 3: Practical Skills in Biology I,50,,29,25,21,18,15,0
+2022,Jan,WBI14,"Unit 4: Energy, Environment, Microbiology and Immunity",90,54.0,45,37,29,22,15,0
+2022,Jan,WBI15,"Unit 5: Respiration, Internal Environment, Coordination and",90,54.0,45,37,29,21,13,0
+2022,Jan,WBI16,Unit 6: Practical Skills in Biology II,50,43.0,40,33,26,19,13,0
+2022,Jan,WBS11,Marketing and People,80,,43,36,29,22,15,0
+2022,Jan,WBS12,Managing business activities,80,,46,38,30,23,16,0
+2022,Jan,WBS13,Unit 3: Business decisions and strategy,80,61.0,55,46,37,28,19,0
+2022,Jan,WBS14,Unit 4: Global business,80,62.0,55,47,39,31,23,0
+2022,Jan,WCH11,"Structure, Bonding and Introduction to Organic Chemistry",80,,52,44,37,30,23,0
+2022,Jan,WCH12,"Energetics, Group Chemistry, Halogenoalkanes and Alcohols",80,,43,36,30,24,18,0
+2022,Jan,WCH13,Practical Skills in Chemistry I,50,,26,21,17,13,9,0
+2022,Jan,WCH14,"Rates, Equilibria and Further Organic Chemistry",90,71.0,59,49,39,29,20,0
+2022,Jan,WCH15,Transition Metals and Organic Nitrogen Chemistry,90,64.0,52,43,35,27,19,0
+2022,Jan,WCH16,Practical Skills in Chemistry II,50,40.0,33,27,22,17,12,0
+2022,Jan,WDM11,Mathematics: Decision D1,75,,46,38,30,22,14,0
+2022,Jan,WEC11,Markets in Action,80,,50,42,35,28,21,0
+2022,Jan,WEC12,Macroeconomic performance and policy,80,,50,42,34,27,20,0
+2022,Jan,WEC13,Business Behaviour,80,53.0,44,36,28,21,14,0
+2022,Jan,WEC14,Developments in the Global Economy,80,61.0,52,45,38,31,24,0
+2022,Jan,WEN01,Language: Context and Identity,50,,33,28,23,18,13,0
+2022,Jan,WEN02,Language in Transition,50,,26,21,17,13,9,0
+2022,Jan,WEN03,Crafting Language (Writing),50,34.0,27,22,17,12,7,0
+2022,Jan,WEN04,Investigating Language,50,34.0,27,22,17,12,7,0
+2022,Jan,WET01,Post-2000 Poetry and Prose,50,,29,24,20,16,12,0
+2022,Jan,WET02,Drama,50,,33,28,23,18,14,0
+2022,Jan,WET03,Poetry and Prose,50,36.0,29,24,19,14,10,0
+2022,Jan,WET04,Shakespeare and Pre-1900 Poetry,50,35.0,31,26,21,17,13,0
+2022,Jan,WFM01,Further Pure Mathematics F1,75,,50,43,36,29,22,0
+2022,Jan,WFM02,Further Pure Mathematics F2,75,59.0,46,37,28,20,12,0
+2022,Jan,WFM03,Further Pure Mathematics F3,75,64.0,53,41,30,19,8,0
+2022,Jan,WFR01,Spoken Expression and Response,40,,30,25,20,16,12,0
+2022,Jan,WFR02,Understanding and Written Response,90,,59,50,42,34,26,0
+2022,Jan,WFR03,Understanding and Spoken Response,40,35.0,28,24,20,16,13,0
+2022,Jan,WFR04,"Research, Understanding and Written Response",90,72.0,60,50,40,31,22,0
+2022,Jan,WGE01,Global Challenges,90,,57,50,43,37,31,0
+2022,Jan,WGE02,Geographical Investigations,60,,44,38,32,26,20,0
+2022,Jan,WGE03,Contested Planet,90,62.0,54,45,36,28,20,0
+2022,Jan,WGE04,Researching Geography,60,50.0,44,37,30,23,17,0
+2022,Jan,WGK01,Understanding and Written Response,80,,58,50,42,35,28,0
+2022,Jan,WGK02,Writing and Research,80,68.0,58,50,43,36,29,0
+2022,Jan,WGN01,Spoken Expression and Response,40,,27,22,18,14,10,0
+2022,Jan,WGN02,Understanding and Written Response,90,,41,34,27,20,14,0
+2022,Jan,WGN03,Understanding and Spoken Response,40,34.0,29,25,21,18,15,0
+2022,Jan,WGN04,"Research, Understanding and Written Response",90,68.0,51,43,36,29,22,0
+2022,Jan,WHI01,"A - France in Revolution, 1774-99",50,,36,31,26,21,16,0
+2022,Jan,WHI01,"B - Russia in Revolution, 1881-1917",50,,36,31,26,21,16,0
+2022,Jan,WHI01,"C - Germany, 1918-45",50,,36,31,26,21,16,0
+2022,Jan,WHI01,"D - Britain, 1964-90",50,,36,31,26,21,16,0
+2022,Jan,WHI02,"A - India, 1857-1948: The Raj to Partition",50,,29,25,22,19,16,0
+2022,Jan,WHI02,"B - China, 1900-76",50,,29,25,22,19,16,0
+2022,Jan,WHI02,"C - Russia, 1917-91: From Lenin to Yeltsin",50,,29,25,22,19,16,0
+2022,Jan,WHI02,"D - South Africa, 1948-2014",50,,29,25,22,19,16,0
+2022,Jan,WHI03,"A - The USA, Independence to Civil War, 1763–1865",50,32.0,29,26,23,20,17,0
+2022,Jan,WHI03,"B - The British Experience of Warfare, 1803–1945",50,32.0,29,26,23,20,17,0
+2022,Jan,WHI03,"C - Germany: United, Divided and Reunited, 1870–1990",50,32.0,29,26,23,20,17,0
+2022,Jan,WHI03,"D - Civil Rights and Race Relations in the USA, 1865–2009",50,32.0,29,26,23,20,17,0
+2022,Jan,WHI04,"A - The Making of Modern Europe, 1805–71",50,34.0,30,26,23,20,17,0
+2022,Jan,WHI04,"B - The World in Crisis, 1879–1945",50,34.0,30,26,23,20,17,0
+2022,Jan,WHI04,"C - The World Divided: Superpower Relations, 1943–90",50,34.0,30,26,23,20,17,0
+2022,Jan,WMA11,Mathematics: Pure Maths P1,75,,48,39,30,21,12,0
+2022,Jan,WMA12,Mathematics: Pure Maths P2,75,,51,40,29,18,8,0
+2022,Jan,WMA13,Mathematics: Pure Maths P3,75,63.0,50,39,28,18,8,0
+2022,Jan,WMA14,Mathematics: Pure Maths P4,75,64.0,53,42,31,20,9,0
+2022,Jan,WME01,Mechanics M1,75,,46,36,26,16,6,0
+2022,Jan,WME02,Mechanics M2,75,58.0,48,38,28,18,9,0
+2022,Jan,WME03,Mechanics M3,75,58.0,48,38,28,19,10,0
+2022,Jan,WPH11,Unit 1: Mechanics and Materials,80,,39,35,31,27,24,0
+2022,Jan,WPH12,Unit 2: Waves and Electricity,80,,42,37,32,28,24,0
+2022,Jan,WPH13,Unit 3: Practical Skills in Physics I,50,,28,25,22,19,17,0
+2022,Jan,WPH14,"Unit 4: Further Mechanics, Fields and Particles",90,66.0,55,49,43,37,32,0
+2022,Jan,WPH15,"Unit 5: Thermodynamics, Radiation, Oscillations and Cosmology",90,65.0,54,49,44,39,34,0
+2022,Jan,WPH16,Unit 6: Practical Skills in Physics II,50,35.0,29,25,22,19,16,0
+2022,Jan,WPS01,Social and cognitive psychology,64,,19,15,12,9,6,0
+2022,Jan,WPS02,"Biological psychology, learning theories and development",96,,36,29,23,17,11,0
+2022,Jan,WPS03,Applications of Psychology,64,35.0,29,23,18,13,8,0
+2022,Jan,WPS04,Clinical Psychology and Psychological Skills,96,43.0,35,29,23,18,13,0
+2022,Jan,WSP01,Spoken Expression and Response,40,,29,25,21,17,14,0
+2022,Jan,WSP02,Understanding and Written Response,90,,70,59,49,39,29,0
+2022,Jan,WSP03,Understanding and Spoken Response,40,31.0,27,23,19,15,11,0
+2022,Jan,WSP04,"Research, Understanding and Written Response",90,74.0,66,55,44,33,23,0
+2022,Jan,WST01,Statistics S1,75,,37,29,21,14,7,0
+2022,Jan,WST02,Statistics S2,75,59.0,49,39,30,21,12,0
+2022,Jan,WST03,Statistics S3,75,62.0,53,43,33,24,15,0
+2022,Jun,WAA01,Unit 1: Understanding and Written Response,80,,49,41,33,25,18,0
+2022,Jun,WAA02,Unit 2: Writing and Research,80,63.0,57,48,39,31,23,0
+2022,Jun,WAC11,Unit 1: The Accounting System and Costing,200,,102,83,64,45,26,0
+2022,Jun,WAC12,Unit 2: Corporate and Management Accounting,200,157.0,127,106,85,64,43,0
+2022,Jun,WBI11,"Unit 1: Molecules, Diet, Transport and Health",80,,37,32,27,23,19,0
+2022,Jun,WBI12,"Unit 2: Cells, Development, Biodiversity and Conservation",80,,45,41,37,33,29,0
+2022,Jun,WBI13,Unit 3: Practical Skills in Biology I,50,,31,26,22,18,14,0
+2022,Jun,WBI14,"Unit 4: Energy, Environment, Microbiology and Immunity",90,45.0,39,36,33,30,28,0
+2022,Jun,WBI15,"Unit 5: Respiration, Internal Environment, Coordination and Gene",90,46.0,39,35,31,27,23,0
+2022,Jun,WBI16,Unit 6: Practical Skills in Biology II,50,36.0,31,26,21,16,11,0
+2022,Jun,WBS11,Unit 1: Marketing and People,80,,50,44,38,32,27,0
+2022,Jun,WBS12,Unit 2: Managing Business Activities,80,,41,35,30,25,20,0
+2022,Jun,WBS13,Unit 3: Business Decisions And Strategy,80,50.0,41,35,29,23,18,0
+2022,Jun,WBS14,Unit 4: Global Business,80,51.0,41,35,29,23,17,0
+2022,Jun,WCH11,"Unit 1: Structure, Bonding and Introducttion to Organic Chemistry",80,,46,40,34,28,22,0
+2022,Jun,WCH12,"Unit 2: Energetics, Group Chemistry, Halogenoalkanes and Alcohol",80,,48,40,33,26,19,0
+2022,Jun,WCH13,Unit 3: Practical Skills in Chemistry I,50,,27,23,19,15,11,0
+2022,Jun,WCH14,"Unit 4: Rates, Equilibria and Further Organic Chemistry",90,73.0,59,50,41,33,25,0
+2022,Jun,WCH15,Unit 5: Transition Metals and Organic Nitrogen Chemistry,90,58.0,44,37,30,23,17,0
+2022,Jun,WCH16,Unit 6: Practical Skills in Chemistry II,50,35.0,26,22,18,14,10,0
+2022,Jun,WDM11,D1: Decision Mathematics 1,75,,46,40,34,29,24,0
+2022,Jun,WEC11,Unit 1: Markets in Action,80,,53,46,39,33,27,0
+2022,Jun,WEC12,Unit 2: Macroeconomic Performance and Policy,80,,50,43,36,29,23,0
+2022,Jun,WEC13,Unit 3: Business Behaviour,80,57.0,50,43,37,31,25,0
+2022,Jun,WEC14,Unit 4: Developments in the Global Economy,80,61.0,53,46,39,33,27,0
+2022,Jun,WEN01,Unit 1: Language: Context and Identity,50,,32,27,22,18,14,0
+2022,Jun,WEN02,Unit 2: Language in Transition,50,,28,24,20,16,12,0
+2022,Jun,WEN03,Unit 3: Crafting Language (Writing),50,37.0,29,24,19,14,10,0
+2022,Jun,WEN04,Unit 4: Investigating Language,50,34.0,27,22,18,14,10,0
+2022,Jun,WET01,Unit 1: Post-2000 Poetry and Prose,50,,30,26,22,18,14,0
+2022,Jun,WET02,Unit 2: Drama,50,,32,27,22,17,13,0
+2022,Jun,WET03,Unit 3: Poetry and Prose,50,35.0,30,26,22,18,14,0
+2022,Jun,WET04,Unit 4: Shakespeare and Pre-1900 Poetry,50,38.0,34,29,25,21,17,0
+2022,Jun,WFM01,FP1: Further Pure Mathematics 1,75,,47,40,34,28,22,0
+2022,Jun,WFM02,FP2: Further Pure Mathematics 2,75,70.0,65,55,46,37,28,0
+2022,Jun,WFM03,FP3: Further Pure Mathematics 3,75,50.0,39,33,27,22,17,0
+2022,Jun,WFR01,Unit 1: Spoken Expression and Response,40,,34,29,25,21,17,0
+2022,Jun,WFR02,Unit 2: Understanding and Written Response,90,,70,62,55,48,41,0
+2022,Jun,WFR03,Unit 3: Understanding and Spoken Response,40,37.0,31,26,21,16,11,0
+2022,Jun,WFR04,"Unit 4: Research, Understanding and Written Response",90,81.0,72,61,50,40,30,0
+2022,Jun,WGE01,Unit 1: Global Challenges,90,,54,48,42,36,30,0
+2022,Jun,WGE02,Unit 2: Geographical Investigations,60,,44,38,32,27,22,0
+2022,Jun,WGE03,Unit 3: Contested Planet,90,62.0,56,48,40,32,25,0
+2022,Jun,WGE04,Unit 4: Researching Geography,60,49.0,43,35,27,19,11,0
+2022,Jun,WGK01,Unit 1: Understanding and Written Response,80,,58,52,46,40,34,0
+2022,Jun,WGK02,Unit 2: Writing and Research,80,66.0,58,51,44,37,30,0
+2022,Jun,WGN01,Unit 1: Spoken Expression and Response,40,,31,27,23,19,15,0
+2022,Jun,WGN02,Unit 2: Understanding and Written Response,90,,73,65,57,49,42,0
+2022,Jun,WGN03,Unit 3: Understanding and Spoken Response,40,37.0,33,29,25,21,18,0
+2022,Jun,WGN04,"Unit 4: Research, Understanding and Written Response",90,71.0,64,54,45,36,27,0
+2022,Jun,WHI01,"1A: France in Revolution, 1774-99",50,,38,33,28,23,18,0
+2022,Jun,WHI01,"1B: Russia in Revolution, 1881-1917",50,,38,33,28,23,18,0
+2022,Jun,WHI01,"1C: Germany, 1918-45",50,,38,33,28,24,20,0
+2022,Jun,WHI01,"1D: Britain, 1964-90",50,,38,33,28,23,18,0
+2022,Jun,WHI02,"1A: India, 1857-1948: The Raj to Partition",50,,32,28,25,22,19,0
+2022,Jun,WHI02,"1B: China, 1900-76",50,,31,28,25,22,19,0
+2022,Jun,WHI02,"1C: Russia, 1917-91: From Lenin to Yeltsin",50,,32,28,24,21,18,0
+2022,Jun,WHI02,"1D: South Africa, 1948-2014",50,,31,28,25,22,19,0
+2022,Jun,WHI03,"1A: The USA, Independence to Civil War, 1763-1865",50,35.0,30,27,24,21,19,0
+2022,Jun,WHI03,"1B: The British Experience of Warfare, 1803-1945",50,34.0,31,27,24,21,18,0
+2022,Jun,WHI03,"1C: Germany: United, Divided and Reunited, 1870-1990",50,35.0,31,28,25,22,19,0
+2022,Jun,WHI03,"1D: Civil Rights and Race Relations in the USA,1 865-2009",50,35.0,31,27,24,21,18,0
+2022,Jun,WHI04,"1A: The Making of Modern Europe, 1805-71",50,36.0,32,28,25,22,19,0
+2022,Jun,WHI04,"1B: The World in Crisis, 1879-1945",50,36.0,32,28,24,21,18,0
+2022,Jun,WHI04,"1C: The World Divided: Superpower Relations, 1 943-90",50,35.0,31,28,25,22,19,0
+2022,Jun,WHI04,"1D: The Cold War and Hot War in Asia, 1945-90",50,36.0,32,28,25,22,19,0
+2022,Jun,WIT11,Unit 1,80,,45,40,35,31,27,0
+2022,Jun,WIT12,Unit 2,80,,39,33,27,22,17,0
+2022,Jun,WIT13,Unit 3,80,46.0,42,38,34,30,27,0
+2022,Jun,WIT14,Unit 4,80,56.0,48,40,32,25,18,0
+2022,Jun,WMA11,P1: Pure Mathematics 1,75,,41,34,27,21,15,0
+2022,Jun,WMA12,P2: Pure Mathematics 2,75,,42,35,28,21,14,0
+2022,Jun,WMA13,P3: Pure Mathematics 3,75,60.0,47,39,31,23,16,0
+2022,Jun,WMA14,P4: Pure Mathematics 4,75,60.0,48,39,30,22,14,0
+2022,Jun,WME01,M1: Mechanics 1,75,,49,40,32,24,16,0
+2022,Jun,WME02,M2: Mechanics 2,75,66.0,57,48,40,32,24,0
+2022,Jun,WME03,M3: Mechanics 3,75,67.0,55,46,37,28,20,0
+2022,Jun,WPH11,Unit 1: Mechanics and Materials,80,,43,38,33,28,23,0
+2022,Jun,WPH12,Unit 2: Waves and Electricity,80,,49,42,35,29,23,0
+2022,Jun,WPH13,Unit 3: Practical Skills in Physics I,50,,30,26,23,20,17,0
+2022,Jun,WPH14,"Unit 4: Further Mechanics, Fields and Particles",90,62.0,48,41,34,28,22,0
+2022,Jun,WPH15,"Unit 5: Thermodynamics, Radiation, Oscillations and Cosmology",90,63.0,54,48,43,38,33,0
+2022,Jun,WPH16,Unit 6: Practical Skills in Physics II,50,34.0,28,24,20,17,14,0
+2022,Jun,WPS01,Unit 1: Social and cognitive psychology,64,,24,21,18,15,12,0
+2022,Jun,WPS02,"Unit 2: Biological psychology, learning theories and development",96,,33,26,20,14,8,0
+2022,Jun,WPS03,Unit 3: Applications of psychology,64,35.0,30,25,20,16,12,0
+2022,Jun,WPS04,Unit 4: Clinical psychology and psychological skills,96,46.0,37,30,24,18,12,0
+2022,Jun,WSP01,Unit 1: Spoken Expression and Response,40,,29,25,21,17,14,0
+2022,Jun,WSP02,Unit 2: Understanding and Written Response,90,,72,64,56,48,40,0
+2022,Jun,WSP03,Unit 3: Understanding and Spoken Response,40,32.0,28,24,20,16,13,0
+2022,Jun,WSP04,"Unit 4: Research, Understanding and Written Response",90,74.0,65,54,43,33,23,0
+2022,Jun,WST01,S1: Statistics 1,75,,48,39,31,23,15,0
+2022,Jun,WST02,S2: Statistics 2,75,52.0,38,30,23,16,9,0
+2022,Jun,WST03,S3: Statistics 3,75,58.0,50,41,32,24,16,0
+2022,Jun,YLA1,Law (Papers 1 & 2),200,116.0,91,80,69,58,47,0
+2022,Oct,WAC11,Unit 1: The Accounting System and Costing,200,,102,83,64,45,26,0
+2022,Oct,WAC12,Unit 2: Corporate and Management Accounting,200,157.0,127,106,85,64,43,0
+2022,Oct,WBI11,"Unit 1: Molecules, Diet, Transport and Health",80,,37,32,27,23,19,0
+2022,Oct,WBI12,"Unit 2: Cells, Development, Biodiversity and Conservation",80,,45,41,37,33,29,0
+2022,Oct,WBI13,Unit 3: Practical Skills in Biology I,50,,31,26,22,18,14,0
+2022,Oct,WBI14,"Unit 4: Energy, Environment, Microbiology and Immunity",90,45.0,39,36,33,30,28,0
+2022,Oct,WBI15,"Unit 5: Respiration, Internal Environment, Coordination and Gene",90,46.0,39,35,31,27,23,0
+2022,Oct,WBI16,Unit 6: Practical Skills in Biology II,50,36.0,31,26,21,16,12,0
+2022,Oct,WBS11,Unit 1: Marketing and People,80,,50,44,38,32,27,0
+2022,Oct,WBS12,Unit 2: Managing Business Activities,80,,41,35,30,25,20,0
+2022,Oct,WBS13,Unit 3: Business Decisions And Strategy,80,50.0,41,35,29,23,18,0
+2022,Oct,WBS14,Unit 4: Global Business,80,51.0,41,35,29,23,17,0
+2022,Oct,WCH11,"Unit 1: Structure, Bonding and Introducttion to Organic Chemistry",80,,46,40,34,28,22,0
+2022,Oct,WCH12,"Unit 2: Energetics, Group Chemistry, Halogenoalkanes and Alcohol",80,,48,41,34,27,20,0
+2022,Oct,WCH13,Unit 3: Practical Skills in Chemistry I,50,,27,23,19,15,12,0
+2022,Oct,WCH14,"Unit 4: Rates, Equilibria and Further Organic Chemistry",90,69.0,55,47,39,31,23,0
+2022,Oct,WCH15,Unit 5: Transition Metals and Organic Nitrogen Chemistry,90,57.0,43,36,29,23,17,0
+2022,Oct,WCH16,Unit 6: Practical Skills in Chemistry II,50,34.0,25,21,17,13,10,0
+2022,Oct,WEC11,Unit 1: Markets in Action,80,,52,45,39,33,27,0
+2022,Oct,WEC12,Unit 2: Macroeconomic Performance and Policy,80,,50,43,36,29,23,0
+2022,Oct,WEC13,Unit 3: Business Behaviour,80,56.0,49,43,37,31,25,0
+2022,Oct,WEC14,Unit 4: Developments in the Global Economy,80,60.0,52,45,39,33,27,0
+2022,Oct,WMA11,P1: Pure Mathematics 1,75,,51,43,35,27,20,0
+2022,Oct,WMA12,P2: Pure Mathematics 2,75,,47,40,33,26,19,0
+2022,Oct,WMA13,P3: Pure Mathematics 3,75,60.0,47,39,31,23,16,0
+2022,Oct,WMA14,P4: Pure Mathematics 4,75,60.0,48,39,30,22,14,0
+2022,Oct,WME01,M1: Mechanics 1,75,,48,39,30,21,13,0
+2022,Oct,WME02,M2: Mechanics 2,75,68.0,59,50,41,32,24,0
+2022,Oct,WPH11,Unit 1: Mechanics and Materials,80,,43,38,33,28,23,0
+2022,Oct,WPH12,Unit 2: Waves and Electricity,80,,49,42,35,29,23,0
+2022,Oct,WPH13,Unit 3: Practical Skills in Physics I,50,,30,27,24,21,18,0
+2022,Oct,WPH14,"Unit 4: Further Mechanics, Fields and Particles",90,62.0,48,41,34,28,22,0
+2022,Oct,WPH15,"Unit 5: Thermodynamics, Radiation, Oscillations and Cosmology",90,63.0,54,48,43,38,33,0
+2022,Oct,WPH16,Unit 6: Practical Skills in Physics II,50,35.0,29,25,21,18,15,0
+2022,Oct,WST01,S1: Statistics 1,75,,48,39,30,21,13,0
+2022,Oct,WST02,S2: Statistics 2,75,60.0,46,39,32,25,18,0
+2023,Jan,WAA01,Unit 1: Understanding and Written Response,80,,49,41,33,25,18,0
+2023,Jan,WAA02,Unit 2: Writing and Research,80,63.0,57,48,39,31,23,0
+2023,Jan,WAC11,Unit 1: The Accounting System and Costing,200,,102,83,64,45,26,0
+2023,Jan,WAC12,Unit 2: Corporate and Management Accounting,200,157.0,127,106,85,64,43,0
+2023,Jan,WBI11,"Unit 1: Molecules, Diet, Transport and Health",80,,37,32,27,23,19,0
+2023,Jan,WBI12,"Unit 2: Cells, Development, Biodiversity and Conservation",80,,45,41,37,33,29,0
+2023,Jan,WBI13,Unit 3: Practical Skills in Biology I,50,,31,26,22,18,14,0
+2023,Jan,WBI14,"Unit 4: Energy, Environment, Microbiology and Immunity",90,45.0,39,36,33,30,28,0
+2023,Jan,WBI15,"Unit 5: Respiration, Internal Environment, Coordination and Gene",90,46.0,39,35,31,27,23,0
+2023,Jan,WBI16,Unit 6: Practical Skills in Biology II,50,36.0,31,26,21,16,11,0
+2023,Jan,WBS11,Unit 1: Marketing and People,80,,50,44,38,32,27,0
+2023,Jan,WBS12,Unit 2: Managing Business Activities,80,,41,35,30,25,20,0
+2023,Jan,WBS13,Unit 3: Business Decisions And Strategy,80,50.0,41,35,29,23,18,0
+2023,Jan,WBS14,Unit 4: Global Business,80,51.0,41,35,29,23,17,0
+2023,Jan,WCH11,"Unit 1: Structure, Bonding and Introducttion to Organic Chemistry",80,,46,40,34,28,22,0
+2023,Jan,WCH12,"Unit 2: Energetics, Group Chemistry, Halogenoalkanes and Alcohol",80,,45,38,31,24,17,0
+2023,Jan,WCH13,Unit 3: Practical Skills in Chemistry I,50,,27,23,19,15,12,0
+2023,Jan,WCH14,"Unit 4: Rates, Equilibria and Further Organic Chemistry",90,71.0,57,49,41,33,25,0
+2023,Jan,WCH15,Unit 5: Transition Metals and Organic Nitrogen Chemistry,90,59.0,45,38,31,25,19,0
+2023,Jan,WCH16,Unit 6: Practical Skills in Chemistry II,50,37.0,28,24,20,16,13,0
+2023,Jan,WDM11,D1: Decision Mathematics 1,75,,45,39,33,27,22,0
+2023,Jan,WEC11,Unit 1: Markets in Action,80,,51,44,37,31,25,0
+2023,Jan,WEC12,Unit 2: Macroeconomic Performance and Policy,80,,49,42,35,28,22,0
+2023,Jan,WEC13,Unit 3: Business Behaviour,80,55.0,48,42,36,30,24,0
+2023,Jan,WEC14,Unit 4: Developments in the Global Economy,80,59.0,51,44,38,32,26,0
+2023,Jan,WEN01,Unit 1: Language: Context and Identity,50,,32,27,22,18,14,0
+2023,Jan,WEN02,Unit 2: Language in Transition,50,,28,24,20,16,12,0
+2023,Jan,WEN03,Unit 3: Crafting Language (Writing),50,37.0,29,24,19,14,10,0
+2023,Jan,WEN04,Unit 4: Investigating Language,50,34.0,27,22,18,14,10,0
+2023,Jan,WET01,Unit 1: Post-2000 Poetry and Prose,50,,30,26,22,18,14,0
+2023,Jan,WET02,Unit 2: Drama,50,,32,27,22,17,13,0
+2023,Jan,WET03,Unit 3: Poetry and Prose,50,35.0,30,26,22,18,14,0
+2023,Jan,WET04,Unit 4: Shakespeare and Pre-1900 Poetry,50,38.0,34,29,25,21,17,0
+2023,Jan,WFM01,FP1: Further Pure Mathematics 1,75,,47,40,34,28,22,0
+2023,Jan,WFM02,FP2: Further Pure Mathematics 2,75,65.0,60,52,44,36,28,0
+2023,Jan,WFM03,FP3: Further Pure Mathematics 3,75,54.0,43,37,31,25,20,0
+2023,Jan,WFR01,Unit 1: Spoken Expression and Response,40,,34,29,25,21,17,0
+2023,Jan,WFR02,Unit 2: Understanding and Written Response,90,,70,62,55,48,41,0
+2023,Jan,WFR03,Unit 3: Understanding and Spoken Response,40,37.0,31,26,21,16,11,0
+2023,Jan,WFR04,"Unit 4: Research, Understanding and Written Response",90,81.0,72,61,50,40,30,0
+2023,Jan,WGE01,Unit 1: Global Challenges,90,,54,48,42,36,30,0
+2023,Jan,WGE02,Unit 2: Geographical Investigations,60,,44,38,32,27,22,0
+2023,Jan,WGE03,Unit 3: Contested Planet,90,62.0,56,48,40,32,25,0
+2023,Jan,WGE04,Unit 4: Researching Geography,60,49.0,43,35,27,19,11,0
+2023,Jan,WGN01,Unit 1: Spoken Expression and Response,40,,31,27,23,19,15,0
+2023,Jan,WGN02,Unit 2: Understanding and Written Response,90,,73,65,57,49,42,0
+2023,Jan,WGN03,Unit 3: Understanding and Spoken Response,40,37.0,33,29,25,21,18,0
+2023,Jan,WGN04,"Unit 4: Research, Understanding and Written Response",90,71.0,64,54,45,36,27,0
+2023,Jan,WHI01,"1A: France in Revolution, 1774-99",50,,38,33,28,23,18,0
+2023,Jan,WHI01,"1B: Russia in Revolution, 1881-1917",50,,38,33,28,23,18,0
+2023,Jan,WHI01,"1C: Germany, 1918-45",50,,38,33,28,24,20,0
+2023,Jan,WHI01,"1D: Britain, 1964-90",50,,38,33,28,23,18,0
+2023,Jan,WHI02,"1A: India, 1857-1948: The Raj to Partition",50,,32,28,25,22,19,0
+2023,Jan,WHI02,"1B: China, 1900-76",50,,31,28,25,22,19,0
+2023,Jan,WHI02,"1C: Russia, 1917-91: From Lenin to Yeltsin",50,,32,28,24,21,18,0
+2023,Jan,WHI02,"1D: South Africa, 1948-2014",50,,31,28,25,22,19,0
+2023,Jan,WHI03,"1A: The USA, Independence to Civil War, 1763-1865",50,35.0,30,27,24,21,19,0
+2023,Jan,WHI03,"1B: The British Experience of Warfare, 1803-1945",50,34.0,31,27,24,21,18,0
+2023,Jan,WHI03,"1C: Germany: United, Divided and Reunited,1 870-1990",50,35.0,31,28,25,22,19,0
+2023,Jan,WHI03,"1D: Civil Rights and Race Relations in the USA,1 865-2009",50,35.0,31,27,24,21,18,0
+2023,Jan,WHI04,"1B: The World in Crisis, 1879-1945",50,36.0,32,28,24,21,18,0
+2023,Jan,WHI04,"1C: The World Divided: Superpower Relations, 1 943-90",50,35.0,31,28,25,22,19,0
+2023,Jan,WHI04,"1D: The Cold War and Hot War in Asia, 1945-90",50,36.0,32,28,25,22,19,0
+2023,Jan,WMA11,P1: Pure Mathematics 1,75,,41,34,27,21,15,0
+2023,Jan,WMA12,P2: Pure Mathematics 2,75,,47,39,31,24,17,0
+2023,Jan,WMA13,P3: Pure Mathematics 3,75,58.0,45,37,30,23,16,0
+2023,Jan,WMA14,P4: Pure Mathematics 4,75,62.0,50,41,33,25,17,0
+2023,Jan,WME01,M1: Mechanics 1,75,,52,43,34,25,16,0
+2023,Jan,WME02,M2: Mechanics 2,75,66.0,57,48,40,32,24,0
+2023,Jan,WME03,M3: Mechanics 3,75,67.0,55,46,37,28,20,0
+2023,Jan,WPH11,Unit 1: Mechanics and Materials,80,,43,38,33,28,23,0
+2023,Jan,WPH12,Unit 2: Waves and Electricity,80,,49,42,35,29,23,0
+2023,Jan,WPH13,Unit 3: Practical Skills in Physics I,50,,30,27,24,21,18,0
+2023,Jan,WPH14,"Unit 4: Further Mechanics, Fields and Particles",90,62.0,48,41,34,28,22,0
+2023,Jan,WPH15,"Unit 5: Thermodynamics, Radiation, Oscillations and Cosmology",90,64.0,55,49,43,38,33,0
+2023,Jan,WPH16,Unit 6: Practical Skills in Physics II,50,34.0,28,25,22,19,16,0
+2023,Jan,WPS01,Unit 1: Social and cognitive psychology,64,,24,21,18,15,12,0
+2023,Jan,WPS02,"Unit 2: Biological psychology, learning theories and development",96,,33,26,20,14,8,0
+2023,Jan,WPS03,Unit 3: Applications of psychology,64,35.0,30,25,20,16,12,0
+2023,Jan,WPS04,Unit 4: Clinical psychology and psychological skills,96,46.0,37,30,24,18,12,0
+2023,Jan,WSP01,Unit 1: Spoken Expression and Response,40,,29,25,21,17,14,0
+2023,Jan,WSP02,Unit 2: Understanding and Written Response,90,,72,64,56,48,40,0
+2023,Jan,WSP03,Unit 3: Understanding and Spoken Response,40,32.0,28,24,20,16,13,0
+2023,Jan,WSP04,"Unit 4: Research, Understanding and Written Response",90,74.0,65,54,43,33,23,0
+2023,Jan,WST01,S1: Statistics 1,75,,48,39,31,23,15,0
+2023,Jan,WST02,S2: Statistics 2,75,62.0,48,40,33,26,19,0
+2023,Jan,WST03,S3: Statistics 3,75,58.0,50,41,32,24,16,0
+2023,Jun,WAA01,Unit 1: Understanding and Written Response,80,,52,44,36,28,21,0
+2023,Jun,WAA02,Unit 2: Writing and Research,80,62.0,53,44,35,26,18,0
+2023,Jun,WAC11,Unit 1: The Accounting System and Costing,200,,117,98,79,60,41,0
+2023,Jun,WAC12,Unit 2: Corporate and Management Accounting,200,168.0,149,130,111,93,75,0
+2023,Jun,WBI11,"Unit 1: Molecules, Diet, Transport and Health",80,,48,42,37,32,27,0
+2023,Jun,WBI12,"Unit 2: Cells, Development, Biodiversity and Conservation",80,,55,51,47,43,39,0
+2023,Jun,WBI13,Unit 3: Practical Skills in Biology I,50,,39,34,29,24,20,0
+2023,Jun,WBI14,"Unit 4: Energy, Environment, Microbiology and Immunity",90,47.0,45,43,41,39,37,0
+2023,Jun,WBI15,"Unit 5: Respiration, Internal Environment, Coordination and Gene",90,59.0,55,51,47,43,39,0
+2023,Jun,WBI16,Unit 6: Practical Skills in Biology II,50,46.0,43,38,33,28,23,0
+2023,Jun,WBS11,Unit 1: Marketing and People,80,,60,54,48,43,38,0
+2023,Jun,WBS12,Unit 2: Managing Business Activities,80,,45,39,34,29,24,0
+2023,Jun,WBS13,Unit 3: Business Decisions And Strategy,80,48.0,43,38,34,30,26,0
+2023,Jun,WBS14,Unit 4: Global Business,80,56.0,49,42,36,30,24,0
+2023,Jun,WCH11,"Unit 1: Structure, Bonding and Introducttion to Organic Chemistry",80,,58,51,44,37,30,0
+2023,Jun,WCH12,"Unit 2: Energetics, Group Chemistry, Halogenoalkanes and Alcohol",80,,50,44,38,33,28,0
+2023,Jun,WCH13,Unit 3: Practical Skills in Chemistry I,50,,36,31,26,21,17,0
+2023,Jun,WCH14,"Unit 4: Rates, Equilibria and Further Organic Chemistry",90,73.0,66,59,52,45,39,0
+2023,Jun,WCH15,Unit 5: Transition Metals and Organic Nitrogen Chemistry,90,69.0,62,55,48,41,35,0
+2023,Jun,WCH16,Unit 6: Practical Skills in Chemistry II,50,36.0,32,28,24,20,17,0
+2023,Jun,WDM11,D1: Decision Mathematics 1,75,,50,45,40,36,32,0
+2023,Jun,WEC11,Unit 1: Markets in Action,80,,54,47,41,35,29,0
+2023,Jun,WEC12,Unit 2: Macroeconomic Performance and Policy,80,,53,47,41,36,31,0
+2023,Jun,WEC13,Unit 3: Business Behaviour,80,54.0,49,44,39,34,29,0
+2023,Jun,WEC14,Unit 4: Developments in the Global Economy,80,58.0,52,46,40,34,28,0
+2023,Jun,WEN01,Unit 1: Language: Context and Identity,50,,32,28,24,21,18,0
+2023,Jun,WEN02,Unit 2: Language in Transition,50,,31,27,23,19,15,0
+2023,Jun,WEN03,Unit 3: Crafting Language (Writing),50,37.0,33,29,25,22,19,0
+2023,Jun,WEN04,Unit 4: Investigating Language,50,36.0,31,26,21,17,13,0
+2023,Jun,WET01,Unit 1: Post-2000 Poetry and Prose,50,,34,30,26,22,18,0
+2023,Jun,WET02,Unit 2: Drama,50,,32,28,24,20,17,0
+2023,Jun,WET03,Unit 3: Poetry and Prose,50,38.0,34,30,26,22,19,0
+2023,Jun,WET04,Unit 4: Shakespeare and Pre-1900 Poetry,50,43.0,38,33,28,23,18,0
+2023,Jun,WFM01,FP1: Further Pure Mathematics 1,75,,62,55,49,43,37,0
+2023,Jun,WFM02,FP2: Further Pure Mathematics 2,75,70.0,66,57,49,41,33,0
+2023,Jun,WFM03,FP3: Further Pure Mathematics 3,75,53.0,48,43,38,33,28,0
+2023,Jun,WFR01,Unit 1: Spoken Expression and Response,40,,32,28,24,20,16,0
+2023,Jun,WFR02,Unit 2: Understanding and Written Response,90,,76,70,64,58,52,0
+2023,Jun,WFR03,Unit 3: Understanding and Spoken Response,40,37.0,34,29,25,21,17,0
+2023,Jun,WFR04,"Unit 4: Research, Understanding and Written Response",90,81.0,72,62,53,44,35,0
+2023,Jun,WGE01,Unit 1: Global Challenges,90,,59,54,49,45,41,0
+2023,Jun,WGE02,Unit 2: Geographical Investigations,60,,44,40,36,32,29,0
+2023,Jun,WGE03,Unit 3: Contested Planet,90,68.0,60,52,45,38,31,0
+2023,Jun,WGE04,Unit 4: Researching Geography,60,53.0,46,39,32,25,19,0
+2023,Jun,WGK01,Unit 1: Understanding and Written Response,80,,58,50,43,36,29,0
+2023,Jun,WGK02,Unit 2: Writing and Research,80,69.0,62,55,48,41,35,0
+2023,Jun,WGN01,Unit 1: Spoken Expression and Response,40,,31,28,25,23,21,0
+2023,Jun,WGN02,Unit 2: Understanding and Written Response,90,,69,61,53,45,38,0
+2023,Jun,WGN03,Unit 3: Understanding and Spoken Response,40,37.0,34,29,24,20,16,0
+2023,Jun,WGN04,"Unit 4: Research, Understanding and Written Response",90,75.0,67,59,52,45,38,0
+2023,Jun,WHI01,"1A: France in Revolution, 1774-99",50,,39,34,29,25,21,0
+2023,Jun,WHI01,"1B: Russia in Revolution, 1881-1917",50,,39,34,30,26,22,0
+2023,Jun,WHI01,"1C: Germany, 1918-45",50,,39,34,29,25,21,0
+2023,Jun,WHI01,"1D: Britain, 1964-90",50,,39,34,29,25,21,0
+2023,Jun,WHI02,"1A: India, 1857-1948: The Raj to Partition",50,,34,31,28,25,22,0
+2023,Jun,WHI02,"1B: China, 1900-76",50,,35,31,28,25,22,0
+2023,Jun,WHI02,"1C: Russia, 1917-91: From Lenin to Yeltsin",50,,34,30,27,24,21,0
+2023,Jun,WHI02,"1D: South Africa, 1948-2014",50,,34,31,28,25,22,0
+2023,Jun,WHI03,"1A: The USA, Independence to Civil War, 1763-1865",50,38.0,34,30,27,24,21,0
+2023,Jun,WHI03,"1B: The British Experience of Warfare, 1803-1945",50,38.0,34,30,27,24,21,0
+2023,Jun,WHI03,"1C: Germany: United, Divided and Reunited, 1870-1990",50,38.0,34,30,27,24,21,0
+2023,Jun,WHI03,"1D: Civil Rights and Race Relations in the USA, 1865-2009",50,38.0,34,30,27,24,21,0
+2023,Jun,WHI04,"1A: The Making of Modern Europe, 1805-71",50,38.0,34,30,27,24,21,0
+2023,Jun,WHI04,"1B: The World in Crisis, 1879-1945",50,39.0,35,31,27,23,19,0
+2023,Jun,WHI04,"1C: The World Divided: Superpower Relations, 1943-90",50,39.0,35,31,27,23,19,0
+2023,Jun,WHI04,"1D: The Cold War and Hot War in Asia, 1945-90",50,37.0,33,29,26,23,20,0
+2023,Jun,WIT11,Unit 1,80,,52,46,40,34,29,0
+2023,Jun,WIT12,Unit 2,80,,56,48,40,32,24,0
+2023,Jun,WIT13,Unit 3,80,59.0,52,45,39,33,27,0
+2023,Jun,WIT14,Unit 4,80,61.0,53,45,38,31,24,0
+2023,Jun,WMA11,P1: Pure Mathematics 1,75,,49,42,36,30,24,0
+2023,Jun,WMA12,P2: Pure Mathematics 2,75,,51,44,37,30,24,0
+2023,Jun,WMA13,P3: Pure Mathematics 3,75,68.0,61,54,47,40,34,0
+2023,Jun,WMA14,P4: Pure Mathematics 4,75,61.0,54,47,40,33,26,0
+2023,Jun,WME01,M1: Mechanics 1,75,,67,58,50,42,34,0
+2023,Jun,WME02,M2: Mechanics 2,75,64.0,57,50,43,37,31,0
+2023,Jun,WME03,M3: Mechanics 3,75,69.0,63,54,45,36,28,0
+2023,Jun,WPH11,Unit 1: Mechanics and Materials,80,,53,47,42,37,32,0
+2023,Jun,WPH12,Unit 2: Waves and Electricity,80,,55,48,42,36,30,0
+2023,Jun,WPH13,Unit 3: Practical Skills in Physics I,50,,33,29,25,21,18,0
+2023,Jun,WPH14,"Unit 4: Further Mechanics, Fields and Particles",90,81.0,73,65,58,51,44,0
+2023,Jun,WPH15,"Unit 5: Thermodynamics, Radiation, Oscillations and Cosmology",90,70.0,66,62,58,54,50,0
+2023,Jun,WPH16,Unit 6: Practical Skills in Physics II,50,39.0,34,29,24,19,15,0
+2023,Jun,WPS01,Unit 1: Social and cognitive psychology,64,,30,27,24,21,18,0
+2023,Jun,WPS02,"Unit 2: Biological psychology, learning theories and development",96,,44,37,30,23,16,0
+2023,Jun,WPS03,Unit 3: Applications of psychology,64,36.0,32,28,24,20,16,0
+2023,Jun,WPS04,Unit 4: Clinical psychology and psychological skills,96,47.0,40,33,26,20,14,0
+2023,Jun,WSP01,Unit 1: Spoken Expression and Response,40,,30,26,22,18,14,0
+2023,Jun,WSP02,Unit 2: Understanding and Written Response,90,,70,61,53,45,37,0
+2023,Jun,WSP03,Unit 3: Understanding and Spoken Response,40,33.0,30,27,24,21,18,0
+2023,Jun,WSP04,"Unit 4: Research, Understanding and Written Response",90,79.0,69,59,50,41,32,0
+2023,Jun,WST01,S1: Statistics 1,75,,62,53,44,35,26,0
+2023,Jun,WST02,S2: Statistics 2,75,66.0,57,48,40,32,24,0
+2023,Jun,WST03,S3: Statistics 3,75,71.0,67,58,50,42,34,0
+2023,Jun,YLA1,Law (Papers 1 & 2),200,126.0,113,100,88,76,64,0
+2023,Oct,WAC11,Unit 1: The Accounting System and Costing,200,,117,98,79,60,41,0
+2023,Oct,WAC12,Unit 2: Corporate and Management Accounting,200,168.0,149,130,111,93,75,0
+2023,Oct,WBI11,"Unit 1: Molecules, Diet, Transport and Health",80,,47,41,35,30,25,0
+2023,Oct,WBI12,"Unit 2: Cells, Development, Biodiversity and Conservation",80,,54,49,45,41,37,0
+2023,Oct,WBI13,Unit 3: Practical Skills in Biology I,50,,37,32,27,23,19,0
+2023,Oct,WBI14,"Unit 4: Energy, Environment, Microbiology and Immunity",90,47.0,45,43,41,39,37,0
+2023,Oct,WBI15,"Unit 5: Respiration, Internal Environment, Coordination and Gene",90,59.0,55,51,47,43,39,0
+2023,Oct,WBI16,Unit 6: Practical Skills in Biology II,50,46.0,43,38,33,28,23,0
+2023,Oct,WBS11,Unit 1: Marketing and People,80,,60,54,48,43,38,0
+2023,Oct,WBS12,Unit 2: Managing Business Activities,80,,45,39,34,29,24,0
+2023,Oct,WBS13,Unit 3: Business Decisions And Strategy,80,48.0,43,38,34,30,26,0
+2023,Oct,WBS14,Unit 4: Global Business,80,56.0,49,42,36,30,24,0
+2023,Oct,WCH11,"Unit 1: Structure, Bonding and Introducttion to Organic Chemistry",80,,57,50,43,36,29,0
+2023,Oct,WCH12,"Unit 2: Energetics, Group Chemistry, Halogenoalkanes and Alcohol",80,,51,45,39,34,29,0
+2023,Oct,WCH13,Unit 3: Practical Skills in Chemistry I,50,,36,31,26,21,17,0
+2023,Oct,WCH14,"Unit 4: Rates, Equilibria and Further Organic Chemistry",90,72.0,65,58,51,44,38,0
+2023,Oct,WCH15,Unit 5: Transition Metals and Organic Nitrogen Chemistry,90,69.0,62,55,48,41,35,0
+2023,Oct,WCH16,Unit 6: Practical Skills in Chemistry II,50,36.0,32,28,24,20,17,0
+2023,Oct,WEC11,Unit 1: Markets in Action,80,,54,47,41,35,29,0
+2023,Oct,WEC12,Unit 2: Macroeconomic Performance and Policy,80,,53,47,41,36,31,0
+2023,Oct,WEC13,Unit 3: Business Behaviour,80,55.0,50,44,39,34,29,0
+2023,Oct,WEC14,Unit 4: Developments in the Global Economy,80,56.0,50,44,38,32,27,0
+2023,Oct,WMA11,P1: Pure Mathematics 1,75,,52,45,38,31,25,0
+2023,Oct,WMA12,P2: Pure Mathematics 2,75,,55,47,40,33,26,0
+2023,Oct,WMA13,P3: Pure Mathematics 3,75,66.0,59,52,45,38,32,0
+2023,Oct,WMA14,P4: Pure Mathematics 4,75,61.0,54,47,40,33,26,0
+2023,Oct,WME01,M1: Mechanics 1,75,,65,57,49,41,33,0
+2023,Oct,WME02,M2: Mechanics 2,75,64.0,57,50,43,37,31,0
+2023,Oct,WPH11,Unit 1: Mechanics and Materials,80,,53,47,42,37,32,0
+2023,Oct,WPH12,Unit 2: Waves and Electricity,80,,55,48,42,36,30,0
+2023,Oct,WPH13,Unit 3: Practical Skills in Physics I,50,,33,29,25,21,18,0
+2023,Oct,WPH14,"Unit 4: Further Mechanics, Fields and Particles",90,81.0,73,65,58,51,44,0
+2023,Oct,WPH15,"Unit 5: Thermodynamics, Radiation, Oscillations and Cosmology",90,70.0,66,62,58,54,50,0
+2023,Oct,WPH16,Unit 6: Practical Skills in Physics II,50,39.0,34,29,24,19,15,0
+2023,Oct,WST01,S1: Statistics 1,75,,62,53,44,35,26,0
+2023,Oct,WST02,S2: Statistics 2,75,66.0,57,48,40,32,24,0
+2024,Jan,WAA01,Unit 1: Understanding and Written Response,80,,53,45,37,30,23,0
+2024,Jan,WAA02,Unit 2: Writing and Research,80,62.0,53,44,35,26,18,0
+2024,Jan,WAC11,Unit 1: The Accounting System and Costing,200,,117,98,79,60,41,0
+2024,Jan,WAC12,Unit 2: Corporate and Management Accounting,200,168.0,149,130,111,93,75,0
+2024,Jan,WBI11,"Unit 1: Molecules, Diet, Transport and Health",80,,49,43,38,33,28,0
+2024,Jan,WBI12,"Unit 2: Cells, Development, Biodiversity and Conservation",80,,55,51,47,43,39,0
+2024,Jan,WBI13,Unit 3: Practical Skills in Biology I,50,,37,32,27,23,19,0
+2024,Jan,WBI14,"Unit 4: Energy, Environment, Microbiology and Immunity",90,50.0,47,44,41,39,37,0
+2024,Jan,WBI15,"Unit 5: Respiration, Internal Environment, Coordination and Gene",90,61.0,56,51,46,42,38,0
+2024,Jan,WBI16,Unit 6: Practical Skills in Biology II,50,46.0,43,38,33,28,23,0
+2024,Jan,WBS11,Unit 1: Marketing and People,80,,60,54,48,43,38,0
+2024,Jan,WBS12,Unit 2: Managing Business Activities,80,,45,39,34,29,24,0
+2024,Jan,WBS13,Unit 3: Business Decisions And Strategy,80,48.0,43,38,34,30,26,0
+2024,Jan,WBS14,Unit 4: Global Business,80,56.0,49,42,36,30,24,0
+2024,Jan,WCH11,"Unit 1: Structure, Bonding and Introducttion to Organic Chemistry",80,,59,52,45,38,32,0
+2024,Jan,WCH12,"Unit 2: Energetics, Group Chemistry, Halogenoalkanes and Alcohol",80,,52,46,40,35,30,0
+2024,Jan,WCH13,Unit 3: Practical Skills in Chemistry I,50,,33,28,23,19,15,0
+2024,Jan,WCH14,"Unit 4: Rates, Equilibria and Further Organic Chemistry",90,74.0,67,60,53,47,41,0
+2024,Jan,WCH15,Unit 5: Transition Metals and Organic Nitrogen Chemistry,90,69.0,62,55,48,41,35,0
+2024,Jan,WCH16,Unit 6: Practical Skills in Chemistry II,50,35.0,31,27,23,19,16,0
+2024,Jan,WDM11,D1: Decision Mathematics 1,75,,50,45,40,36,32,0
+2024,Jan,WEC11,Unit 1: Markets in Action,80,,55,48,42,36,30,0
+2024,Jan,WEC12,Unit 2: Macroeconomic Performance and Policy,80,,53,47,41,36,31,0
+2024,Jan,WEC13,Unit 3: Business Behaviour,80,52.0,47,42,37,32,27,0
+2024,Jan,WEC14,Unit 4: Developments in the Global Economy,80,58.0,52,46,40,34,28,0
+2024,Jan,WEN01,Unit 1: Language: Context and Identity,50,,32,28,24,21,18,0
+2024,Jan,WEN02,Unit 2: Language in Transition,50,,31,27,23,19,15,0
+2024,Jan,WEN03,Unit 3: Crafting Language (Writing),50,37.0,33,29,25,22,19,0
+2024,Jan,WEN04,Unit 4: Investigating Language,50,36.0,31,26,21,17,13,0
+2024,Jan,WET01,Unit 1: Post-2000 Poetry and Prose,50,,34,30,26,22,18,0
+2024,Jan,WET02,Unit 2: Drama,50,,32,28,24,20,17,0
+2024,Jan,WET03,Unit 3: Poetry and Prose,50,38.0,34,30,26,22,19,0
+2024,Jan,WET04,Unit 4: Shakespeare and Pre-1900 Poetry,50,43.0,38,33,28,23,18,0
+2024,Jan,WFM01,FP1: Further Pure Mathematics 1,75,,62,56,50,44,39,0
+2024,Jan,WFM02,FP2: Further Pure Mathematics 2,75,70.0,66,57,49,41,33,0
+2024,Jan,WFM03,FP3: Further Pure Mathematics 3,75,53.0,48,43,38,33,28,0
+2024,Jan,WFR01,Unit 1: Spoken Expression and Response,40,,32,28,24,20,16,0
+2024,Jan,WFR02,Unit 2: Understanding and Written Response,90,,76,70,64,58,52,0
+2024,Jan,WFR03,Unit 3: Understanding and Spoken Response,40,37.0,34,29,25,21,17,0
+2024,Jan,WFR04,"Unit 4: Research, Understanding and Written Response",90,81.0,72,62,53,44,35,0
+2024,Jan,WGE01,Unit 1: Global Challenges,90,,58,53,48,44,40,0
+2024,Jan,WGE02,Unit 2: Geographical Investigations,60,,46,42,38,34,31,0
+2024,Jan,WGE03,Unit 3: Contested Planet,90,67.0,59,51,44,37,30,0
+2024,Jan,WGE04,Unit 4: Researching Geography,60,53.0,47,40,33,26,20,0
+2024,Jan,WGN01,Unit 1: Spoken Expression and Response,40,,31,28,25,23,21,0
+2024,Jan,WGN02,Unit 2: Understanding and Written Response,90,,68,60,52,44,37,0
+2024,Jan,WGN03,Unit 3: Understanding and Spoken Response,40,37.0,34,29,24,20,16,0
+2024,Jan,WGN04,"Unit 4: Research, Understanding and Written Response",90,74.0,66,59,52,45,38,0
+2024,Jan,WHI01,"1A: France in Revolution, 1774-99",50,,39,34,29,25,21,0
+2024,Jan,WHI01,"1B: Russia in Revolution, 1881-1917",50,,39,34,30,26,22,0
+2024,Jan,WHI01,"1C: Germany, 1918-45",50,,39,34,29,25,21,0
+2024,Jan,WHI01,"1D: Britain, 1964-90",50,,39,34,29,25,21,0
+2024,Jan,WHI02,"1A: India, 1857-1948: The Raj to Partition",50,,34,31,28,25,22,0
+2024,Jan,WHI02,"1B: China, 1900-76",50,,35,31,28,25,22,0
+2024,Jan,WHI02,"1C: Russia, 1917-91: From Lenin to Yeltsin",50,,34,31,28,25,22,0
+2024,Jan,WHI02,"1D: South Africa, 1948-2014",50,,34,31,28,25,22,0
+2024,Jan,WHI03,"1A: The USA, Independence to Civil War, 1763-1865",50,38.0,34,30,27,24,21,0
+2024,Jan,WHI03,"1B: The British Experience of Warfare, 1803-1945",50,38.0,34,30,27,24,21,0
+2024,Jan,WHI03,"1C: Germany: United, Divided and Reunited,1 870-1990",50,38.0,34,30,27,24,21,0
+2024,Jan,WHI03,"1D: Civil Rights and Race Relations in the USA,1 865-2009",50,38.0,34,30,27,24,21,0
+2024,Jan,WHI04,"1A: The Making of Modern Europe, 1805-71",50,38.0,34,30,27,24,21,0
+2024,Jan,WHI04,"1B: The World in Crisis, 1879-1945",50,39.0,35,31,27,23,19,0
+2024,Jan,WHI04,"1C: The World Divided: Superpower Relations, 1 943-90",50,38.0,34,30,26,22,19,0
+2024,Jan,WHI04,"1D: The Cold War and Hot War in Asia, 1945-90",50,37.0,33,29,26,23,20,0
+2024,Jan,WMA11,P1: Pure Mathematics 1,75,,55,48,41,34,28,0
+2024,Jan,WMA12,P2: Pure Mathematics 2,75,,53,46,39,32,25,0
+2024,Jan,WMA13,P3: Pure Mathematics 3,75,68.0,61,54,47,40,34,0
+2024,Jan,WMA14,P4: Pure Mathematics 4,75,62.0,55,48,41,34,27,0
+2024,Jan,WME01,M1: Mechanics 1,75,,65,56,48,40,32,0
+2024,Jan,WME02,M2: Mechanics 2,75,66.0,59,52,46,40,34,0
+2024,Jan,WME03,M3: Mechanics 3,75,69.0,63,54,45,36,28,0
+2024,Jan,WPH11,Unit 1: Mechanics and Materials,80,,53,47,42,37,32,0
+2024,Jan,WPH12,Unit 2: Waves and Electricity,80,,55,48,42,36,30,0
+2024,Jan,WPH13,Unit 3: Practical Skills in Physics I,50,,33,29,25,21,18,0
+2024,Jan,WPH14,"Unit 4: Further Mechanics, Fields and Particles",90,81.0,73,65,58,51,44,0
+2024,Jan,WPH15,"Unit 5: Thermodynamics, Radiation, Oscillations and Cosmology",90,70.0,66,62,58,54,50,0
+2024,Jan,WPH16,Unit 6: Practical Skills in Physics II,50,39.0,34,29,24,19,15,0
+2024,Jan,WPS01,Unit 1: Social and cognitive psychology,64,,30,27,24,21,18,0
+2024,Jan,WPS02,"Unit 2: Biological psychology, learning theories and development",96,,44,37,30,23,16,0
+2024,Jan,WPS03,Unit 3: Applications of psychology,64,36.0,32,28,24,20,16,0
+2024,Jan,WPS04,Unit 4: Clinical psychology and psychological skills,96,47.0,40,33,26,20,14,0
+2024,Jan,WSP01,Unit 1: Spoken Expression and Response,40,,30,26,22,18,14,0
+2024,Jan,WSP02,Unit 2: Understanding and Written Response,90,,71,62,54,46,38,0
+2024,Jan,WSP03,Unit 3: Understanding and Spoken Response,40,33.0,30,27,24,21,18,0
+2024,Jan,WSP04,"Unit 4: Research, Understanding and Written Response",90,79.0,69,59,50,41,32,0
+2024,Jan,WST01,S1: Statistics 1,75,,62,53,44,35,26,0
+2024,Jan,WST02,S2: Statistics 2,75,66.0,57,48,40,32,24,0
+2024,Jan,WST03,S3: Statistics 3,75,71.0,67,58,50,42,34,0
+2024,Jun,WAA01,Unit 1: Understanding and Written Response,80,,53,44,35,26,17,0
+2024,Jun,WAA02,Unit 2: Writing and Research,80,66.0,57,48,39,31,23,0
+2024,Jun,WAC11,Unit 1: The Accounting System and Costing,200,,135,114,93,73,53,0
+2024,Jun,WAC12,Unit 2: Corporate and Management Accounting,200,166.0,147,128,109,90,72,0
+2024,Jun,WBI11,"Unit 1: Molecules, Diet, Transport and Health",80,,49,44,39,35,31,0
+2024,Jun,WBI12,"Unit 2: Cells, Development, Biodiversity and Conservation",80,,58,54,50,46,42,0
+2024,Jun,WBI13,Unit 3: Practical Skills in Biology I,50,,33,29,25,21,18,0
+2024,Jun,WBI14,"Unit 4: Energy, Environment, Microbiology and Immunity",90,57.0,53,49,45,41,38,0
+2024,Jun,WBI15,"Unit 5: Respiration, Internal Environment, Coordination and Gene",90,61.0,57,53,49,46,43,0
+2024,Jun,WBI16,Unit 6: Practical Skills in Biology II,50,42.0,38,34,30,26,22,0
+2024,Jun,WBS11,Unit 1: Marketing and People,80,,54,49,44,39,35,0
+2024,Jun,WBS12,Unit 2: Managing Business Activities,80,,54,49,44,39,35,0
+2024,Jun,WBS13,Unit 3: Business Decisions And Strategy,80,47.0,42,37,33,29,25,0
+2024,Jun,WBS14,Unit 4: Global Business,80,54.0,48,42,37,32,27,0
+2024,Jun,WCH11,"Unit 1: Structure, Bonding and Introducttion to Organic Chemistry",80,,57,51,45,39,33,0
+2024,Jun,WCH12,"Unit 2: Energetics, Group Chemistry, Halogenoalkanes and Alcohol",80,,53,46,39,33,27,0
+2024,Jun,WCH12,"Unit 2R: Energetics, Group Chemistry, Halogenoalkanes and Alcohol",80,,60,53,46,40,34,0
+2024,Jun,WCH13,Unit 3: Practical Skills in Chemistry I,50,,30,26,22,18,14,0
+2024,Jun,WCH13,Unit 3R: Practical Skills in Chemistry I,50,,35,30,25,20,16,0
+2024,Jun,WCH14,"Unit 4: Rates, Equilibria and Further Organic Chemistry",90,69.0,63,57,51,45,39,0
+2024,Jun,WCH15,Unit 5: Transition Metals and Organic Nitrogen Chemistry,90,65.0,59,53,47,42,37,0
+2024,Jun,WCH16,Unit 6: Practical Skills in Chemistry II,50,39.0,36,33,30,27,24,0
+2024,Jun,WDM11,D1: Decision Mathematics 1,75,,57,52,47,42,38,0
+2024,Jun,WEC11,Unit 1: Markets in Action,80,,59,53,47,41,36,0
+2024,Jun,WEC12,Unit 2: Macroeconomic Performance and Policy,80,,55,49,43,38,33,0
+2024,Jun,WEC13,Unit 3: Business Behaviour,80,58.0,53,48,43,39,35,0
+2024,Jun,WEC14,Unit 4: Developments in the Global Economy,80,56.0,50,44,38,32,26,0
+2024,Jun,WEN01,Unit 1: Language: Context and Identity,50,,32,28,24,21,18,0
+2024,Jun,WEN01,Unit 1C: Language: Context and Identity,50,,32,28,24,21,18,0
+2024,Jun,WEN02,Unit 2: Language in Transition,50,,38,33,28,23,18,0
+2024,Jun,WEN02,Unit 2C: Language in Transition,50,,38,33,28,23,18,0
+2024,Jun,WEN03,Unit 3: Crafting Language (Writing),50,37.0,33,29,25,22,19,0
+2024,Jun,WEN04,Unit 4: Investigating Language,50,36.0,31,26,21,17,13,0
+2024,Jun,WET01,Unit 1: Post-2000 Poetry and Prose,50,,31,28,25,22,19,0
+2024,Jun,WET01,Unit 1C: Post-2000 Poetry and Prose,50,,31,28,25,22,19,0
+2024,Jun,WET02,Unit 2: Drama,50,,32,28,24,21,18,0
+2024,Jun,WET02,Unit 2C: Drama,50,,32,28,24,21,18,0
+2024,Jun,WET03,Unit 3: Poetry and Prose,50,36.0,32,28,24,20,17,0
+2024,Jun,WET03,Unit 3C: Poetry and Prose,50,36.0,32,28,24,20,17,0
+2024,Jun,WET04,Unit 4: Shakespeare and Pre-1900 Poetry,50,45.0,40,34,28,23,18,0
+2024,Jun,WET04,Unit 4C: Shakespeare and Pre-1900 Poetry,50,45.0,40,34,28,23,18,0
+2024,Jun,WFM01,FP1: Further Pure Mathematics 1,75,,64,57,50,44,38,0
+2024,Jun,WFM02,FP2: Further Pure Mathematics 2,75,71.0,68,60,52,45,38,0
+2024,Jun,WFM03,FP3: Further Pure Mathematics 3,75,61.0,55,49,43,38,33,0
+2024,Jun,WFR01,Unit 1: Spoken Expression and Response,40,,32,28,24,20,16,0
+2024,Jun,WFR02,Unit 2: Understanding and Written Response,90,,72,66,60,54,49,0
+2024,Jun,WFR03,Unit 3: Understanding and Spoken Response,40,37.0,34,29,25,21,17,0
+2024,Jun,WFR04,"Unit 4: Research, Understanding and Written Response",90,81.0,72,62,53,44,35,0
+2024,Jun,WGE01,Unit 1: Global Challenges,90,,60,55,51,47,43,0
+2024,Jun,WGE02,Unit 2: Geographical Investigations,60,,46,42,38,35,32,0
+2024,Jun,WGE03,Unit 3: Contested Planet,90,67.0,60,53,46,39,33,0
+2024,Jun,WGE04,Unit 4: Researching Geography,60,53.0,46,39,32,25,19,0
+2024,Jun,WGK01,Unit 1: Understanding and Written Response,80,,56,48,41,34,27,0
+2024,Jun,WGK02,Unit 2: Writing and Research,80,68.0,61,54,47,41,35,0
+2024,Jun,WGN01,Unit 1: Spoken Expression and Response,40,,31,28,25,23,21,0
+2024,Jun,WGN02,Unit 2: Understanding and Written Response,90,,67,59,51,43,36,0
+2024,Jun,WGN03,Unit 3: Understanding and Spoken Response,40,37.0,34,29,24,20,16,0
+2024,Jun,WGN04,"Unit 4: Research, Understanding and Written Response",90,73.0,65,57,50,43,36,0
+2024,Jun,WHI01,"1A: France in Revolution, 1774-99",50,,39,34,29,25,21,0
+2024,Jun,WHI01,"1B: Russia in Revolution, 1881-1917",50,,39,34,30,26,22,0
+2024,Jun,WHI01,"1C: Germany, 1918-45",50,,39,34,29,25,21,0
+2024,Jun,WHI01,"1D: Britain, 1964-90",50,,39,34,29,25,21,0
+2024,Jun,WHI02,"1A: India, 1857-1948: The Raj to Partition",50,,34,31,28,25,22,0
+2024,Jun,WHI02,"1B: China, 1900-76",50,,35,31,28,25,22,0
+2024,Jun,WHI02,"1C: Russia, 1917-91: From Lenin to Yeltsin",50,,35,31,28,25,22,0
+2024,Jun,WHI02,"1D: South Africa, 1948-2014",50,,34,31,28,25,22,0
+2024,Jun,WHI03,"1A: The USA, Independence to Civil War, 1763-1865",50,38.0,34,30,27,24,21,0
+2024,Jun,WHI03,"1B: The British Experience of Warfare, 1803-1945",50,38.0,34,30,27,24,21,0
+2024,Jun,WHI03,"1C: Germany: United, Divided and Reunited,1 870-1990",50,38.0,34,30,27,24,21,0
+2024,Jun,WHI03,"1D: Civil Rights and Race Relations in the USA,1 865-2009",50,36.0,33,30,27,24,21,0
+2024,Jun,WHI04,"1A: The Making of Modern Europe, 1805-71",50,38.0,34,30,27,24,21,0
+2024,Jun,WHI04,"1B: The World in Crisis, 1879-1945",50,39.0,35,31,27,23,19,0
+2024,Jun,WHI04,"1C: The World Divided: Superpower Relations, 1 943-90",50,40.0,36,32,28,24,21,0
+2024,Jun,WHI04,"1D: The Cold War and Hot War in Asia, 1945-90",50,38.0,34,30,27,24,21,0
+2024,Jun,WIT11,Unit 1,80,,45,39,33,28,23,0
+2024,Jun,WIT12,Unit 2,80,,61,53,46,39,32,0
+2024,Jun,WIT13,Unit 3,80,56.0,50,44,38,33,28,0
+2024,Jun,WIT14,Unit 4,80,68.0,61,53,46,39,32,0
+2024,Jun,WMA11,P1: Pure Mathematics 1,75,,55,48,42,36,30,0
+2024,Jun,WMA11,P1: Pure Mathematics 1R,75,,55,48,42,36,30,0
+2024,Jun,WMA12,P2: Pure Mathematics 2,75,,48,42,37,32,27,0
+2024,Jun,WMA12,P2: Pure Mathematics 2R,75,,48,42,37,32,27,0
+2024,Jun,WMA13,P3: Pure Mathematics 3,75,68.0,62,56,50,44,38,0
+2024,Jun,WMA14,P4: Pure Mathematics 4,75,59.0,53,47,41,35,29,0
+2024,Jun,WME01,M1: Mechanics 1,75,,64,56,48,40,33,0
+2024,Jun,WME02,M2: Mechanics 2,75,59.0,53,47,41,35,29,0
+2024,Jun,WME03,M3: Mechanics 3,75,71.0,67,60,53,46,39,0
+2024,Jun,WPH11,Unit 1: Mechanics and Materials,80,,61,54,47,40,34,0
+2024,Jun,WPH12,Unit 2: Waves and Electricity,80,,50,44,39,34,29,0
+2024,Jun,WPH13,Unit 3: Practical Skills in Physics I,50,,36,32,29,26,23,0
+2024,Jun,WPH14,"Unit 4: Further Mechanics, Fields and Particles",90,76.0,69,62,55,48,42,0
+2024,Jun,WPH15,"Unit 5: Thermodynamics, Radiation, Oscillations and Cosmology",90,73.0,67,61,55,49,44,0
+2024,Jun,WPH16,Unit 6: Practical Skills in Physics II,50,42.0,37,32,27,22,17,0
+2024,Jun,WPS01,Unit 1: Social and cognitive psychology,64,,30,27,24,21,19,0
+2024,Jun,WPS02,"Unit 2: Biological psychology, learning theories and development",96,,45,37,30,23,16,0
+2024,Jun,WPS03,Unit 3: Applications of psychology,64,36.0,32,28,24,20,16,0
+2024,Jun,WPS04,Unit 4: Clinical psychology and psychological skills,96,53.0,46,39,33,27,21,0
+2024,Jun,WSP01,Unit 1: Spoken Expression and Response,40,,30,26,22,18,14,0
+2024,Jun,WSP02,Unit 2: Understanding and Written Response,90,,74,65,56,48,40,0
+2024,Jun,WSP03,Unit 3: Understanding and Spoken Response,40,33.0,30,27,24,21,18,0
+2024,Jun,WSP04,"Unit 4: Research, Understanding and Written Response",90,80.0,71,60,50,40,30,0
+2024,Jun,WST01,S1: Statistics 1,75,,57,49,41,33,26,0
+2024,Jun,WST02,S2: Statistics 2,75,66.0,58,49,40,31,23,0
+2024,Jun,WST03,S3: Statistics 3,75,69.0,63,54,45,36,27,0
+2024,Jun,YLA1,Law (Papers 1 & 2),200,130.0,118,106,94,83,72,0
+2024,Oct,WAC11,Unit 1: The Accounting System and Costing,200,,139,119,99,79,60,0
+2024,Oct,WAC12,Unit 2: Corporate and Management Accounting,200,174.0,152,130,109,88,67,0
+2024,Oct,WBI11,"Unit 1: Molecules, Diet, Transport and Health",80,,46,40,35,30,25,0
+2024,Oct,WBI12,"Unit 2: Cells, Development, Biodiversity and Conservation",80,,53,46,39,32,26,0
+2024,Oct,WBI13,Unit 3: Practical Skills in Biology I,50,,33,29,25,22,19,0
+2024,Oct,WBI14,"Unit 4: Energy, Environment, Microbiology and Immunity",90,56.0,50,44,38,33,28,0
+2024,Oct,WBI15,"Unit 5: Respiration, Internal Environment, Coordination and Gene",90,63.0,56,49,42,35,29,0
+2024,Oct,WBI16,Unit 6: Practical Skills in Biology II,50,42.0,38,34,30,26,22,0
+2024,Oct,WBS11,Unit 1: Marketing and People,80,,54,49,44,39,35,0
+2024,Oct,WBS12,Unit 2: Managing Business Activities,80,,54,49,44,39,34,0
+2024,Oct,WBS13,Unit 3: Business Decisions And Strategy,80,47.0,43,39,35,31,27,0
+2024,Oct,WBS14,Unit 4: Global Business,80,54.0,49,44,39,34,29,0
+2024,Oct,WCH11,"Unit 1: Structure, Bonding and Introducttion to Organic Chemistry",80,,55,48,41,34,28,0
+2024,Oct,WCH12,"Unit 2: Energetics, Group Chemistry, Halogenoalkanes and Alcohol",80,,54,46,39,32,25,0
+2024,Oct,WCH13,Unit 3: Practical Skills in Chemistry I,50,,29,24,20,16,12,0
+2024,Oct,WCH14,"Unit 4: Rates, Equilibria and Further Organic Chemistry",90,70.0,62,54,46,39,32,0
+2024,Oct,WCH15,Unit 5: Transition Metals and Organic Nitrogen Chemistry,90,63.0,57,51,45,39,33,0
+2024,Oct,WCH16,Unit 6: Practical Skills in Chemistry II,50,37.0,32,27,22,18,14,0
+2024,Oct,WEC11,Unit 1: Markets in Action,80,,55,49,43,37,31,0
+2024,Oct,WEC12,Unit 2: Macroeconomic Performance and Policy,80,,55,49,44,39,34,0
+2024,Oct,WEC13,Unit 3: Business Behaviour,80,58.0,53,48,43,38,33,0
+2024,Oct,WEC14,Unit 4: Developments in the Global Economy,80,60.0,54,48,42,36,30,0
+2024,Oct,WMA11,P1: Pure Mathematics 1,75,,55,48,41,34,27,0
+2024,Oct,WMA12,P2: Pure Mathematics 2,75,,54,47,40,34,28,0
+2024,Oct,WMA13,P3: Pure Mathematics 3,75,65.0,59,53,47,41,36,0
+2024,Oct,WMA14,P4: Pure Mathematics 4,75,58.0,52,46,40,34,28,0
+2024,Oct,WME01,M1: Mechanics 1,75,,63,55,47,39,32,0
+2024,Oct,WME02,M2: Mechanics 2,75,67.0,60,52,45,38,31,0
+2024,Oct,WPH11,Unit 1: Mechanics and Materials,80,,61,54,47,40,34,0
+2024,Oct,WPH12,Unit 2: Waves and Electricity,80,,59,51,43,36,29,0
+2024,Oct,WPH13,Unit 3: Practical Skills in Physics I,50,,37,32,27,23,19,0
+2024,Oct,WPH14,"Unit 4: Further Mechanics, Fields and Particles",90,78.0,71,64,57,50,43,0
+2024,Oct,WPH15,"Unit 5: Thermodynamics, Radiation, Oscillations and Cosmology",90,79.0,71,63,55,47,40,0
+2024,Oct,WPH16,Unit 6: Practical Skills in Physics II,50,42.0,37,32,27,23,19,0
+2024,Oct,WST01,S1: Statistics 1,75,,60,51,43,35,27,0
+2024,Oct,WST02,S2: Statistics 2,75,66.0,58,49,41,33,25,0
+2025,Jan,WAA01,Unit 1: Understanding and Written Response,80,,50,42,35,28,21,0
+2025,Jan,WAA02,Unit 2: Writing and Research,80,67.0,57,47,37,27,18,0
+2025,Jan,WAC11,Unit 1: The Accounting System and Costing,200,,134,111,88,66,44,0
+2025,Jan,WAC12,Unit 2: Corporate and Management Accounting,200,164.0,147,130,113,96,79,0
+2025,Jan,WBI11,"Unit 1: Molecules, Diet, Transport and Health",80,,49,43,37,31,25,0
+2025,Jan,WBI12,"Unit 2: Cells, Development, Biodiversity and Conservation",80,,54,47,40,33,27,0
+2025,Jan,WBI13,Unit 3: Practical Skills in Biology I,50,,33,29,25,22,19,0
+2025,Jan,WBI14,"Unit 4: Energy, Environment, Microbiology and Immunity",90,59.0,53,47,41,35,30,0
+2025,Jan,WBI15,"Unit 5: Respiration, Internal Environment, Coordination and Gene",90,64.0,57,50,43,36,30,0
+2025,Jan,WBI16,Unit 6: Practical Skills in Biology II,50,42.0,38,34,30,26,22,0
+2025,Jan,WBS11,Unit 1: Marketing and People,80,,54,49,44,39,35,0
+2025,Jan,WBS12,Unit 2: Managing Business Activities,80,,51,46,41,36,32,0
+2025,Jan,WBS13,Unit 3: Business Decisions And Strategy,80,46.0,42,38,34,30,27,0
+2025,Jan,WBS14,Unit 4: Global Business,80,57.0,50,43,36,29,22,0
+2025,Jan,WCH11,"Unit 1: Structure, Bonding and Introducttion to Organic Chemistry",80,,52,45,38,32,26,0
+2025,Jan,WCH12,"Unit 2: Energetics, Group Chemistry, Halogenoalkanes and Alcohol",80,,53,45,37,30,23,0
+2025,Jan,WCH13,Unit 3: Practical Skills in Chemistry I,50,,32,27,23,19,15,0
+2025,Jan,WCH14,"Unit 4: Rates, Equilibria and Further Organic Chemistry",90,73.0,66,59,52,45,39,0
+2025,Jan,WCH15,Unit 5: Transition Metals and Organic Nitrogen Chemistry,90,71.0,65,59,53,47,42,0
+2025,Jan,WCH16,Unit 6: Practical Skills in Chemistry II,50,35.0,30,25,20,16,12,0
+2025,Jan,WDM11,D1: Decision Mathematics 1,75,,58,51,45,39,33,0
+2025,Jan,WEC11,Unit 1: Markets in Action,80,,52,46,41,36,31,0
+2025,Jan,WEC12,Unit 2: Macroeconomic Performance and Policy,80,,51,46,41,36,32,0
+2025,Jan,WEC13,Unit 3: Business Behaviour,80,60.0,55,50,45,40,35,0
+2025,Jan,WEC14,Unit 4: Developments in the Global Economy,80,58.0,53,48,43,38,33,0
+2025,Jan,WEN01,Unit 1: Language: Context and Identity,50,,33,29,25,21,18,0
+2025,Jan,WEN01,Unit 1C: Language: Context and Identity,50,,33,29,25,21,18,0
+2025,Jan,WEN02,Unit 2: Language in Transition,50,,36,31,26,22,18,0
+2025,Jan,WEN02,Unit 2C: Language in Transition,50,,36,31,26,22,18,0
+2025,Jan,WEN03,Unit 3: Crafting Language (Writing),50,37.0,33,29,25,22,19,0
+2025,Jan,WEN04,Unit 4: Investigating Language,50,36.0,31,26,21,17,13,0
+2025,Jan,WET01,Unit 1: Post-2000 Poetry and Prose,50,,34,30,26,22,18,0
+2025,Jan,WET01,Unit 1C: Post-2000 Poetry and Prose,50,,34,30,26,22,18,0
+2025,Jan,WET02,Unit 2: Drama,50,,32,28,24,20,17,0
+2025,Jan,WET02,Unit 2C: Drama,50,,32,28,24,20,17,0
+2025,Jan,WET03,Unit 3: Poetry and Prose,50,38.0,34,30,26,22,19,0
+2025,Jan,WET03,Unit 3C: Poetry and Prose,50,38.0,34,30,26,22,19,0
+2025,Jan,WET04,Unit 4: Shakespeare and Pre-1900 Poetry,50,43.0,38,33,28,23,18,0
+2025,Jan,WET04,Unit 4C: Shakespeare and Pre-1900 Poetry,50,43.0,38,33,28,23,18,0
+2025,Jan,WFM01,FP1: Further Pure Mathematics 1,75,,64,58,52,46,40,0
+2025,Jan,WFM02,FP2: Further Pure Mathematics 2,75,70.0,66,58,50,43,36,0
+2025,Jan,WFM03,FP3: Further Pure Mathematics 3,75,68.0,62,55,48,42,36,0
+2025,Jan,WFR01,Unit 1: Spoken Expression and Response,40,,32,28,24,20,16,0
+2025,Jan,WFR02,Unit 2: Understanding and Written Response,90,,76,70,64,58,52,0
+2025,Jan,WFR03,Unit 3: Understanding and Spoken Response,40,37.0,34,29,25,21,17,0
+2025,Jan,WFR04,"Unit 4: Research, Understanding and Written Response",90,81.0,72,62,53,44,35,0
+2025,Jan,WGE01,Unit 1: Global Challenges,90,,58,53,49,45,41,0
+2025,Jan,WGE02,Unit 2: Geographical Investigations,60,,47,43,39,35,32,0
+2025,Jan,WGE03,Unit 3: Contested Planet,90,69.0,61,53,45,37,30,0
+2025,Jan,WGE04,Unit 4: Researching Geography,60,53.0,47,40,33,26,20,0
+2025,Jan,WGN01,Unit 1: Spoken Expression and Response,40,,31,28,25,23,21,0
+2025,Jan,WGN02,Unit 2: Understanding and Written Response,90,,68,60,52,44,37,0
+2025,Jan,WGN03,Unit 3: Understanding and Spoken Response,40,37.0,34,29,24,20,16,0
+2025,Jan,WGN04,"Unit 4: Research, Understanding and Written Response",90,73.0,66,59,52,45,38,0
+2025,Jan,WHI01,"1A: France in Revolution, 1774-99",50,,39,34,29,25,21,0
+2025,Jan,WHI01,"1B: Russia in Revolution, 1881-1917",50,,39,34,30,26,22,0
+2025,Jan,WHI01,"1C: Germany, 1918-45",50,,39,34,29,25,21,0
+2025,Jan,WHI01,"1D: Britain, 1964-90",50,,39,34,29,25,21,0
+2025,Jan,WHI02,"1A: India, 1857-1948: The Raj to Partition",50,,34,31,28,25,22,0
+2025,Jan,WHI02,"1B: China, 1900-76",50,,35,31,28,25,22,0
+2025,Jan,WHI02,"1C: Russia, 1917-91: From Lenin to Yeltsin",50,,34,31,28,25,22,0
+2025,Jan,WHI02,"1D: South Africa, 1948-2014",50,,34,31,28,25,22,0
+2025,Jan,WHI03,"1A: The USA, Independence to Civil War, 1763-1865",50,38.0,34,30,27,24,21,0
+2025,Jan,WHI03,"1B: The British Experience of Warfare, 1803-1945",50,38.0,34,30,27,24,21,0
+2025,Jan,WHI03,"1C: Germany: United, Divided and Reunited,1 870-1990",50,38.0,34,30,27,24,21,0
+2025,Jan,WHI03,"1D: Civil Rights and Race Relations in the USA,1 865-2009",50,38.0,34,30,27,24,21,0
+2025,Jan,WHI04,"1A: The Making of Modern Europe, 1805-71",50,38.0,34,30,27,24,21,0
+2025,Jan,WHI04,"1B: The World in Crisis, 1879-1945",50,39.0,35,31,27,23,19,0
+2025,Jan,WHI04,"1C: The World Divided: Superpower Relations, 1 943-90",50,39.0,35,31,27,23,20,0
+2025,Jan,WHI04,"1D: The Cold War and Hot War in Asia, 1945-90",50,37.0,33,29,26,23,20,0
+2025,Jan,WMA11,P1: Pure Mathematics 1,75,,55,48,41,34,27,0
+2025,Jan,WMA12,P2: Pure Mathematics 2,75,,54,47,40,34,28,0
+2025,Jan,WMA13,P3: Pure Mathematics 3,75,65.0,59,53,47,41,36,0
+2025,Jan,WMA14,P4: Pure Mathematics 4,75,68.0,61,53,45,37,30,0
+2025,Jan,WME01,M1: Mechanics 1,75,,64,56,48,40,33,0
+2025,Jan,WME02,M2: Mechanics 2,75,67.0,60,53,46,39,32,0
+2025,Jan,WME03,M3: Mechanics 3,75,68.0,62,53,45,37,29,0
+2025,Jan,WPH11,Unit 1: Mechanics and Materials,80,,61,54,47,40,34,0
+2025,Jan,WPH12,Unit 2: Waves and Electricity,80,,59,51,43,36,29,0
+2025,Jan,WPH13,Unit 3: Practical Skills in Physics I,50,,37,32,27,23,19,0
+2025,Jan,WPH14,"Unit 4: Further Mechanics, Fields and Particles",90,78.0,71,64,57,50,43,0
+2025,Jan,WPH15,"Unit 5: Thermodynamics, Radiation, Oscillations and Cosmology",90,79.0,71,63,55,47,40,0
+2025,Jan,WPH16,Unit 6: Practical Skills in Physics II,50,42.0,37,32,27,23,19,0
+2025,Jan,WPS01,Unit 1: Social and cognitive psychology,64,,32,28,24,20,17,0
+2025,Jan,WPS02,"Unit 2: Biological psychology, learning theories and development",96,,43,35,28,21,14,0
+2025,Jan,WPS03,Unit 3: Applications of psychology,64,35.0,31,27,23,19,15,0
+2025,Jan,WPS04,Unit 4: Clinical psychology and psychological skills,96,46.0,39,32,26,20,14,0
+2025,Jan,WSP01,Unit 1: Spoken Expression and Response,40,,30,26,22,18,14,0
+2025,Jan,WSP02,Unit 2: Understanding and Written Response,90,,69,61,53,45,37,0
+2025,Jan,WSP03,Unit 3: Understanding and Spoken Response,40,33.0,30,27,24,21,18,0
+2025,Jan,WSP04,"Unit 4: Research, Understanding and Written Response",90,79.0,69,59,50,41,32,0
+2025,Jan,WST01,S1: Statistics 1,75,,59,51,43,35,27,0
+2025,Jan,WST02,S2: Statistics 2,75,67.0,59,51,43,35,27,0
+2025,Jan,WST03,S3: Statistics 3,75,70.0,66,57,48,39,31,0
