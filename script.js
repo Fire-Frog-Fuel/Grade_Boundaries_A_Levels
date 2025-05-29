@@ -2,7 +2,9 @@ function loadCSV(file, tableId, headId, bodyId) {
     fetch(file)
         .then(response => response.text())
         .then(data => {
-            const rows = data.trim().split('\n').map(row => row.split(','));
+            const parsed = Papa.parse(data, { skipEmptyLines: true });
+            const rows = parsed.data;
+
             const [headers, ...entries] = rows;
 
             const thead = document.getElementById(headId);
