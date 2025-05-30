@@ -2,26 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edexcel Grade Boundaries</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
-    <style>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+
+  <!-- DataTables CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
+  >
+  <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(to bottom, #def2f1, #ffffff);
     }
     header {
       background-color: #3aafa9;
-    }
-    nav a:hover {
-      color: #ffffff;
-      border-bottom: 2px solid #feffff;
     }
     table.dataTable thead th {
       background-color: #3aafa9;
@@ -33,6 +31,7 @@
   </style>
 </head>
 <body class="text-gray-800 flex flex-col min-h-screen">
+
   <header class="bg-[#3aafa9] text-white text-center py-6 shadow-lg">
     <h1 class="text-4xl font-bold">Edexcel Grade Boundaries</h1>
     <nav class="mt-4">
@@ -41,85 +40,130 @@
       <a href="OxfordAqa.html" class="mx-4 text-lg hover:text-white transition">Oxford AQA</a>
     </nav>
   </header>
+
   <main class="flex-1 max-w-6xl mx-auto p-6">
     <section class="bg-white rounded-lg shadow-md p-6">
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-semibold">Edexcel Grade Boundaries Table</h2>
-      </div>
-      <table id="EdexcelTable" class="display w-full">
+      <h2 class="text-2xl font-semibold mb-4">Edexcel Grade Boundaries Table</h2>
+
+      <table
+        id="EdexcelTable"
+        class="display w-full"
+        aria-describedby="grade-boundaries-caption"
+      >
+        <caption id="grade-boundaries-caption" class="sr-only">
+          Edexcel grade boundaries per unit code
+        </caption>
         <thead><tr id="Edexcel-head"></tr></thead>
         <tbody id="Edexcel-body"></tbody>
       </table>
+
       <div class="text-right mt-4">
-        <button id="downloadCSV" class="bg-[#3aafa9] text-white px-4 py-2 rounded hover:bg-[#2b7a78]">Download CSV</button>
+        <button
+          id="downloadCSV"
+          class="bg-[#3aafa9] text-white px-4 py-2 rounded hover:bg-[#2b7a78] transition"
+        >
+          Download CSV
+        </button>
       </div>
     </section>
   </main>
 
   <footer class="bg-[#3aafa9] text-white text-center py-4 mt-10">
-    <p>Database provided by <a href="https://github.com/ChessMastermind" class="underline hover:text-gray-200">ChessMastermind</a></p>
+    <p>
+      Database provided by
+      <a
+        href="https://github.com/ChessMastermind"
+        class="underline hover:text-gray-200"
+      >
+        ChessMastermind
+      </a>
+    </p>
   </footer>
 
-  <script>
-    fetch('Edexcel.csv')
-      .then(response => response.text())
-      .then(csv => {
-        const parsed = Papa.parse(csv, { header: true, skipEmptyLines: true }).data;
-        const uniqueUnits = [...new Set(parsed.map(row => row.code))].filter(Boolean);
+  <!-- Dependencies (deferred) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+  <script
+    src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"
+    defer
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"
+    defer
+  ></script>
 
-        const select = document.getElementById("unitFilter");
-        uniqueUnits.forEach(unit => {
-          const option = document.createElement("option");
-          option.value = unit;
-          option.textContent = unit;
-          select.appendChild(option);Add commentMore actions
-        });
+  <!-- Your page logic -->
+  <script defer>
+    window.addEventListener('DOMContentLoaded', () => {
+      fetch('Edexcel.csv')
+        .then(resp => {
+          if (!resp.ok) throw new Error('Network error');
+          return resp.text();
+        })
+        .then(csv => {
+          const parsed = Papa.parse(csv, {
+            header: true,
+            skipEmptyLines: true
+          }).data;
 
-        function populateTable(data) {
-          const headRow = document.getElementById("Edexcel-head");
-          const body = document.getElementById("Edexcel-body");
-          headRow.innerHTML = '';
-          body.innerHTML = '';
-          if (!data.length) return;
+          const headRow = document.getElementById('Edexcel-head');
+          const body    = document.getElementById('Edexcel-body');
 
-          const headers = Object.keys(data[0]);
-          headers.forEach(h => {
-            const th = document.createElement("th");
-            th.textContent = h;
-            headRow.appendChild(th);
-          });
+          function populateTable(data) {
+            headRow.innerHTML = '';
+            body.innerHTML    = '';
 
-          data.forEach(row => {
-            const tr = document.createElement("tr");
+            if (!data.length) return;
+
+            // build the header
+            const headers = Object.keys(data[0]);
             headers.forEach(h => {
-              const td = document.createElement("td");
-              td.textContent = row[h];
-              tr.appendChild(td);
+              const th = document.createElement('th');
+              th.textContent = h;
+              headRow.appendChild(th);
             });
-            body.appendChild(tr);
-          });
+
+            // build the rows
+            data.forEach(row => {
+              const tr = document.createElement('tr');
+              headers.forEach(h => {
+                const td = document.createElement('td');
+                td.textContent = row[h];
+                tr.appendChild(td);
+              });
+              body.appendChild(tr);
+            });
+          }
+
+          // initial render
+          populateTable(parsed);
+
+          // initialize DataTable once
           $('#EdexcelTable').DataTable();
-        }
 
-        document.getElementById("unitFilter").addEventListener("change", e => {
-          const value = e.target.value;
-          const filtered = value ? parsed.filter(row => row.code === value) : parsed;
-          $('#EdexcelTable').DataTable().destroy();
-          populateTable(filtered);
+          // wire up download button
+          document
+            .getElementById('downloadCSV')
+            .addEventListener('click', () => {
+              const blob = new Blob([csv], { type: 'text/csv' });
+              const url  = URL.createObjectURL(blob);
+              const a    = document.createElement('a');
+              a.href     = url;
+              a.download = 'Edexcel_Grade_Boundaries.csv';
+              a.click();
+            });
+        })
+        .catch(err => {
+          console.error(err);
+          const body = document.getElementById('Edexcel-body');
+          body.innerHTML = `
+            <tr>
+              <td colspan="10" class="text-center py-4">
+                Failed to load data.
+              </td>
+            </tr>
+          `;
         });
-
-        document.getElementById("downloadCSV").addEventListener("click", () => {
-          const blob = new Blob([csv], { type: 'text/csv' });
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement("a");
-          a.href = url;
-          a.download = "Edexcel_Grade_Boundaries.csv";
-          a.click();
-        });
-
-        populateTable(parsed);
-      });
+    });
   </script>
 </body>
 </html>
-
