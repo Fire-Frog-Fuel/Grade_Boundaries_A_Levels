@@ -2,34 +2,36 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #def2f1;
+    background-color: #f9f9f9; /* light neutral background */
 }
 
 header {
-    background-color: #17252A;
-    color: white;
+    background-color: #1e1f26; /* deep navy-gray */
+    color: #fefefe;             /* soft white */
     padding: 1rem;
     text-align: center;
 }
 
 nav a {
     margin: 0 1rem;
-    color: #00b7ff;
+    color: #ffd369;            /* warm gold accent */
     text-decoration: none;
     font-weight: bold;
 }
 
 main {
     padding: 2rem;
+    color: #2c2c2c;            /* near-black text */
 }
 
 h2 {
     margin-top: 3rem;
+    color: #393e46;            /* slightly darker heading */
 }
 
 footer {
-    background: #222;
-    color: white;
+    background: #222831;       /* dark slate */
+    color: #eeeeee;            /* light gray text */
     text-align: center;
     padding: 1rem;
     position: relative;
