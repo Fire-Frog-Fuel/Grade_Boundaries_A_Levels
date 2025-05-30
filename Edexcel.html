@@ -31,6 +31,11 @@
   </style>
 </head>
 <body class="text-gray-800 flex flex-col min-h-screen">
+  <!-- 1) This outer wrapper will give you a page-level horizontal scrollbar when anything is wider than the viewport -->
+  <div class="overflow-x-auto">
+
+    <!-- 2) This inner wrapper will “shrink-wrap” to the width of its widest child (your table) but never be less than the viewport -->
+    <div class="min-w-max">
 
   <header class="bg-[#3aafa9] text-white text-center py-6 shadow-lg">
     <h1 class="text-4xl font-bold">Edexcel Grade Boundaries</h1>
@@ -44,7 +49,6 @@
   <main class="flex-1 max-w-6xl mx-auto p-6">
     <section class="bg-white rounded-lg shadow-md p-6">
       <h2 class="text-2xl font-semibold mb-4">Edexcel Grade Boundaries </h2>
-      <div class="overflow-x-auto">
         <table
         id="EdexcelTable"
         class="display w-full"
@@ -56,7 +60,6 @@
           <thead><tr id="Edexcel-head"></tr></thead>
           <tbody id="Edexcel-body"></tbody>
         </table>
-      </div>
       <div class="text-right mt-4">
         <button
           id="downloadCSV"
@@ -138,9 +141,7 @@
           populateTable(parsed);
 
           // initialize DataTable once
-          $('#EdexcelTable').DataTable({
-  scrollX: true
-});
+          $('#EdexcelTable').DataTable();
           // wire up download button
           document
             .getElementById('downloadCSV')
@@ -166,5 +167,7 @@
         });
     });
   </script>
+    </div>
+  </div>
 </body>
 </html>
