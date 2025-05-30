@@ -12,7 +12,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
 </head>
-<body class="bg-[#def2f1] text-[#17252a] font-sans">
+<body class="bg-[#def2f1] text-[#17252a] font-sans flex flex-col min-h-screen">
   <header class="bg-[#3aafa9] text-white text-center py-6 shadow-lg">
     <h1 class="text-4xl font-bold">Edexcel Grade Boundaries</h1>
     <nav class="mt-4">
@@ -22,7 +22,7 @@
     </nav>
   </header>
 
-  <main class="max-w-6xl mx-auto p-6">
+  <main class="flex-1 max-w-6xl mx-auto p-6">
     <section class="mb-6">
       <label for="unitFilter" class="block text-lg font-medium mb-2">Filter by code:</label>
       <select id="unitFilter" class="w-full p-2 border rounded">
