@@ -45,7 +45,15 @@
       .then(response => response.text())
       .then(csv => {
         const parsed = Papa.parse(csv, { header: true, skipEmptyLines: true }).data;
-      
+        const uniqueUnits = [...new Set(parsed.map(row => row.code))].filter(Boolean);
+
+        const select = document.getElementById("unitFilter");
+        uniqueUnits.forEach(unit => {
+          const option = document.createElement("option");
+          option.value = unit;
+          option.textContent = unit;
+          select.appendChild(option);Add commentMore actions
+        });
 
         function populateTable(data) {
           const headRow = document.getElementById("Edexcel-head");
