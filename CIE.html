@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CIE Grade Boundaries</title>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com" defer></script>
 
@@ -65,6 +67,20 @@
           Download CSV
         </button>
       </div>
+      <div id="controls" class="flex flex-wrap gap-4 mb-4 items-center">
+        <label for="subjectSelect" class="font-semibold">Subject Code:</label>
+        <select id="subjectSelect" class="border rounded px-2 py-1"></select>
+
+        <label class="ml-4 font-semibold">Grades:</label>
+
+        <label><input type="checkbox" class="gradeToggle" value="a" checked> A</label>
+        <label><input type="checkbox" class="gradeToggle" value="b" checked> B</label>
+        <label><input type="checkbox" class="gradeToggle" value="c" checked> C</label>
+        <label><input type="checkbox" class="gradeToggle" value="d" checked> D</label>
+        <label><input type="checkbox" class="gradeToggle" value="e" checked> E</label>
+      </div>
+      <canvas id="CIEChart" width="800" height="400" class="mt-8"></canvas>
+
     </section>
   </main>
 
@@ -139,7 +155,113 @@
 
           // initialize DataTable once
           $('#CIETable').DataTable();
+          const allSessions = [];
+const bySubject = {};
+const grades = ['a*', 'a', 'b', 'c', 'd', 'e'];
 
+// Group entries by subject and session
+parsed.forEach(row => {
+  const session = row['Series'] || row['session'];
+  const code = row['SubjectCode'] || row['code'];
+  if (!session || !code) return;
+
+  if (!bySubject[code]) bySubject[code] = {};
+  if (!bySubject[code][session]) bySubject[code][session] = {};
+
+  grades.forEach(g => {
+    const val = parseFloat(row[g.toUpperCase()] || row[g]);
+    if (!isNaN(val)) {
+      bySubject[code][session][g] = val;
+    }
+  });
+
+  if (!allSessions.includes(session)) allSessions.push(session);
+});
+
+// Sort sessions
+const sortedSessions = allSessions.sort((a, b) => {
+  const [ma, ya] = a.split('-');
+  const [mb, yb] = b.split('-');
+  const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+  return ya - yb || months.indexOf(ma.toLowerCase()) - months.indexOf(mb.toLowerCase());
+});
+
+// Populate subject dropdown
+const subjectSelect = document.getElementById('subjectSelect');
+Object.keys(bySubject).sort().forEach(code => {
+  const opt = document.createElement('option');
+  opt.value = code;
+  opt.textContent = code;
+  subjectSelect.appendChild(opt);
+});
+
+// Chart setup
+const ctx = document.getElementById('CIEChart').getContext('2d');
+let chart = null;
+
+function updateChart() {
+  const selectedCode = subjectSelect.value;
+  const activeGrades = Array.from(document.querySelectorAll('.gradeToggle:checked')).map(cb => cb.value);
+  const subjectData = bySubject[selectedCode];
+
+  const datasets = activeGrades.map(g => {
+    return {
+      label: g.toUpperCase(),
+      data: sortedSessions.map(s => subjectData?.[s]?.[g] ?? null),
+      borderColor: `hsl(${Math.random() * 360}, 70%, 50%)`,
+      tension: 0.2,
+      fill: false
+    };
+  });
+
+  if (chart) chart.destroy();
+  chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: sortedSessions,
+      datasets: datasets
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: `Grade Boundaries Over Time — ${selectedCode}`
+        },
+        legend: {
+          position: 'bottom'
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Marks'
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Exam Session'
+          }
+        }
+      }
+    }
+  });
+}
+
+// Attach listeners
+subjectSelect.addEventListener('change', updateChart);
+document.querySelectorAll('.gradeToggle').forEach(cb => cb.addEventListener('change', updateChart));
+
+// Initial trigger
+subjectSelect.value = subjectSelect.options[0]?.value || '';
+updateChart();
+
+          
+          
+          
           // wire up download button
           document
             .getElementById('downloadCSV')
