@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Edexcel Grades</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Edexcel Boundaries</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- DataTables + jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
 </head>
+<html lang="en">
 <body>
   <header>
-    <h1>Edexcel Grade Boundaries</h1>
+    <h1>Grade Boundaries</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="CIE.html">CIE</a>
@@ -17,7 +26,7 @@
 
   <main>
     <section id="Edexcel">
-            <h2>Edexcel Table</h2>
+            <h2>Edexcel Grade Boundaries</h2>
             <table id="EdexcelTable" class="display">
                 <thead><tr id="Edexcel-head"></tr></thead>
                 <tbody id="Edexcel-body"></tbody>
