@@ -28,12 +28,17 @@
     table.dataTable tbody tr:hover {
       background-color: #dff6f5;
     }
-    @media (max-width: 640px) {
-    html {
-      font-size: 90%;
-    }
-    table {
-      font-size: 0.8rem;
+    /* Reduce padding in DataTable cells */
+  table.dataTable td,
+  table.dataTable th {
+    padding: 0.25rem 0.5rem !important; /* top/bottom, left/right */
+    line-height: 1.2;
+  }
+
+  /* Optional: shrink font on very small screens */
+  @media (max-width: 640px) {
+    table.dataTable {
+      font-size: 0.75rem;
     }
   }
 }
