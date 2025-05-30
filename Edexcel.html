@@ -5,40 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edexcel Grade Boundaries</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
-
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #def2f1, #ffffff);
-    }
-    header {
-      background-color: #3aafa9;
-    }
-    nav a:hover {
-      color: #ffffff;
-      border-bottom: 2px solid #feffff;
-    }
-    table.dataTable thead th {
-      background-color: #3aafa9;
-      color: white;
-    }
-    table.dataTable tbody tr:hover {
-      background-color: #dff6f5;
-    }
-  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
 </head>
-<body class="text-gray-800">
-  <header class="text-white text-center py-6 shadow-lg">
+<body class="bg-[#def2f1] text-[#17252a] font-sans">
+  <header class="bg-[#3aafa9] text-white text-center py-6 shadow-lg">
     <h1 class="text-4xl font-bold">Edexcel Grade Boundaries</h1>
     <nav class="mt-4">
       <a href="index.html" class="mx-4 text-lg hover:text-white transition">Home</a>
@@ -48,8 +23,6 @@
   </header>
 
   <main class="max-w-6xl mx-auto p-6">
-    <section id="chart-app" class="mb-10"></section>
-
     <section class="mb-6">
       <label for="unitFilter" class="block text-lg font-medium mb-2">Filter by Unit:</label>
       <select id="unitFilter" class="w-full p-2 border rounded">
@@ -60,12 +33,14 @@
     <section class="bg-white rounded-lg shadow-md p-6">
       <div class="flex justify-between items-center mb-4">
         <h2 class="text-2xl font-semibold">Edexcel Grade Boundaries Table</h2>
-        <button id="downloadCSV" class="bg-[#3aafa9] text-white px-4 py-2 rounded hover:bg-[#2b7a78]">Download CSV</button>
       </div>
       <table id="EdexcelTable" class="display w-full">
         <thead><tr id="Edexcel-head"></tr></thead>
         <tbody id="Edexcel-body"></tbody>
       </table>
+      <div class="text-right mt-4">
+        <button id="downloadCSV" class="bg-[#3aafa9] text-white px-4 py-2 rounded hover:bg-[#2b7a78]">Download CSV</button>
+      </div>
     </section>
   </main>
 
@@ -73,44 +48,7 @@
     <p>Database provided by <a href="https://github.com/ChessMastermind" class="underline hover:text-gray-200">ChessMastermind</a></p>
   </footer>
 
-  <script type="text/babel">
-    const { motion } = window['framer-motion'];
-
-    function ChartComponent({ data }) {
-      React.useEffect(() => {
-        if (!data.length) return;
-        const ctx = document.getElementById("myChart");
-        const units = data.map(d => d.unit);
-        const aStars = data.map(d => parseInt(d["a*"] || 0));
-
-        new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: units,
-            datasets: [{
-              label: 'A* Thresholds',
-              data: aStars,
-              backgroundColor: '#3aafa9'
-            }]
-          },
-          options: {
-            responsive: true,
-            plugins: {
-              legend: { display: false }
-            },
-            scales: { x: { ticks: { autoSkip: true, maxTicksLimit: 10 } } }
-          }
-        });
-      }, [data]);
-
-      return (
-        <motion.div className="bg-white shadow-lg rounded-lg p-4" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          <h3 className="text-2xl font-semibold mb-2">Top A* Thresholds by Unit</h3>
-          <canvas id="myChart" height="200"></canvas>
-        </motion.div>
-      );
-    }
-
+  <script>
     fetch('Edexcel.csv')
       .then(response => response.text())
       .then(csv => {
@@ -168,7 +106,6 @@
         });
 
         populateTable(parsed);
-        ReactDOM.createRoot(document.getElementById("chart-app")).render(<ChartComponent data={parsed.slice(0, 10)} />);
       });
   </script>
 </body>
