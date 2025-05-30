@@ -22,14 +22,6 @@
     </nav>
   </header>
 
-  <main class="flex-1 max-w-6xl mx-auto p-6">
-    <section class="mb-6">
-      <label for="unitFilter" class="block text-lg font-medium mb-2">Filter by code:</label>
-      <select id="unitFilter" class="w-full p-2 border rounded">
-        <option value="">All</option>
-      </select>
-    </section>
-
     <section class="bg-white rounded-lg shadow-md p-6">
       <div class="flex justify-between items-center mb-4">
         <h2 class="text-2xl font-semibold">Edexcel Grade Boundaries Table</h2>
@@ -53,15 +45,7 @@
       .then(response => response.text())
       .then(csv => {
         const parsed = Papa.parse(csv, { header: true, skipEmptyLines: true }).data;
-        const uniqueUnits = [...new Set(parsed.map(row => row.code))].filter(Boolean);
-
-        const select = document.getElementById("unitFilter");
-        uniqueUnits.forEach(unit => {
-          const option = document.createElement("option");
-          option.value = unit;
-          option.textContent = unit;
-          select.appendChild(option);
-        });
+      
 
         function populateTable(data) {
           const headRow = document.getElementById("Edexcel-head");
