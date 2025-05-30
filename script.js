@@ -3,7 +3,7 @@ function loadCSV(file, tableId, headId, bodyId) {
         .then(response => response.text())
         .then(data => {
             const parsed = Papa.parse(data, { skipEmptyLines: true });
-
+            const rows = parsed.data;
             const [headers, ...entries] = rows;
 
             document.getElementById(headId).innerHTML = '';
