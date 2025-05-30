@@ -59,6 +59,89 @@
       </a>
     </p>
   </footer>
-  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+  <script
+    src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"
+    defer
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"
+    defer
+  ></script>
+
+  <!-- Your page logic -->
+  <script defer>
+    window.addEventListener('DOMContentLoaded', () => {
+      fetch('CIE.csv')
+        .then(resp => {
+          if (!resp.ok) throw new Error('Network error');
+          return resp.text();
+        })
+        .then(csv => {
+          const parsed = Papa.parse(csv, {
+            header: true,
+            skipEmptyLines: true
+          }).data;
+
+          const headRow = document.getElementById('CIE-head');
+          const body    = document.getElementById('CIE-body');
+
+          function populateTable(data) {
+            headRow.innerHTML = '';
+            body.innerHTML    = '';
+
+            if (!data.length) return;
+
+            // build the header
+            const headers = Object.keys(data[0]);
+            headers.forEach(h => {
+              const th = document.createElement('th');
+              th.textContent = h;
+              headRow.appendChild(th);
+            });
+
+            // build the rows
+            data.forEach(row => {
+              const tr = document.createElement('tr');
+              headers.forEach(h => {
+                const td = document.createElement('td');
+                td.textContent = row[h];
+                tr.appendChild(td);
+              });
+              body.appendChild(tr);
+            });
+          }
+
+          // initial render
+          populateTable(parsed);
+
+          // initialize DataTable once
+          $('#CIETable').DataTable();
+
+          // wire up download button
+          document
+            .getElementById('downloadCSV')
+            .addEventListener('click', () => {
+              const blob = new Blob([csv], { type: 'text/csv' });
+              const url  = URL.createObjectURL(blob);
+              const a    = document.createElement('a');
+              a.href     = url;
+              a.download = 'CIE_Grade_Boundaries.csv';
+              a.click();
+            });
+        })
+        .catch(err => {
+          console.error(err);
+          const body = document.getElementById('CIE-body');
+          body.innerHTML = `
+            <tr>
+              <td colspan="10" class="text-center py-4">
+                Failed to load data.
+              </td>
+            </tr>
+          `;
+        });
+    });
+  </script>
 </body>
 </html>
