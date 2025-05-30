@@ -138,8 +138,9 @@
           populateTable(parsed);
 
           // initialize DataTable once
-          $('#EdexcelTable').DataTable();
-
+          $('#EdexcelTable').DataTable({
+  scrollX: true
+});
           // wire up download button
           document
             .getElementById('downloadCSV')
