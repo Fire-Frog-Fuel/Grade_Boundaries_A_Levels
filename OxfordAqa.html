@@ -2,20 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oxford AQA Grade Boundaries</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oxford Aqa Grade Boundaries</title>
 
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
 
+  <!-- DataTables CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
+  >
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -23,10 +20,6 @@
     }
     header {
       background-color: #3aafa9;
-    }
-    nav a:hover {
-      color: #ffffff;
-      border-bottom: 2px solid #feffff;
     }
     table.dataTable thead th {
       background-color: #3aafa9;
@@ -38,138 +31,139 @@
   </style>
 </head>
 <body class="text-gray-800 flex flex-col min-h-screen">
-  <header class="text-white text-center py-6 shadow-lg">
-    <h1 class="text-4xl font-bold">Oxford AQA Grade Boundaries</h1>
+
+  <header class="bg-[#3aafa9] text-white text-center py-6 shadow-lg">
+    <h1 class="text-4xl font-bold">Oxford Aqa Grade Boundaries</h1>
     <nav class="mt-4">
       <a href="index.html" class="mx-4 text-lg hover:text-white transition">Home</a>
       <a href="CIE.html" class="mx-4 text-lg hover:text-white transition">CIE</a>
-      <a href="Edexcel.html" class="mx-4 text-lg hover:text-white transition">Edexcel</a>
+      <a href="Edexcel.html" class="mx-4 text-lg hover:text-white transition"> Edexcel</a>
     </nav>
   </header>
 
-<main class="flex-1 max-w-6xl mx-auto p-6">
-    <section id="chart-app" class="mb-10"></section>
-
-    <section class="mb-6">
-      <label for="unitFilter" class="block text-lg font-medium mb-2">Filter by Unit:</label>
-      <select id="unitFilter" class="w-full p-2 border rounded">
-        <option value="">All</option>
-      </select>
-    </section>
-
+  <main class="flex-1 max-w-6xl mx-auto p-6">
     <section class="bg-white rounded-lg shadow-md p-6">
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-semibold">Oxford AQA Grade Boundaries Table</h2>
-        <button id="downloadCSV" class="bg-[#3aafa9] text-white px-4 py-2 rounded hover:bg-[#2b7a78]">Download CSV</button>
-      </div>
-      <table id="OxfordAqaTable" class="display w-full">
+      <h2 class="text-2xl font-semibold mb-4">Oxford Aqa Grade Boundaries </h2>
+
+      <table
+        id="OxfordAqaTable"
+        class="display w-full"
+        aria-describedby="grade-boundaries-caption"
+      >
+        <caption id="grade-boundaries-caption" class="sr-only">
+          Grade boundaries per unit code
+        </caption>
         <thead><tr id="OxfordAqa-head"></tr></thead>
         <tbody id="OxfordAqa-body"></tbody>
       </table>
+
+      <div class="text-right mt-4">
+        <button
+          id="downloadCSV"
+          class="bg-[#3aafa9] text-white px-4 py-2 rounded hover:bg-[#2b7a78] transition"
+        >
+          Download CSV
+        </button>
+      </div>
     </section>
   </main>
 
   <footer class="bg-[#3aafa9] text-white text-center py-4 mt-10">
-    <p>Database provided by <a href="https://github.com/ChessMastermind" class="underline hover:text-gray-200">ChessMastermind</a></p>
+    <p>
+      Database provided by
+      <a
+        href="https://github.com/ChessMastermind"
+        class="underline hover:text-gray-200"
+      >
+        ChessMastermind
+      </a>
+    </p>
   </footer>
 
-  <script type="text/babel">
-    const { motion } = window['framer-motion'];
+  <!-- Dependencies (deferred) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+  <script
+    src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"
+    defer
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"
+    defer
+  ></script>
 
-    function ChartComponent({ data }) {
-      React.useEffect(() => {
-        if (!data.length) return;
-        const ctx = document.getElementById("myChart");
-        const units = data.map(d => d.unit);
-        const aStars = data.map(d => parseInt(d["a*"] || 0));
+  <!-- Your page logic -->
+  <script defer>
+    window.addEventListener('DOMContentLoaded', () => {
+      fetch('OxfordAqa.csv')
+        .then(resp => {
+          if (!resp.ok) throw new Error('Network error');
+          return resp.text();
+        })
+        .then(csv => {
+          const parsed = Papa.parse(csv, {
+            header: true,
+            skipEmptyLines: true
+          }).data;
 
-        new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: units,
-            datasets: [{
-              label: 'A* Thresholds',
-              data: aStars,
-              backgroundColor: '#3aafa9'
-            }]
-          },
-          options: {
-            responsive: true,
-            plugins: {
-              legend: { display: false }
-            },
-            scales: { x: { ticks: { autoSkip: true, maxTicksLimit: 10 } } }
-          }
-        });
-      }, [data]);
+          const headRow = document.getElementById('OxfordAqa-head');
+          const body    = document.getElementById('OxfordAqa-body');
 
-      return (
-        <motion.div className="bg-white shadow-lg rounded-lg p-4" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          <h3 className="text-2xl font-semibold mb-2">Top A* Thresholds by Unit</h3>
-          <canvas id="myChart" height="200"></canvas>
-        </motion.div>
-      );
-    }
+          function populateTable(data) {
+            headRow.innerHTML = '';
+            body.innerHTML    = '';
 
-    fetch('OxfordAqa.csv')
-      .then(response => response.text())
-      .then(csv => {
-        const parsed = Papa.parse(csv, { header: true, skipEmptyLines: true }).data;
-        const uniqueUnits = [...new Set(parsed.map(row => row.unit))].filter(Boolean);
+            if (!data.length) return;
 
-        const select = document.getElementById("unitFilter");
-        uniqueUnits.forEach(unit => {
-          const option = document.createElement("option");
-          option.value = unit;
-          option.textContent = unit;
-          select.appendChild(option);
-        });
-
-        function populateTable(data) {
-          const headRow = document.getElementById("OxfordAqa-head");
-          const body = document.getElementById("OxfordAqa-body");
-          headRow.innerHTML = '';
-          body.innerHTML = '';
-          if (!data.length) return;
-
-          const headers = Object.keys(data[0]);
-          headers.forEach(h => {
-            const th = document.createElement("th");
-            th.textContent = h;
-            headRow.appendChild(th);
-          });
-
-          data.forEach(row => {
-            const tr = document.createElement("tr");
+            // build the header
+            const headers = Object.keys(data[0]);
             headers.forEach(h => {
-              const td = document.createElement("td");
-              td.textContent = row[h];
-              tr.appendChild(td);
+              const th = document.createElement('th');
+              th.textContent = h;
+              headRow.appendChild(th);
             });
-            body.appendChild(tr);
-          });
-          $('#OxfordAqaTable').DataTable();
-        }
 
-        document.getElementById("unitFilter").addEventListener("change", e => {
-          const value = e.target.value;
-          const filtered = value ? parsed.filter(row => row.unit === value) : parsed;
-          $('#OxfordAqaTable').DataTable().destroy();
-          populateTable(filtered);
+            // build the rows
+            data.forEach(row => {
+              const tr = document.createElement('tr');
+              headers.forEach(h => {
+                const td = document.createElement('td');
+                td.textContent = row[h];
+                tr.appendChild(td);
+              });
+              body.appendChild(tr);
+            });
+          }
+
+          // initial render
+          populateTable(parsed);
+
+          // initialize DataTable once
+          $('#OxfordAqa').DataTable();
+
+          // wire up download button
+          document
+            .getElementById('downloadCSV')
+            .addEventListener('click', () => {
+              const blob = new Blob([csv], { type: 'text/csv' });
+              const url  = URL.createObjectURL(blob);
+              const a    = document.createElement('a');
+              a.href     = url;
+              a.download = 'OxfordAqa_Grade_Boundaries.csv';
+              a.click();
+            });
+        })
+        .catch(err => {
+          console.error(err);
+          const body = document.getElementById('OxfordAqa-body');
+          body.innerHTML = `
+            <tr>
+              <td colspan="10" class="text-center py-4">
+                Failed to load data.
+              </td>
+            </tr>
+          `;
         });
-
-        document.getElementById("downloadCSV").addEventListener("click", () => {
-          const blob = new Blob([csv], { type: 'text/csv' });
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement("a");
-          a.href = url;
-          a.download = "OxfordAqa_Grade_Boundaries.csv";
-          a.click();
-        });
-
-        populateTable(parsed);
-        ReactDOM.createRoot(document.getElementById("chart-app")).render(<ChartComponent data={parsed.slice(0, 10)} />);
-      });
+    });
   </script>
 </body>
 </html>
