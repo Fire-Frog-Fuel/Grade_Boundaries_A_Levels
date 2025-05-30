@@ -28,17 +28,43 @@ function loadCSV(file, tableId, headId, bodyId) {
             });
 
             $(`#${tableId}`).DataTable();
+
+            if (chartId) {
+                const labels = entries.map(row => row[labelIndex]);
+                const dataPoints = entries.map(row => Number(row[dataIndex]));
+
+                const ctx = document.getElementById(chartId).getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: headers[dataIndex],
+                            data: dataPoints,
+                            backgroundColor: 'rgba(58, 175, 169, 0.5)',
+                            borderColor: 'rgba(58, 175, 169, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: { beginAtZero: true }
+                        }
+                    }
+                });
+            }
         });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById('CIETable')) {
-        loadCSV('CIE.csv', 'CIETable', 'CIE-head', 'CIE-body');
+        loadCSV('CIE.csv', 'CIETable', 'CIE-head', 'CIE-body', 'CIEChart');
     }
     if (document.getElementById('EdexcelTable')) {
-        loadCSV('Edexcel.csv', 'EdexcelTable', 'Edexcel-head', 'Edexcel-body');
+        loadCSV('Edexcel.csv', 'EdexcelTable', 'Edexcel-head', 'Edexcel-body','EdexcelChart');
     }
     if (document.getElementById('OxfordAqaTable')) {
-        loadCSV('OxfordAqa.csv', 'OxfordAqaTable', 'OxfordAqa-head', 'OxfordAqa-body');
+        loadCSV('OxfordAqa.csv', 'OxfordAqaTable', 'OxfordAqa-head', 'OxfordAqa-body','OxfordAqaChart');
     }
 });
