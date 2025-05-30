@@ -28,6 +28,19 @@
     table.dataTable tbody tr:hover {
       background-color: #dff6f5;
     }
+    table.dataTable td,
+  table.dataTable th {
+    padding: 0.25rem 0.5rem !important; /* top/bottom, left/right */
+    line-height: 1.2;
+  }
+
+  /* Optional: shrink font on very small screens */
+  @media (max-width: 640px) {
+    table.dataTable {
+      font-size: 0.75rem;
+    }
+  }
+}
   </style>
 </head>
 <body class="text-gray-800 flex flex-col min-h-screen">
@@ -41,8 +54,9 @@
     </nav>
   </header>
 
-  <main class="flex-1 max-w-6xl mx-auto p-6">
-    <section class="bg-white rounded-lg shadow-md p-6">
+<main class="flex-1 w-full overflow-x-auto px-4">
+  <div class="min-w-max">
+    <section class="bg-white rounded-lg shadow-md p-6 w-full inline-block">
       <h2 class="text-2xl font-semibold mb-4">Oxford Aqa Grade Boundaries </h2>
 
       <table
@@ -66,6 +80,7 @@
         </button>
       </div>
     </section>
+    </div>
   </main>
 
   <footer class="bg-[#3aafa9] text-white text-center py-4 mt-10">
