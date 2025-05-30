@@ -24,7 +24,7 @@
 
   <main class="max-w-6xl mx-auto p-6">
     <section class="mb-6">
-      <label for="unitFilter" class="block text-lg font-medium mb-2">Filter by Unit:</label>
+      <label for="unitFilter" class="block text-lg font-medium mb-2">Filter by code:</label>
       <select id="unitFilter" class="w-full p-2 border rounded">
         <option value="">All</option>
       </select>
@@ -53,7 +53,7 @@
       .then(response => response.text())
       .then(csv => {
         const parsed = Papa.parse(csv, { header: true, skipEmptyLines: true }).data;
-        const uniqueUnits = [...new Set(parsed.map(row => row.unit))].filter(Boolean);
+        const uniqueUnits = [...new Set(parsed.map(row => row.code))].filter(Boolean);
 
         const select = document.getElementById("unitFilter");
         uniqueUnits.forEach(unit => {
@@ -91,7 +91,7 @@
 
         document.getElementById("unitFilter").addEventListener("change", e => {
           const value = e.target.value;
-          const filtered = value ? parsed.filter(row => row.unit === value) : parsed;
+          const filtered = value ? parsed.filter(row => row.code === value) : parsed;
           $('#EdexcelTable').DataTable().destroy();
           populateTable(filtered);
         });
