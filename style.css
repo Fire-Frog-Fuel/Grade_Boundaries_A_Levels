@@ -1,37 +1,77 @@
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #def2f1; /* light neutral background */
+
+/* style.css */
+
+/* ===== Color Theme Variables ===== */
+:root {
+    --bg-color: #def2f1;
+    --header-bg: #3aafa9;
+    --header-text: #17252a;
+    --nav-link: #feffff;
+    --nav-link-hover: #ffffff;
+    --section-bg: #ffffff;
+    --text-color: #17252A;
+    --table-header-bg: #3aafa9;
+    --table-header-text: #17252a;
+    --table-row-hover: #2b7a78;
+    --footer-bg: #3aafa9;
+    --footer-text: #feffff;
 }
 
+/* ===== Reset & Base ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* ===== Header ===== */
 header {
-    background-color: #2b7a78; /* deep navy-gray */
-    color: #feffff;             /* soft white */
+    background-color: var(--header-bg);
+    color: var(--header-text);
     padding: 1rem;
     text-align: center;
 }
 
 nav a {
-    margin: 0 1rem;
-    color: #feffff;            /* warm gold accent */
+    color: var(--nav-link);
     text-decoration: none;
+    margin: 0 1rem;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
+nav a:hover {
+    color: var(--nav-link-hover);
+}
+
+/* ===== Main Content ===== */
 main {
     padding: 2rem;
-    color: #17252a;            /* near-black text */
 }
 
-h2 {
-    margin-top: 3rem;
-    color: #393e46;            /* slightly darker heading */
+section {
+    background-color: var(--section-bg);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
+/* ===== DataTables Styling ===== */
+table.dataTable thead th {
+    background-color: var(--table-header-bg);
+    color: var(--table-header-text);
+}
+
+table.dataTable tbody tr:hover {
+    background-color: var(--table-row-hover);
+}
+
+/* ===== Footer ===== */
 footer {
-    background: #222831;       /* dark slate */
-    color: #eeeeee;            /* light gray text */
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
     text-align: center;
     padding: 1rem;
     position: relative;
