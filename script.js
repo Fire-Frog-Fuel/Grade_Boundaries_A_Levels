@@ -27,7 +27,11 @@ function loadCSV(file, tableId, headId, bodyId) {
                 tbody.appendChild(tr);
             });
 
-            $(`#${tableId}`).DataTable();
+            if ($.fn.DataTable.isDataTable(`#${tableId}`)) {
+  $(`#${tableId}`).DataTable().clear().destroy();
+}
+$(`#${tableId}`).DataTable();
+
 
             if (chartId) {
                 const labels = entries.map(row => row[labelIndex]);
