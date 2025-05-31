@@ -69,7 +69,6 @@ table.dataTable {
     padding: 0.125rem 0.25rem !important; /* 2px top/bottom, 4px left/right */
   }
 }
-}
   </style>
 </head>
 <body class="text-gray-800 flex flex-col min-h-screen">
@@ -109,16 +108,17 @@ table.dataTable {
       </div>
       <div class="table-wrapper overflow-x-auto">
       <div id="edexcel-controls" class="flex flex-wrap gap-4 mb-4 items-center">
-        <label for="edexcelsubjectSelect" class="font-semibold">Subject Code:</label>
-        <select id="edexcelsubjectSelect" class="border rounded px-2 py-1"></select>
+        <label for="edexcelSubjectSelect" class="font-semibold">Subject Code:</label>
+        <select id="edexcelSubjectSelect" class="border rounded px-2 py-1"></select>
 
         <label class="ml-4 font-semibold">Grades:</label>
-        <label><input type="checkbox" class="gradeToggle" value="a" checked> A</label>
-        <label><input type="checkbox" class="gradeToggle" value="a" checked> A</label>
-        <label><input type="checkbox" class="gradeToggle" value="b" checked> B</label>
-        <label><input type="checkbox" class="gradeToggle" value="c" checked> C</label>
-        <label><input type="checkbox" class="gradeToggle" value="d" checked> D</label>
-        <label><input type="checkbox" class="gradeToggle" value="e" checked> E</label>
+        <label><input type="checkbox" class="edexcelGradeToggle" value="a*" checked> A*</label>
+<label><input type="checkbox" class="edexcelGradeToggle" value="a" checked> A</label>
+<label><input type="checkbox" class="edexcelGradeToggle" value="b" checked> B</label>
+<label><input type="checkbox" class="edexcelGradeToggle" value="c" checked> C</label>
+<label><input type="checkbox" class="edexcelGradeToggle" value="d" checked> D</label>
+<label><input type="checkbox" class="edexcelGradeToggle" value="e" checked> E</label>
+
       </div>
       </div>
       <div class="table-wrapper overflow-x-auto">
@@ -228,10 +228,10 @@ parsed.forEach(row => {
 
 // Sort sessions
 const orderedSessions = edexcelSessions.sort((a, b) => {
-  const [ya, sa] = a.split(' ');
-  const [yb, sb] = b.split(' ');
+  const [ya, ma] = a.split(' ');
+  const [yb, mb] = b.split(' ');
   const monthOrder = { Jan: 1, Feb: 2, Mar: 3, May: 5, Jun: 6, Jul: 7, Aug: 8, Oct: 10, Nov: 11 };
-  return ya - yb || monthOrder[sa] - monthOrder[sb];
+  return ya - yb || monthOrder[ma] - monthOrder[mb];
 });
 
 // Populate subject dropdown
