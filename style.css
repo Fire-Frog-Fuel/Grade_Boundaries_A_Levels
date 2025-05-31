@@ -34,13 +34,14 @@
 
   /* Buttons */
   --button-bg: #3aafa9;
-  --button-text: #ffffff;
   --button-hover-bg: #2b7a78;
-  --button-border: #2b7a78;
+  --button-text: #ffffff;
+
 
   /* Chart */
   --chart-bg: #ffffff;
   --chart-line: #3aafa9;
+
 }
 
 /* ===== Dark Theme Variables ===== */
@@ -71,9 +72,9 @@
   --input-border: #30363d;
   --input-focus-border: #58a6ff;
 
-  --button-bg: #238636;            /* green accent */
+  --button-bg: #2563eb;          /* blue-600 */
+  --button-hover-bg: #1d4ed8;    /* blue-700 */
   --button-text: #ffffff;
-  --button-hover-bg: #2ea043;
   --button-border: #238636;
 
   --chart-bg: #0d1117;
@@ -92,11 +93,11 @@ body {
 .custom-button {
   background-color: var(--button-bg);
   color: var(--button-text);
-  border: 1px solid var(--button-border);
   padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
+  border-radius: 0.5rem; /* same as Tailwind's rounded */
+  font-weight: 500;
   transition: background-color 0.3s, color 0.3s;
+  border: none;
 }
 .custom-button:hover {
   background-color: var(--button-hover-bg);
