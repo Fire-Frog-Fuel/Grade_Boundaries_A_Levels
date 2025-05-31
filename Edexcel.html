@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edexcel Grade Boundaries</title>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com" defer></script>
 
@@ -105,6 +107,24 @@ table.dataTable {
           Download CSV
         </button>
       </div>
+      <div class="table-wrapper overflow-x-auto">
+      <div id="edexcel-controls" class="flex flex-wrap gap-4 mb-4 items-center">
+        <label for="edexcelsubjectSelect" class="font-semibold">Subject Code:</label>
+        <select id="edexcelsubjectSelect" class="border rounded px-2 py-1"></select>
+
+        <label class="ml-4 font-semibold">Grades:</label>
+        <label><input type="checkbox" class="gradeToggle" value="a" checked> A</label>
+        <label><input type="checkbox" class="gradeToggle" value="a" checked> A</label>
+        <label><input type="checkbox" class="gradeToggle" value="b" checked> B</label>
+        <label><input type="checkbox" class="gradeToggle" value="c" checked> C</label>
+        <label><input type="checkbox" class="gradeToggle" value="d" checked> D</label>
+        <label><input type="checkbox" class="gradeToggle" value="e" checked> E</label>
+      </div>
+      </div>
+      <div class="table-wrapper overflow-x-auto">
+      <canvas id="EdexcelChart" width="800" height="400" class="mt-8"></canvas>
+</div>
+      
     </section>
   </main>
 
@@ -179,6 +199,128 @@ table.dataTable {
 
           // initialize DataTable once
           $('#EdexcelTable').DataTable();
+const edexcelSessions = [];
+const edexcelDataByCode = {};
+const gradeList = ['a*', 'a', 'b', 'c', 'd', 'e'];
+
+parsed.forEach(row => {
+  const session = `${row['year']} ${row['session']}`;
+  const code = row['code'];
+  if (!code || !session) return;
+
+  if (!edexcelDataByCode[code]) edexcelDataByCode[code] = {};
+  if (!edexcelDataByCode[code][session]) edexcelDataByCode[code][session] = {};
+
+  gradeList.forEach(g => {
+    const val = parseFloat(row[g]);
+    if (!isNaN(val)) {
+      edexcelDataByCode[code][session][g] = val;
+    }
+  });
+
+  const maxMark = parseFloat(row['max_mark']);
+  if (!isNaN(maxMark)) {
+    edexcelDataByCode[code][session]['max_mark'] = maxMark;
+  }
+
+  if (!edexcelSessions.includes(session)) edexcelSessions.push(session);
+});
+
+// Sort sessions
+const orderedSessions = edexcelSessions.sort((a, b) => {
+  const [ya, sa] = a.split(' ');
+  const [yb, sb] = b.split(' ');
+  const monthOrder = { Jan: 1, Feb: 2, Mar: 3, May: 5, Jun: 6, Jul: 7, Aug: 8, Oct: 10, Nov: 11 };
+  return ya - yb || monthOrder[sa] - monthOrder[sb];
+});
+
+// Populate subject dropdown
+const edexcelSelect = document.getElementById('edexcelSubjectSelect');
+Object.keys(edexcelDataByCode).sort().forEach(code => {
+  const opt = document.createElement('option');
+  opt.value = code;
+  opt.textContent = code;
+  edexcelSelect.appendChild(opt);
+});
+
+// Setup chart
+const edexcelCtx = document.getElementById('EdexcelChart').getContext('2d');
+let edexcelChart = null;
+
+function updateEdexcelChart() {
+  const selectedCode = edexcelSelect.value;
+  const selectedGrades = Array.from(document.querySelectorAll('.edexcelGradeToggle:checked')).map(cb => cb.value);
+  const dataset = [];
+
+  const subjectData = edexcelDataByCode[selectedCode];
+
+  // Grade lines
+  selectedGrades.forEach(g => {
+    dataset.push({
+      label: g.toUpperCase(),
+      data: orderedSessions.map(s => subjectData[s]?.[g] ?? null),
+      borderColor: `hsl(${Math.random() * 360}, 70%, 50%)`,
+      fill: false,
+      tension: 0.2
+    });
+  });
+
+  // Max mark line
+  dataset.push({
+    label: 'Max Mark',
+    data: orderedSessions.map(s => subjectData[s]?.['max_mark'] ?? null),
+    borderColor: '#999',
+    borderDash: [5, 5],
+    borderWidth: 1,
+    pointRadius: 0,
+    fill: false
+  });
+
+  if (edexcelChart) edexcelChart.destroy();
+  edexcelChart = new Chart(edexcelCtx, {
+    type: 'line',
+    data: {
+      labels: orderedSessions,
+      datasets: dataset
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: `Grade Boundaries — ${selectedCode}`
+        },
+        legend: {
+          position: 'bottom'
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Marks'
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Exam Session'
+          }
+        }
+      }
+    }
+  });
+}
+
+// Hook up events
+edexcelSelect.addEventListener('change', updateEdexcelChart);
+document.querySelectorAll('.edexcelGradeToggle').forEach(cb => cb.addEventListener('change', updateEdexcelChart));
+
+// Initial render
+edexcelSelect.value = edexcelSelect.options[0]?.value || '';
+updateEdexcelChart();
+
           // wire up download button
           document
             .getElementById('downloadCSV')
