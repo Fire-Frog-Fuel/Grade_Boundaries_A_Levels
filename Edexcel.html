@@ -155,214 +155,233 @@ table.dataTable {
 
   <!-- Your page logic -->
   <script defer>
-    window.addEventListener('DOMContentLoaded', () => {
-      fetch('Edexcel.csv')
-        .then(resp => {
-          if (!resp.ok) throw new Error('Network error');
-          return resp.text();
-        })
-        .then(csv => {
-          const parsed = Papa.parse(csv, {
-            header: true,
-            skipEmptyLines: true
-          }).data;
+  window.addEventListener('DOMContentLoaded', () => {
+    fetch('Edexcel.csv')
+      .then(resp => {
+        if (!resp.ok) throw new Error('Network error');
+        return resp.text();
+      })
+      .then(csv => {
+        const parsed = Papa.parse(csv, {
+          header: true,
+          skipEmptyLines: true
+        }).data;
 
-          const headRow = document.getElementById('Edexcel-head');
-          const body    = document.getElementById('Edexcel-body');
+        // ------------- BUILD THE TABLE (UNCHANGED) -------------
+        const headRow = document.getElementById('Edexcel-head');
+        const body    = document.getElementById('Edexcel-body');
 
-          function populateTable(data) {
-            headRow.innerHTML = '';
-            body.innerHTML    = '';
+        function populateTable(data) {
+          headRow.innerHTML = '';
+          body.innerHTML    = '';
+          if (!data.length) return;
 
-            if (!data.length) return;
+          const headers = Object.keys(data[0]);
+          headers.forEach(h => {
+            const th = document.createElement('th');
+            th.textContent = h;
+            headRow.appendChild(th);
+          });
 
-            // build the header
-            const headers = Object.keys(data[0]);
+          data.forEach(row => {
+            const tr = document.createElement('tr');
             headers.forEach(h => {
-              const th = document.createElement('th');
-              th.textContent = h;
-              headRow.appendChild(th);
+              const td = document.createElement('td');
+              td.textContent = row[h];
+              tr.appendChild(td);
             });
-
-            // build the rows
-            data.forEach(row => {
-              const tr = document.createElement('tr');
-              headers.forEach(h => {
-                const td = document.createElement('td');
-                td.textContent = row[h];
-                tr.appendChild(td);
-              });
-              body.appendChild(tr);
-            });
-          }
-
-          // initial render
-          populateTable(parsed);
-
-          // initialize DataTable once
-          $('#EdexcelTable').DataTable();
-const edexcelSessions = [];
-const edexcelDataByCode = {};
-const gradeList = ['a*', 'a', 'b', 'c', 'd', 'e'];
-
-parsed.forEach(row => {
-  const session = `${row['year']} ${row['session']}`;
-  const code = row['code'];
-  if (!code || !session) return;
-
-  if (!edexcelDataByCode[code]) edexcelDataByCode[code] = {};
-  if (!edexcelDataByCode[code][session]) edexcelDataByCode[code][session] = {};
-
-  gradeList.forEach(g => {
-    const val = parseFloat(row[g]);
-    if (!isNaN(val)) {
-      edexcelDataByCode[code][session][g] = val;
-    }
-  });
-
-  const maxMark = parseFloat(row['max_mark']);
-  if (!isNaN(maxMark)) {
-    edexcelDataByCode[code][session]['max_mark'] = maxMark;
-  }
-
-  if (!edexcelSessions.includes(session)) edexcelSessions.push(session);
-});
-
-// Sort sessions
-const orderedSessions = edexcelSessions.sort((a, b) => {
-  const [ya, ma] = a.split(' ');
-  const [yb, mb] = b.split(' ');
-  const monthOrder = { Jan: 1, Feb: 2, Mar: 3, May: 5, Jun: 6, Jul: 7, Aug: 8, Oct: 10, Nov: 11 };
-  return ya - yb || monthOrder[ma] - monthOrder[mb];
-});
-
-// Populate subject dropdown
-const edexcelInput = document.getElementById('edexcelSubjectSearch');
-const edexcelDatalist = document.getElementById('edexcelCodeList');
-
-Object.keys(edexcelDataByCode).sort().forEach(code => {
-  const opt = document.createElement('option');
-  opt.value = code;
-  edexcelDatalist.appendChild(opt);
-});
-
-
-// Setup chart
-const edexcelCtx = document.getElementById('EdexcelChart').getContext('2d');
-let edexcelChart = null;
-
-function updateEdexcelChart() {
-  const selectedCode = edexcelInput.value.trim();
-  const selectedGrades = Array.from(document.querySelectorAll('.edexcelGradeToggle:checked')).map(cb => cb.value);
-  const dataset = [];
-const gradeColors = {
-  "a*": "#E63946",  // red
-  "a":  "#F4A261",  // orange
-  "b":  "#E9C46A",  // yellow
-  "c":  "#2A9D8F",  // teal
-  "d":  "#264653",  // dark blue
-  "e":  "#6D597A"   // purple
-};
-const maxMarkColor = "#999999";
-  const subjectData = edexcelDataByCode[selectedCode];
-
-  // Grade lines
-  selectedGrades.forEach(g => {
-    dataset.push({
-      label: g.toUpperCase(),
-      data: orderedSessions.map(s => subjectData[s]?.[g] ?? null),
-      borderColor: gradeColors[g],
-      fill: false,
-      tension: 0.2
-    });
-  });
-
-  // Max mark line
-  dataset.push({
-    label: 'Max Mark',
-    data: orderedSessions.map(s => subjectData[s]?.['max_mark'] ?? null),
-    borderColor: '#999',
-    borderDash: [5, 5],
-    borderWidth: 1,
-    pointRadius: 0,
-    fill: false
-  });
-
-  if (edexcelChart) edexcelChart.destroy();
-  edexcelChart = new Chart(edexcelCtx, {
-    type: 'line',
-    data: {
-      labels: orderedSessions,
-      datasets: dataset
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        title: {
-          display: true,
-          text: `Grade Boundaries — ${selectedCode}`
-        },
-        legend: {
-          position: 'bottom'
+            body.appendChild(tr);
+          });
         }
-      },
-      scales: {
-        y: {
-          beginAtZero: true,
-          title: {
-            display: true,
-            text: 'Marks'
+
+        populateTable(parsed);
+        $('#EdexcelTable').DataTable();
+
+        // ------------- BUILD DATA STRUCTURES -------------
+        const edexcelDataByCode = {};   // { code: { "2024 Jun": { "a*": 80, "a": 75, …, "max_mark": 100 }, … }, … }
+        const gradeList         = ['a*', 'a', 'b', 'c', 'd', 'e'];
+
+        parsed.forEach(row => {
+          const session = `${row['year']} ${row['session']}`.trim();
+          const code    = row['code'];
+          if (!code || !session) return;
+
+          if (!edexcelDataByCode[code]) edexcelDataByCode[code] = {};
+          if (!edexcelDataByCode[code][session]) edexcelDataByCode[code][session] = {};
+
+          gradeList.forEach(g => {
+            const val = parseFloat(row[g]);
+            if (!isNaN(val)) {
+              edexcelDataByCode[code][session][g] = val;
+            }
+          });
+
+          const maxMark = parseFloat(row['max_mark']);
+          if (!isNaN(maxMark)) {
+            edexcelDataByCode[code][session]['max_mark'] = maxMark;
           }
-        },
-        x: {
-          title: {
-            display: true,
-            text: 'Exam Session'
-          }
-        }
-      }
-    }
-  });
-}
-
-// Hook up events
-edexcelInput.addEventListener('input', () => {
-  if (edexcelDataByCode[edexcelInput.value.trim()]) {
-    updateEdexcelChart();
-  }
-});
-
-document.querySelectorAll('.edexcelGradeToggle').forEach(cb => cb.addEventListener('change', updateEdexcelChart));
-
-// Initial render
-edexcelInput.value = Object.keys(edexcelDataByCode)[0] || '';
-updateEdexcelChart();
-
-
-          // wire up download button
-          document
-            .getElementById('downloadCSV')
-            .addEventListener('click', () => {
-              const blob = new Blob([csv], { type: 'text/csv' });
-              const url  = URL.createObjectURL(blob);
-              const a    = document.createElement('a');
-              a.href     = url;
-              a.download = 'Edexcel_Grade_Boundaries.csv';
-              a.click();
-            });
-        })
-        .catch(err => {
-          console.error(err);
-          const body = document.getElementById('Edexcel-body');
-          body.innerHTML = `
-            <tr>
-              <td colspan="10" class="text-center py-4">
-                Failed to load data.
-              </td>
-            </tr>More actions
-          `;
         });
-    });
-  </script>
+
+        // Populate the subject‐code datalist
+        const edexcelInput    = document.getElementById('edexcelSubjectSearch');
+        const edexcelDatalist = document.getElementById('edexcelCodeList');
+        Object.keys(edexcelDataByCode).sort().forEach(code => {
+          const opt = document.createElement('option');
+          opt.value = code;
+          edexcelDatalist.appendChild(opt);
+        });
+
+        // ------------- FIXED COLOR PALETTE -------------
+        // A* = green, A = orange, B = yellow, C = red, D = dark‐blue, E = purple
+        const gradeColors = {
+          "a*": "#2ECC71",  // green
+          "a":  "#F4A261",  // orange
+          "b":  "#E9C46A",  // yellow
+          "c":  "#E63946",  // red
+          "d":  "#264653",  // dark blue
+          "e":  "#6D597A"   // purple
+        };
+        const maxMarkColor = "#999999";  // gray dashed line
+
+        // ------------- SET UP CHART.JS -------------
+        const edexcelCtx = document.getElementById('EdexcelChart').getContext('2d');
+        let edexcelChart = null;
+
+        function updateEdexcelChart() {
+          const selectedCode = edexcelInput.value.trim();
+          if (!edexcelDataByCode[selectedCode]) {
+            // If subject code is invalid or empty, just destroy existing chart (if any) and exit
+            if (edexcelChart) {
+              edexcelChart.destroy();
+              edexcelChart = null;
+            }
+            return;
+          }
+
+          // 1) Grab all sessions for this subject, then sort them chronologically:
+          const subjectData     = edexcelDataByCode[selectedCode];
+          const subjectSessions = Object.keys(subjectData);
+          if (subjectSessions.length === 0) {
+            // No sessions => no chart
+            if (edexcelChart) {
+              edexcelChart.destroy();
+              edexcelChart = null;
+            }
+            return;
+          }
+
+          // Sort by year, then by month order:
+          const monthOrder = { Jan: 1, Feb: 2, Mar: 3, May: 5, Jun: 6, Jul: 7, Aug: 8, Oct: 10, Nov: 11 };
+          subjectSessions.sort((a, b) => {
+            const [ya, ma] = a.split(' ');
+            const [yb, mb] = b.split(' ');
+            return (parseInt(ya) - parseInt(yb)) || (monthOrder[ma] - monthOrder[mb]);
+          });
+
+          // 2) Check whether "a*" actually exists for any of these sessions:
+          const hasAStar = subjectSessions.some(sess => subjectData[sess].hasOwnProperty('a*'));
+
+          // 3) Build the list of grades the user has checked, but filter out "a*" if it doesn't exist:
+          const checkedGrades = Array.from(
+            document.querySelectorAll('.edexcelGradeToggle:checked')
+          ).map(cb => cb.value);
+
+          const selectedGrades = checkedGrades.filter(g => (g !== 'a*' || hasAStar));
+
+          // 4) Build datasets array.  One line per selected grade:
+          const datasets = selectedGrades.map(g => ({
+            label:       g.toUpperCase(),
+            data:        subjectSessions.map(sess => subjectData[sess]?.[g] ?? null),
+            borderColor: gradeColors[g],
+            fill:        false,
+            tension:     0.2
+          }));
+
+          // 5) Finally, add the "Max Mark" line (always dashed gray):
+          datasets.push({
+            label:       "Max Mark",
+            data:        subjectSessions.map(sess => subjectData[sess]?.['max_mark'] ?? null),
+            borderColor: maxMarkColor,
+            borderDash: [5, 5],
+            borderWidth: 1,
+            pointRadius: 0,
+            fill:        false
+          });
+
+          // 6) Destroy previous chart (if any) and create a brand‐new one:
+          if (edexcelChart) {
+            edexcelChart.destroy();
+            edexcelChart = null;
+          }
+          edexcelChart = new Chart(edexcelCtx, {
+            type: 'line',
+            data: {
+              labels:   subjectSessions,  // only sessions that this subject actually has
+              datasets: datasets
+            },
+            options: {
+              responsive: true,
+              plugins: {
+                title: {
+                  display: true,
+                  text: `Grade Boundaries — ${selectedCode}`
+                },
+                legend: {
+                  position: 'bottom'
+                }
+              },
+              scales: {
+                x: {
+                  title: {
+                    display: true,
+                    text: 'Exam Session'
+                  }
+                },
+                y: {
+                  beginAtZero: true,
+                  title: {
+                    display: true,
+                    text: 'Marks'
+                  }
+                }
+              }
+            }
+          });
+        }
+
+        // ------------- HOOK UP EVENT LISTENERS -------------
+        edexcelInput.addEventListener('input', () => {
+          updateEdexcelChart();
+        });
+        document.querySelectorAll('.edexcelGradeToggle')
+                .forEach(cb => cb.addEventListener('change', updateEdexcelChart));
+
+        // ------------- INITIAL RENDER -------------
+        edexcelInput.value = Object.keys(edexcelDataByCode)[0] || '';
+        updateEdexcelChart();
+
+        // ------------- DOWNLOAD BUTTON (UNCHANGED) -------------
+        document.getElementById('downloadCSV').addEventListener('click', () => {
+          const blob = new Blob([csv], { type: 'text/csv' });
+          const url  = URL.createObjectURL(blob);
+          const a    = document.createElement('a');
+          a.href     = url;
+          a.download = 'Edexcel_Grade_Boundaries.csv';
+          a.click();
+        });
+      })
+      .catch(err => {
+        console.error(err);
+        const body = document.getElementById('Edexcel-body');
+        body.innerHTML = `
+          <tr>
+            <td colspan="10" class="text-center py-4">
+              Failed to load data.
+            </td>
+          </tr>
+        `;
+      });
+  });
+</script>
 </body>
 </html>
