@@ -28,45 +28,44 @@
     table.dataTable tbody tr:hover {
       background-color: #dff6f5;
     }
-/* 1) Ensure the table container can scroll if it overflows */
+/* 1) .table-wrapper must be scrollable */
 .table-wrapper {
-  width: 100%;            /* fill its parent */
-  overflow-x: auto;       /* allow horizontal scroll */
+  width: 100%;
+  overflow-x: auto;            /* horizontal scroll on narrow screens */
+  -webkit-overflow-scrolling: touch; /* smooth iOS scrolling (optional) */
 }
 
-/* 2) Base DataTable styling (padding, line-height) */
+/* 2) Padding + line-height for all DataTable cells */
 table.dataTable th,
 table.dataTable td {
-  padding: 0.25rem 0.5rem !important;
+  padding: 0.25rem 0.5rem !important; /* 4px top/bottom, 8px left/right */
   line-height: 1.2;
 }
 
-/* 3) Make the <th> font “fluid but bounded” */
+/* 3) Fluid‐but‐bounded font for <th> */
 table.dataTable th {
-  /* 
-    – Never smaller than 0.875rem (≈14px)  
-    – Scale at roughly 2vw (2% of viewport width)  
-    – Never larger than 1.25rem (≈20px) 
-  */
   font-size: clamp(0.875rem, 2vw, 1.25rem);
-  white-space: nowrap; 
+  white-space: nowrap;
 }
 
-/* 4) Make the <td> font a bit smaller, also fluid */
+/* 4) Fluid‐but‐bounded font for <td> */
 table.dataTable td {
-  /*
-    – Never smaller than 0.75rem (≈12px)  
-    – Scale at roughly 1.2vw  
-    – Never larger than 1rem (≈16px) 
-  */
   font-size: clamp(0.75rem, 1.2vw, 1rem);
 }
 
-/* 5) (Optional) If you want to cap the entire <table> width at, say, 1000px: */
+/* 5) Cap total table width on very wide screens (optional) */
 table.dataTable {
   width: 100%;
-  max-width: 1000px; /* adjust to taste */
-  margin: 0 auto;    /* center if the parent is wider */
+  max-width: 1000px; /* adjust as needed */
+  margin: 0 auto;    /* center if parent is wider */
+}
+
+/* 6) On the smallest phones (≤400px), reduce cell padding further */
+@media (max-width: 400px) {
+  table.dataTable th,
+  table.dataTable td {
+    padding: 0.125rem 0.25rem !important; /* 2px top/bottom, 4px left/right */
+  }
 }
 }
   </style>
@@ -82,9 +81,10 @@ table.dataTable {
   </header>
 
 <main class="flex-1 w-full overflow-x-auto px-4">
-  <div class="min-w-max">
+  
     <section class="bg-white rounded-lg shadow-md p-6 w-full max-w-6xl mx-auto">
       <h2 class="text-2xl font-semibold mb-4">Edexcel Grade Boundaries </h2>
+      <div class="table-wrapper overflow-x-auto">
         <table
         id="EdexcelTable"
         class="display w-full whitespace-nowrap text-sm leading-tight"
@@ -96,6 +96,7 @@ table.dataTable {
           <thead><tr id="Edexcel-head"></tr></thead>
           <tbody id="Edexcel-body"></tbody>
         </table>
+      </div>
       <div class="text-right mt-4">
         <button
           id="downloadCSV"
@@ -105,7 +106,6 @@ table.dataTable {
         </button>
       </div>
     </section>
-    </div>
   </main>
 
   <footer class="bg-[#3aafa9] text-white text-center py-4 mt-10">
