@@ -80,19 +80,29 @@
   </style>
   <link rel="stylesheet" href="style.css">
 <script src="script.js" defer></script>
+  <!-- Load dark theme BEFORE first paint -->
+<script>
+  const match = document.cookie.match(/(?:^|;\s*)theme=(dark|light)/);
+  if (match && match[1] === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+</script>
+
 </head>
 <body class="text-gray-800 flex flex-col min-h-screen">
-  <header class="text-white text-center py-6 shadow-lg">
-    <h1 class="text-3xl sm:text-4xl font-bold">Cambridge International Grade Boundaries</h1>
-    <nav class="mt-4">
-      <a href="index.html" class="mx-4 text-base sm:text-lg hover:text-white transition">Home</a>
-      <a href="Edexcel.html" class="mx-4 text-base sm:text-lg hover:text-white transition">Edexcel</a>
-      <a href="OxfordAqa.html" class="mx-4 text-base sm:text-lg hover:text-white transition">Oxford&nbsp;AQA</a>
-    </nav>
-        <label class="theme-switch">
-  <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
-  <span class="slider"></span>
-  </header>
+ <header class="text-white text-center py-6 shadow-lg relative">
+  <h1 class="text-3xl sm:text-4xl font-bold">Cambridge International Grade Boundaries</h1>
+  <nav class="mt-4">
+    <a href="index.html" class="mx-4 text-base sm:text-lg hover:text-white transition">Home</a>
+    <a href="Edexcel.html" class="mx-4 text-base sm:text-lg hover:text-white transition">Edexcel</a>
+    <a href="OxfordAqa.html" class="mx-4 text-base sm:text-lg hover:text-white transition">Oxford AQA</a>
+  </nav>
+  <label class="theme-switch absolute top-4 right-4">
+    <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
+    <span class="slider"></span>
+  </label>
+</header>
+
 
   <main class="flex-1 w-full px-4">
     <section class="bg-white rounded-lg shadow-md p-6 w-full max-w-6xl mx-auto">
@@ -111,7 +121,7 @@
 
       <!-- ===== CSV DOWNLOAD ===== -->
       <div class="text-right my-4">
-        <button id="downloadCSV" class="bg-[#3aafa9] text-white px-4 py-2 rounded hover:bg-[#2b7a78] transition">
+        <button id="downloadCSV" class="custom-button">
           Download CSV
         </button>
       </div>
@@ -371,6 +381,18 @@
           body.innerHTML = `<tr><td colspan="10" class="text-center py-4">Failed to load data.</td></tr>`;
         });
     });
+    // Theme toggle logic
+const toggle = document.getElementById('theme-toggle');
+if (toggle) {
+  toggle.checked = (document.documentElement.getAttribute('data-theme') === 'dark');
+  toggle.addEventListener('change', () => {
+    const isDark = toggle.checked;
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : '');
+    const expires = new Date(Date.now() + 365*24*60*60*1000).toUTCString();
+    document.cookie = `theme=${isDark ? 'dark' : 'light'}; expires=${expires}; path=/`;
+  });
+}
+
   </script>
 </body>
 </html>
