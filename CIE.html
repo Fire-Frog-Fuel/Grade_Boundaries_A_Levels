@@ -184,6 +184,10 @@
           }
 
           populateTable(parsed);
+          if ($.fn.DataTable.isDataTable('#CIETable')) {
+  $('#CIETable').DataTable().clear().destroy();
+}
+
 
           /* DataTables with Responsive */
           $('#CIETable').DataTable({
