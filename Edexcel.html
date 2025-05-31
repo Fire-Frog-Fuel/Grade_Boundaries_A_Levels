@@ -276,9 +276,7 @@ table.dataTable {
           const hasAStar = subjectSessions.some(sess => subjectData[sess].hasOwnProperty('a*'));
 
           // 3) Build the list of grades the user has checked, but filter out "a*" if it doesn't exist:
-          const checkedGrades = Array.from(
-            document.querySelectorAll('.edexcelGradeToggle:checked')
-          ).map(cb => cb.value);
+          const checkedGrades = ['a*', 'a', 'b', 'c', 'd', 'e'];
 
           const selectedGrades = checkedGrades.filter(g => (g !== 'a*' || hasAStar));
 
@@ -298,7 +296,7 @@ table.dataTable {
             borderColor: maxMarkColor,
             borderDash: [5, 5],
             borderWidth: 1,
-            pointRadius: 0,
+            pointRadius: 0
             fill:        false
           });
 
@@ -347,8 +345,6 @@ table.dataTable {
         edexcelInput.addEventListener('input', () => {
           updateEdexcelChart();
         });
-        document.querySelectorAll('.edexcelGradeToggle')
-                .forEach(cb => cb.addEventListener('change', updateEdexcelChart));
 
         // ------------- INITIAL RENDER -------------
         edexcelInput.value = Object.keys(edexcelDataByCode)[0] || '';
