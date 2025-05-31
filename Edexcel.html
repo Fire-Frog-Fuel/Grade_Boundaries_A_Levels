@@ -327,8 +327,9 @@ edexcelInput.addEventListener('input', () => {
 document.querySelectorAll('.edexcelGradeToggle').forEach(cb => cb.addEventListener('change', updateEdexcelChart));
 
 // Initial render
-edexcelInput.value = edexcelSelect.options[0]?.value || '';
+edexcelInput.value = Object.keys(edexcelDataByCode)[0] || '';
 updateEdexcelChart();
+
 
           // wire up download button
           document
