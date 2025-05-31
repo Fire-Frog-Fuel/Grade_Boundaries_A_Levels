@@ -108,8 +108,10 @@ table.dataTable {
       </div>
       <div class="table-wrapper overflow-x-auto">
       <div id="edexcel-controls" class="flex flex-wrap gap-4 mb-4 items-center">
-        <label for="edexcelSubjectSelect" class="font-semibold">Subject Code:</label>
-        <select id="edexcelSubjectSelect" class="border rounded px-2 py-1"></select>
+        <label for="edexcelSubjectSearch" class="font-semibold">Subject Code:</label>
+        <input type="text" id="edexcelSubjectSearch" placeholder="Enter code (e.g. WPH14)" class="border rounded px-2 py-1" list="edexcelCodeList" />
+        <datalist id="edexcelCodeList"></datalist>
+
 
         <label class="ml-4 font-semibold">Grades:</label>
         <label><input type="checkbox" class="edexcelGradeToggle" value="a*" checked> A*</label>
@@ -235,20 +237,22 @@ const orderedSessions = edexcelSessions.sort((a, b) => {
 });
 
 // Populate subject dropdown
-const edexcelSelect = document.getElementById('edexcelSubjectSelect');
+const edexcelInput = document.getElementById('edexcelSubjectSearch');
+const edexcelDatalist = document.getElementById('edexcelCodeList');
+
 Object.keys(edexcelDataByCode).sort().forEach(code => {
   const opt = document.createElement('option');
   opt.value = code;
-  opt.textContent = code;
-  edexcelSelect.appendChild(opt);
+  edexcelDatalist.appendChild(opt);
 });
+
 
 // Setup chart
 const edexcelCtx = document.getElementById('EdexcelChart').getContext('2d');
 let edexcelChart = null;
 
 function updateEdexcelChart() {
-  const selectedCode = edexcelSelect.value;
+  const selectedCode = edexcelSelect.value.trim();
   const selectedGrades = Array.from(document.querySelectorAll('.edexcelGradeToggle:checked')).map(cb => cb.value);
   const dataset = [];
 
@@ -314,7 +318,12 @@ function updateEdexcelChart() {
 }
 
 // Hook up events
-edexcelSelect.addEventListener('change', updateEdexcelChart);
+edexcelInput.addEventListener('input', () => {
+  if (edexcelDataByCode[edexcelInput.value.trim()]) {
+    updateEdexcelChart();
+  }
+});
+
 document.querySelectorAll('.edexcelGradeToggle').forEach(cb => cb.addEventListener('change', updateEdexcelChart));
 
 // Initial render
