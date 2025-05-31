@@ -141,15 +141,7 @@
         </table>
       </div>
 
-      <!-- Download CSV Button -->
-      <div class="text-right mt-4">
-        <button
-          id="downloadCSV"
-          class="bg-[#3aafa9] text-white px-4 py-2 rounded hover:bg-[#2b7a78] transition"
-        >
-          Download CSV
-        </button>
-      </div>
+      
       <label for="edexcelSubjectSearch" class="font-semibold"
           >Subject Code:</label
         >
@@ -206,6 +198,14 @@
             value="e"
             checked
         />E</label>
+      </div>
+      <div class="text-right mt-4">
+        <button
+          id="downloadCSV"
+          class="bg-[#3aafa9] text-white px-4 py-2 rounded hover:bg-[#2b7a78] transition"
+        >
+          Download CSV
+        </button>
       </div>
       <!-- CHART WRAPPER: allow horizontal scrolling on small screens -->
       <div class="table-wrapper overflow-x-auto mt-8">
@@ -453,32 +453,45 @@
                 datasets: datasets,
               },
               options: {
-                responsive: true,
-                plugins: {
-                  title: {
-                    display: true,
-                    text: `Grade Boundaries — ${selectedCode}`,
-                  },
-                  legend: {
-                    position: 'bottom',
-                  },
-                },
-                scales: {
-                  x: {
-                    title: {
-                      display: true,
-                      text: 'Exam Session',
-                    },
-                  },
-                  y: {
-                    beginAtZero: true,
-                    title: {
-                      display: true,
-                      text: 'Marks',
-                    },
-                  },
-                },
-              },
+  responsive: true,
+  plugins: {
+    title: {
+      display: true,
+      text: `Grade Boundaries — ${selectedCode}`
+    },
+    legend: {
+      position: 'bottom'
+    }
+  },
+  elements: {
+    line: {
+      fill: false
+    },
+    point: {
+      radius: 3
+    }
+  },
+  scales: {
+    x: {
+      title: {
+        display: true,
+        text: 'Exam Session'
+      },
+      ticks: {
+        maxRotation: 45,
+        minRotation: 45,
+        autoSkip: false
+      }
+    },
+    y: {
+      beginAtZero: true,
+      title: {
+        display: true,
+        text: 'Marks'
+      }
+    }
+  }
+},
             });
           }
 
