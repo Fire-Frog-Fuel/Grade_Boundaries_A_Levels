@@ -125,12 +125,6 @@ table.dataTable {
       </div>
       <div class="table-wrapper overflow-x-auto">
       <canvas id="EdexcelChart" width="800" height="400" class="mt-8"></canvas>
-        <button
-  id="downloadChart"
-  class="bg-[#3aafa9] text-white px-4 py-2 rounded hover:bg-[#2b7a78] transition ml-2"
->
-  Download Chart Image
-</button>
 
 </div>
       
@@ -350,11 +344,7 @@ updateEdexcelChart();
               a.click();
             });
           // wire up chart image download
-document.getElementById('downloadChart').addEventListener('click', () => {
-  const link = document.createElement('a');
-  link.download = `Chart_${edexcelInput.value.trim()}.png`;
-  link.href = edexcelChart.toBase64Image();
-  link.click();
+
 });
 
         })
