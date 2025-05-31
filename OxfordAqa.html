@@ -182,7 +182,9 @@
           }
 
           populateTable(parsed);
-
+if ($.fn.DataTable.isDataTable('#OxfordAqaTable')) {
+  $('#OxfordAqaTable').DataTable().clear().destroy();
+}
           /* DataTables with Responsive extension */
           $('#OxfordAqaTable').DataTable({
             responsive: true,
