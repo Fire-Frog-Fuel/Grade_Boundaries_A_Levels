@@ -21,7 +21,7 @@
 :root[data-theme='dark'] {
     --bg-color: #111827;        /* slate-900 */
     --header-bg: #1e293b;       /* slate-800 */
-    --header-text: #f1f5f9;     /* slate-100 */
+    --header-text: #d5e6f7;     /* slate-100 */
     --nav-link: #e2e8f0;        /* slate-200 */
     --nav-link-hover: #ffffff;
     --section-bg: #1f2937;      /* slate-800 */
