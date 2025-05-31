@@ -29,18 +29,22 @@
       background-color: #dff6f5;
     }
     /* Reduce padding in DataTable cells */
-  table.dataTable td,
-  table.dataTable th {
-    padding: 0.25rem 0.5rem !important; /* top/bottom, left/right */
-    line-height: 1.2;
-  }
+table.dataTable td,
+table.dataTable th {
+  padding: 0.25rem 0.5rem !important;
+  line-height: 1.2;
 
-  /* Optional: shrink font on very small screens */
-  @media (max-width: 640px) {
-    table.dataTable {
-      font-size: 0.75rem;
-    }
+  /* Fluid font: 2% of viewport width. Adjust 2vw as needed. */
+  font-size: 2vw;
+}
+
+/* (Optional) If you find that on ultra-wide screens it gets too large, you can add a max-font-size via a single breakpoint: */
+@media (min-width: 1200px) {
+  table.dataTable {
+    /* cap at around 18px once viewport is ≥1200px wide */
+    font-size: 1.125rem; /* 18px */
   }
+}
 }
   </style>
 </head>
