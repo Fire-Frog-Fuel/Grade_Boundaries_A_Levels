@@ -45,39 +45,42 @@
 
 /* ===== Dark Theme Variables ===== */
 :root[data-theme='dark'] {
-  --bg-color: #111827;
-  --text-color: #e2e8f0;
+ :root[data-theme='dark'] {
+  --bg-color: #0d1117;              /* deep slate blue */
+  --text-color: #c9d1d9;            /* light gray-blue */
 
-  --header-bg: #1e293b;
-  --header-text: #f1f5f9;
+  --header-bg: #161b22;            /* dark header */
+  --header-text: #58a6ff;          /* neon blue */
 
-  --nav-link: #e2e8f0;
-  --nav-link-hover: #ffffff;
+  --nav-link: #8b949e;             /* muted text */
+  --nav-link-hover: #58a6ff;       /* bright neon blue */
 
-  --section-bg: #1f2937;
-  --section-text: #e2e8f0;
-  --section-border: #334155;
-  --section-shadow: rgba(255, 255, 255, 0.05);
+  --section-bg: #161b22;           /* dark card background */
+  --section-text: #c9d1d9;         /* light text */
+  --section-border: #30363d;       /* soft border */
+  --section-shadow: rgba(90, 145, 255, 0.05); /* very soft blue glow */
 
-  --table-header-bg: #334155;
-  --table-header-text: #f1f5f9;
-  --table-row-hover: #0f172a;
+  --table-header-bg: #21262d;      /* darker for contrast */
+  --table-header-text: #58a6ff;
+  --table-row-hover: #1f6feb;      /* soft neon blue on hover */
 
-  --footer-bg: #1e293b;
-  --footer-text: #f1f5f9;
+  --footer-bg: #161b22;
+  --footer-text: #8b949e;
 
-  --input-bg: #1e293b;
-  --input-text: #f1f5f9;
-  --input-border: #475569;
-  --input-focus-border: #60a5fa;
+  --input-bg: #0d1117;
+  --input-text: #c9d1d9;
+  --input-border: #30363d;
+  --input-focus-border: #58a6ff;
 
-  --button-bg: #2563eb;
+  --button-bg: #238636;            /* green accent */
   --button-text: #ffffff;
-  --button-hover-bg: #1d4ed8;
-  --button-border: #1e40af;
+  --button-hover-bg: #2ea043;
+  --button-border: #238636;
 
-  --chart-bg: #1f2937;
-  --chart-line: #60a5fa;
+  --chart-bg: #0d1117;
+  --chart-line: #58a6ff;
+}
+
 }
 
 /* ===== Reset & Base ===== */
