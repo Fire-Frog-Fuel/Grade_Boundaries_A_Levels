@@ -34,7 +34,11 @@ function loadCSV(file, tableId, headId, bodyId, chartId = null, labelIndex = 0, 
       if ($.fn.DataTable.isDataTable(`#${tableId}`)) {
         $(`#${tableId}`).DataTable().clear().destroy();
       }
-      $(`#${tableId}`).DataTable();
+      $(`#${tableId}`).DataTable({
+        responsive: true,
+        scrollX: false,
+        autoWidth: false
+      });
 
       // Chart (if specified)
       if (chartId && document.getElementById(chartId)) {
@@ -43,30 +47,4 @@ function loadCSV(file, tableId, headId, bodyId, chartId = null, labelIndex = 0, 
 
         const ctx = document.getElementById(chartId).getContext('2d');
 
-        // Destroy old chart if one already exists (optional safety)
-        if (window[chartId]) {
-          window[chartId].destroy();
-        }
-
-        window[chartId] = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: labels,
-            datasets: [{
-              label: headers[dataIndex],
-              data: dataPoints,
-              backgroundColor: 'rgba(58, 175, 169, 0.5)',
-              borderColor: 'rgba(58, 175, 169, 1)',
-              borderWidth: 1
-            }]
-          },
-          options: {
-            responsive: true,
-            scales: {
-              y: { beginAtZero: true }
-            }
-          }
-        });
-      }
-    });
-}
+        // Destroy old chart
