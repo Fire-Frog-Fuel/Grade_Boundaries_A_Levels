@@ -177,6 +177,9 @@
         }
 
         populateTable(parsed);
+if ($.fn.DataTable.isDataTable('#EdexcelTable')) {
+  $('#EdexcelTable').DataTable().clear().destroy();
+}
 
         /* DataTables now with Responsive extension */
         $('#EdexcelTable').DataTable({
