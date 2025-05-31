@@ -5,16 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edexcel Grade Boundaries</title>
 
+  <!-- Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com" defer></script>
 
   <!-- DataTables CSS -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
-  >
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -34,67 +32,69 @@
     table.dataTable tbody tr:hover {
       background-color: #dff6f5;
     }
-/* 1) .table-wrapper must be scrollable */
-.table-wrapper {
-  width: 100%;
-  overflow-x: auto;            /* horizontal scroll on narrow screens */
-  -webkit-overflow-scrolling: touch; /* smooth iOS scrolling (optional) */
-}
 
-/* 2) Padding + line-height for all DataTable cells */
-table.dataTable th,
-table.dataTable td {
-  padding: 0.25rem 0.5rem !important; /* 4px top/bottom, 8px left/right */
-  line-height: 1.2;
-}
+    /* ------------- MOBILE‑FRIENDLY TABLE ------------- */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    table.dataTable th,
+    table.dataTable td {
+      padding: 0.25rem 0.5rem !important;
+      line-height: 1.2;
+    }
+    table.dataTable th {
+      font-size: clamp(0.875rem, 2vw, 1.25rem);
+      white-space: nowrap;
+    }
+    table.dataTable td {
+      font-size: clamp(0.75rem, 1.2vw, 1rem);
+    }
+    table.dataTable {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    @media (max-width: 400px) {
+      table.dataTable th,
+      table.dataTable td {
+        padding: 0.125rem 0.25rem !important;
+      }
+    }
 
-/* 3) Fluid‐but‐bounded font for <th> */
-table.dataTable th {
-  font-size: clamp(0.875rem, 2vw, 1.25rem);
-  white-space: nowrap;
-}
-
-/* 4) Fluid‐but‐bounded font for <td> */
-table.dataTable td {
-  font-size: clamp(0.75rem, 1.2vw, 1rem);
-}
-
-/* 5) Cap total table width on very wide screens (optional) */
-table.dataTable {
-  width: 100%;
-  max-width: 1000px; /* adjust as needed */
-  margin: 0 auto;    /* center if parent is wider */
-}
-
-/* 6) On the smallest phones (≤400px), reduce cell padding further */
-@media (max-width: 400px) {
-  table.dataTable th,
-  table.dataTable td {
-    padding: 0.125rem 0.25rem !important; /* 2px top/bottom, 4px left/right */
-  }
-}
+    /* ------------- RESPONSIVE CHART ------------- */
+    .chart-container{
+      position:relative;
+      width:100%;
+      min-height:250px;
+      height:45vw;         /* scales with screen width on mobiles */
+      max-height:500px;    /* avoids being massive on desktops */
+    }
+    .chart-container canvas{
+      position:absolute;
+      inset:0;
+      width:100% !important;
+      height:100% !important;
+    }
   </style>
 </head>
 <body class="text-gray-800 flex flex-col min-h-screen">
   <header class="text-white text-center py-6 shadow-lg">
-    <h1 class="text-4xl font-bold">Edexcel Grade Boundaries</h1>
+    <h1 class="text-3xl sm:text-4xl font-bold">Edexcel Grade Boundaries</h1>
     <nav class="mt-4">
-      <a href="index.html" class="mx-4 text-lg hover:text-white transition">Home</a>
-      <a href="CIE.html" class="mx-4 text-lg hover:text-white transition">CIE</a>
-      <a href="OxfordAqa.html" class="mx-4 text-lg hover:text-white transition">Oxford AQA</a>
+      <a href="index.html" class="mx-4 text-base sm:text-lg hover:text-white transition">Home</a>
+      <a href="CIE.html" class="mx-4 text-base sm:text-lg hover:text-white transition">CIE</a>
+      <a href="OxfordAqa.html" class="mx-4 text-base sm:text-lg hover:text-white transition">Oxford&nbsp;AQA</a>
     </nav>
   </header>
 
-<main class="flex-1 w-full overflow-x-auto px-4">
-
+  <main class="flex-1 w-full px-4">
     <section class="bg-white rounded-lg shadow-md p-6 w-full max-w-6xl mx-auto">
-      <h2 class="text-2xl font-semibold mb-4">Edexcel Grade Boundaries </h2>
-      <div class="table-wrapper overflow-x-auto">
-        <table
-        id="EdexcelTable"
-        class="display w-full whitespace-nowrap text-sm leading-tight"
-        aria-describedby="grade-boundaries-caption"
-        >
+      <h2 class="text-2xl font-semibold mb-4">Edexcel Grade Boundaries</h2>
+
+      <div class="table-wrapper mb-6">
+        <table id="EdexcelTable" class="display nowrap responsive w-full" aria-describedby="grade-boundaries-caption">
           <caption id="grade-boundaries-caption" class="sr-only">
             Edexcel grade boundaries per unit code
           </caption>
@@ -102,35 +102,30 @@ table.dataTable {
           <tbody id="Edexcel-body"></tbody>
         </table>
       </div>
-      <div class="text-right mt-4">
-        <button
-          id="downloadCSV"
-          class="bg-[#3aafa9] text-white px-4 py-2 rounded hover:bg-[#2b7a78] transition"
-        >
+
+      <div class="text-right my-4">
+        <button id="downloadCSV" class="bg-[#3aafa9] text-white px-4 py-2 rounded hover:bg-[#2b7a78] transition">
           Download CSV
         </button>
       </div>
-      <div class="table-wrapper overflow-x-auto">
-      <div id="edexcel-controls" class="flex flex-wrap gap-4 mb-4 items-center">
-        <label for="edexcelSubjectSearch" class="font-semibold">Subject Code:</label>
-        <input type="text" id="edexcelSubjectSearch" placeholder="Enter code (e.g. WPH14)" class="border rounded px-2 py-1" list="edexcelCodeList" />
+
+      <div id="edexcel-controls" class="flex flex-wrap gap-4 mb-6 items-center">
+        <label for="edexcelSubjectSearch" class="font-semibold">Subject&nbsp;Code:</label>
+        <input type="text" id="edexcelSubjectSearch" placeholder="Enter code (e.g. WPH14)"
+               class="border rounded px-2 py-1 w-40 sm:w-auto" list="edexcelCodeList" />
         <datalist id="edexcelCodeList"></datalist>
       </div>
-      </div>
-      <div class="table-wrapper overflow-x-auto">
-      <canvas id="EdexcelChart" width="800" height="400" class="mt-8"></canvas>
-</div>
 
+      <div class="chart-container">
+        <canvas id="EdexcelChart"></canvas>
+      </div>
     </section>
   </main>
 
   <footer class="bg-[#3aafa9] text-white text-center py-4 mt-10">
     <p>
       Database provided by
-      <a
-        href="https://github.com/ChessMastermind"
-        class="underline hover:text-gray-200"
-      >
+      <a href="https://github.com/ChessMastermind" class="underline hover:text-gray-200">
         ChessMastermind
       </a>
     </p>
@@ -138,30 +133,18 @@ table.dataTable {
 
   <!-- Dependencies (deferred) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-  <script
-    src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"
-    defer
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"
-    defer
-  ></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" defer></script>
+  <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
 
-  <!-- Your page logic -->
+  <!-- Page logic -->
   <script defer>
   window.addEventListener('DOMContentLoaded', () => {
     fetch('Edexcel.csv')
-      .then(resp => {
-        if (!resp.ok) throw new Error('Network error');
-        return resp.text();
-      })
+      .then(resp => resp.text())
       .then(csv => {
-        const parsed = Papa.parse(csv, {
-          header: true,
-          skipEmptyLines: true
-        }).data;
+        const parsed = Papa.parse(csv, { header: true, skipEmptyLines: true }).data;
 
-        // ------------- BUILD THE TABLE (UNCHANGED) -------------
         const headRow = document.getElementById('Edexcel-head');
         const body    = document.getElementById('Edexcel-body');
 
@@ -189,10 +172,16 @@ table.dataTable {
         }
 
         populateTable(parsed);
-        $('#EdexcelTable').DataTable();
 
-        // ------------- BUILD DATA STRUCTURES -------------
-        const edexcelDataByCode = {};   // { code: { "2024 Jun": { "a*": 80, "a": 75, …, "max_mark": 100 }, … }, … }
+        /* DataTables now with Responsive extension */
+        $('#EdexcelTable').DataTable({
+          responsive: true,
+          scrollX: false,
+          autoWidth: false
+        });
+
+        /* ---------- DATA PREP ---------- */
+        const edexcelDataByCode = {};
         const gradeList         = ['a*', 'a', 'b', 'c', 'd', 'e'];
 
         parsed.forEach(row => {
@@ -205,152 +194,102 @@ table.dataTable {
 
           gradeList.forEach(g => {
             const val = parseFloat(row[g]);
-            if (!isNaN(val)) {
-              edexcelDataByCode[code][session][g] = val;
-            }
+            if (!isNaN(val)) edexcelDataByCode[code][session][g] = val;
           });
 
           const maxMark = parseFloat(row['max_mark']);
-          if (!isNaN(maxMark)) {
-            edexcelDataByCode[code][session]['max_mark'] = maxMark;
-          }
+          if (!isNaN(maxMark)) edexcelDataByCode[code][session]['max_mark'] = maxMark;
         });
 
-        // Populate the subject‐code datalist
-        const edexcelInput    = document.getElementById('edexcelSubjectSearch');
-        const edexcelDatalist = document.getElementById('edexcelCodeList');
+        /* Populate datalist */
+        const edexcelInput = document.getElementById('edexcelSubjectSearch');
+        const codeList     = document.getElementById('edexcelCodeList');
         Object.keys(edexcelDataByCode).sort().forEach(code => {
           const opt = document.createElement('option');
           opt.value = code;
-          edexcelDatalist.appendChild(opt);
+          codeList.appendChild(opt);
         });
 
-        // ------------- FIXED COLOR PALETTE -------------
-        // A* = green, A = orange, B = yellow, C = red, D = dark‐blue, E = purple
+        /* ---------- CHART ---------- */
         const gradeColors = {
-          "a*": "#2ECC71",  // green
-          "a":  "#F4A261",  // orange
-          "b":  "#E9C46A",  // yellow
-          "c":  "#E63946",  // red
-          "d":  "#264653",  // dark blue
-          "e":  "#6D597A"   // purple
+          "a*": "#2ECC71",
+          "a":  "#F4A261",
+          "b":  "#E9C46A",
+          "c":  "#E63946",
+          "d":  "#264653",
+          "e":  "#6D597A"
         };
-        const maxMarkColor = "#999999";  // gray dashed line
+        const maxMarkColor = "#999999";
 
-        // ------------- SET UP CHART.JS -------------
-        const edexcelCtx = document.getElementById('EdexcelChart').getContext('2d');
-        let edexcelChart = null;
+        const ctx = document.getElementById('EdexcelChart').getContext('2d');
+        let chart = null;
 
-        function updateEdexcelChart() {
-          const selectedCode = edexcelInput.value.trim();
-          if (!edexcelDataByCode[selectedCode]) {
-            // If subject code is invalid or empty, just destroy existing chart (if any) and exit
-            if (edexcelChart) {
-              edexcelChart.destroy();
-              edexcelChart = null;
-            }
+        function updateChart() {
+          const code = edexcelInput.value.trim();
+          if (!edexcelDataByCode[code]) {
+            if (chart) { chart.destroy(); chart = null; }
+            return;
+          }
+          const data = edexcelDataByCode[code];
+          const sessions = Object.keys(data);
+          if (!sessions.length) {
+            if (chart) { chart.destroy(); chart = null; }
             return;
           }
 
-          // 1) Grab all sessions for this subject, then sort them chronologically:
-          const subjectData     = edexcelDataByCode[selectedCode];
-          const subjectSessions = Object.keys(subjectData);
-          if (subjectSessions.length === 0) {
-            // No sessions => no chart
-            if (edexcelChart) {
-              edexcelChart.destroy();
-              edexcelChart = null;
-            }
-            return;
-          }
-
-          // Sort by year, then by month order:
-          const monthOrder = { Jan: 1, Feb: 2, Mar: 3, May: 5, Jun: 6, Jul: 7, Aug: 8, Oct: 10, Nov: 11 };
-          subjectSessions.sort((a, b) => {
-            const [ya, ma] = a.split(' ');
-            const [yb, mb] = b.split(' ');
-            return (parseInt(ya) - parseInt(yb)) || (monthOrder[ma] - monthOrder[mb]);
+          /* chronological order */
+          const monthOrder = { Jan:1, Feb:2, Mar:3, May:5, Jun:6, Jul:7, Aug:8, Oct:10, Nov:11 };
+          sessions.sort((a,b)=>{
+            const [ya,ma] = a.split(' ');
+            const [yb,mb] = b.split(' ');
+            return (+ya - +yb) || (monthOrder[ma] - monthOrder[mb]);
           });
 
-          // 2) Check whether "a*" actually exists for any of these sessions:
-          const hasAStar = subjectSessions.some(sess => subjectData[sess].hasOwnProperty('a*'));
+          const hasAStar = sessions.some(s=>data[s].hasOwnProperty('a*'));
+          const grades = ['a*', 'a', 'b', 'c', 'd', 'e'].filter(g=>g!=='a*' || hasAStar);
 
-          // 3) Build the list of grades the user has checked, but filter out "a*" if it doesn't exist:
-          const checkedGrades = ['a*', 'a', 'b', 'c', 'd', 'e'];
-
-          const selectedGrades = checkedGrades.filter(g => (g !== 'a*' || hasAStar));
-
-          // 4) Build datasets array.  One line per selected grade:
-          const datasets = selectedGrades.map(g => ({
-            label:       g.toUpperCase(),
-            data:        subjectSessions.map(sess => subjectData[sess]?.[g] ?? null),
+          const datasets = grades.map(g=>({
+            label: g.toUpperCase(),
+            data: sessions.map(s=>data[s]?.[g] ?? null),
             borderColor: gradeColors[g],
-            fill:        false,
-            tension:     0.2
+            fill:false,
+            tension:0.2
           }));
-
-          // 5) Finally, add the "Max Mark" line (always dashed gray):
           datasets.push({
-            label:       "Max Mark",
-            data:        subjectSessions.map(sess => subjectData[sess]?.['max_mark'] ?? null),
+            label: 'Max\u00A0Mark',
+            data: sessions.map(s=>data[s]?.['max_mark'] ?? null),
             borderColor: maxMarkColor,
-            borderDash: [5, 5],
+            borderDash: [5,5],
             borderWidth: 1,
             pointRadius: 0,
-            fill:        false
+            fill:false
           });
 
-          // 6) Destroy previous chart (if any) and create a brand‐new one:
-          if (edexcelChart) {
-            edexcelChart.destroy();
-            edexcelChart = null;
-          }
-          edexcelChart = new Chart(edexcelCtx, {
+          if (chart) chart.destroy();
+          chart = new Chart(ctx, {
             type: 'line',
-            data: {
-              labels:   subjectSessions,  // only sessions that this subject actually has
-              datasets: datasets
-            },
+            data: { labels: sessions, datasets },
             options: {
               responsive: true,
-              plugins: {
-                title: {
-                  display: true,
-                  text: `Grade Boundaries — ${selectedCode}`
-                },
-                legend: {
-                  position: 'bottom'
-                }
+              maintainAspectRatio: false,
+              plugins:{
+                title:{ display:true, text:`Grade Boundaries — ${code}` },
+                legend:{ position:'bottom' }
               },
-              scales: {
-                x: {
-                  title: {
-                    display: true,
-                    text: 'Exam Session'
-                  }
-                },
-                y: {
-                  beginAtZero: true,
-                  title: {
-                    display: true,
-                    text: 'Marks'
-                  }
-                }
+              scales:{
+                x:{ title:{ display:true, text:'Exam Session' } },
+                y:{ beginAtZero:true, title:{ display:true, text:'Marks' } }
               }
             }
           });
         }
 
-        // ------------- HOOK UP EVENT LISTENERS -------------
-        edexcelInput.addEventListener('input', () => {
-          updateEdexcelChart();
-        });
+        edexcelInput.addEventListener('input', updateChart);
 
-        // ------------- INITIAL RENDER -------------
         edexcelInput.value = Object.keys(edexcelDataByCode)[0] || '';
-        updateEdexcelChart();
+        updateChart();
 
-        // ------------- DOWNLOAD BUTTON (UNCHANGED) -------------
+        /* Download CSV */
         document.getElementById('downloadCSV').addEventListener('click', () => {
           const blob = new Blob([csv], { type: 'text/csv' });
           const url  = URL.createObjectURL(blob);
@@ -360,18 +299,12 @@ table.dataTable {
           a.click();
         });
       })
-      .catch(err => {
+      .catch(err=>{
         console.error(err);
-        const body = document.getElementById('Edexcel-body');
-        body.innerHTML = `
-          <tr>
-            <td colspan="10" class="text-center py-4">
-              Failed to load data.
-            </td>
-          </tr>
-        `;
+        document.getElementById('Edexcel-body').innerHTML = `
+          <tr><td colspan="10" class="text-center py-4">Failed to load data.</td></tr>`;
       });
   });
-</script>
+  </script>
 </body>
 </html>
