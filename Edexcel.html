@@ -255,7 +255,15 @@ function updateEdexcelChart() {
   const selectedCode = edexcelInput.value.trim();
   const selectedGrades = Array.from(document.querySelectorAll('.edexcelGradeToggle:checked')).map(cb => cb.value);
   const dataset = [];
-
+const gradeColors = {
+  "a*": "#E63946",  // red
+  "a":  "#F4A261",  // orange
+  "b":  "#E9C46A",  // yellow
+  "c":  "#2A9D8F",  // teal
+  "d":  "#264653",  // dark blue
+  "e":  "#6D597A"   // purple
+};
+const maxMarkColor = "#999999";
   const subjectData = edexcelDataByCode[selectedCode];
 
   // Grade lines
@@ -263,7 +271,7 @@ function updateEdexcelChart() {
     dataset.push({
       label: g.toUpperCase(),
       data: orderedSessions.map(s => subjectData[s]?.[g] ?? null),
-      borderColor: `hsl(${Math.random() * 360}, 70%, 50%)`,
+      borderColor: gradeColors[g],
       fill: false,
       tension: 0.2
     });
