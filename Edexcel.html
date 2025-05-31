@@ -252,7 +252,7 @@ const edexcelCtx = document.getElementById('EdexcelChart').getContext('2d');
 let edexcelChart = null;
 
 function updateEdexcelChart() {
-  const selectedCode = edexcelSelect.value.trim();
+  const selectedCode = edexcelInput.value.trim();
   const selectedGrades = Array.from(document.querySelectorAll('.edexcelGradeToggle:checked')).map(cb => cb.value);
   const dataset = [];
 
