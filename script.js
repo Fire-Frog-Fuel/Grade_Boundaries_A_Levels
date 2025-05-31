@@ -84,14 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById('OxfordAqaTable')) {
         loadCSV('OxfordAqa.csv', 'OxfordAqaTable', 'OxfordAqa-head', 'OxfordAqa-body','OxfordAqaChart');
     }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  /* === existing CSV/DataTables code stays here === */
-
-  /* === dark-mode switch === */
-  const toggle = document.getElementById('theme-toggle');
+    const toggle = document.getElementById('theme-toggle');
   if (toggle) {
     // Initialise the checkbox state from the cookie
     toggle.checked = (getCookie('theme') === 'dark');
@@ -107,3 +100,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
