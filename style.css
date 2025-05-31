@@ -45,7 +45,6 @@
 
 /* ===== Dark Theme Variables ===== */
 :root[data-theme='dark'] {
- :root[data-theme='dark'] {
   --bg-color: #0d1117;              /* deep slate blue */
   --text-color: #c9d1d9;            /* light gray-blue */
 
@@ -79,7 +78,6 @@
 
   --chart-bg: #0d1117;
   --chart-line: #58a6ff;
-}
 
 }
 
