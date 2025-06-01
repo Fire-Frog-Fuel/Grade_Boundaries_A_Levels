@@ -57,6 +57,23 @@ function loadCSV(file, tableId, headId, bodyId) {
         });
 }
 
+/* ===== Theme persistence helpers ===== */
+function setCookie(name, value, days) {
+  const expires = new Date(Date.now() + days*24*60*60*1000).toUTCString();
+  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+}
+function getCookie(name) {
+  return document.cookie.split('; ')
+    .find(row => row.startsWith(name + '='))?.split('=')[1];
+}
+
+/* Apply the saved theme *before* the first paint */
+const savedTheme = getCookie('theme');
+if (savedTheme === 'dark') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById('CIETable')) {
         loadCSV('CIE.csv', 'CIETable', 'CIE-head', 'CIE-body', 'CIEChart');
@@ -67,4 +84,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById('OxfordAqaTable')) {
         loadCSV('OxfordAqa.csv', 'OxfordAqaTable', 'OxfordAqa-head', 'OxfordAqa-body','OxfordAqaChart');
     }
+    const toggle = document.getElementById('theme-toggle');
+  if (toggle) {
+    // Initialise the checkbox state from the cookie
+    toggle.checked = (getCookie('theme') === 'dark');
+
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        setCookie('theme', 'dark', 365);   // remember for a year
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        setCookie('theme', 'light', 365);  // you may prefer deleting it
+      }
+    });
+  }
 });
+
