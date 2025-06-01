@@ -17,12 +17,14 @@
   <meta property="og:url" content="https://www.gradeboundaries.com/">
   <meta property="og:title" content="A-Level Grade Boundaries 2015-2025 | Edexcel, CIE, Oxford AQA">
   <meta property="og:description" content="Compare free interactive grade-boundary data for Edexcel, CIE and Oxford AQA between 2015-2025.">
+  <meta property="og:image" content="https://www.gradeboundaries.com/assets/og-image.jpg">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://www.gradeboundaries.com/">
   <meta name="twitter:title" content="A-Level Grade Boundaries 2015-2025">
   <meta name="twitter:description" content="Interactive tables and charts covering Edexcel, CIE & Oxford AQA A-Level grade thresholds.">
+  <meta name="twitter:image" content="https://www.gradeboundaries.com/assets/og-image.jpg">
 
   <!-- TailwindCSS (kept in <head> for first-paint styling) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -30,20 +32,24 @@
   <!-- Critical Styles -->
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #def2f1, #ffffff);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #def2f1 0%, #ffffff 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: #1f2937; /* gray-800 */
     }
     header {
       background-color: #3aafa9;
     }
     nav a {
   border-bottom: 2px solid transparent;
-  }
+}
 
-    nav a:hover {
+nav a:hover {
   color: #ffffff;
   border-bottom-color: #feffff;
-    }
+}
   </style>
 
   <!-- Schema.org structured data -->
