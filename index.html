@@ -3,13 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grade Boundaries A Levels</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+  <title>A Level Grade Boundaries | Edexcel, CIE, Oxford AQA</title>
+  <meta name="description" content="Free, open-access platform for analyzing and comparing A-Level grade boundaries for Edexcel, CIE, and Oxford AQA. Interactive tables, downloadable data, and animated visualizations from 2015 to 2025.">
+  <meta name="keywords" content="A Level grade boundaries, Edexcel A Level, CIE A Level, Oxford AQA grade boundaries, A Level results, exam thresholds">
+  <meta name="author" content="ChessMastermind">
+  <link rel="canonical" href="https://yourdomain.com/index.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="A Level Grade Boundaries | Edexcel, CIE, Oxford AQA">
+  <meta property="og:description" content="Explore and compare A-Level grade boundaries for Edexcel, CIE, and Oxford AQA with interactive tables, downloadable data, and animated charts.">
+  <meta property="og:url" content="https://yourdomain.com/index.html">
+  <meta property="og:site_name" content="Grade Boundaries Platform">
+  <meta property="og:image" content="https://yourdomain.com/assets/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A Level Grade Boundaries | Edexcel, CIE, Oxford AQA">
+  <meta name="twitter:description" content="Free, open-access platform for analyzing A-Level grade boundaries from Edexcel, CIE, and Oxford AQA with interactive visualizations.">
+  <meta name="twitter:image" content="https://yourdomain.com/assets/twitter-card.jpg">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "A Level Grade Boundaries",
+    "url": "https://yourdomain.com/",
+    "description": "Free, open-access platform for analyzing and comparing A-Level grade boundaries for Edexcel, CIE, and Oxford AQA.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ChessMastermind",
+      "url": "https://github.com/ChessMastermind"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://yourdomain.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <!-- React & Babel (deferred) -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin defer></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin defer></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js" defer></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <!-- Framer Motion -->
+  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js" defer></script>
+
+  <!-- Custom Styles for Dark Mode & Overrides -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -23,61 +73,76 @@
       border-bottom: 2px solid #feffff;
     }
   </style>
-<!-- Dark-mode assets -->
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
-
 </head>
 <body class="text-gray-800 flex flex-col min-h-screen">
   <header class="text-white text-center py-6 shadow-lg">
     <h1 class="text-4xl font-bold">Grade Boundaries</h1>
-    <nav class="mt-4">
-      <a href="Edexcel.html" class="mx-4 text-lg hover:text-white transition">Edexcel</a>
-      <a href="CIE.html" class="mx-4 text-lg hover:text-white transition">CIE</a>
-      <a href="OxfordAqa.html" class="mx-4 text-lg hover:text-white transition">Oxford AQA</a>
+    <nav aria-label="Primary Navigation" class="mt-4">
+      <ul class="flex justify-center space-x-6">
+        <li><a href="Edexcel.html" class="text-lg hover:text-white transition">Edexcel</a></li>
+        <li><a href="CIE.html" class="text-lg hover:text-white transition">CIE</a></li>
+        <li><a href="OxfordAqa.html" class="text-lg hover:text-white transition">Oxford AQA</a></li>
+      </ul>
     </nav>
-
-
   </header>
 
-  <main class="flex-1 max-w-6xl mx-auto p-6">
-  <h2 class="text-3xl font-semibold mb-4">Welcome</h2>
-  <p class="text-lg mb-2">
-    This website is a free and open-access platform for analyzing and comparing A-Level grade boundaries from Edexcel, CIE, and Oxford AQA.
-    It presents all available data in interactive tables, downloadable formats, and animated visualizations to help students, teachers, and researchers.
-  </p>
-      
-  <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div class="bg-white shadow-md rounded-lg p-4">
-      <h3 class="text-xl font-bold mb-2">Edexcel</h3>
-      <p class="text-sm">Covers over 800 units from 2015 to 2025. Includes Maths, Sciences, Economics and more.</p>
-      <a href="Edexcel.html" class="inline-block mt-4 px-4 py-2 bg-[#3aafa9] text-white rounded hover:bg-[#2b7a78]">View Edexcel</a>
-    </div>
-    <div class="bg-white shadow-md rounded-lg p-4">
-      <h3 class="text-xl font-bold mb-2">CIE</h3>
-      <p class="text-sm">Covers 2021 to 2025. Explore grade thresholds for AS/A-Level Cambridge International exams.</p>
-      <a href="CIE.html" class="inline-block mt-4 px-4 py-2 bg-[#3aafa9] text-white rounded hover:bg-[#2b7a78]">View CIE</a>
-    </div>
-    <div class="bg-white shadow-md rounded-lg p-4">
-      <h3 class="text-xl font-bold mb-2">Oxford AQA</h3>
-      <p class="text-sm">Oxford AQA subjects from 2020 to 2025. A growing dataset with verified grade data.</p>
-      <a href="OxfordAqa.html" class="inline-block mt-4 px-4 py-2 bg-[#3aafa9] text-white rounded hover:bg-[#2b7a78]">View Oxford AQA</a>
-    </div>
-  </div>
+  <main class="flex-1 max-w-6xl mx-auto p-6" id="main-content">
+    <section aria-labelledby="welcome-heading">
+      <h2 id="welcome-heading" class="text-3xl font-semibold mb-4">Welcome to Grade Boundaries</h2>
+      <p class="text-lg mb-6">
+        This free, open-access platform allows students, teachers, and researchers to analyze and compare A-Level grade boundaries from 
+        <strong>Edexcel</strong>, <strong>CIE</strong>, and <strong>Oxford AQA</strong>. Explore interactive tables, download comprehensive datasets, 
+        and view animated visualizations covering the period from 2015 to 2025.
+      </p>
+    </section>
 
+    <section aria-labelledby="exam-series">
+      <h3 id="exam-series" class="text-2xl font-semibold mb-4">Explore Exam Boards</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Edexcel Card -->
+        <article class="bg-white shadow-md rounded-lg p-4">
+          <h4 class="text-xl font-bold mb-2">Edexcel</h4>
+          <p class="text-sm">
+            Covers over 800 units from 2015 to 2025 across Maths, Sciences, Economics, and more. Access detailed grade thresholds and trends.
+          </p>
+          <a href="Edexcel.html" class="inline-block mt-4 px-4 py-2 bg-[#3aafa9] text-white rounded hover:bg-[#2b7a78]">
+            View Edexcel Data
+          </a>
+        </article>
 
-    
+        <!-- CIE Card -->
+        <article class="bg-white shadow-md rounded-lg p-4">
+          <h4 class="text-xl font-bold mb-2">CIE</h4>
+          <p class="text-sm">
+            Explore Cambridge International AS/A-Level grade thresholds from 2021 to 2025. Interactive filters for subjects and years.
+          </p>
+          <a href="CIE.html" class="inline-block mt-4 px-4 py-2 bg-[#3aafa9] text-white rounded hover:bg-[#2b7a78]">
+            View CIE Data
+          </a>
+        </article>
 
-
-    
+        <!-- Oxford AQA Card -->
+        <article class="bg-white shadow-md rounded-lg p-4">
+          <h4 class="text-xl font-bold mb-2">Oxford AQA</h4>
+          <p class="text-sm">
+            Browse grade boundaries for Oxford AQA subjects from 2020 to 2025. Continuously updated dataset with verified thresholds.
+          </p>
+          <a href="OxfordAqa.html" class="inline-block mt-4 px-4 py-2 bg-[#3aafa9] text-white rounded hover:bg-[#2b7a78]">
+            View Oxford AQA Data
+          </a>
+        </article>
+      </div>
+    </section>
   </main>
 
   <footer class="bg-[#3aafa9] text-white text-center py-4">
-    <p>2025 Grade Boundaries provided by <a href="https://github.com/ChessMastermind" class="underline hover:text-gray-200">ChessMastermind</a></p>
-    <p><a href="contact_information.html" class="underline hover:text-gray-200">Contact us</a></p>
-    </label>
+    <p class="mb-1">
+      &copy; 2025 Grade Boundaries. Provided by 
+      <a href="https://github.com/ChessMastermind" class="underline hover:text-gray-200" target="_blank" rel="noopener">ChessMastermind</a>.
+    </p>
+    <p>
+      <a href="contact_information.html" class="underline hover:text-gray-200">Contact Us</a>
+    </p>
   </footer>
-
-  
 </body>
 </html>
