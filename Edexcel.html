@@ -5,43 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Edexcel Grade Boundaries</title>
 
+  <!-- ─── INLINE CRITICAL CSS ─── -->
+  <style>
+    /* Basic page background and typography */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #def2f1, #ffffff);
+      margin: 0;
+    }
+    /* Header / nav visible immediately */
+    header {
+      background-color: #3aafa9;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      font-size: 1.875rem; /* text-3xl */
+      font-weight: 700;
+      margin: 0;
+    }
+    nav a {
+      margin: 0 1rem;
+      font-size: 1rem; /* text-base */
+      text-decoration: none;
+      color: white;
+    }
+    nav a:hover {
+      border-bottom: 2px solid #feffff;
+    }
+    /* Table container skeleton (unstyled until DataTables CSS loads) */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      background: #fff; /* avoid white‐on‐white flash */
+      border-radius: 0.5rem; /* rounded-lg */
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+    }
+    /* Chart container skeleton */
+    .chart-container {
+      position: relative;
+      width: 100%;
+      min-height: 250px;
+      height: 45vw;
+      max-height: 500px;
+      background: #fff;
+      border-radius: 0.5rem; /* rounded-lg */
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+  </style>
+
   <!-- ─── PERFORMANCE HINTS ─── -->
-  <!-- Preconnect to CDN domains used below -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="preconnect" href="https://cdn.datatables.net" />
   <link rel="preconnect" href="https://code.jquery.com" />
 
-  <!-- Tailwind (small enough to defer in head) -->
+  <!-- Tailwind (deferred, full build) -->
   <script src="https://cdn.tailwindcss.com" defer></script>
 
-  <!-- PapaParse (we need this prior to fetching/processing CSV) -->
+  <!-- PapaParse (needed before CSV parse) -->
   <script
     src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"
     defer
   ></script>
 
-  <!-- DataTables CSS -->
+  <!-- ─── DATATABLES CSS PRELOAD ─── -->
   <link
-    rel="stylesheet"
+    rel="preload"
     href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
+    as="style"
+    onload="this.rel='stylesheet'"
   />
-  <link
-    rel="stylesheet"
-    href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css"
-  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
+    />
+  </noscript>
 
+  <link
+    rel="preload"
+    href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css"
+    as="style"
+    onload="this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css"
+    />
+  </noscript>
+
+  <!-- ─── ADDITIONAL NON-CRITICAL STYLES (deferred) ─── -->
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #def2f1, #ffffff);
-    }
-    header {
-      background-color: #3aafa9;
-    }
-    nav a:hover {
-      color: #ffffff;
-      border-bottom: 2px solid #feffff;
-    }
+    /* Styles that depend on DataTables CSS can remain here or be overridden after preload */
     table.dataTable thead th {
       background-color: #3aafa9;
       color: #fff;
@@ -49,13 +109,7 @@
     table.dataTable tbody tr:hover {
       background-color: #dff6f5;
     }
-
-    /* ─── MOBILE-FRIENDLY TABLE ─── */
-    .table-wrapper {
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
+    /* MOBILE-FRIENDLY TABLE (applied once DataTables CSS is loaded) */
     table.dataTable th,
     table.dataTable td {
       padding: 0.25rem 0.5rem !important;
@@ -79,21 +133,6 @@
         padding: 0.125rem 0.25rem !important;
       }
     }
-
-    /* ─── RESPONSIVE CHART ─── */
-    .chart-container {
-      position: relative;
-      width: 100%;
-      min-height: 250px;
-      height: 45vw; /* scales with screen width on mobiles */
-      max-height: 500px; /* avoids being massive on desktops */
-    }
-    .chart-container canvas {
-      position: absolute;
-      inset: 0;
-      width: 100% !important;
-      height: 100% !important;
-    }
   </style>
 </head>
 
@@ -101,19 +140,13 @@
   <header class="text-white text-center py-6 shadow-lg">
     <h1 class="text-3xl sm:text-4xl font-bold">Edexcel Grade Boundaries</h1>
     <nav class="mt-4">
-      <a
-        href="index.html"
-        class="mx-4 text-base sm:text-lg hover:text-white transition"
+      <a href="index.html" class="mx-4 text-base sm:text-lg hover:text-white transition"
         >Home</a
       >
-      <a
-        href="CIE.html"
-        class="mx-4 text-base sm:text-lg hover:text-white transition"
+      <a href="CIE.html" class="mx-4 text-base sm:text-lg hover:text-white transition"
         >CIE</a
       >
-      <a
-        href="OxfordAqa.html"
-        class="mx-4 text-base sm:text-lg hover:text-white transition"
+      <a href="OxfordAqa.html" class="mx-4 text-base sm:text-lg hover:text-white transition"
         >Oxford&nbsp;AQA</a
       >
     </nav>
@@ -137,7 +170,9 @@
           >
             Edexcel grade boundaries per unit code
           </caption>
-          <thead><tr></tr></thead>
+          <thead>
+            <tr></tr>
+          </thead>
           <!-- No <tbody> needed—DataTables will create it dynamically -->
         </table>
       </div>
@@ -177,9 +212,7 @@
   <footer class="bg-[#3aafa9] text-white text-center py-4 mt-10">
     <p>
       Database provided by
-      <a
-        href="https://github.com/ChessMastermind"
-        class="underline hover:text-gray-200"
+      <a href="https://github.com/ChessMastermind" class="underline hover:text-gray-200"
         >ChessMastermind</a
       >
     </p>
@@ -272,8 +305,7 @@
         gradeList.forEach((g) => {
           if (!isNaN(r[g])) byCode[code][session][g] = r[g];
         });
-        if (!isNaN(r.max_mark))
-          byCode[code][session].max_mark = r.max_mark;
+        if (!isNaN(r.max_mark)) byCode[code][session].max_mark = r.max_mark;
       });
 
       // ─── 4) Populate the datalist for Subject Code suggestions ───
