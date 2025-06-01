@@ -17,6 +17,59 @@
     --footer-text: #feffff;
 }
 
+/* ===== Dark Theme Variables ===== */
+:root[data-theme='dark'] {
+    --bg-color: #111827;        /* slate-900 */
+    --header-bg: #1e293b;       /* slate-800 */
+    --header-text: #f1f5f9;     /* slate-100 */
+    --nav-link: #e2e8f0;        /* slate-200 */
+    --nav-link-hover: #ffffff;
+    --section-bg: #1f2937;      /* slate-800 */
+    --text-color: #e2e8f0;      /* slate-200 */
+    --table-header-bg: #334155; /* slate-700 */
+    --table-header-text: #f1f5f9;
+    --table-row-hover: #0f172a; /* slate-900 */
+    --footer-bg: #1e293b;
+    --footer-text: #f1f5f9;
+}
+
+/* Optional cosmetics for the pretty slider */
+.theme-switch {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;          /* tuck it in the header corner */
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+.theme-switch input { display: none; }
+
+.theme-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #ccc;
+    border-radius: 26px;
+    transition: background-color .3s;
+}
+.theme-switch .slider::before {
+    content: "";
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform .3s;
+}
+.theme-switch input:checked + .slider {
+    background-color: #3b82f6;   /* blue-500 */
+}
+.theme-switch input:checked + .slider::before {
+    transform: translateX(24px);
+}
+
 /* ===== Reset & Base ===== */
 body {
     margin: 0;
