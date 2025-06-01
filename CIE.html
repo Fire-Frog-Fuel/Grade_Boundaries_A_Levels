@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CIE Grade Boundaries</title>
 
-  <!-- Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- ─── PERFORMANCE HINTS ─── -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://cdn.datatables.net" />
+  <link rel="preconnect" href="https://code.jquery.com" />
+
+  <!-- Tailwind (small – safe to defer) -->
   <script src="https://cdn.tailwindcss.com" defer></script>
 
-  <!-- DataTables & Responsive CSS -->
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+  <!-- PapaParse (needed before fetching/parsing CSV) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"
+    defer
+  ></script>
+
+  <!-- DataTables CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css"
+  />
 
   <style>
     body {
@@ -33,7 +49,7 @@
       background-color: #dff6f5;
     }
 
-    /* --------- MOBILE-FRIENDLY TABLE --------- */
+    /* ─── MOBILE-FRIENDLY TABLE ─── */
     .table-wrapper {
       width: 100%;
       overflow-x: auto;
@@ -63,13 +79,13 @@
       }
     }
 
-    /* --------- RESPONSIVE CHART --------- */
+    /* ─── RESPONSIVE CHART ─── */
     .chart-container {
       position: relative;
       width: 100%;
       min-height: 250px;
-      height: 45vw;
-      max-height: 500px;
+      height: 45vw; /* scales with screen width on mobiles */
+      max-height: 500px; /* avoids being massive on desktops */
     }
     .chart-container canvas {
       position: absolute;
@@ -79,46 +95,94 @@
     }
   </style>
 </head>
+
 <body class="text-gray-800 flex flex-col min-h-screen">
   <header class="text-white text-center py-6 shadow-lg">
-    <h1 class="text-3xl sm:text-4xl font-bold">Cambridge International Grade Boundaries</h1>
+    <h1 class="text-3xl sm:text-4xl font-bold">
+      Cambridge International Grade Boundaries
+    </h1>
     <nav class="mt-4">
-      <a href="index.html" class="mx-4 text-base sm:text-lg hover:text-white transition">Home</a>
-      <a href="Edexcel.html" class="mx-4 text-base sm:text-lg hover:text-white transition">Edexcel</a>
-      <a href="OxfordAqa.html" class="mx-4 text-base sm:text-lg hover:text-white transition">Oxford&nbsp;AQA</a>
+      <a
+        href="index.html"
+        class="mx-4 text-base sm:text-lg hover:text-white transition"
+        >Home</a
+      >
+      <a
+        href="Edexcel.html"
+        class="mx-4 text-base sm:text-lg hover:text-white transition"
+        >Edexcel</a
+      >
+      <a
+        href="OxfordAqa.html"
+        class="mx-4 text-base sm:text-lg hover:text-white transition"
+        >Oxford&nbsp;AQA</a
+      >
     </nav>
   </header>
 
   <main class="flex-1 w-full px-4">
-    <section class="bg-white rounded-lg shadow-md p-6 w-full max-w-6xl mx-auto">
-      <h2 class="text-2xl font-semibold mb-4">Cambridge International Grade Boundaries</h2>
+    <section
+      class="bg-white rounded-lg shadow-md p-6 w-full max-w-6xl mx-auto"
+    >
+      <h2 class="text-2xl font-semibold mb-4">
+        Cambridge International Grade Boundaries
+      </h2>
 
       <!-- ===== TABLE ===== -->
       <div class="table-wrapper mb-6">
-        <table id="CIETable" class="display nowrap responsive w-full" aria-describedby="grade-boundaries-caption">
-          <caption id="grade-boundaries-caption" class="sr-only">
+        <table
+          id="CIETable"
+          class="display nowrap responsive w-full"
+          aria-describedby="grade-boundaries-caption"
+        >
+          <caption
+            id="grade-boundaries-caption"
+            class="sr-only"
+          >
             Cambridge grade boundaries per unit / component code
           </caption>
-          <thead><tr id="CIE-head"></tr></thead>
-          <tbody id="CIE-body"></tbody>
+          <thead>
+            <tr></tr>
+          </thead>
+          <!-- No <tbody> needed—DataTables will populate it -->
         </table>
       </div>
 
       <!-- ===== CSV DOWNLOAD ===== -->
       <div class="text-right my-4">
-        <button id="downloadCSV" class="bg-[#3aafa9] text-white px-4 py-2 rounded hover:bg-[#2b7a78] transition">
+        <button
+          id="downloadCSV"
+          class="bg-[#3aafa9] text-white px-4 py-2 rounded hover:bg-[#2b7a78] transition"
+        >
           Download CSV
         </button>
       </div>
 
       <!-- ===== CONTROLS ===== -->
       <div id="cie-controls" class="flex flex-wrap gap-4 mb-6 items-center">
-        <label for="cieSubjectSearch" class="font-semibold">Subject&nbsp;Code:</label>
-        <input type="text" id="cieSubjectSearch" placeholder="e.g. 9709" class="border rounded px-2 py-1 w-32 sm:w-auto" list="cieSubjectList" />
+        <label for="cieSubjectSearch" class="font-semibold"
+          >Subject&nbsp;Code:</label
+        >
+        <input
+          type="text"
+          id="cieSubjectSearch"
+          placeholder="e.g. 9709"
+          class="border rounded px-2 py-1 w-32 sm:w-auto"
+          list="cieSubjectList"
+        />
         <datalist id="cieSubjectList"></datalist>
 
-        <label for="cieComponentSearch" class="font-semibold">Component:</label>
-        <input type="text" id="cieComponentSearch" placeholder="optional" class="border rounded px-2 py-1 w-24 sm:w-32" list="cieComponentList" disabled />
+        <label for="cieComponentSearch" class="font-semibold"
+          >Component:</label
+        >
+        <input
+          type="text"
+          id="cieComponentSearch"
+          placeholder="optional"
+          class="border rounded px-2 py-1 w-24 sm:w-32"
+          list="cieComponentList"
+          disabled
+        />
         <datalist id="cieComponentList"></datalist>
       </div>
 
@@ -132,236 +196,308 @@
   <footer class="bg-[#3aafa9] text-white text-center py-4 mt-10">
     <p>
       Database provided by
-      <a href="https://github.com/ChessMastermind" class="underline hover:text-gray-200">ChessMastermind</a>
+      <a
+        href="https://github.com/ChessMastermind"
+        class="underline hover:text-gray-200"
+        >ChessMastermind</a
+      >
     </p>
   </footer>
 
-  <!-- ===== Dependencies (deferred) ===== -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" defer></script>
-  <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
-
-  <!-- ===== Page logic ===== -->
+  <!-- ─── PAGE SCRIPT ─── -->
   <script defer>
+    /**
+     * Helper: dynamically load a script by URL and resolve when loaded
+     */
+    const loadScript = (src) =>
+      new Promise((res) => {
+        const s = document.createElement('script');
+        s.src = src;
+        s.onload = res;
+        document.body.appendChild(s);
+      });
+
     window.addEventListener('DOMContentLoaded', () => {
-      /* ---------- FETCH & PARSE CSV ---------- */
       fetch('CIE.csv')
-        .then(resp => resp.text())
-        .then(csv => {
-          const parsed = Papa.parse(csv, { header: true, skipEmptyLines: true }).data;
-
-          /* ---------- BUILD TABLE ---------- */
-          const headRow = document.getElementById('CIE-head');
-          const body    = document.getElementById('CIE-body');
-
-          function populateTable(data) {
-            headRow.innerHTML = '';
-            body.innerHTML    = '';
-            if (!data.length) return;
-
-            const headers = Object.keys(data[0]);
-            headers.forEach(h => {
-              const th = document.createElement('th');
-              th.textContent = h;
-              headRow.appendChild(th);
+        .then((r) => r.text())
+        .then((csvText) =>
+          new Promise((resolve) => {
+            Papa.parse(csvText, {
+              header: true,
+              dynamicTyping: true,
+              skipEmptyLines: true,
+              worker: true, // offload parsing
+              complete: ({ data }) => resolve([data, csvText]),
             });
+          })
+        )
+        .then(async ([parsed, csvText]) => {
+          // 1) Load jQuery, DataTables, and Chart.js after parsing CSV
+          await loadScript('https://code.jquery.com/jquery-3.6.0.min.js');
+          await Promise.all([
+            loadScript(
+              'https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js'
+            ),
+            loadScript(
+              'https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js'
+            ),
+            loadScript('https://cdn.jsdelivr.net/npm/chart.js'),
+          ]);
 
-            data.forEach(row => {
-              const tr = document.createElement('tr');
-              headers.forEach(h => {
-                const td = document.createElement('td');
-                td.textContent = row[h];
-                tr.appendChild(td);
-              });
-              body.appendChild(tr);
-            });
-          }
-
-          populateTable(parsed);
-
-          /* DataTables with Responsive */
-          $('#CIETable').DataTable({
-            responsive: true,
-            scrollX: false,
-            autoWidth: false
-          });
-
-          /* ---------- DATA PREPARATION ---------- */
-          const cieDataBySubject = {};      // subject -> component -> session -> grades
-          const gradeList = ['a*', 'a', 'b', 'c', 'd', 'e'];
-          const monthOrder = { Jan:1, Feb:2, Mar:3, Apr:4, May:5, Jun:6, Jul:7, Aug:8, Sep:9, Oct:10, Nov:11, Dec:12 };
-
-          parsed.forEach(row => {
-            const sessionRaw = row['Series'] || row['session'] || row['Session'];
-            const subject    = row['SubjectCode'] || row['code'] || row['subject'];
-            const component  = row['Component'] || row['component'] || row['ComponentCode'] || row['component_code'] || '';
-            if (!sessionRaw || !subject) return;
-
-            // Standardise session format e.g. "2024 Jun"
-            let session = sessionRaw.trim();
-            if (/^\d{4}\s+[A-Za-z]{3}$/i.test(session) === false) {
-              // if session is like "Jun-2024" or "Jun 2024" convert
-              const parts = session.replace('-', ' ').split(/\s+/);
-              if (parts.length === 2) {
-                const [mon, yr] = parts;
-                session = `${yr} ${mon.substring(0,3)}`;
-              }
-            }
-
-            const compKey = component || 'ALL';
-            if (!cieDataBySubject[subject]) cieDataBySubject[subject] = {};
-            if (!cieDataBySubject[subject][compKey]) cieDataBySubject[subject][compKey] = {};
-            if (!cieDataBySubject[subject]['ALL']) cieDataBySubject[subject]['ALL'] = {};
-
-            if (!cieDataBySubject[subject][compKey][session]) cieDataBySubject[subject][compKey][session] = {};
-            if (!cieDataBySubject[subject]['ALL'][session])  cieDataBySubject[subject]['ALL'][session]  = {};
-
-            gradeList.forEach(g => {
-              const val = parseFloat(row[g.toUpperCase()] || row[g]);
-              if (!isNaN(val)) {
-                cieDataBySubject[subject][compKey][session][g] = val;
-                cieDataBySubject[subject]['ALL'][session][g]   = val; // store for aggregate view
-              }
-            });
-
-            const maxMark = parseFloat(row['MaxMark'] || row['max_mark']);
-            if (!isNaN(maxMark)) {
-              cieDataBySubject[subject][compKey][session]['max_mark'] = maxMark;
-              cieDataBySubject[subject]['ALL'][session]['max_mark']   = maxMark;
-            }
-          });
-
-          /* ---------- POPULATE SUBJECT & COMPONENT LISTS ---------- */
-          const subjectInput   = document.getElementById('cieSubjectSearch');
-          const componentInput = document.getElementById('cieComponentSearch');
-          const subjectList    = document.getElementById('cieSubjectList');
-          const componentList  = document.getElementById('cieComponentList');
-
-          Object.keys(cieDataBySubject).sort().forEach(code => {
-            const opt = document.createElement('option');
-            opt.value = code;
-            subjectList.appendChild(opt);
-          });
-
-          function populateComponents(subject) {
-            componentList.innerHTML = '';
-            if (!subject || !cieDataBySubject[subject]) {
-              componentInput.value = '';
-              componentInput.disabled = true;
-              return;
-            }
-            componentInput.disabled = false;
-            Object.keys(cieDataBySubject[subject]).filter(c=>c!=='ALL').sort().forEach(comp => {
-              const opt = document.createElement('option');
-              opt.value = comp;
-              componentList.appendChild(opt);
-            });
-          }
-
-          /* ---------- CHART ---------- */
-          const gradeColors = {
-            'a*':'#2ECC71',
-            'a':'#F4A261',
-            'b':'#E9C46A',
-            'c':'#E63946',
-            'd':'#264653',
-            'e':'#6D597A'
-          };
-          const maxMarkColor = '#999999';
-
-          const ctx = document.getElementById('CIEChart').getContext('2d');
-          let chart = null;
-
-          function updateChart() {
-            const subject   = subjectInput.value.trim();
-            const component = componentInput.value.trim();
-            if (!subject || !cieDataBySubject[subject]) {
-              if (chart) { chart.destroy(); chart = null; }
-              return;
-            }
-            const compKey = component && cieDataBySubject[subject][component] ? component : 'ALL';
-            const dataObj = cieDataBySubject[subject][compKey];
-            const sessions = Object.keys(dataObj);
-            if (!sessions.length) {
-              if (chart) { chart.destroy(); chart = null; }
-              return;
-            }
-
-            // chronological sort
-            sessions.sort((a,b)=>{
-              const [ya,ma] = a.split(' ');
-              const [yb,mb] = b.split(' ');
-              return (+ya - +yb) || (monthOrder[ma] - monthOrder[mb]);
-            });
-
-            const hasAStar = sessions.some(s=>dataObj[s].hasOwnProperty('a*'));
-            const grades   = gradeList.filter(g=>g!=='a*' || hasAStar);
-
-            const datasets = grades.map(g=>({
-              label: g.toUpperCase(),
-              data: sessions.map(s=>dataObj[s]?.[g] ?? null),
-              borderColor: gradeColors[g],
-              fill:false,
-              tension:0.2
-            }));
-            datasets.push({
-              label: 'Max\u00A0Mark',
-              data: sessions.map(s=>dataObj[s]?.['max_mark'] ?? null),
-              borderColor: maxMarkColor,
-              borderDash:[5,5],
-              borderWidth:1,
-              pointRadius:0,
-              fill:false
-            });
-
-            if (chart) chart.destroy();
-            chart = new Chart(ctx, {
-              type: 'line',
-              data: { labels: sessions, datasets },
-              options: {
-                responsive:true,
-                maintainAspectRatio:false,
-                plugins:{
-                  title:{ display:true, text:`Grade Boundaries — ${subject}${compKey!=='ALL' ? ' ('+compKey+')' : ''}` },
-                  legend:{ position:'bottom' }
-                },
-                scales:{
-                  x:{ title:{ display:true, text:'Exam Session' } },
-                  y:{ beginAtZero:true, title:{ display:true, text:'Marks' } }
-                }
-              }
-            });
-          }
-
-          /* ---------- EVENT LISTENERS ---------- */
-          subjectInput.addEventListener('input', () => {
-            populateComponents(subjectInput.value.trim());
-            updateChart();
-          });
-          componentInput.addEventListener('input', updateChart);
-
-          /* Auto-select first subject if available */
-          subjectInput.value = Object.keys(cieDataBySubject)[0] || '';
-          populateComponents(subjectInput.value);
-          updateChart();
-
-          /* ---------- CSV DOWNLOAD ---------- */
-          document.getElementById('downloadCSV').addEventListener('click', () => {
-            const blob = new Blob([csv], { type: 'text/csv' });
-            const url  = URL.createObjectURL(blob);
-            const a    = document.createElement('a');
-            a.href     = url;
-            a.download = 'CIE_Grade_Boundaries.csv';
-            a.click();
-          });
+          initPage(parsed, csvText);
         })
-        .catch(err => {
+        .catch((err) => {
           console.error(err);
-          const body = document.getElementById('CIE-body');
-          body.innerHTML = `<tr><td colspan="10" class="text-center py-4">Failed to load data.</td></tr>`;
+          const placeholder = `<tbody><tr><td colspan="10" class="text-center py-4">Failed to load data.</td></tr></tbody>`;
+          document.getElementById('CIETable').innerHTML = placeholder;
         });
     });
+
+    /**
+     * Main initialization: hand DataTables the parsed array, then set up filters, chart, and CSV download
+     */
+    function initPage(parsed, csvText) {
+      const tableEl = $('#CIETable');
+
+      // ─── 1) Build columns array from CSV headers ───
+      const headers = Object.keys(parsed[0] || {});
+      const dtColumns = headers.map((h) => ({
+        data: h,
+        title: h,
+      }));
+
+      // ─── 2) Initialize DataTables directly from JS data ───
+      tableEl.DataTable({
+        data: parsed, // use the entire array of parsed objects
+        columns: dtColumns,
+        responsive: true,
+        autoWidth: false,
+        deferRender: true,
+        pageLength: 50,
+      });
+
+      // ─── 3) Prepare data structure: subject → component → session → grades ───
+      const cieDataBySubject = {};
+      const gradeList = ['a*', 'a', 'b', 'c', 'd', 'e'];
+      const monthOrder = {
+        Jan: 1,
+        Feb: 2,
+        Mar: 3,
+        Apr: 4,
+        May: 5,
+        Jun: 6,
+        Jul: 7,
+        Aug: 8,
+        Sep: 9,
+        Oct: 10,
+        Nov: 11,
+        Dec: 12,
+      };
+
+      parsed.forEach((row) => {
+        // Normalize field names (some CSVs use different headers)
+        const sessionRaw =
+          row['Series'] || row['session'] || row['Session'] || '';
+        const subject =
+          row['SubjectCode'] || row['code'] || row['subject'] || '';
+        const component =
+          row['Component'] ||
+          row['component'] ||
+          row['ComponentCode'] ||
+          row['component_code'] ||
+          '';
+
+        if (!sessionRaw || !subject) return;
+
+        // Standardize session format to "YYYY MMM"
+        let session = sessionRaw.trim();
+        if (!/^\d{4}\s+[A-Za-z]{3}$/i.test(session)) {
+          // e.g. "Jun-2024" or "Jun 2024" → "2024 Jun"
+          const parts = session.replace('-', ' ').split(/\s+/);
+          if (parts.length === 2) {
+            const [mon, yr] = parts;
+            session = `${yr} ${mon.substring(0, 3)}`;
+          }
+        }
+
+        const compKey = component || 'ALL';
+        cieDataBySubject[subject] ??= {};
+        cieDataBySubject[subject][compKey] ??= {};
+        cieDataBySubject[subject]['ALL'] ??= {};
+
+        cieDataBySubject[subject][compKey][session] ??= {};
+        cieDataBySubject[subject]['ALL'][session] ??= {};
+
+        gradeList.forEach((g) => {
+          // CSV might use uppercase grade headers or lowercase
+          const rawVal = row[g.toUpperCase()] ?? row[g] ?? '';
+          const val = parseFloat(rawVal);
+          if (!isNaN(val)) {
+            cieDataBySubject[subject][compKey][session][g] = val;
+            cieDataBySubject[subject]['ALL'][session][g] = val;
+          }
+        });
+
+        const maxMarkRaw = row['MaxMark'] || row['max_mark'] || '';
+        const maxMark = parseFloat(maxMarkRaw);
+        if (!isNaN(maxMark)) {
+          cieDataBySubject[subject][compKey][session]['max_mark'] = maxMark;
+          cieDataBySubject[subject]['ALL'][session]['max_mark'] = maxMark;
+        }
+      });
+
+      // ─── 4) Populate Subject & Component datalists ───
+      const subjectInput = document.getElementById('cieSubjectSearch');
+      const componentInput = document.getElementById('cieComponentSearch');
+      const subjectList = document.getElementById('cieSubjectList');
+      const componentList = document.getElementById('cieComponentList');
+
+      Object.keys(cieDataBySubject)
+        .sort()
+        .forEach((code) => {
+          const opt = document.createElement('option');
+          opt.value = code;
+          subjectList.appendChild(opt);
+        });
+
+      function populateComponents(subject) {
+        componentList.innerHTML = '';
+        if (!subject || !cieDataBySubject[subject]) {
+          componentInput.value = '';
+          componentInput.disabled = true;
+          return;
+        }
+        componentInput.disabled = false;
+        Object.keys(cieDataBySubject[subject])
+          .filter((c) => c !== 'ALL')
+          .sort()
+          .forEach((comp) => {
+            const opt = document.createElement('option');
+            opt.value = comp;
+            componentList.appendChild(opt);
+          });
+      }
+
+      // ─── 5) Configure & update the Chart ───
+      const gradeColors = {
+        'a*': '#2ECC71',
+        a: '#F4A261',
+        b: '#E9C46A',
+        c: '#E63946',
+        d: '#264653',
+        e: '#6D597A',
+      };
+      const maxMarkColor = '#999999';
+
+      const ctx = document.getElementById('CIEChart').getContext('2d');
+      let chart = null;
+
+      function updateChart() {
+        const subject = subjectInput.value.trim();
+        const component = componentInput.value.trim();
+        if (!subject || !cieDataBySubject[subject]) {
+          if (chart) {
+            chart.destroy();
+            chart = null;
+          }
+          return;
+        }
+
+        const compKey =
+          component && cieDataBySubject[subject][component]
+            ? component
+            : 'ALL';
+        const dataObj = cieDataBySubject[subject][compKey];
+        const sessions = Object.keys(dataObj);
+        if (!sessions.length) {
+          if (chart) {
+            chart.destroy();
+            chart = null;
+          }
+          return;
+        }
+
+        // Sort sessions chronologically (YYYY MMM)
+        sessions.sort((a, b) => {
+          const [ya, ma] = a.split(' ');
+          const [yb, mb] = b.split(' ');
+          return +ya - +yb || monthOrder[ma] - monthOrder[mb];
+        });
+
+        const hasAStar = sessions.some((s) =>
+          dataObj[s].hasOwnProperty('a*')
+        );
+        const grades = gradeList.filter((g) => g !== 'a*' || hasAStar);
+
+        const datasets = grades.map((g) => ({
+          label: g.toUpperCase(),
+          data: sessions.map((s) => dataObj[s][g] ?? null),
+          borderColor: gradeColors[g],
+          fill: false,
+          tension: 0.2,
+        }));
+        datasets.push({
+          label: 'Max\u00A0Mark',
+          data: sessions.map((s) => dataObj[s]['max_mark'] ?? null),
+          borderColor: maxMarkColor,
+          borderDash: [5, 5],
+          borderWidth: 1,
+          pointRadius: 0,
+          fill: false,
+        });
+
+        if (chart) chart.destroy();
+        chart = new Chart(ctx, {
+          type: 'line',
+          data: { labels: sessions, datasets },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              title: {
+                display: true,
+                text: `Grade Boundaries — ${subject}${
+                  compKey !== 'ALL' ? ' (' + compKey + ')' : ''
+                }`,
+              },
+              legend: { position: 'bottom' },
+            },
+            scales: {
+              x: { title: { display: true, text: 'Exam Session' } },
+              y: {
+                beginAtZero: true,
+                title: { display: true, text: 'Marks' },
+              },
+            },
+          },
+        });
+      }
+
+      // ─── 6) Hook up event listeners ───
+      subjectInput.addEventListener('input', () => {
+        populateComponents(subjectInput.value.trim());
+        updateChart();
+      });
+      componentInput.addEventListener('input', updateChart);
+
+      // Auto-select first subject & populate components
+      subjectInput.value = Object.keys(cieDataBySubject)[0] || '';
+      populateComponents(subjectInput.value);
+      updateChart();
+
+      // ─── 7) Wire up "Download CSV" ───
+      document
+        .getElementById('downloadCSV')
+        .addEventListener('click', () => {
+          const blob = new Blob([csvText], { type: 'text/csv' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'CIE_Grade_Boundaries.csv';
+          a.click();
+          URL.revokeObjectURL(url);
+        });
+    }
   </script>
 </body>
 </html>
