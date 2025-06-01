@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Oxford Aqa Grade Boundaries</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oxford AQA Grade Boundaries</title>
 
-  <!-- Tailwind -->
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
   <script src="https://cdn.tailwindcss.com" defer></script>
 
   <!-- DataTables CSS -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
-  >
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" />
+
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -21,6 +21,10 @@
     header {
       background-color: #3aafa9;
     }
+    nav a:hover {
+      color: #ffffff;
+      border-bottom: 2px solid #feffff;
+    }
     table.dataTable thead th {
       background-color: #3aafa9;
       color: white;
@@ -28,89 +32,97 @@
     table.dataTable tbody tr:hover {
       background-color: #dff6f5;
     }
-    table.dataTable td,
-  table.dataTable th {
-    padding: 0.25rem 0.5rem !important; /* top/bottom, left/right */
-    line-height: 1.2;
-  }
 
-  /* 1) .table-wrapper must be scrollable */
-.table-wrapper {
-  width: 100%;
-  overflow-x: auto;            /* horizontal scroll on narrow screens */
-  -webkit-overflow-scrolling: touch; /* smooth iOS scrolling (optional) */
-}
+    /* ---------- MOBILE‑FRIENDLY TABLE ---------- */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    table.dataTable th,
+    table.dataTable td {
+      padding: 0.25rem 0.5rem !important;
+      line-height: 1.2;
+    }
+    table.dataTable th {
+      font-size: clamp(0.875rem, 2vw, 1.25rem);
+      white-space: nowrap;
+    }
+    table.dataTable td {
+      font-size: clamp(0.75rem, 1.2vw, 1rem);
+    }
+    table.dataTable {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    @media (max-width: 400px) {
+      table.dataTable th,
+      table.dataTable td {
+        padding: 0.125rem 0.25rem !important;
+      }
+    }
 
-/* 2) Padding + line-height for all DataTable cells */
-table.dataTable th,
-table.dataTable td {
-  padding: 0.25rem 0.5rem !important; /* 4px top/bottom, 8px left/right */
-  line-height: 1.2;
-}
-
-/* 3) Fluid‐but‐bounded font for <th> */
-table.dataTable th {
-  font-size: clamp(0.875rem, 2vw, 1.25rem);
-  white-space: nowrap;
-}
-
-/* 4) Fluid‐but‐bounded font for <td> */
-table.dataTable td {
-  font-size: clamp(0.75rem, 1.2vw, 1rem);
-}
-
-/* 5) Cap total table width on very wide screens (optional) */
-table.dataTable {
-  width: 100%;
-  max-width: 1000px; /* adjust as needed */
-  margin: 0 auto;    /* center if parent is wider */
-}
-
-/* 6) On the smallest phones (≤400px), reduce cell padding further */
-@media (max-width: 400px) {
-  table.dataTable th,
-  table.dataTable td {
-    padding: 0.125rem 0.25rem !important; /* 2px top/bottom, 4px left/right */
-  }
-}
-}
+    /* ---------- RESPONSIVE CHART ---------- */
+    .chart-container {
+      position: relative;
+      width: 100%;
+      min-height: 250px;
+      height: 45vw;
+      max-height: 500px;
+    }
+    .chart-container canvas {
+      position: absolute;
+      inset: 0;
+      width: 100% !important;
+      height: 100% !important;
+    }
   </style>
 </head>
 <body class="text-gray-800 flex flex-col min-h-screen">
-
-  <header class="bg-[#3aafa9] text-white text-center py-6 shadow-lg">
-    <h1 class="text-4xl font-bold">Oxford Aqa Grade Boundaries</h1>
+  <header class="text-white text-center py-6 shadow-lg">
+    <h1 class="text-3xl sm:text-4xl font-bold">Oxford&nbsp;AQA Grade Boundaries</h1>
     <nav class="mt-4">
-      <a href="index.html" class="mx-4 text-lg hover:text-white transition">Home</a>
-      <a href="CIE.html" class="mx-4 text-lg hover:text-white transition">CIE</a>
-      <a href="Edexcel.html" class="mx-4 text-lg hover:text-white transition"> Edexcel</a>
+      <a href="index.html" class="mx-4 text-base sm:text-lg hover:text-white transition">Home</a>
+      <a href="CIE.html" class="mx-4 text-base sm:text-lg hover:text-white transition">CIE</a>
+      <a href="Edexcel.html" class="mx-4 text-base sm:text-lg hover:text-white transition">Edexcel</a>
     </nav>
   </header>
 
-<main class="flex-1 w-full overflow-x-auto px-4">
-  
+  <main class="flex-1 w-full px-4">
     <section class="bg-white rounded-lg shadow-md p-6 w-full max-w-6xl mx-auto">
-      <h2 class="text-2xl font-semibold mb-4">Oxford Aqa Grade Boundaries </h2>
-<div class="table-wrapper overflow-x-auto">
-      <table
-        id="OxfordAqaTable"
-        class="display w-full"
-        aria-describedby="grade-boundaries-caption"
-      >
-        <caption id="grade-boundaries-caption" class="sr-only">
-          Grade boundaries per unit code
-        </caption>
-        <thead><tr id="OxfordAqa-head"></tr></thead>
-        <tbody id="OxfordAqa-body"></tbody>
-      </table>
- </div>
-      <div class="text-right mt-4">
-        <button
-          id="downloadCSV"
-          class="bg-[#3aafa9] text-white px-4 py-2 rounded hover:bg-[#2b7a78] transition"
-        >
+      <h2 class="text-2xl font-semibold mb-4">Oxford&nbsp;AQA Grade Boundaries</h2>
+
+      <div class="table-wrapper mb-6">
+        <table id="OxfordAqaTable" class="display nowrap responsive w-full" aria-describedby="grade-boundaries-caption">
+          <caption id="grade-boundaries-caption" class="sr-only">
+            Oxford AQA grade boundaries per unit code
+          </caption>
+          <thead><tr id="OxfordAqa-head"></tr></thead>
+          <tbody id="OxfordAqa-body"></tbody>
+        </table>
+      </div>
+
+      <div class="text-right my-4">
+        <button id="downloadCSV" class="bg-[#3aafa9] text-white px-4 py-2 rounded hover:bg-[#2b7a78] transition">
           Download CSV
         </button>
+      </div>
+
+      <div id="aqa-controls" class="flex flex-wrap gap-4 mb-6 items-center">
+        <label for="aqaSubjectSearch" class="font-semibold">Subject&nbsp;Code:</label>
+        <input
+          type="text"
+          id="aqaSubjectSearch"
+          placeholder="Enter code (e.g. 9610/01)"
+          class="border rounded px-2 py-1 w-40 sm:w-auto"
+          list="aqaCodeList"
+        />
+        <datalist id="aqaCodeList"></datalist>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="OxfordAqaChart"></canvas>
       </div>
     </section>
   </main>
@@ -118,50 +130,33 @@ table.dataTable {
   <footer class="bg-[#3aafa9] text-white text-center py-4 mt-10">
     <p>
       Database provided by
-      <a
-        href="https://github.com/ChessMastermind"
-        class="underline hover:text-gray-200"
-      >
-        ChessMastermind
-      </a>
+      <a href="https://github.com/ChessMastermind" class="underline hover:text-gray-200">ChessMastermind</a>
     </p>
   </footer>
 
   <!-- Dependencies (deferred) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-  <script
-    src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"
-    defer
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"
-    defer
-  ></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" defer></script>
+  <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
 
-  <!-- Your page logic -->
+  <!-- Page logic -->
   <script defer>
     window.addEventListener('DOMContentLoaded', () => {
       fetch('OxfordAqa.csv')
-        .then(resp => {
-          if (!resp.ok) throw new Error('Network error');
-          return resp.text();
-        })
+        .then(resp => resp.text())
         .then(csv => {
-          const parsed = Papa.parse(csv, {
-            header: true,
-            skipEmptyLines: true
-          }).data;
+          const parsed = Papa.parse(csv, { header: true, skipEmptyLines: true }).data;
 
+          /* -------------------- TABLE -------------------- */
           const headRow = document.getElementById('OxfordAqa-head');
           const body    = document.getElementById('OxfordAqa-body');
 
           function populateTable(data) {
             headRow.innerHTML = '';
             body.innerHTML    = '';
-
             if (!data.length) return;
 
-            // build the header
             const headers = Object.keys(data[0]);
             headers.forEach(h => {
               const th = document.createElement('th');
@@ -169,7 +164,6 @@ table.dataTable {
               headRow.appendChild(th);
             });
 
-            // build the rows
             data.forEach(row => {
               const tr = document.createElement('tr');
               headers.forEach(h => {
@@ -181,34 +175,138 @@ table.dataTable {
             });
           }
 
-          // initial render
           populateTable(parsed);
 
-          // initialize DataTable once
-          $('#OxfordAqaTable').DataTable();
+          /* DataTables with Responsive extension */
+          $('#OxfordAqaTable').DataTable({
+            responsive: true,
+            scrollX: false,
+            autoWidth: false
+          });
 
-          // wire up download button
-          document
-            .getElementById('downloadCSV')
-            .addEventListener('click', () => {
-              const blob = new Blob([csv], { type: 'text/csv' });
-              const url  = URL.createObjectURL(blob);
-              const a    = document.createElement('a');
-              a.href     = url;
-              a.download = 'OxfordAqa_Grade_Boundaries.csv';
-              a.click();
+          /* -------------------- DATA PREP -------------------- */
+          const aqaDataByCode = {};
+
+          // Determine grade columns dynamically: everything except these meta columns
+          const metaCols = ['year', 'session', 'code', 'max_mark'];
+          const gradeList = Object.keys(parsed[0] || {}).filter(k => !metaCols.includes(k.toLowerCase()));
+
+          parsed.forEach(row => {
+            const session = `${row['year']} ${row['session']}`.trim();
+            const code    = row['code'];
+            if (!code || !session) return;
+
+            if (!aqaDataByCode[code]) aqaDataByCode[code] = {};
+            if (!aqaDataByCode[code][session]) aqaDataByCode[code][session] = {};
+
+            gradeList.forEach(g => {
+              const val = parseFloat(row[g]);
+              if (!isNaN(val)) aqaDataByCode[code][session][g] = val;
             });
+
+            const maxMark = parseFloat(row['max_mark']);
+            if (!isNaN(maxMark)) aqaDataByCode[code][session]['max_mark'] = maxMark;
+          });
+
+          /* Populate datalist */
+          const aqaInput = document.getElementById('aqaSubjectSearch');
+          const codeList = document.getElementById('aqaCodeList');
+          Object.keys(aqaDataByCode).sort().forEach(code => {
+            const opt = document.createElement('option');
+            opt.value = code;
+            codeList.appendChild(opt);
+          });
+
+          /* -------------------- CHART -------------------- */
+          // Basic color palette generator
+          function genColor(i, total) {
+            const hue = (i * 360 / total) % 360;
+            return `hsl(${hue}, 60%, 50%)`;
+          }
+          const gradeColors = {};
+          gradeList.forEach((g, idx) => { gradeColors[g] = genColor(idx, gradeList.length); });
+          const maxMarkColor = "#999999";
+
+          const ctx = document.getElementById('OxfordAqaChart').getContext('2d');
+          let chart = null;
+
+          function updateChart() {
+            const code = aqaInput.value.trim();
+            if (!aqaDataByCode[code]) {
+              if (chart) { chart.destroy(); chart = null; }
+              return;
+            }
+            const data = aqaDataByCode[code];
+            const sessions = Object.keys(data);
+            if (!sessions.length) {
+              if (chart) { chart.destroy(); chart = null; }
+              return;
+            }
+
+            // Sort sessions chronologically (relies on month abbreviations)
+            const monthOrder = { Jan:1, Feb:2, Mar:3, Apr:4, May:5, Jun:6, Jul:7, Aug:8, Sep:9, Oct:10, Nov:11, Dec:12 };
+            sessions.sort((a,b) => {
+              const [ya,ma] = a.split(' ');
+              const [yb,mb] = b.split(' ');
+              return (+ya - +yb) || (monthOrder[ma] - monthOrder[mb]);
+            });
+
+            const datasets = gradeList.map(g => ({
+              label: g.toUpperCase(),
+              data: sessions.map(s => data[s]?.[g] ?? null),
+              borderColor: gradeColors[g],
+              fill: false,
+              tension: 0.2
+            }));
+            datasets.push({
+              label: 'Max\u00A0Mark',
+              data: sessions.map(s => data[s]?.['max_mark'] ?? null),
+              borderColor: maxMarkColor,
+              borderDash: [5, 5],
+              borderWidth: 1,
+              pointRadius: 0,
+              fill: false
+            });
+
+            if (chart) chart.destroy();
+            chart = new Chart(ctx, {
+              type: 'line',
+              data: { labels: sessions, datasets },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  title: { display: true, text: `Grade Boundaries — ${code}` },
+                  legend: { position: 'bottom' }
+                },
+                scales: {
+                  x: { title: { display: true, text: 'Exam Session' } },
+                  y: { beginAtZero: true, title: { display: true, text: 'Marks' } }
+                }
+              }
+            });
+          }
+
+          aqaInput.addEventListener('input', updateChart);
+
+          // Auto‑select the first code if available
+          aqaInput.value = Object.keys(aqaDataByCode)[0] || '';
+          updateChart();
+
+          /* -------------------- DOWNLOAD BUTTON -------------------- */
+          document.getElementById('downloadCSV').addEventListener('click', () => {
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url  = URL.createObjectURL(blob);
+            const a    = document.createElement('a');
+            a.href     = url;
+            a.download = 'OxfordAqa_Grade_Boundaries.csv';
+            a.click();
+          });
         })
         .catch(err => {
           console.error(err);
-          const body = document.getElementById('OxfordAqa-body');
-          body.innerHTML = `
-            <tr>
-              <td colspan="10" class="text-center py-4">
-                Failed to load data.
-              </td>
-            </tr>
-          `;
+          document.getElementById('OxfordAqa-body').innerHTML = `
+            <tr><td colspan="10" class="text-center py-4">Failed to load data.</td></tr>`;
         });
     });
   </script>
