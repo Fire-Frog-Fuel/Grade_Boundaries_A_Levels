@@ -42,10 +42,9 @@
   .chart-container {
     position: relative;
     width: 100%;
-    /* Taller graph to match new CIE */
-    min-height: 550px;
-    height: 80vw;
-    max-height: 900px;
+    min-height: 550px;   /* taller graph */
+    height: 80vw;        /* responsive on mobiles */
+    max-height: 900px;   /* avoid being massive on desktops */
     background: #fff;
     border-radius: 0.5rem;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -63,13 +62,13 @@
 <link rel="preconnect" href="https://cdn.datatables.net" />
 <link rel="preconnect" href="https://code.jquery.com" />
 
-<!-- Tailwind (deferred) -->
+<!-- Tailwind -->
 <script src="https://cdn.tailwindcss.com" defer></script>
 
 <!-- PapaParse -->
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
 
-<!-- DataTables CSS -->
+<!-- DataTables CSS (preload) -->
 <link rel="preload" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" as="style" onload="this.rel='stylesheet'" />
 <noscript><link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" /></noscript>
 <link rel="preload" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" as="style" onload="this.rel='stylesheet'" />
@@ -100,7 +99,7 @@
 
     <div class="table-wrapper mb-6">
       <table id="EdexcelTable" class="display nowrap responsive w-full" aria-describedby="grade-boundaries-caption">
-        <caption id="grade-boundaries-caption" class="sr-only">Edexcel grade boundaries per unit / component</caption>
+        <caption id="grade-boundaries-caption" class="sr-only">Edexcel grade boundaries per unit code</caption>
         <thead><tr></tr></thead>
       </table>
     </div>
@@ -109,15 +108,10 @@
       <button id="downloadCSV" class="bg-[#3aafa9] text-white px-4 py-2 rounded hover:bg-[#2b7a78] transition">Download CSV</button>
     </div>
 
-    <!-- CONTROLS -->
     <div id="edexcel-controls" class="flex flex-wrap gap-4 mb-6 items-center">
-      <label for="edexcelSubjectSearch" class="font-semibold">Subject&nbsp;Code:</label>
+      <label for="edexcelSubjectSearch" class="font-semibold">Unit&nbsp;Code:</label>
       <input type="text" id="edexcelSubjectSearch" placeholder="e.g. WPH14" class="border rounded px-2 py-1 w-36 sm:w-auto" list="edexcelCodeList" />
       <datalist id="edexcelCodeList"></datalist>
-
-      <label for="edexcelComponentSearch" class="font-semibold">Component:</label>
-      <input type="text" id="edexcelComponentSearch" placeholder="select component" class="border rounded px-2 py-1 w-24 sm:w-32" list="edexcelComponentList" disabled />
-      <datalist id="edexcelComponentList"></datalist>
     </div>
 
     <div class="chart-container"><canvas id="EdexcelChart"></canvas></div>
@@ -150,54 +144,26 @@
     // Build DataTable
     const headers = Object.keys(parsed[0]||{});
     const dtColumns = headers.map(h=>({data:h,title:h}));
-    const dataTable = $('#EdexcelTable').DataTable({ data:parsed, columns:dtColumns, responsive:true, autoWidth:false, deferRender:true, pageLength:10 });
+    $('#EdexcelTable').DataTable({ data:parsed, columns:dtColumns, responsive:true, autoWidth:false, deferRender:true, pageLength:10 });
 
-    // Component filter beside search bar
-    const componentAliases = ['Component','component','component_code','paper','unit'];
-    const compColIdx = headers.findIndex(h=>componentAliases.includes(h));
-    if(compColIdx!==-1){
-      const compSet=new Set(parsed.map(r=>r[headers[compColIdx]]).filter(Boolean));
-      const filterDiv = $('#EdexcelTable_filter');
-      filterDiv.append(`<label style="margin-left:1rem;font-weight:600;">Component:&nbsp;<input type="text" id="componentTableSearch" list="componentTableList" placeholder="component" class="border rounded px-2 py-1 w-24 sm:w-32"></label>`);
-      $('body').append('<datalist id="componentTableList"></datalist>');
-      compSet.forEach(c=>$('#componentTableList').append(`<option value="${c}"></option>`));
-      $('#componentTableSearch').on('input',function(){ dataTable.column(compColIdx).search(this.value).draw(); });
-    }
-
-    // Build nested data structure: subject → component → session → grades
+    // Structure: unitCode -> session -> grades
     const gradeList=['a*','a','b','c','d','e'];
-    const dataBySubject = {};
+    const dataByCode = {};
     parsed.forEach(r=>{
-      const subject = r.code || r.SubjectCode || r.subject || '';
-      const component = r.Component || r.component || r.component_code || r.paper || r.unit || '';
+      const code = r.code || r.UnitCode || r.unit || r.subject || '';
       const session = `${r.year||''} ${(r.session||'').trim()}`.trim();
-      if(!subject || !session) return;
-      const compKey=component || 'ALL';
-      dataBySubject[subject]??={};
-      dataBySubject[subject][compKey]??={};
-      dataBySubject[subject][compKey][session]??={};
-      gradeList.forEach(g=>{ const v=parseFloat(r[g]); if(!isNaN(v)) dataBySubject[subject][compKey][session][g]=v; });
-      const mm=parseFloat(r.max_mark); if(!isNaN(mm)) dataBySubject[subject][compKey][session].max_mark=mm;
+      if(!code || !session) return;
+      dataByCode[code]??={};
+      dataByCode[code][session]??={};
+      gradeList.forEach(g=>{ const v=parseFloat(r[g]); if(!isNaN(v)) dataByCode[code][session][g]=v; });
+      const mm=parseFloat(r.max_mark); if(!isNaN(mm)) dataByCode[code][session].max_mark=mm;
     });
 
-    // Populate subject & component datalists
-    const subjInput=document.getElementById('edexcelSubjectSearch');
-    const compInput=document.getElementById('edexcelComponentSearch');
-    const subjList=document.getElementById('edexcelCodeList');
-    const compList=document.getElementById('edexcelComponentList');
-    Object.keys(dataBySubject).sort().forEach(c=>subjList.appendChild(Object.assign(document.createElement('option'),{value:c})));
+    // Datalist for unit codes
+    const codeInput=document.getElementById('edexcelSubjectSearch');
+    const codeList=document.getElementById('edexcelCodeList');
+    Object.keys(dataByCode).sort().forEach(c=>codeList.appendChild(Object.assign(document.createElement('option'),{value:c})));
 
-    function populateComponents(subj){
-      compList.innerHTML=''; compInput.value=''; compInput.disabled=true;
-      if(!subj || !dataBySubject[subj]) return;
-      const comps=Object.keys(dataBySubject[subj]).filter(c=>c!=='ALL');
-      if(!comps.length) return;
-      compInput.disabled=false;
-      comps.sort().forEach(c=>compList.appendChild(Object.assign(document.createElement('option'),{value:c})));
-      compInput.value=comps[0];
-    }
-
-    // Chart setup
     const ctx=document.getElementById('EdexcelChart').getContext('2d');
     let chart=null;
     const gradeColors={'a*':'#2ECC71',a:'#F4A261',b:'#E9C46A',c:'#E63946',d:'#264653',e:'#6D597A'};
@@ -205,10 +171,9 @@
     const monthOrder={Jan:1,Feb:2,Mar:3,Apr:4,May:5,Jun:6,Jul:7,Aug:8,Sep:9,Oct:10,Nov:11,Dec:12};
 
     function updateChart(){
-      const subj=subjInput.value.trim();
-      const comp=compInput.value.trim();
-      if(!subj || !comp || !dataBySubject[subj] || !dataBySubject[subj][comp]){ if(chart){chart.destroy();chart=null;} return; }
-      const dataObj=dataBySubject[subj][comp];
+      const code=codeInput.value.trim();
+      if(!dataByCode[code]){ if(chart){chart.destroy();chart=null;} return; }
+      const dataObj=dataByCode[code];
       const sessions=Object.keys(dataObj);
       if(!sessions.length){ if(chart){chart.destroy();chart=null;} return; }
       sessions.sort((a,b)=>{const [ya,ma]=a.split(' ');const [yb,mb]=b.split(' ');return(+ya-+yb)||(monthOrder[ma]-monthOrder[mb]);});
@@ -217,18 +182,16 @@
       const datasets=grades.map(g=>({label:g.toUpperCase(),data:sessions.map(s=>dataObj[s][g]??null),borderColor:gradeColors[g],tension:0.2,fill:false}));
       datasets.push({label:'Max Mark',data:sessions.map(s=>dataObj[s].max_mark??null),borderColor:maxMarkColor,borderDash:[5,5],borderWidth:1,pointRadius:0,fill:false});
       if(chart) chart.destroy();
-      chart=new Chart(ctx,{type:'line',data:{labels:sessions,datasets},options:{responsive:true,maintainAspectRatio:false,plugins:{title:{display:true,text:`Grade Boundaries — ${subj} (${comp})`},legend:{position:'bottom'}},scales:{x:{title:{display:true,text:'Exam Session'}},y:{beginAtZero:true,title:{display:true,text:'Marks'}}}}});
+      chart=new Chart(ctx,{type:'line',data:{labels:sessions,datasets},options:{responsive:true,maintainAspectRatio:false,plugins:{title:{display:true,text:`Grade Boundaries — ${code}`},legend:{position:'bottom'}},scales:{x:{title:{display:true,text:'Exam Session'}},y:{beginAtZero:true,title:{display:true,text:'Marks'}}}}});
     }
 
-    subjInput.addEventListener('input',()=>{populateComponents(subjInput.value.trim()); updateChart();});
-    compInput.addEventListener('input',updateChart);
-    // initialise
-    subjInput.value=Object.keys(dataBySubject)[0]||'';
-    populateComponents(subjInput.value);
+    codeInput.addEventListener('input',updateChart);
+    // initialise with first code
+    codeInput.value=Object.keys(dataByCode)[0]||'';
     updateChart();
 
     // CSV download
-    document.getElementById('downloadCSV').addEventListener('click',()=>{const blob=new Blob([csvText],{type:'text/csv'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='Edexcel_Grade_Boundaries.csv';a.click();URL.revokeObjectURL(url);});
+    document.getElementById('downloadCSV').addEventListener('click',()=>{ const blob=new Blob([csvText],{type:'text/csv'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='Edexcel_Grade_Boundaries.csv'; a.click(); URL.revokeObjectURL(url); });
   }
 </script>
 
