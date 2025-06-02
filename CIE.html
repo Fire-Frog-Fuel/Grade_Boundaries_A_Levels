@@ -6,10 +6,20 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" />
 <link rel="preconnect" href="https://cdn.datatables.net" />
 <link rel="preconnect" href="https://code.jquery.com" />
-
+<script>
+/* Instant-load theme so there’s zero flash of wrong colour */
+(() => {
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark' ||
+      (!saved && matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  }
+})();
+</script>
 <!-- Tailwind (small – safe to defer) -->
 <script src="https://cdn.tailwindcss.com" defer></script>
 <link rel="stylesheet" href="style.css">
+    
 <!-- PapaParse (needed before fetching/parsing CSV) -->
 <script
   src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"
@@ -321,6 +331,22 @@
       URL.revokeObjectURL(url);
     });
   }
+</script>
+<!-- 🟢 put this at the BOTTOM of <body> -->
+<button id="theme-toggle" aria-label="Toggle dark / light mode">🌙</button>
+
+<script>
+const btn  = document.getElementById('theme-toggle');
+const root = document.documentElement;
+
+/*  swap icon to match current state  */
+btn.textContent = root.classList.contains('dark') ? '☀️' : '🌙';
+
+btn.addEventListener('click', () => {
+  const dark = root.classList.toggle('dark');
+  localStorage.setItem('theme', dark ? 'dark' : 'light');
+  btn.textContent = dark ? '☀️' : '🌙';
+});
 </script>
 
   </body>
