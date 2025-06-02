@@ -61,7 +61,7 @@
   --table-th-bg:    var(--brand-600);
   --table-th-text:  #ffffff;
 
-  --border-default: #334155; /* slate-700 */
+  --border-default: transparent; 
 }
 
 /* ============================================================
