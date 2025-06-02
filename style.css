@@ -1,6 +1,3 @@
-
-/* style.css */
-
 /* =================================================
    THEME TOKENS – tweak these per colour group 🖌️
    ================================================= */
@@ -12,8 +9,8 @@
   /* Neutrals */
   --bg-page: linear-gradient(to bottom, #def2f1 0%, #ffffff 100%);
   --bg-card: #ffffff;
-  --text-body: #1f2937;   /* gray-800 */
-  --text-heading: #111827;/* gray-900 */
+  --text-body: #1f2937;        /* gray-800 */
+  --text-heading: #111827;     /* gray-900 */
 
   /* Links & borders */
   --link-default: var(--brand-500);
@@ -21,113 +18,146 @@
   --border-default: transparent;
 }
 
+/* -------------- DARK THEME OVERRIDES -------------- */
 .dark {
-  /* Brand stays the same, but you can change it here */
-  --bg-page: #0f172a;            /* slate-900 */
-  --bg-card: #1e293b;            /* slate-800 */
-  --text-body: #f1f5f9;          /* slate-100 */
+  /* feel free to change any of these */
+  --bg-page: #0f172a;          /* slate-900 */
+  --bg-card: #1e293b;          /* slate-800 */
+  --text-body: #f1f5f9;        /* slate-100 */
   --text-heading: #ffffff;
-  --link-default: #a7f3d0;       /* emerald-200 */
-  --link-hover: #d1fae5;         /* emerald-100 */
-  --border-default: #334155;     /* slate-700 */
+  --link-default: #a7f3d0;     /* emerald-200 */
+  --link-hover: #d1fae5;       /* emerald-100 */
+  --border-default: #334155;   /* slate-700 */
 }
 
+/* =================================================
+   BASE ELEMENTS – always reference the tokens above
+   ================================================= */
+html, body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
-/* Optional cosmetics for the pretty slider */
+body {
+  background: var(--bg-page);
+  color: var(--text-body);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Headings pick up their own colour token */
+h1, h2, h3, h4, h5, h6 { color: var(--text-heading); }
+
+/* =================================================
+   COMPONENT STYLES
+   ================================================= */
+
+/* ---------- Header ---------- */
+header {
+  background-color: var(--brand-500);
+  color: var(--link-hover);
+}
+
+/* Navigation */
+nav a {
+  border-bottom: 2px solid var(--border-default);
+  color: var(--link-hover);
+  transition: color .3s, border-color .3s;
+}
+nav a:hover {
+  color: var(--link-hover);
+  border-bottom-color: var(--link-hover);
+}
+
+/* ---------- Cards ---------- */
+article {
+  background: var(--bg-card);
+  color: var(--text-body);
+  transition: background-color .2s ease, color .2s ease;
+}
+
+/* ---------- Buttons inside cards ---------- */
+a.inline-block {
+  background-color: var(--brand-500);
+  color: #fff;
+}
+a.inline-block:hover {
+  background-color: var(--brand-600);
+}
+
+/* ---------- DataTables (if/when you initialise them) ---------- */
+table.dataTable thead th {
+  background-color: var(--brand-500);
+  color: var(--link-hover);
+}
+
+table.dataTable tbody tr:hover {
+  background-color: var(--border-default);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background-color: var(--brand-500);
+  color: var(--link-hover);
+}
+
+/* =================================================
+   DARK-MODE PATCHES for Tailwind’s fixed colours
+   ================================================= */
+
+/* Tailwind’s “bg-white” utility is hard-coded – neutralise it */
+.dark .bg-white,
+.dark article,
+.dark .bg-[#ffffff] {
+  background-color: var(--bg-card) !important;
+}
+
+/* Same for text utilities that force black */
+.dark .text-black {
+  color: var(--text-body) !important;
+}
+
+/* Optional: darken table header a bit more */
+.dark table.dataTable thead th {
+  background-color: var(--brand-600);
+}
+
+/* =================================================
+   THEME TOGGLE – pretty slider (unchanged)
+   ================================================= */
 .theme-switch {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;          /* tuck it in the header corner */
-    display: inline-block;
-    width: 50px;
-    height: 26px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
 }
 .theme-switch input { display: none; }
 
 .theme-switch .slider {
-    position: absolute;
-    cursor: pointer;
-    inset: 0;
-    background-color: #ccc;
-    border-radius: 26px;
-    transition: background-color .3s;
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  border-radius: 26px;
+  transition: background-color .3s;
 }
 .theme-switch .slider::before {
-    content: "";
-    position: absolute;
-    height: 22px;
-    width: 22px;
-    left: 2px;
-    bottom: 2px;
-    background-color: white;
-    border-radius: 50%;
-    transition: transform .3s;
+  content: "";
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform .3s;
 }
 .theme-switch input:checked + .slider {
-    background-color: #3b82f6;   /* blue-500 */
+  background-color: #3b82f6;   /* blue-500 */
 }
 .theme-switch input:checked + .slider::before {
-    transform: translateX(24px);
-}
-
-/* ===== Reset & Base ===== */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-
-/* ===== Header ===== */
-header {
-    background-color: var(--header-bg);
-    color: var(--header-text);
-    padding: 1rem;
-    text-align: center;
-}
-
-nav a {
-    color: var(--nav-link);
-    text-decoration: none;
-    margin: 0 1rem;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: var(--nav-link-hover);
-}
-
-/* ===== Main Content ===== */
-main {
-    padding: 2rem;
-}
-
-section {
-    background-color: var(--section-bg);
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-/* ===== DataTables Styling ===== */
-table.dataTable thead th {
-    background-color: var(--table-header-bg);
-    color: var(--table-header-text);
-}
-
-table.dataTable tbody tr:hover {
-    background-color: var(--table-row-hover);
-}
-
-/* ===== Footer ===== */
-footer {
-    background-color: var(--footer-bg);
-    color: var(--footer-text);
-    text-align: center;
-    padding: 1rem;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+  transform: translateX(24px);
 }
