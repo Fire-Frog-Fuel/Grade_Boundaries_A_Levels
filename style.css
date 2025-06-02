@@ -1,202 +1,199 @@
 /* ============================================================
-   1️⃣  DESIGN TOKENS – edit these to re-skin the whole site
+   01  DESIGN TOKENS – tweak one hex, reskin everything ✨
    ============================================================ */
 
-/* ---------- LIGHT THEME ---------- */
+/* ---------- LIGHT THEME (default) ---------- */
 :root {
-  /* Brand */
-  --brand-500: #3aafa9;
+  /* Brand accent  */
+  --brand-500: #3aafa9;  /* teal */
   --brand-600: #2b7a78;
 
-  /* Backgrounds */
+  /* Backgrounds   */
   --bg-body:  linear-gradient(to bottom, #def2f1 0%, #ffffff 100%);
   --bg-card:  #ffffff;
   --bg-header: var(--brand-500);
   --bg-footer: var(--brand-500);
   --bg-table-hover: #dff6f5;
 
-  /* Typography */
-  --text-body:      #1f2937; /* gray-800 */
-  --text-heading:   #111827; /* gray-900 */
+  /* Typography    */
+  --text-body:      #1f2937; /* gray‑800 */
+  --text-heading:   #111827; /* gray‑900 */
   --text-link:      var(--brand-500);
   --text-link-hover:#ffffff;
 
   /* Buttons & inputs */
   --btn-bg:         var(--brand-500);
   --btn-bg-hover:   var(--brand-600);
+  --btn-text:       #ffffff;
+  --btn-shadow:     0 2px 6px rgb(0 0 0 / .20);
+  --btn-lift:       -2px;      /* upward movement on hover */
+
   --input-bg:       #ffffff;
-  --input-border:   #cbd5e1; /* slate-300 */
+  --input-border:   #cbd5e1;   /* slate‑300 */
 
   /* Table header */
   --table-th-bg:    var(--brand-500);
   --table-th-text:  #ffffff;
 
-  /* Misc */
   --border-default: transparent;
 }
 
 /* ---------- DARK THEME OVERRIDES ---------- */
 .dark {
-  /* Backgrounds */
-  --bg-body:        #111827; /* slate-900 */
-  --bg-card:        #1e293b; /* slate-800 */
-  --bg-header:      var(--brand-500); /* keep brand bar teal */
+  --bg-body:        #111827; /* slate‑900 */
+  --bg-card:        #1e293b; /* slate‑800 */
+  --bg-header:      var(--brand-500); /* keep teal bar */
   --bg-footer:      var(--brand-500);
-  --bg-table-hover: #1b2535; /* slightly lighter than body */
+  --bg-table-hover: #1b2535;
 
-  /* Typography */
-  --text-body:      #cbd5e1; /* slate-300 */
-  --text-heading:   #f1f5f9; /* slate-100 */
-  --text-link:      #38bdf8; /* sky-400 */
-  --text-link-hover:#7dd3fc; /* sky-300 */
+  --text-body:      #cbd5e1; /* slate‑300 */
+  --text-heading:   #f1f5f9; /* slate‑100 */
+  --text-link:      #38bdf8; /* sky‑400 */
+  --text-link-hover:#7dd3fc; /* sky‑300 */
 
-  /* Buttons & inputs */
-  --btn-bg:         var(--brand-500);
-  --btn-bg-hover:   var(--brand-600);
-  --input-bg:       #0f172a; /* slate-900 */
-  --input-border:   #334155; /* slate-700 */
+  --btn-bg:         #38bdf8; /* sky‑400 */
+  --btn-bg-hover:   #0ea5e9; /* sky‑500 */
+  --btn-shadow:     0 2px 6px rgb(0 0 0 / .4);
 
-  /* Table header */
+  --input-bg:       #0f172a; /* slate‑900 */
+  --input-border:   #334155; /* slate‑700 */
+
   --table-th-bg:    var(--brand-600);
   --table-th-text:  #ffffff;
 
-  --border-default: #334155; /* slate-700 */
+  --border-default: #334155; /* slate‑700 */
 }
 
 /* ============================================================
-   2️⃣  GLOBAL RESET & BASE ELEMENTS
+   02  GLOBAL RESET & BASE ELEMENTS
    ============================================================ */
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif}
 
-*,
-*::before,
-*::after { box-sizing: border-box; }
-
-html, body {
-  margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+body{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  background:var(--bg-body);
+  color:var(--text-body);
 }
 
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+h1,h2,h3,h4,h5,h6{color:var(--text-heading);font-weight:700}
 
-  background: var(--bg-body);
-  color: var(--text-body);
-}
+a{color:var(--text-link);transition:color .3s}
+a:hover{color:var(--text-link-hover)}
 
-h1, h2, h3, h4, h5, h6 { color: var(--text-heading); }
-
-a { color: var(--text-link); transition: color .3s; }
-a:hover { color: var(--text-link-hover); }
+main{flex:1 1 auto}
 
 /* ============================================================
-   3️⃣  LAYOUT & SECTION WRAPPERS
+   03  LAYOUT CONTAINERS / CARDS
    ============================================================ */
-
-main { flex: 1 1 auto; }
-
-/* Cards / sections */
-.card,
-article {
-  background: var(--bg-card);
-  color: var(--text-body);
-  border-radius: .5rem;
-  box-shadow: 0 1px 4px rgb(0 0 0 / .05);
-  transition: background-color .2s, color .2s;
+.card,article,section.bg-white{
+  background:var(--bg-card);
+  color:var(--text-body);
+  border-radius:.5rem;
+  box-shadow:0 1px 4px rgb(0 0 0 / .05);
+  transition:background-color .2s,color .2s;
 }
 
 /* ============================================================
-   4️⃣  HEADER & NAVIGATION
+   04  HEADER & NAVIGATION
    ============================================================ */
-
-header {
-  background: var(--bg-header);
-  color: var(--text-link-hover);
+header{
+  background:var(--bg-header);
+  color:var(--text-link-hover);
 }
 
-nav a {
-  border-bottom: 2px solid var(--border-default);
+nav a{
+  border-bottom:2px solid var(--border-default);
 }
-nav a:hover {
-  border-bottom-color: var(--text-link-hover);
+nav a:hover{
+  border-bottom-color:var(--text-link-hover);
 }
 
 /* ============================================================
-   5️⃣  BUTTONS
+   05  BUTTONS – pop & lift 🚀
    ============================================================ */
-
-button,
-.btn,
-a.inline-block {
-  background: var(--btn-bg);
-  color: #ffffff;
-  padding: .5rem 1rem;
-  border: none;
-  border-radius: .375rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color .2s, color .2s;
+button,.btn,a.inline-block{
+  background:var(--btn-bg);
+  color:var(--btn-text);
+  padding:.6rem 1.25rem;
+  border:none;
+  border-radius:.5rem;
+  font-weight:700;
+  letter-spacing:.03em;
+  cursor:pointer;
+  box-shadow:var(--btn-shadow);
+  transform:translateY(0);
+  transition:background-color .2s,transform .15s,box-shadow .15s;
 }
-button:hover,
-.btn:hover,
-a.inline-block:hover {
-  background: var(--btn-bg-hover);
+button:hover,.btn:hover,a.inline-block:hover{
+  background:var(--btn-bg-hover);
+  transform:translateY(var(--btn-lift));
+  box-shadow:0 4px 12px rgb(0 0 0 / .25);
+}
+button:active,.btn:active,a.inline-block:active{
+  transform:translateY(0);
+  box-shadow:var(--btn-shadow);
+}
+button:focus-visible,a.inline-block:focus-visible{
+  outline:3px solid var(--text-link);
+  outline-offset:2px;
 }
 
 /* ============================================================
-   6️⃣  FORM CONTROLS
+   06  FORM CONTROLS
    ============================================================ */
-
-input,
-select {
-  background: var(--input-bg);
-  color: var(--text-body);
-  border: 1px solid var(--input-border);
-  border-radius: .375rem;
-  padding: .25rem .5rem;
-  transition: background-color .2s, border-color .2s, color .2s;
+input,select{
+  background:var(--input-bg);
+  color:var(--text-body);
+  border:1px solid var(--input-border);
+  border-radius:.375rem;
+  padding:.35rem .5rem;
+  transition:background-color .2s,border-color .2s,color .2s;
 }
-input:focus,
-select:focus { outline: 2px solid var(--btn-bg); outline-offset: 1px; }
+input:focus,select:focus{outline:2px solid var(--btn-bg);outline-offset:1px}
 
 /* ============================================================
-   7️⃣  DATATABLES OVERRIDES
+   07  DATATABLES OVERRIDES
    ============================================================ */
+.table-wrapper{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
 
-table.dataTable {
-  width: 100%;
-  border-collapse: collapse;
-}
-table.dataTable thead th {
-  background: var(--table-th-bg);
-  color: var(--table-th-text);
-}
-table.dataTable tbody tr:hover {
-  background: var(--bg-table-hover);
+table.dataTable{width:100%;border-collapse:collapse}
+
+table.dataTable thead th{
+  background:var(--table-th-bg);
+  color:var(--table-th-text);
 }
 
-/* Fix Tailwind’s hard-coded colours in dark mode */
-.dark .bg-white,
-.dark .bg-[#ffffff] { background: var(--bg-card) !important; }
-.dark .text-black   { color: var(--text-body) !important; }
+table.dataTable tbody tr:hover{background:var(--bg-table-hover)}
+
+/* Tailwind utilities that force white / black */
+.dark .bg-white,.dark .bg-[#ffffff]{background:var(--bg-card)!important}
+.dark .text-black{color:var(--text-body)!important}
 
 /* ============================================================
-   8️⃣  FOOTER
+   08  FOOTER
    ============================================================ */
-
-footer {
-  background: var(--bg-footer);
-  color: var(--text-link-hover);
+footer{
+  background:var(--bg-footer);
+  color:var(--text-link-hover);
 }
 
 /* ============================================================
-   9️⃣  THEME TOGGLE (moon button) – keep as is
+   09  THEME TOGGLE BUTTON STYLE (uses btn tokens)
    ============================================================ */
-
-#theme-toggle { background: var(--btn-bg); }
-#theme-toggle:hover { background: var(--btn-bg-hover); }
-
-/* ============================================================
-   ▶  THAT’S IT – just tweak the variables up top to re-theme!
-   ============================================================ */
+#theme-toggle{
+  position:fixed;
+  bottom:1rem;
+  right:1rem;
+  z-index:50;
+  background:var(--btn-bg);
+  width:3rem;height:3rem;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:9999px;
+  font-size:1.25rem;
+  line-height:1;
+  box-shadow:var(--btn-shadow);
+}
+#theme-toggle:hover{background:var(--btn-bg-hover)}
