@@ -136,7 +136,7 @@
   const loadScript = (src) => new Promise((res)=>{ const s=document.createElement('script'); s.src=src; s.onload=res; document.body.appendChild(s); });
 
   window.addEventListener('DOMContentLoaded', ()=>{
-    fetch('Edexcel.csv')
+    fetch('Edexcel/Edexcel.csv')
       .then(r=>r.text())
       .then(csvText=>new Promise((resolve)=>{ Papa.parse(csvText,{header:true,dynamicTyping:true,skipEmptyLines:true,worker:true,complete:({data})=>resolve([data,csvText])}); }))
       .then(async ([parsed,csvText])=>{
@@ -204,7 +204,7 @@
     updateChart();
 
     // CSV download
-    document.getElementById('downloadCSV').addEventListener('click',()=>{ const blob=new Blob([csvText],{type:'text/csv'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='Edexcel_Grade_Boundaries.csv'; a.click(); URL.revokeObjectURL(url); });
+    document.getElementById('downloadCSV').addEventListener('click',()=>{ const blob=new Blob([csvText],{type:'text/csv'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='Edexcel/Edexcel.csv'; a.click(); URL.revokeObjectURL(url); });
   }
 </script>
 
