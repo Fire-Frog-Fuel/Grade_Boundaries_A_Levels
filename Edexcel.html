@@ -42,9 +42,9 @@
   .chart-container {
     position: relative;
     width: 100%;
-    min-height: 550px;   /* taller graph */
-    height: 80vw;        /* responsive on mobiles */
-    max-height: 900px;   /* avoid being massive on desktops */
+    min-height: 550px;
+    height: 80vw;
+    max-height: 900px;
     background: #fff;
     border-radius: 0.5rem;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -99,7 +99,7 @@
 
     <div class="table-wrapper mb-6">
       <table id="EdexcelTable" class="display nowrap responsive w-full" aria-describedby="grade-boundaries-caption">
-        <caption id="grade-boundaries-caption" class="sr-only">Edexcel grade boundaries per unit code</caption>
+        <caption id="grade-boundaries-caption" class="sr-only">Edexcel grade boundaries (unit‑level)</caption>
         <thead><tr></tr></thead>
       </table>
     </div>
@@ -109,9 +109,9 @@
     </div>
 
     <div id="edexcel-controls" class="flex flex-wrap gap-4 mb-6 items-center">
-      <label for="edexcelSubjectSearch" class="font-semibold">Unit&nbsp;Code:</label>
-      <input type="text" id="edexcelSubjectSearch" placeholder="e.g. WPH14" class="border rounded px-2 py-1 w-36 sm:w-auto" list="edexcelCodeList" />
-      <datalist id="edexcelCodeList"></datalist>
+      <label for="edexcelUnitSearch" class="font-semibold">Unit&nbsp;Code:</label>
+      <input type="text" id="edexcelUnitSearch" placeholder="e.g. WPH14" class="border rounded px-2 py-1 w-36 sm:w-auto" list="edexcelUnitList" />
+      <datalist id="edexcelUnitList"></datalist>
     </div>
 
     <div class="chart-container"><canvas id="EdexcelChart"></canvas></div>
@@ -141,29 +141,32 @@
   });
 
   function initPage(parsed,csvText){
-    // Build DataTable
-    const headers = Object.keys(parsed[0]||{});
+    // Columns: drop anything that looks like a component column
+    const componentAliases = ['component','Component','component_code','paper'];
+    const headers = Object.keys(parsed[0]||{}).filter(h=>!componentAliases.includes(h));
     const dtColumns = headers.map(h=>({data:h,title:h}));
     $('#EdexcelTable').DataTable({ data:parsed, columns:dtColumns, responsive:true, autoWidth:false, deferRender:true, pageLength:10 });
 
     // Structure: unitCode -> session -> grades
     const gradeList=['a*','a','b','c','d','e'];
-    const dataByCode = {};
+    const dataByUnit = {};
     parsed.forEach(r=>{
-      const code = r.code || r.UnitCode || r.unit || r.subject || '';
-      const session = `${r.year||''} ${(r.session||'').trim()}`.trim();
-      if(!code || !session) return;
-      dataByCode[code]??={};
-      dataByCode[code][session]??={};
-      gradeList.forEach(g=>{ const v=parseFloat(r[g]); if(!isNaN(v)) dataByCode[code][session][g]=v; });
-      const mm=parseFloat(r.max_mark); if(!isNaN(mm)) dataByCode[code][session].max_mark=mm;
+      const unit = r.code || r.UnitCode || r.unit || r.subject || '';
+      const sessionRaw = `${r.year||''} ${(r.session||'').trim()}`.trim();
+      if(!unit || !sessionRaw) return;
+      const session=sessionRaw;
+      dataByUnit[unit]??={};
+      dataByUnit[unit][session]??={};
+      gradeList.forEach(g=>{ const v=parseFloat(r[g]); if(!isNaN(v)) dataByUnit[unit][session][g]=v; });
+      const mm=parseFloat(r.max_mark); if(!isNaN(mm)) dataByUnit[unit][session].max_mark=mm;
     });
 
-    // Datalist for unit codes
-    const codeInput=document.getElementById('edexcelSubjectSearch');
-    const codeList=document.getElementById('edexcelCodeList');
-    Object.keys(dataByCode).sort().forEach(c=>codeList.appendChild(Object.assign(document.createElement('option'),{value:c})));
+    // Populate unit datalist
+    const unitInput=document.getElementById('edexcelUnitSearch');
+    const unitList=document.getElementById('edexcelUnitList');
+    Object.keys(dataByUnit).sort().forEach(u=>unitList.appendChild(Object.assign(document.createElement('option'),{value:u})));
 
+    // Chart setup
     const ctx=document.getElementById('EdexcelChart').getContext('2d');
     let chart=null;
     const gradeColors={'a*':'#2ECC71',a:'#F4A261',b:'#E9C46A',c:'#E63946',d:'#264653',e:'#6D597A'};
@@ -171,9 +174,9 @@
     const monthOrder={Jan:1,Feb:2,Mar:3,Apr:4,May:5,Jun:6,Jul:7,Aug:8,Sep:9,Oct:10,Nov:11,Dec:12};
 
     function updateChart(){
-      const code=codeInput.value.trim();
-      if(!dataByCode[code]){ if(chart){chart.destroy();chart=null;} return; }
-      const dataObj=dataByCode[code];
+      const unit=unitInput.value.trim();
+      if(!dataByUnit[unit]){ if(chart){chart.destroy();chart=null;} return; }
+      const dataObj=dataByUnit[unit];
       const sessions=Object.keys(dataObj);
       if(!sessions.length){ if(chart){chart.destroy();chart=null;} return; }
       sessions.sort((a,b)=>{const [ya,ma]=a.split(' ');const [yb,mb]=b.split(' ');return(+ya-+yb)||(monthOrder[ma]-monthOrder[mb]);});
@@ -182,12 +185,11 @@
       const datasets=grades.map(g=>({label:g.toUpperCase(),data:sessions.map(s=>dataObj[s][g]??null),borderColor:gradeColors[g],tension:0.2,fill:false}));
       datasets.push({label:'Max Mark',data:sessions.map(s=>dataObj[s].max_mark??null),borderColor:maxMarkColor,borderDash:[5,5],borderWidth:1,pointRadius:0,fill:false});
       if(chart) chart.destroy();
-      chart=new Chart(ctx,{type:'line',data:{labels:sessions,datasets},options:{responsive:true,maintainAspectRatio:false,plugins:{title:{display:true,text:`Grade Boundaries — ${code}`},legend:{position:'bottom'}},scales:{x:{title:{display:true,text:'Exam Session'}},y:{beginAtZero:true,title:{display:true,text:'Marks'}}}}});
+      chart=new Chart(ctx,{type:'line',data:{labels:sessions,datasets},options:{responsive:true,maintainAspectRatio:false,plugins:{title:{display:true,text:`Grade Boundaries — ${unit}`},legend:{position:'bottom'}},scales:{x:{title:{display:true,text:'Exam Session'}},y:{beginAtZero:true,title:{display:true,text:'Marks'}}}}});
     }
 
-    codeInput.addEventListener('input',updateChart);
-    // initialise with first code
-    codeInput.value=Object.keys(dataByCode)[0]||'';
+    unitInput.addEventListener('input',updateChart);
+    unitInput.value=Object.keys(dataByUnit)[0]||'';
     updateChart();
 
     // CSV download
