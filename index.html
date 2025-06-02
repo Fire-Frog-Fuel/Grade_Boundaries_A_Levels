@@ -28,7 +28,7 @@
 
   <!-- TailwindCSS (kept in <head> for first-paint styling) -->
   <script src="https://cdn.tailwindcss.com"></script>
-
+  
   <!-- Critical Styles -->
   <style>
     /* ===== GLOBALS ===== */
@@ -99,7 +99,16 @@ h1, h2, h3, h4, h5, h6 {
     ]
   }
   </script>
-  
+  <script>
+/* Instant-load theme so there’s zero flash of wrong colour */
+(() => {
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark' ||
+      (!saved && matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  }
+})();
+</script>
   <!-- Defer non-critical JS for better LCP -->
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin defer></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin defer></script>
@@ -152,24 +161,7 @@ h1, h2, h3, h4, h5, h6 {
           <a href="OxfordAqa.html" class="inline-block mt-4 px-4 py-2 bg-[#3aafa9] text-white rounded hover:bg-[#2b7a78]">View Oxford AQA grade boundaries</a>
         </article>
       </div>
-    <button id="theme-toggle" aria-label="Toggle dark mode"
-        class="fixed bottom-4 right-4 rounded-full p-3 shadow-lg bg-[var(--brand-500)] text-white">
-  🌙
-</button>
-
-<script>
-  // ----- Theme bootstrap -----
-  const root = document.documentElement;
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const saved = localStorage.getItem('theme');
-  if (saved === 'dark' || (!saved && prefersDark)) root.classList.add('dark');
-
-  // ----- Toggle handler -----
-  document.getElementById('theme-toggle').addEventListener('click', () => {
-    root.classList.toggle('dark');
-    localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
-  });
-</script>
+    
 
   </main>
 
@@ -183,5 +175,20 @@ h1, h2, h3, h4, h5, h6 {
   <noscript>
     <p class="text-center p-4 bg-yellow-200">JavaScript is disabled. Charts and interactive tables will not function, but you can still download data in CSV format.</p>
   </noscript>
+  <button id="theme-toggle" aria-label="Toggle dark / light mode">🌙</button>
+
+<script>
+const btn  = document.getElementById('theme-toggle');
+const root = document.documentElement;
+
+/*  swap icon to match current state  */
+btn.textContent = root.classList.contains('dark') ? '☀️' : '🌙';
+
+btn.addEventListener('click', () => {
+  const dark = root.classList.toggle('dark');
+  localStorage.setItem('theme', dark ? 'dark' : 'light');
+  btn.textContent = dark ? '☀️' : '🌙';
+});
+</script>
 </body>
 </html>
