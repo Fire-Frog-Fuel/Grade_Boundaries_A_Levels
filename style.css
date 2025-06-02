@@ -17,7 +17,7 @@
 
   /* Typography */
   --text-body:      #1f2937; /* gray-800 */
-  --text-heading:   #111827; /* gray-900 */
+  --text-heading:   #f1f5f9; /* gray-900 */
   --text-link:      var(--brand-500);
   --text-link-hover:#ffffff;
 
@@ -78,6 +78,7 @@ body{
   color:var(--text-body);
 }
 
+
 h1,h2,h3,h4,h5,h6{color:var(--text-heading);font-weight:700}
 
 a{color:var(--text-link);transition:color .3s}
@@ -102,6 +103,8 @@ main{flex:1 1 auto}
 header{
   background:var(--bg-header);
   color:var(--text-link-hover);
+  position: relative; /* so the toggle’s “absolute” sticks to the header */
+  padding: 1.5rem 2rem; 
 }
 
 nav a{
@@ -177,8 +180,15 @@ table.dataTable thead th{
 table.dataTable tbody tr:hover{background:var(--bg-table-hover)}
 
 /* Prevent Tailwind utilities forcing white/black in dark */
-.dark .bg-white,.dark .bg-[#ffffff]{background:var(--bg-card)!important}
-.dark .text-black{color:var(--text-body)!important}
+.dark .bg-white,
+.dark .bg-\[\#ffffff\] {
+  background: var(--bg-card) !important;
+}
+
+.dark .text-black {
+  color: var(--text-body) !important;
+}
+
 
 /* ============================================================
    08  CHART CONTAINER
@@ -213,9 +223,9 @@ footer{
    10  THEME TOGGLE BUTTON (uses tokens)
    ============================================================ */
 #theme-toggle{
-  position: fixed;
-  bottom: 2rem;           /* moved in from the edge */
-  right: 2rem;            /* ditto */
+  position: absolute;
+  top: 1rem;
+  right: 1rem;         
   z-index: 50;
   background: var(--btn-bg);
   width: 3rem;

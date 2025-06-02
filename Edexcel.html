@@ -84,7 +84,7 @@
 <noscript><link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" /></noscript>
 
 <!-- Table overrides -->
-<style>
+<!-- <style>
   table.dataTable thead th { background-color: #3aafa9; color: #fff; }
   table.dataTable tbody tr:hover { background-color: #dff6f5; }
   table.dataTable th, table.dataTable td { padding: 0.25rem 0.5rem !important; line-height: 1.2; }
@@ -92,11 +92,12 @@
   table.dataTable td { font-size: clamp(0.75rem, 1.2vw, 1rem); }
   table.dataTable { width: 100%; max-width: 1000px; margin: 0 auto; }
   @media (max-width: 400px) { table.dataTable th, table.dataTable td { padding: 0.125rem 0.25rem !important; } }
-</style>
+</style> -->
 
   </head>  <body class="text-gray-800 flex flex-col min-h-screen">
     <header class="text-white text-center py-6 shadow-lg">
       <h1 class="text-3xl sm:text-4xl font-bold">Edexcel Grade Boundaries</h1>
+      <button id="theme-toggle" class="absolute top-4 right-4">🌙</button>
       <nav class="mt-4">
         <a href="index.html" class="mx-4 text-base sm:text-lg hover:text-white transition">Home</a>
         <a href="CIE.html" class="mx-4 text-base sm:text-lg hover:text-white transition">CIE</a>
@@ -205,7 +206,7 @@
     document.getElementById('downloadCSV').addEventListener('click',()=>{ const blob=new Blob([csvText],{type:'text/csv'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='Edexcel_Grade_Boundaries.csv'; a.click(); URL.revokeObjectURL(url); });
   }
 </script>
-<button id="theme-toggle" aria-label="Toggle dark / light mode">🌙</button>
+
 
 <script>
 const btn  = document.getElementById('theme-toggle');
