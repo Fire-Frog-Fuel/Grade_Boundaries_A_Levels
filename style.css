@@ -41,7 +41,7 @@
 /* ---------- DARK THEME OVERRIDES ---------- */
 .dark {
   --brand-500: #2d8b87;  /* teal */
-  --brand-600: #1b4e4d;
+  --brand-600: #2d8b87;
   --bg-body:        #111827; /* slate-900 */
   --bg-card:        #1e293b; /* slate-800 */
   --bg-header:      var(--brand-500); /* keep teal bar */
@@ -53,8 +53,8 @@
   --text-link:      #38bdf8; /* sky-400 */
   --text-link-hover:#7dd3fc; /* sky-300 */
 
-  --btn-bg:         #38bdf8; /* sky-400 */
-  --btn-bg-hover:   #0ea5e9; /* sky-500 */
+  --btn-bg:         #267091; /* sky-400 */
+  --btn-bg-hover:   #267599; /* sky-500 */
   --btn-shadow:     0 2px 6px rgb(0 0 0 / .40);
 
   --input-bg:       #0f172a; /* slate-900 */
