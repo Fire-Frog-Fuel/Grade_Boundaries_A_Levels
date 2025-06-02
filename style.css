@@ -20,16 +20,23 @@
 
 /* -------------- DARK THEME OVERRIDES -------------- */
 .dark {
-  /* feel free to change any of these */
-  --bg-page: #0f172a;          /* slate-900 */
-  --bg-card: #1e293b;          /* slate-800 */
-  --text-body: #f1f5f9;        /* slate-100 */
-  --text-heading: #ffffff;
-  --link-default: #a7f3d0;     /* emerald-200 */
-  --link-hover: #d1fae5;       /* emerald-100 */
+  /* Backgrounds */
+  --bg-page: #111827;          /* slate-900-ish, almost black-blue */
+  --bg-card: #1e293b;          /* slate-800, lifts cards off the page */
+
+  /* Typography */
+  --text-body: #cbd5e1;        /* slate-300: readable but not blazing white */
+  --text-heading: #f1f5f9;     /* slate-100 */
+
+  /* Links & accents */
+  --link-default: #38bdf8;     /* sky-400 */
+  --link-hover: #7dd3fc;       /* sky-300 */
+
+  /* Misc */
   --border-default: #334155;   /* slate-700 */
 }
 
+.dark article h3 { color: var(--link-default); }
 /* =================================================
    BASE ELEMENTS – always reference the tokens above
    ================================================= */
