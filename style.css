@@ -109,42 +109,74 @@ header{
   padding: 1.5rem 2rem; 
 }
 
-nav a{
-  border-bottom:2px solid var(--border-default);
+nav a {
+  text-decoration: none;
+  border-bottom: 2px solid var(--border-default); /* if you still want a bottom border “line” */
 }
-nav a:hover{
-  border-bottom-color:var(--text-link-hover);
+
+/* On hover, swap in the underline (or change the border-bottom color, if you want that style instead) */
+nav a:hover {
+  /* Option A: add an actual underline instead of border */
+  text-decoration: underline;
+  /* If you want to keep border-bottom but change its color, uncomment: */
+  /* border-bottom-color: var(--text-link-hover); */
+}
+
+/* If you have standalone inline text links outside of <nav>, you can do something similar: */
+a.inline-text {
+  text-decoration: none;
+  color: var(--text-link);
+  transition: color 0.2s, text-decoration 0.2s;
+}
+
+a.inline-text:hover {
+  text-decoration: underline;
+  color: var(--text-link-hover);
 }
 
 /* ============================================================
    05  BUTTONS – pop & lift 🚀
    ============================================================ */
-button,.btn,a.inline-block{
-  background:var(--btn-bg);
-  color:var(--btn-text);
-  padding:.6rem 1.25rem;
-  border:none;
-  border-radius:.5rem;
-  font-weight:700;
-  letter-spacing:.03em;
-  cursor:pointer;
-  box-shadow:var(--btn-shadow);
-  transform:translateY(0);
-  transition:background-color .2s,transform .15s,box-shadow .15s;
+button,
+.btn,
+a.inline-block {
+  background: var(--btn-bg);
+  color:      var(--btn-text);
+  padding:    0.6rem 1.25rem;
+  border:     none;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor:      pointer;
+  box-shadow:  var(--btn-shadow);
+  transform:   translateY(0);
+  transition:  background-color 0.2s,
+               transform        0.15s,
+               box-shadow       0.15s;
 }
-button:hover,.btn:hover,a.inline-block:hover{
-  background:var(--btn-bg-hover);
-  transform:translateY(var(--btn-lift));
-  box-shadow:0 4px 12px rgb(0 0 0 / .25);
+
+button:hover,
+.btn:hover,
+a.inline-block:hover {
+  background:      var(--btn-bg-hover);
+  transform:       translateY(var(--btn-lift));
+  box-shadow:      0 4px 12px rgb(0 0 0 / 0.25);
 }
-button:active,.btn:active,a.inline-block:active{
-  transform:translateY(0);
-  box-shadow:var(--btn-shadow);
+
+button:active,
+.btn:active,
+a.inline-block:active {
+  transform:       translateY(0);
+  box-shadow:      var(--btn-shadow);
 }
-button:focus-visible,a.inline-block:focus-visible{
-  outline:3px solid var(--text-link);
-  outline-offset:2px;
+
+button:focus-visible,
+a.inline-block:focus-visible {
+  outline:         3px solid var(--text-link);
+  outline-offset:  2px;
 }
+
+
 
 /* ============================================================
    06  FORM CONTROLS
