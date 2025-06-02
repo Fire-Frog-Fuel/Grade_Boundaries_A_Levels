@@ -138,8 +138,7 @@ a.inline-text:hover {
    05  BUTTONS – pop & lift 🚀
    ============================================================ */
 button,
-.btn,
-a.inline-block {
+.class-button{
   background: var(--btn-bg);
   color:      var(--btn-text);
   padding:    0.6rem 1.25rem;
@@ -156,22 +155,20 @@ a.inline-block {
 }
 
 button:hover,
-.btn:hover,
-a.inline-block:hover {
+.class-button:hover {
   background:      var(--btn-bg-hover);
   transform:       translateY(var(--btn-lift));
   box-shadow:      0 4px 12px rgb(0 0 0 / 0.25);
 }
 
 button:active,
-.btn:active,
-a.inline-block:active {
+.class-button:active {
   transform:       translateY(0);
   box-shadow:      var(--btn-shadow);
 }
 
 button:focus-visible,
-a.inline-block:focus-visible {
+.class-button:focus-visible {
   outline:         3px solid var(--text-link);
   outline-offset:  2px;
 }
