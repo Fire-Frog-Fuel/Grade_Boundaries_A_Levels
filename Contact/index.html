@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <base href="{{ site.baseurl }}/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact information</title>
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com" defer></script>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
   <!-- DataTables CSS -->
   <link
     rel="stylesheet"
@@ -35,10 +36,10 @@
   <header class="bg-[#3aafa9] text-white text-center py-6 shadow-lg">
     <h1 class="text-4xl font-bold">Contact information</h1>
     <nav class="mt-4">
-      <a href="/" class="mx-4 text-lg hover:text-white transition">Home</a>
-      <a href="/Edexcel" class="mx-4 text-lg hover:text-white transition">Edexcel</a>
-      <a href="/OxfordAqa" class="mx-4 text-lg hover:text-white transition">Oxford AQA</a>
-      <a href="/CIE" class="mx-4 text-lg hover:text-white transition">CIE</a>
+      <a href="{{ site.baseurl }}/" class="mx-4 text-lg hover:text-white transition">Home</a>
+      <a href="{{ site.baseurl }}/Edexcel" class="mx-4 text-lg hover:text-white transition">Edexcel</a>
+      <a href="{{ site.baseurl }}/OxfordAqa" class="mx-4 text-lg hover:text-white transition">Oxford AQA</a>
+      <a href="{{ site.baseurl }}/CIE" class="mx-4 text-lg hover:text-white transition">CIE</a>
     </nav>
   </header>
 

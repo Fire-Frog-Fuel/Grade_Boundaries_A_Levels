@@ -1,5 +1,6 @@
 <!DOCTYPE html><html lang="en">
   <head>
+    <base href="{{ site.baseurl }}/">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CIE Grade Boundaries</title><!-- ─── PERFORMANCE HINTS ─── -->
@@ -18,7 +19,7 @@
 </script>
 <!-- Tailwind (small – safe to defer) -->
 <script src="https://cdn.tailwindcss.com" defer></script>
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/style.css">
     
 <!-- PapaParse (needed before fetching/parsing CSV) -->
 <script
@@ -110,9 +111,9 @@
       </h1>
       <button id="theme-toggle" class="absolute top-4 right-4">🌙</button>
       <nav class="mt-4">
-        <a href="/" class="mx-4 text-base sm:text-lg hover:text-white transition">Home</a>
-        <a href="/Edexcel" class="mx-4 text-base sm:text-lg hover:text-white transition">Edexcel</a>
-        <a href="/OxfordAqa" class="mx-4 text-base sm:text-lg hover:text-white transition">Oxford&nbsp;AQA</a>
+        <a href="{{ site.baseurl }}/" class="mx-4 text-base sm:text-lg hover:text-white transition">Home</a>
+        <a href="{{ site.baseurl }}/Edexcel" class="mx-4 text-base sm:text-lg hover:text-white transition">Edexcel</a>
+        <a href="{{ site.baseurl }}/OxfordAqa" class="mx-4 text-base sm:text-lg hover:text-white transition">Oxford&nbsp;AQA</a>
       </nav>
     </header><main class="flex-1 w-full px-4">
   <section class="bg-white rounded-lg shadow-md p-6 w-full max-w-6xl mx-auto">
