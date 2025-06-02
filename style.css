@@ -1,179 +1,202 @@
-/* =================================================
-   THEME TOKENS – tweak these per colour group 🖌️
-   ================================================= */
+/* ============================================================
+   1️⃣  DESIGN TOKENS – edit these to re-skin the whole site
+   ============================================================ */
+
+/* ---------- LIGHT THEME ---------- */
 :root {
-  /* Brand / accent */
+  /* Brand */
   --brand-500: #3aafa9;
   --brand-600: #2b7a78;
 
-  /* Neutrals */
-  --bg-page: linear-gradient(to bottom, #def2f1 0%, #ffffff 100%);
-  --bg-card: #ffffff;
-  --text-body: #1f2937;        /* gray-800 */
-  --text-heading: #111827;     /* gray-900 */
+  /* Backgrounds */
+  --bg-body:  linear-gradient(to bottom, #def2f1 0%, #ffffff 100%);
+  --bg-card:  #ffffff;
+  --bg-header: var(--brand-500);
+  --bg-footer: var(--brand-500);
+  --bg-table-hover: #dff6f5;
 
-  /* Links & borders */
-  --link-default: var(--brand-500);
-  --link-hover: #ffffff;
+  /* Typography */
+  --text-body:      #1f2937; /* gray-800 */
+  --text-heading:   #111827; /* gray-900 */
+  --text-link:      var(--brand-500);
+  --text-link-hover:#ffffff;
+
+  /* Buttons & inputs */
+  --btn-bg:         var(--brand-500);
+  --btn-bg-hover:   var(--brand-600);
+  --input-bg:       #ffffff;
+  --input-border:   #cbd5e1; /* slate-300 */
+
+  /* Table header */
+  --table-th-bg:    var(--brand-500);
+  --table-th-text:  #ffffff;
+
+  /* Misc */
   --border-default: transparent;
 }
 
-/* -------------- DARK THEME OVERRIDES -------------- */
+/* ---------- DARK THEME OVERRIDES ---------- */
 .dark {
   /* Backgrounds */
-  --bg-page: #111827;          /* slate-900-ish, almost black-blue */
-  --bg-card: #1e293b;          /* slate-800, lifts cards off the page */
+  --bg-body:        #111827; /* slate-900 */
+  --bg-card:        #1e293b; /* slate-800 */
+  --bg-header:      var(--brand-500); /* keep brand bar teal */
+  --bg-footer:      var(--brand-500);
+  --bg-table-hover: #1b2535; /* slightly lighter than body */
 
   /* Typography */
-  --text-body: #cbd5e1;        /* slate-300: readable but not blazing white */
-  --text-heading: #f1f5f9;     /* slate-100 */
+  --text-body:      #cbd5e1; /* slate-300 */
+  --text-heading:   #f1f5f9; /* slate-100 */
+  --text-link:      #38bdf8; /* sky-400 */
+  --text-link-hover:#7dd3fc; /* sky-300 */
 
-  /* Links & accents */
-  --link-default: #38bdf8;     /* sky-400 */
-  --link-hover: #7dd3fc;       /* sky-300 */
+  /* Buttons & inputs */
+  --btn-bg:         var(--brand-500);
+  --btn-bg-hover:   var(--brand-600);
+  --input-bg:       #0f172a; /* slate-900 */
+  --input-border:   #334155; /* slate-700 */
 
-  /* Misc */
-  --border-default: #334155;   /* slate-700 */
+  /* Table header */
+  --table-th-bg:    var(--brand-600);
+  --table-th-text:  #ffffff;
+
+  --border-default: #334155; /* slate-700 */
 }
 
-/* --------------------------------------------------
-   1) Keep card backgrounds dark (overrides bg-white)
-   -------------------------------------------------- */
-.dark article,
-.dark .bg-white {
-  background-color: var(--bg-card) !important;   /* slate-800 */
-  color: var(--text-body) !important;            /* slate-300 */
-}
-.dark article p { color: var(--text-body) !important; }
+/* ============================================================
+   2️⃣  GLOBAL RESET & BASE ELEMENTS
+   ============================================================ */
 
-/* =================================================
-   BASE ELEMENTS – always reference the tokens above
-   ================================================= */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
 html, body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  background: var(--bg-page);
-  color: var(--text-body);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  background: var(--bg-body);
+  color: var(--text-body);
 }
 
-/* Headings pick up their own colour token */
 h1, h2, h3, h4, h5, h6 { color: var(--text-heading); }
 
-/* =================================================
-   COMPONENT STYLES
-   ================================================= */
+a { color: var(--text-link); transition: color .3s; }
+a:hover { color: var(--text-link-hover); }
 
-/* ---------- Header ---------- */
-header {
-  background-color: var(--brand-500);
-  color: var(--link-hover);
-}
+/* ============================================================
+   3️⃣  LAYOUT & SECTION WRAPPERS
+   ============================================================ */
 
-/* Navigation */
-nav a {
-  border-bottom: 2px solid var(--border-default);
-  color: var(--link-hover);
-  transition: color .3s, border-color .3s;
-}
-nav a:hover {
-  color: var(--link-hover);
-  border-bottom-color: var(--link-hover);
-}
+main { flex: 1 1 auto; }
 
-/* ---------- Cards ---------- */
+/* Cards / sections */
+.card,
 article {
   background: var(--bg-card);
   color: var(--text-body);
-  transition: background-color .2s ease, color .2s ease;
+  border-radius: .5rem;
+  box-shadow: 0 1px 4px rgb(0 0 0 / .05);
+  transition: background-color .2s, color .2s;
 }
 
-/* ---------- Buttons inside cards ---------- */
+/* ============================================================
+   4️⃣  HEADER & NAVIGATION
+   ============================================================ */
+
+header {
+  background: var(--bg-header);
+  color: var(--text-link-hover);
+}
+
+nav a {
+  border-bottom: 2px solid var(--border-default);
+}
+nav a:hover {
+  border-bottom-color: var(--text-link-hover);
+}
+
+/* ============================================================
+   5️⃣  BUTTONS
+   ============================================================ */
+
+button,
+.btn,
 a.inline-block {
-  background-color: var(--brand-500);
-  color: #fff;
-}
-a.inline-block:hover {
-  background-color: var(--brand-600);
-}
-
-/* ---------- DataTables (if/when you initialise them) ---------- */
-table.dataTable thead th {
-  background-color: var(--brand-500);
-  color: var(--link-hover);
-}
-
-table.dataTable tbody tr:hover {
-  background-color: var(--border-default);
-}
-
-/* ---------- Footer ---------- */
-footer {
-  background-color: var(--brand-500);
-  color: var(--link-hover);
-}
-
-/* =================================================
-   DARK-MODE PATCHES for Tailwind’s fixed colours
-   ================================================= */
-
-/* Tailwind’s “bg-white” utility is hard-coded – neutralise it */
-.dark .bg-white,
-.dark article,
-.dark .bg-[#ffffff] {
-  background-color: var(--bg-card) !important;
-}
-
-/* Same for text utilities that force black */
-.dark .text-black {
-  color: var(--text-body) !important;
-}
-
-/* Optional: darken table header a bit more */
-.dark table.dataTable thead th {
-  background-color: var(--brand-600);
-}
-
-/* =================================================
-   THEME TOGGLE – pretty slider (unchanged)
-   ================================================= */
-.theme-switch {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  display: inline-block;
-  width: 50px;
-  height: 26px;
-}
-.theme-switch input { display: none; }
-
-.theme-switch .slider {
-  position: absolute;
+  background: var(--btn-bg);
+  color: #ffffff;
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: .375rem;
+  font-weight: 600;
   cursor: pointer;
-  inset: 0;
-  background-color: #ccc;
-  border-radius: 26px;
-  transition: background-color .3s;
+  transition: background-color .2s, color .2s;
 }
-.theme-switch .slider::before {
-  content: "";
-  position: absolute;
-  height: 22px;
-  width: 22px;
-  left: 2px;
-  bottom: 2px;
-  background-color: white;
-  border-radius: 50%;
-  transition: transform .3s;
+button:hover,
+.btn:hover,
+a.inline-block:hover {
+  background: var(--btn-bg-hover);
 }
-.theme-switch input:checked + .slider {
-  background-color: #3b82f6;   /* blue-500 */
+
+/* ============================================================
+   6️⃣  FORM CONTROLS
+   ============================================================ */
+
+input,
+select {
+  background: var(--input-bg);
+  color: var(--text-body);
+  border: 1px solid var(--input-border);
+  border-radius: .375rem;
+  padding: .25rem .5rem;
+  transition: background-color .2s, border-color .2s, color .2s;
 }
-.theme-switch input:checked + .slider::before {
-  transform: translateX(24px);
+input:focus,
+select:focus { outline: 2px solid var(--btn-bg); outline-offset: 1px; }
+
+/* ============================================================
+   7️⃣  DATATABLES OVERRIDES
+   ============================================================ */
+
+table.dataTable {
+  width: 100%;
+  border-collapse: collapse;
 }
+table.dataTable thead th {
+  background: var(--table-th-bg);
+  color: var(--table-th-text);
+}
+table.dataTable tbody tr:hover {
+  background: var(--bg-table-hover);
+}
+
+/* Fix Tailwind’s hard-coded colours in dark mode */
+.dark .bg-white,
+.dark .bg-[#ffffff] { background: var(--bg-card) !important; }
+.dark .text-black   { color: var(--text-body) !important; }
+
+/* ============================================================
+   8️⃣  FOOTER
+   ============================================================ */
+
+footer {
+  background: var(--bg-footer);
+  color: var(--text-link-hover);
+}
+
+/* ============================================================
+   9️⃣  THEME TOGGLE (moon button) – keep as is
+   ============================================================ */
+
+#theme-toggle { background: var(--btn-bg); }
+#theme-toggle:hover { background: var(--btn-bg-hover); }
+
+/* ============================================================
+   ▶  THAT’S IT – just tweak the variables up top to re-theme!
+   ============================================================ */
