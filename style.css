@@ -40,6 +40,8 @@
 
 /* ---------- DARK THEME OVERRIDES ---------- */
 .dark {
+  --brand-500: #2d8b87;  /* teal */
+  --brand-600: #1b4e4d;
   --bg-body:        #111827; /* slate-900 */
   --bg-card:        #1e293b; /* slate-800 */
   --bg-header:      var(--brand-500); /* keep teal bar */
