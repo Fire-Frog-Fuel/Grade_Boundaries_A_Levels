@@ -4,13 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Edexcel Grade Boundaries</title><!-- ─── INLINE CRITICAL CSS ─── -->
 <style>
-  /* Basic page background and typography */
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(to bottom, #def2f1, #ffffff);
     margin: 0;
   }
-  /* Header / nav visible immediately */
   header {
     background-color: #3aafa9;
     color: white;
@@ -19,39 +17,37 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   header h1 {
-    font-size: 1.875rem; /* text-3xl */
+    font-size: 1.875rem;
     font-weight: 700;
     margin: 0;
   }
   nav a {
     margin: 0 1rem;
-    font-size: 1rem; /* text-base */
+    font-size: 1rem;
     text-decoration: none;
     color: white;
   }
   nav a:hover {
     border-bottom: 2px solid #feffff;
   }
-  /* Table container skeleton (unstyled until DataTables CSS loads) */
   .table-wrapper {
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    background: #fff; /* avoid white‐on‐white flash */
-    border-radius: 0.5rem; /* rounded-lg */
+    background: #fff;
+    border-radius: 0.5rem;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     margin-bottom: 1.5rem;
   }
-  /* Chart container skeleton */
   .chart-container {
     position: relative;
     width: 100%;
-    /* MATCH CIE SIZE */
-    min-height: 450px;
-    height: 70vw; /* scales with screen width on mobiles */
-    max-height: 800px; /* avoid being massive on desktops */
+    /* Taller graph to match new CIE */
+    min-height: 550px;
+    height: 80vw;
+    max-height: 900px;
     background: #fff;
-    border-radius: 0.5rem; /* rounded-lg */
+    border-radius: 0.5rem;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   }
   .chart-container canvas {
@@ -67,57 +63,27 @@
 <link rel="preconnect" href="https://cdn.datatables.net" />
 <link rel="preconnect" href="https://code.jquery.com" />
 
-<!-- Tailwind (deferred, full build) -->
+<!-- Tailwind (deferred) -->
 <script src="https://cdn.tailwindcss.com" defer></script>
 
-<!-- PapaParse (needed before CSV parse) -->
+<!-- PapaParse -->
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
 
-<!-- ─── DATATABLES CSS PRELOAD ─── -->
+<!-- DataTables CSS -->
 <link rel="preload" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" as="style" onload="this.rel='stylesheet'" />
-<noscript>
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
-</noscript>
-
+<noscript><link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" /></noscript>
 <link rel="preload" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" as="style" onload="this.rel='stylesheet'" />
-<noscript>
-  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" />
-</noscript>
+<noscript><link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" /></noscript>
 
-<!-- ─── ADDITIONAL NON-CRITICAL STYLES (deferred) ─── -->
+<!-- Table overrides -->
 <style>
-  /* Styles that depend on DataTables CSS can remain here or be overridden after preload */
-  table.dataTable thead th {
-    background-color: #3aafa9;
-    color: #fff;
-  }
-  table.dataTable tbody tr:hover {
-    background-color: #dff6f5;
-  }
-  /* MOBILE-FRIENDLY TABLE (applied once DataTables CSS is loaded) */
-  table.dataTable th,
-  table.dataTable td {
-    padding: 0.25rem 0.5rem !important;
-    line-height: 1.2;
-  }
-  table.dataTable th {
-    font-size: clamp(0.875rem, 2vw, 1.25rem);
-    white-space: nowrap;
-  }
-  table.dataTable td {
-    font-size: clamp(0.75rem, 1.2vw, 1rem);
-  }
-  table.dataTable {
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  @media (max-width: 400px) {
-    table.dataTable th,
-    table.dataTable td {
-      padding: 0.125rem 0.25rem !important;
-    }
-  }
+  table.dataTable thead th { background-color: #3aafa9; color: #fff; }
+  table.dataTable tbody tr:hover { background-color: #dff6f5; }
+  table.dataTable th, table.dataTable td { padding: 0.25rem 0.5rem !important; line-height: 1.2; }
+  table.dataTable th { font-size: clamp(0.875rem, 2vw, 1.25rem); white-space: nowrap; }
+  table.dataTable td { font-size: clamp(0.75rem, 1.2vw, 1rem); }
+  table.dataTable { width: 100%; max-width: 1000px; margin: 0 auto; }
+  @media (max-width: 400px) { table.dataTable th, table.dataTable td { padding: 0.125rem 0.25rem !important; } }
 </style>
 
   </head>  <body class="text-gray-800 flex flex-col min-h-screen">
@@ -134,10 +100,8 @@
 
     <div class="table-wrapper mb-6">
       <table id="EdexcelTable" class="display nowrap responsive w-full" aria-describedby="grade-boundaries-caption">
-        <caption id="grade-boundaries-caption" class="sr-only">Edexcel grade boundaries per unit code</caption>
-        <thead>
-          <tr></tr>
-        </thead>
+        <caption id="grade-boundaries-caption" class="sr-only">Edexcel grade boundaries per unit / component</caption>
+        <thead><tr></tr></thead>
       </table>
     </div>
 
@@ -145,17 +109,128 @@
       <button id="downloadCSV" class="bg-[#3aafa9] text-white px-4 py-2 rounded hover:bg-[#2b7a78] transition">Download CSV</button>
     </div>
 
+    <!-- CONTROLS -->
     <div id="edexcel-controls" class="flex flex-wrap gap-4 mb-6 items-center">
       <label for="edexcelSubjectSearch" class="font-semibold">Subject&nbsp;Code:</label>
-      <input type="text" id="edexcelSubjectSearch" placeholder="Enter code (e.g. WPH14)" class="border rounded px-2 py-1 w-40 sm:w-auto" list="edexcelCodeList" />
+      <input type="text" id="edexcelSubjectSearch" placeholder="e.g. WPH14" class="border rounded px-2 py-1 w-36 sm:w-auto" list="edexcelCodeList" />
       <datalist id="edexcelCodeList"></datalist>
+
+      <label for="edexcelComponentSearch" class="font-semibold">Component:</label>
+      <input type="text" id="edexcelComponentSearch" placeholder="select component" class="border rounded px-2 py-1 w-24 sm:w-32" list="edexcelComponentList" disabled />
+      <datalist id="edexcelComponentList"></datalist>
     </div>
 
-    <div class="chart-container">
-      <canvas id="EdexcelChart"></canvas>
-    </div>
+    <div class="chart-container"><canvas id="EdexcelChart"></canvas></div>
   </section>
 </main>
 
-<footer class="bg-[#
+<footer class="bg-[#3aafa9] text-white text-center py-4 mt-10"><p>Database provided by <a href="https://github.com/ChessMastermind" class="underline hover:text-gray-200">ChessMastermind</a></p></footer>
 
+<!-- PAGE SCRIPT -->
+<script defer>
+  const loadScript = (src) => new Promise((res)=>{ const s=document.createElement('script'); s.src=src; s.onload=res; document.body.appendChild(s); });
+
+  window.addEventListener('DOMContentLoaded', ()=>{
+    fetch('Edexcel.csv')
+      .then(r=>r.text())
+      .then(csvText=>new Promise((resolve)=>{ Papa.parse(csvText,{header:true,dynamicTyping:true,skipEmptyLines:true,worker:true,complete:({data})=>resolve([data,csvText])}); }))
+      .then(async ([parsed,csvText])=>{
+        await loadScript('https://code.jquery.com/jquery-3.6.0.min.js');
+        await Promise.all([
+          loadScript('https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js'),
+          loadScript('https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js'),
+          loadScript('https://cdn.jsdelivr.net/npm/chart.js')
+        ]);
+        initPage(parsed,csvText);
+      })
+      .catch(err=>{ console.error(err); document.getElementById('EdexcelTable').innerHTML='<tbody><tr><td colspan="10" class="text-center py-4">Failed to load data.</td></tr></tbody>'; });
+  });
+
+  function initPage(parsed,csvText){
+    // Build DataTable
+    const headers = Object.keys(parsed[0]||{});
+    const dtColumns = headers.map(h=>({data:h,title:h}));
+    const dataTable = $('#EdexcelTable').DataTable({ data:parsed, columns:dtColumns, responsive:true, autoWidth:false, deferRender:true, pageLength:10 });
+
+    // Component filter beside search bar
+    const componentAliases = ['Component','component','component_code','paper','unit'];
+    const compColIdx = headers.findIndex(h=>componentAliases.includes(h));
+    if(compColIdx!==-1){
+      const compSet=new Set(parsed.map(r=>r[headers[compColIdx]]).filter(Boolean));
+      const filterDiv = $('#EdexcelTable_filter');
+      filterDiv.append(`<label style="margin-left:1rem;font-weight:600;">Component:&nbsp;<input type="text" id="componentTableSearch" list="componentTableList" placeholder="component" class="border rounded px-2 py-1 w-24 sm:w-32"></label>`);
+      $('body').append('<datalist id="componentTableList"></datalist>');
+      compSet.forEach(c=>$('#componentTableList').append(`<option value="${c}"></option>`));
+      $('#componentTableSearch').on('input',function(){ dataTable.column(compColIdx).search(this.value).draw(); });
+    }
+
+    // Build nested data structure: subject → component → session → grades
+    const gradeList=['a*','a','b','c','d','e'];
+    const dataBySubject = {};
+    parsed.forEach(r=>{
+      const subject = r.code || r.SubjectCode || r.subject || '';
+      const component = r.Component || r.component || r.component_code || r.paper || r.unit || '';
+      const session = `${r.year||''} ${(r.session||'').trim()}`.trim();
+      if(!subject || !session) return;
+      const compKey=component || 'ALL';
+      dataBySubject[subject]??={};
+      dataBySubject[subject][compKey]??={};
+      dataBySubject[subject][compKey][session]??={};
+      gradeList.forEach(g=>{ const v=parseFloat(r[g]); if(!isNaN(v)) dataBySubject[subject][compKey][session][g]=v; });
+      const mm=parseFloat(r.max_mark); if(!isNaN(mm)) dataBySubject[subject][compKey][session].max_mark=mm;
+    });
+
+    // Populate subject & component datalists
+    const subjInput=document.getElementById('edexcelSubjectSearch');
+    const compInput=document.getElementById('edexcelComponentSearch');
+    const subjList=document.getElementById('edexcelCodeList');
+    const compList=document.getElementById('edexcelComponentList');
+    Object.keys(dataBySubject).sort().forEach(c=>subjList.appendChild(Object.assign(document.createElement('option'),{value:c})));
+
+    function populateComponents(subj){
+      compList.innerHTML=''; compInput.value=''; compInput.disabled=true;
+      if(!subj || !dataBySubject[subj]) return;
+      const comps=Object.keys(dataBySubject[subj]).filter(c=>c!=='ALL');
+      if(!comps.length) return;
+      compInput.disabled=false;
+      comps.sort().forEach(c=>compList.appendChild(Object.assign(document.createElement('option'),{value:c})));
+      compInput.value=comps[0];
+    }
+
+    // Chart setup
+    const ctx=document.getElementById('EdexcelChart').getContext('2d');
+    let chart=null;
+    const gradeColors={'a*':'#2ECC71',a:'#F4A261',b:'#E9C46A',c:'#E63946',d:'#264653',e:'#6D597A'};
+    const maxMarkColor='#999999';
+    const monthOrder={Jan:1,Feb:2,Mar:3,Apr:4,May:5,Jun:6,Jul:7,Aug:8,Sep:9,Oct:10,Nov:11,Dec:12};
+
+    function updateChart(){
+      const subj=subjInput.value.trim();
+      const comp=compInput.value.trim();
+      if(!subj || !comp || !dataBySubject[subj] || !dataBySubject[subj][comp]){ if(chart){chart.destroy();chart=null;} return; }
+      const dataObj=dataBySubject[subj][comp];
+      const sessions=Object.keys(dataObj);
+      if(!sessions.length){ if(chart){chart.destroy();chart=null;} return; }
+      sessions.sort((a,b)=>{const [ya,ma]=a.split(' ');const [yb,mb]=b.split(' ');return(+ya-+yb)||(monthOrder[ma]-monthOrder[mb]);});
+      const hasAStar=sessions.some(s=>'a*' in dataObj[s]);
+      const grades=gradeList.filter(g=>g!=='a*'||hasAStar);
+      const datasets=grades.map(g=>({label:g.toUpperCase(),data:sessions.map(s=>dataObj[s][g]??null),borderColor:gradeColors[g],tension:0.2,fill:false}));
+      datasets.push({label:'Max Mark',data:sessions.map(s=>dataObj[s].max_mark??null),borderColor:maxMarkColor,borderDash:[5,5],borderWidth:1,pointRadius:0,fill:false});
+      if(chart) chart.destroy();
+      chart=new Chart(ctx,{type:'line',data:{labels:sessions,datasets},options:{responsive:true,maintainAspectRatio:false,plugins:{title:{display:true,text:`Grade Boundaries — ${subj} (${comp})`},legend:{position:'bottom'}},scales:{x:{title:{display:true,text:'Exam Session'}},y:{beginAtZero:true,title:{display:true,text:'Marks'}}}}});
+    }
+
+    subjInput.addEventListener('input',()=>{populateComponents(subjInput.value.trim()); updateChart();});
+    compInput.addEventListener('input',updateChart);
+    // initialise
+    subjInput.value=Object.keys(dataBySubject)[0]||'';
+    populateComponents(subjInput.value);
+    updateChart();
+
+    // CSV download
+    document.getElementById('downloadCSV').addEventListener('click',()=>{const blob=new Blob([csvText],{type:'text/csv'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='Edexcel_Grade_Boundaries.csv';a.click();URL.revokeObjectURL(url);});
+  }
+</script>
+
+  </body>
+</html>
