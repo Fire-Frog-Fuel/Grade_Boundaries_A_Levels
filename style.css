@@ -1,37 +1,37 @@
 
 /* style.css */
 
-/* ===== Color Theme Variables ===== */
+/* =================================================
+   THEME TOKENS – tweak these per colour group 🖌️
+   ================================================= */
 :root {
-    --bg-color: #def2f1;
-    --header-bg: #3aafa9;
-    --header-text: #17252a;
-    --nav-link: #feffff;
-    --nav-link-hover: #ffffff;
-    --section-bg: #ffffff;
-    --text-color: #17252A;
-    --table-header-bg: #3aafa9;
-    --table-header-text: #17252a;
-    --table-row-hover: #2b7a78;
-    --footer-bg: #3aafa9;
-    --footer-text: #feffff;
+  /* Brand / accent */
+  --brand-500: #3aafa9;
+  --brand-600: #2b7a78;
+
+  /* Neutrals */
+  --bg-page: linear-gradient(to bottom, #def2f1 0%, #ffffff 100%);
+  --bg-card: #ffffff;
+  --text-body: #1f2937;   /* gray-800 */
+  --text-heading: #111827;/* gray-900 */
+
+  /* Links & borders */
+  --link-default: var(--brand-500);
+  --link-hover: #ffffff;
+  --border-default: transparent;
 }
 
-/* ===== Dark Theme Variables ===== */
-:root[data-theme='dark'] {
-    --bg-color: #111827;        /* slate-900 */
-    --header-bg: #1e293b;       /* slate-800 */
-    --header-text: #f1f5f9;     /* slate-100 */
-    --nav-link: #e2e8f0;        /* slate-200 */
-    --nav-link-hover: #ffffff;
-    --section-bg: #1f2937;      /* slate-800 */
-    --text-color: #e2e8f0;      /* slate-200 */
-    --table-header-bg: #334155; /* slate-700 */
-    --table-header-text: #f1f5f9;
-    --table-row-hover: #0f172a; /* slate-900 */
-    --footer-bg: #1e293b;
-    --footer-text: #f1f5f9;
+.dark {
+  /* Brand stays the same, but you can change it here */
+  --bg-page: #0f172a;            /* slate-900 */
+  --bg-card: #1e293b;            /* slate-800 */
+  --text-body: #f1f5f9;          /* slate-100 */
+  --text-heading: #ffffff;
+  --link-default: #a7f3d0;       /* emerald-200 */
+  --link-hover: #d1fae5;         /* emerald-100 */
+  --border-default: #334155;     /* slate-700 */
 }
+
 
 /* Optional cosmetics for the pretty slider */
 .theme-switch {
