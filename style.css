@@ -17,7 +17,7 @@
 
   /* Typography */
   --text-body:      #1f2937; /* gray-800 */
-  --text-heading:   #f1f5f9; /* gray-900 */
+  --text-heading:   #111827; /* gray-900 */
   --text-link:      var(--brand-500);
   --text-link-hover:#ffffff;
 
