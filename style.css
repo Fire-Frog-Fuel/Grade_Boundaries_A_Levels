@@ -8,16 +8,16 @@
   --brand-500: #3aafa9;  /* teal */
   --brand-600: #2b7a78;
 
-  /* Backgrounds   */
+  /* Backgrounds */
   --bg-body:  linear-gradient(to bottom, #def2f1 0%, #ffffff 100%);
   --bg-card:  #ffffff;
   --bg-header: var(--brand-500);
   --bg-footer: var(--brand-500);
   --bg-table-hover: #dff6f5;
 
-  /* Typography    */
-  --text-body:      #1f2937; /* gray‑800 */
-  --text-heading:   #111827; /* gray‑900 */
+  /* Typography */
+  --text-body:      #1f2937; /* gray-800 */
+  --text-heading:   #111827; /* gray-900 */
   --text-link:      var(--brand-500);
   --text-link-hover:#ffffff;
 
@@ -26,10 +26,10 @@
   --btn-bg-hover:   var(--brand-600);
   --btn-text:       #ffffff;
   --btn-shadow:     0 2px 6px rgb(0 0 0 / .20);
-  --btn-lift:       -2px;      /* upward movement on hover */
+  --btn-lift:       -2px; /* upward movement on hover */
 
   --input-bg:       #ffffff;
-  --input-border:   #cbd5e1;   /* slate‑300 */
+  --input-border:   #cbd5e1; /* slate-300 */
 
   /* Table header */
   --table-th-bg:    var(--brand-500);
@@ -40,28 +40,28 @@
 
 /* ---------- DARK THEME OVERRIDES ---------- */
 .dark {
-  --bg-body:        #111827; /* slate‑900 */
-  --bg-card:        #1e293b; /* slate‑800 */
+  --bg-body:        #111827; /* slate-900 */
+  --bg-card:        #1e293b; /* slate-800 */
   --bg-header:      var(--brand-500); /* keep teal bar */
   --bg-footer:      var(--brand-500);
   --bg-table-hover: #1b2535;
 
-  --text-body:      #cbd5e1; /* slate‑300 */
-  --text-heading:   #f1f5f9; /* slate‑100 */
-  --text-link:      #38bdf8; /* sky‑400 */
-  --text-link-hover:#7dd3fc; /* sky‑300 */
+  --text-body:      #cbd5e1; /* slate-300 */
+  --text-heading:   #f1f5f9; /* slate-100 */
+  --text-link:      #38bdf8; /* sky-400 */
+  --text-link-hover:#7dd3fc; /* sky-300 */
 
-  --btn-bg:         #38bdf8; /* sky‑400 */
-  --btn-bg-hover:   #0ea5e9; /* sky‑500 */
-  --btn-shadow:     0 2px 6px rgb(0 0 0 / .4);
+  --btn-bg:         #38bdf8; /* sky-400 */
+  --btn-bg-hover:   #0ea5e9; /* sky-500 */
+  --btn-shadow:     0 2px 6px rgb(0 0 0 / .40);
 
-  --input-bg:       #0f172a; /* slate‑900 */
-  --input-border:   #334155; /* slate‑700 */
+  --input-bg:       #0f172a; /* slate-900 */
+  --input-border:   #334155; /* slate-700 */
 
   --table-th-bg:    var(--brand-600);
   --table-th-text:  #ffffff;
 
-  --border-default: #334155; /* slate‑700 */
+  --border-default: #334155; /* slate-700 */
 }
 
 /* ============================================================
@@ -155,9 +155,17 @@ input,select{
 input:focus,select:focus{outline:2px solid var(--btn-bg);outline-offset:1px}
 
 /* ============================================================
-   07  DATATABLES OVERRIDES
+   07  DATATABLES + TABLE WRAPPER
    ============================================================ */
-.table-wrapper{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.table-wrapper{
+  width:100%;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  background:var(--bg-card);
+  border-radius:.5rem;
+  box-shadow:0 1px 2px rgb(0 0 0 / .1);
+  margin-bottom:1.5rem;
+}
 
 table.dataTable{width:100%;border-collapse:collapse}
 
@@ -168,12 +176,32 @@ table.dataTable thead th{
 
 table.dataTable tbody tr:hover{background:var(--bg-table-hover)}
 
-/* Tailwind utilities that force white / black */
+/* Prevent Tailwind utilities forcing white/black in dark */
 .dark .bg-white,.dark .bg-[#ffffff]{background:var(--bg-card)!important}
 .dark .text-black{color:var(--text-body)!important}
 
 /* ============================================================
-   08  FOOTER
+   08  CHART CONTAINER
+   ============================================================ */
+.chart-container{
+  position:relative;
+  width:100%;
+  min-height:550px;
+  height:80vw;   /* mobile friendly */
+  max-height:900px;
+  background:var(--bg-card);
+  border-radius:.5rem;
+  box-shadow:0 1px 2px rgb(0 0 0 / .1);
+}
+.chart-container canvas{
+  position:absolute;
+  inset:0;
+  width:100% !important;
+  height:100% !important;
+}
+
+/* ============================================================
+   09  FOOTER
    ============================================================ */
 footer{
   background:var(--bg-footer);
@@ -181,7 +209,7 @@ footer{
 }
 
 /* ============================================================
-   09  THEME TOGGLE BUTTON STYLE (uses btn tokens)
+   10  THEME TOGGLE BUTTON (uses tokens)
    ============================================================ */
 #theme-toggle{
   position:fixed;
