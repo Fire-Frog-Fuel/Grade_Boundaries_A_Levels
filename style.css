@@ -168,7 +168,7 @@ button:active,
 }
 
 button:focus-visible,
-.class-button:focus-visible {
+.class-buttonfocus-visible {
   outline:         3px solid var(--text-link);
   outline-offset:  2px;
 }
