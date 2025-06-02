@@ -36,7 +36,16 @@
   --border-default: #334155;   /* slate-700 */
 }
 
-.dark article h3 { color: var(--link-default); }
+/* --------------------------------------------------
+   1) Keep card backgrounds dark (overrides bg-white)
+   -------------------------------------------------- */
+.dark article,
+.dark .bg-white {
+  background-color: var(--bg-card) !important;   /* slate-800 */
+  color: var(--text-body) !important;            /* slate-300 */
+}
+.dark article p { color: var(--text-body) !important; }
+
 /* =================================================
    BASE ELEMENTS – always reference the tokens above
    ================================================= */
