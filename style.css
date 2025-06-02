@@ -183,23 +183,24 @@ table.dataTable tbody tr:hover{background:var(--bg-table-hover)}
 /* ============================================================
    08  CHART CONTAINER
    ============================================================ */
-.chart-container{
-  position:relative;
-  width:100%;
-  min-height:550px;
-  height:80vw;   /* mobile friendly */
-  max-height:900px;
-  background:var(--bg-card);
-  border-radius:.5rem;
-  box-shadow:0 1px 2px rgb(0 0 0 / .1);
-}
-.chart-container canvas{
-  position:absolute;
-  inset:0;
-  width:100% !important;
-  height:100% !important;
-}
 
+.chart-container {
+    position: relative;
+    width: 100%;
+    /* Even taller graph */
+    min-height: 450px;
+    height: 70vw; /* scales with screen width on mobiles */
+    max-height: 800px; /* avoids being massive on desktops */
+    background: var(--bg-card);
+    border-radius: .5rem;
+    box-shadow: 0 1px 2px rgb(0 0 0 / .1);
+  }
+  .chart-container canvas {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
 /* ============================================================
    09  FOOTER
    ============================================================ */
