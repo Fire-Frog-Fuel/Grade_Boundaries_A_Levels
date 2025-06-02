@@ -174,7 +174,7 @@
         updateChart();
 
         // CSV download
-        document.getElementById('downloadCSV').addEventListener('click',()=>{ const blob=new Blob([csvText],{type:'text/csv'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='OxfordAqa/OxfordAqa.csv'; a.click(); URL.revokeObjectURL(url); });
+        document.getElementById('downloadCSV').addEventListener('click',()=>{ const blob=new Blob([csvText],{type:'text/csv'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='OxfordAqa.csv'; a.click(); URL.revokeObjectURL(url); });
       }
     </script>
 
