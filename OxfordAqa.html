@@ -9,7 +9,16 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link rel="preconnect" href="https://cdn.datatables.net" />
     <link rel="preconnect" href="https://code.jquery.com" />
-
+    <script>
+/* Instant-load theme so there’s zero flash of wrong colour */
+(() => {
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark' ||
+      (!saved && matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  }
+})();
+</script>
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com" defer></script>
     
@@ -166,5 +175,20 @@
         document.getElementById('downloadCSV').addEventListener('click',()=>{ const blob=new Blob([csvText],{type:'text/csv'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='OxfordAqa_Grade_Boundaries.csv'; a.click(); URL.revokeObjectURL(url); });
       }
     </script>
+    <button id="theme-toggle" aria-label="Toggle dark / light mode">🌙</button>
+
+<script>
+const btn  = document.getElementById('theme-toggle');
+const root = document.documentElement;
+
+/*  swap icon to match current state  */
+btn.textContent = root.classList.contains('dark') ? '☀️' : '🌙';
+
+btn.addEventListener('click', () => {
+  const dark = root.classList.toggle('dark');
+  localStorage.setItem('theme', dark ? 'dark' : 'light');
+  btn.textContent = dark ? '☀️' : '🌙';
+});
+</script>
   </body>
 </html>
