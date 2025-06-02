@@ -31,25 +31,46 @@
 
   <!-- Critical Styles -->
   <style>
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #def2f1 0%, #ffffff 100%);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      color: #1f2937; /* gray-800 */
-    }
-    header {
-      background-color: #3aafa9;
-    }
-    nav a {
-  border-bottom: 2px solid transparent;
+    /* ===== GLOBALS ===== */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-page);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-body);
 }
 
-nav a:hover {
-  color: #ffffff;
-  border-bottom-color: #feffff;
+/* Header */
+header {
+  background-color: var(--brand-500);
+  color: var(--link-hover);
 }
+
+/* Cards */
+article {
+  background: var(--bg-card);
+  color: var(--text-body);
+}
+
+/* Links in nav + buttons */
+nav a,
+a.inline-block {
+  border-bottom: 2px solid var(--border-default);
+  color: var(--link-default);
+}
+
+nav a:hover,
+a.inline-block:hover {
+  color: var(--link-hover);
+  border-bottom-color: var(--link-hover);
+}
+
+/* Headings (optional) */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-heading);
+}
+
   </style>
 
   <!-- Schema.org structured data -->
@@ -131,6 +152,25 @@ nav a:hover {
           <a href="OxfordAqa.html" class="inline-block mt-4 px-4 py-2 bg-[#3aafa9] text-white rounded hover:bg-[#2b7a78]">View Oxford AQA grade boundaries</a>
         </article>
       </div>
+    <button id="theme-toggle" aria-label="Toggle dark mode"
+        class="fixed bottom-4 right-4 rounded-full p-3 shadow-lg bg-[var(--brand-500)] text-white">
+  🌙
+</button>
+
+<script>
+  // ----- Theme bootstrap -----
+  const root = document.documentElement;
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark' || (!saved && prefersDark)) root.classList.add('dark');
+
+  // ----- Toggle handler -----
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    root.classList.toggle('dark');
+    localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+  });
+</script>
+
   </main>
 
   <!-- Footer -->
