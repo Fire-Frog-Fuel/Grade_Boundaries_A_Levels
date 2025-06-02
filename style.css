@@ -241,3 +241,34 @@ footer{
 #theme-toggle:hover {
   background: var(--btn-bg-hover);
 }
+/* ─────────────────────────────────────────────────────────────
+   11  PAGE-TITLE (per-page main heading, separate from other headers)
+   ───────────────────────────────────────────────────────────── */
+
+.page-title {
+  /* Base typography (you can override any Tailwind utility) */
+  font-size: 1.875rem;      /* same as text-3xl */
+  line-height: 2.25rem;     /* equivalent to `sm:text-4xl` on larger screens */
+  font-weight: 700;         /* bold */
+
+  /* Spacing */
+  margin: 0;                /* remove any default margin */
+  padding-bottom: 0.5rem;   /* e.g. push the nav down a bit */
+
+  /* Color (you can read from tokens, or set a hard‐coded value) */
+  color: var(--text-link-hover); /* white in light mode; (or override for dark) */
+}
+
+/* If you want the page-title to appear slightly larger on bigger screens: */
+@media (min-width: 640px) {
+  .page-title {
+    font-size: 2.25rem;    /* sm:text-4xl */
+    line-height: 2.5rem;
+  }
+}
+
+/* If you want to tweak its color specifically in dark-mode: */
+.dark .page-title {
+  /* For instance, keep it “near white” if your header is still teal in dark mode: */
+  color: var(--text-heading); /* slate-100 or a custom token */
+}
