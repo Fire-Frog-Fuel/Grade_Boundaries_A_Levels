@@ -30,7 +30,7 @@
 
   --input-bg:       #ffffff;
   --input-border:   #cbd5e1; /* slate-300 */
-
+  --title-text: #ffffff;
   /* Table header */
   --table-th-bg:    var(--brand-500);
   --table-th-text:  #ffffff;
@@ -53,6 +53,7 @@
   --text-link:      #38bdf8; /* sky-400 */
   --text-link-hover:#f2f7fa; /* sky-300 */
 
+  --title-text: #bdcdcc;
   --btn-bg:         #2d8b87; /* sky-400 */
   --btn-bg-hover:   #36a8a3; /* sky-500 */
   --btn-shadow:     0 2px 6px rgb(0 0 0 / .40);
@@ -104,7 +105,7 @@ main{flex:1 1 auto}
    ============================================================ */
 header{
   background:var(--bg-header);
-  color:var(--text-link-hover);
+  color:var(--title-text);
   position: relative; /* so the toggle’s “absolute” sticks to the header */
   padding: 1.5rem 2rem; 
 }
@@ -115,15 +116,11 @@ nav a {
 }
 
 /* On hover, swap in the underline (or change the border-bottom color, if you want that style instead) */
-nav a:hover {
-  /* Option A: add an actual underline instead of border */
-  text-decoration: underline;
-  /* If you want to keep border-bottom but change its color, uncomment: */
-  /* border-bottom-color: var(--text-link-hover); */
-}
+
+
 
 /* If you have standalone inline text links outside of <nav>, you can do something similar: */
-a.inline-text {
+/*a.inline-text {
   text-decoration: none;
   color: var(--text-link);
   transition: color 0.2s, text-decoration 0.2s;
@@ -132,8 +129,39 @@ a.inline-text {
 a.inline-text:hover {
   text-decoration: underline;
   color: var(--text-link-hover);
+}*/
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
 }
 
+/* 1) Make the underline full‐width but initially scaled down */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;               /* adjust gap under the text as needed */
+  width: 100%;                /* full width of the link text */
+  height: 2px;                /* thickness of the underline */
+  background-color: white;    /* underline color */
+  transform-origin: center;   /* grow from the middle */
+  transform: scaleX(0);       /* start “collapsed” */
+  transition: transform 0.25s ease;
+}
+
+/* 2) On hover (or focus), scale it to full width */
+.nav-link:hover::after,
+.nav-link:focus::after {
+  transform: scaleX(1);
+}
+
+/* 3) (Optional) Keep the link text white on hover/focus */
+.nav-link:hover,
+.nav-link:focus {
+  color: white;
+}
 /* ============================================================
    05  BUTTONS – pop & lift 🚀
    ============================================================ */
