@@ -13,6 +13,16 @@
     <!-- Tailwind (kept defer so it does not block first paint) -->
     <script src="https://cdn.tailwindcss.com" defer></script>
     <link rel="stylesheet" href="style.css">
+    <script>
+/* Instant-load theme so there’s zero flash of wrong colour */
+(() => {
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark' ||
+      (!saved && matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  }
+})();
+</script>
   </head>
   <body class="text-gray-800 flex flex-col min-h-screen">
     <!-- ===== HEADER ===== -->
