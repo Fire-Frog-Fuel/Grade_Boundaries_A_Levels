@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script defer data-domain="gradeboundaries.com" src="https://plausible.io/js/script.js"></script>
+  <script defer data-domain="gradeboundaries.com" src="https://plausible.io/js/script.js"></script>
   <!-- Basic Meta Tags -->
   <base href="/Grade_Boundaries_A_Levels/">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A-Level Grade Boundaries 2015-2025 | Edexcel · CIE · Oxford AQA</title>
-  <meta name="description" content="Explore interactive tables, downloadable datasets and animated charts of A-Level grade boundaries (2015-2025) for Edexcel, CIE and Oxford AQA — 100 % free.">
-  <meta name="keywords" content="A Level grade boundaries, Edexcel grade thresholds, CIE grade boundaries, Oxford AQA, exam results, UK A-Levels, 2025">
+  <title>A-Level Grade Boundaries 2015-2025 | Edexcel · CIE · Oxford AQA · OCR</title>
+  <meta name="description" content="Explore interactive tables, downloadable datasets and animated charts of A-Level grade boundaries for Edexcel, CIE, Oxford AQA, and OCR — 100 % free.">
+  <meta name="keywords" content="A Level grade boundaries, Edexcel grade thresholds, CIE grade boundaries, Oxford AQA, OCR grade boundaries, exam results, UK A-Levels, 2025">
   <meta name="author" content="Fire-Frog-Fuel">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.gradeboundaries.com/">
@@ -17,64 +17,20 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.gradeboundaries.com/">
-  <meta property="og:title" content="A-Level Grade Boundaries 2015-2025 | Edexcel, CIE, Oxford AQA">
-  <meta property="og:description" content="Compare free interactive grade-boundary data for Edexcel, CIE and Oxford AQA between 2015-2025.">
+  <meta property="og:title" content="A-Level Grade Boundaries 2015-2025 | Edexcel, CIE, Oxford AQA, OCR">
+  <meta property="og:description" content="Compare free interactive grade-boundary data for Edexcel, CIE, Oxford AQA, and OCR between 2015-2025.">
   <meta property="og:image" content="https://www.gradeboundaries.com/assets/og-image.jpg">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://www.gradeboundaries.com/">
   <meta name="twitter:title" content="A-Level Grade Boundaries 2015-2025">
-  <meta name="twitter:description" content="Interactive tables and charts covering Edexcel, CIE & Oxford AQA A-Level grade thresholds.">
+  <meta name="twitter:description" content="Interactive tables and charts covering Edexcel, CIE, Oxford AQA & OCR A-Level grade thresholds.">
   <meta name="twitter:image" content="https://www.gradeboundaries.com/assets/og-image.jpg">
 
   <!-- TailwindCSS (kept in <head> for first-paint styling) -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Critical Styles -->
-  <!--  <style>
-    /* ===== GLOBALS ===== */
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: var(--bg-page);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  color: var(--text-body);
-}
-
-/* Header */
-header {
-  background-color: var(--brand-500);
-  color: var(--link-hover);
-}
-
-/* Cards */
-article {
-  background: var(--bg-card);
-  color: var(--text-body);
-}
-
-/* Links in nav + buttons */
-nav a,
-a.inline-block {
-  border-bottom: 2px solid var(--border-default);
-  color: var(--link-default);
-}
-
-nav a:hover,
-a.inline-block:hover {
-  color: var(--link-hover);
-  border-bottom-color: var(--link-hover);
-}
-
-/* Headings (optional) */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--text-heading);
-}
-
-  </style> -->
-
   <!-- Schema.org structured data -->
   <script type="application/ld+json">
   {
@@ -97,20 +53,21 @@ h1, h2, h3, h4, h5, h6 {
       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gradeboundaries.com/"},
       {"@type": "ListItem", "position": 2, "name": "Edexcel", "item": "https://www.gradeboundaries.com//Edexcel"},
       {"@type": "ListItem", "position": 3, "name": "CIE", "item": "https://www.gradeboundaries.com//CIE"},
-      {"@type": "ListItem", "position": 4, "name": "Oxford AQA", "item": "https://www.gradeboundaries.com//OxfordAqa"}
+      {"@type": "ListItem", "position": 4, "name": "Oxford AQA", "item": "https://www.gradeboundaries.com//OxfordAqa"},
+      {"@type": "ListItem", "position": 5, "name": "OCR", "item": "https://www.gradeboundaries.com//OCR"}
     ]
   }
   </script>
   <script>
-/* Instant-load theme so there’s zero flash of wrong colour */
-(() => {
-  const saved = localStorage.getItem('theme');
-  if (saved === 'dark' ||
-      (!saved && matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark');
-  }
-})();
-</script>
+  /* Instant-load theme so there’s zero flash of wrong colour */
+  (() => {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' ||
+        (!saved && matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+  </script>
   <!-- Defer non-critical JS for better LCP -->
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin defer></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin defer></script>
@@ -131,45 +88,51 @@ h1, h2, h3, h4, h5, h6 {
       <a href="Edexcel" class="nav-link mx-4 text-base sm:text-lg hover:text-white transition" title="Edexcel A-Level grade boundaries 2015-2025">Edexcel</a>
       <a href="CIE" class="nav-link mx-4 text-base sm:text-lg hover:text-white transition" title="CIE (Cambridge International) A-Level grade boundaries">CIE</a>
       <a href="OxfordAqa" class="nav-link mx-4 text-base sm:text-lg hover:text-white transition" title="Oxford AQA A-Level grade boundaries 2020-2025">Oxford AQA</a>
+      <a href="OCR" class="nav-link mx-4 text-base sm:text-lg hover:text-white transition" title="OCR A-Level grade boundaries 2015-2025">OCR</a>
     </nav>
   </header>
 
   <!-- Main content -->
   <main class="flex-1 max-w-6xl mx-auto p-6" id="main-content">
-      <h2 class="text-3xl font-semibold mb-4">Welcome to Grade-Boundary Explorer</h2>
-      <p class="text-lg mb-4">This site offers a <strong>free</strong>, open-access way to analyse and compare A-Level grade boundaries for Edexcel, CIE and Oxford AQA. Access tables, download CSVs and visualise trends with interactive charts.</p>
+    <h2 class="text-3xl font-semibold mb-4">Welcome to Grade-Boundary Explorer</h2>
+    <p class="text-lg mb-4">This site offers a <strong>free</strong>, open-access way to analyse and compare A-Level grade boundaries for Edexcel, CIE, Oxford AQA, and OCR. Access tables, download CSVs and visualise trends with interactive charts.</p>
 
-    
-      <h2 id="datasets-heading" class="sr-only">Available datasets</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <article class="bg-white shadow-md rounded-lg p-6" itemscope itemtype="https://schema.org/Dataset">
-          <meta itemprop="name" content="Edexcel A-Level Grade Boundaries 2015-2025" />
-          <h3 class="text-xl font-bold mb-2" itemprop="name">Edexcel</h3>
-          <p class="text-sm" itemprop="description">Over 800 units covering Maths, Sciences, Economics and more (2015-2025).</p>
-          <a href="Edexcel" class="class-button inline-block mt-4 px-4 py-2  rounded" itemprop="url">View Edexcel grade boundaries</a>
-        </article>
+    <h2 id="datasets-heading" class="sr-only">Available datasets</h2>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <article class="bg-white shadow-md rounded-lg p-6 flex flex-col h-70" itemscope itemtype="https://schema.org/Dataset">
+        <meta itemprop="name" content="Edexcel A-Level Grade Boundaries 2015-2025" />
+        <h3 class="text-xl font-bold mb-2" itemprop="name">Edexcel</h3>
+        <p class="text-sm mb-4" itemprop="description">Over 800 units covering Maths, Sciences, Economics and more (2015-2025).</p>
+        <a href="Edexcel" class="class-button inline-block mt-auto mb-0 px-4 py-2 rounded text-center" itemprop="url">View Edexcel grade boundaries</a>
+      </article>
 
-        <article class="bg-white shadow-md rounded-lg p-6" itemscope itemtype="https://schema.org/Dataset">
-          <meta itemprop="name" content="CIE A-Level Grade Boundaries 2021-2025" />
-          <h3 class="text-xl font-bold mb-2">CIE</h3>
-          <p class="text-sm">Grade thresholds for AS/A-Level Cambridge International examinations (2021-2025).</p>
-          <a href="CIE" class="class-button inline-block mt-4 px-4 py-2  rounded">View CIE grade boundaries</a>
-        </article>
+      <article class="bg-white shadow-md rounded-lg p-6 flex flex-col h-70" itemscope itemtype="https://schema.org/Dataset">
+        <meta itemprop="name" content="CIE A-Level Grade Boundaries 2021-2025" />
+        <h3 class="text-xl font-bold mb-2">CIE</h3>
+        <p class="text-sm mb-4">Grade thresholds for AS/A-Level Cambridge International examinations (2021-2025).</p>
+        
+        <a href="CIE" class="class-button inline-block mt-auto mb-0 px-4 py-2 rounded text-center">View CIE grade boundaries</a>
+      </article>
 
-        <article class="bg-white shadow-md rounded-lg p-6" itemscope itemtype="https://schema.org/Dataset">
-          <meta itemprop="name" content="Oxford AQA A-Level Grade Boundaries 2020-2025" />
-          <h3 class="text-xl font-bold mb-2">Oxford AQA</h3>
-          <p class="text-sm">Oxford AQA subjects from 2020-2025 with verified grade-boundary data.</p>
-          <a href="OxfordAqa" class="class-button inline-block mt-4 px-4 py-2  rounded">View Oxford AQA grade boundaries</a>
-        </article>
-      </div>
-    
+      <article class="bg-white shadow-md rounded-lg p-6 flex flex-col h-70" itemscope itemtype="https://schema.org/Dataset">
+        <meta itemprop="name" content="Oxford AQA A-Level Grade Boundaries 2018-2025" />
+        <h3 class="text-xl font-bold mb-2">Oxford AQA</h3>
+        <p class="text-sm mb-4">Oxford AQA subjects from 2020-2025 with verified grade-boundary data.</p>
+        <a href="OxfordAqa" class="class-button inline-block mt-auto mb-0 px-4 py-2 rounded text-center">View Oxford AQA grade boundaries</a>
+      </article>
 
+      <article class="bg-white shadow-md rounded-lg p-6 flex flex-col h-70" itemscope itemtype="https://schema.org/Dataset">
+        <meta itemprop="name" content="OCR A-Level Grade Boundaries 2021-2025" />
+        <h3 class="text-xl font-bold mb-2">OCR</h3>
+        <p class="text-sm mb-4">Comprehensive OCR A-Level grade boundaries from 2015-2025, including all major subjects.</p>
+        <a href="OCR" class="class-button inline-block mt-auto mb-0 px-4 py-2 rounded text-center">View OCR grade boundaries</a>
+      </article>
+    </div>
   </main>
 
   <!-- Footer -->
   <footer class="text-white text-center py-4 mt-10" role="contentinfo">
-    <p>Grade-Boundary Explorer by <a href="https://github.com/Fire-Frog-Fuel" class="underline hover:text-gray-200" rel="noopener" target="_blank">Fire-Frog-Fuel</a> and <a href="https://github.com/ChessMastermind" class="underline hover:text-gray-200" rel="noopener" target="_blank">ChessMastermind</a> </p>
+    <p>Grade-Boundary Explorer by <a href="https://github.com/Fire-Frog-Fuel" class="underline hover:text-gray-200" rel="noopener" target="_blank">Fire-Frog-Fuel</a> and <a href="https://github.com/ChessMastermind" class="underline hover:text-gray-200" rel="noopener" target="_blank">ChessMastermind</a></p>
     <p><a href="Contact" class="underline hover:text-gray-200">Contact&nbsp;us</a></p>
     <p><a href="Privacy" class="underline hover:text-gray-200">Privacy</a></p>
   </footer>
@@ -178,20 +141,21 @@ h1, h2, h3, h4, h5, h6 {
   <noscript>
     <p class="text-center p-4 bg-yellow-200">JavaScript is disabled. Charts and interactive tables will not function, but you can still download data in CSV format.</p>
   </noscript>
+
   <button id="theme-toggle" aria-label="Toggle dark / light mode">🌙</button>
 
-<script>
-const btn  = document.getElementById('theme-toggle');
-const root = document.documentElement;
+  <script>
+    const btn  = document.getElementById('theme-toggle');
+    const root = document.documentElement;
 
-/*  swap icon to match current state  */
-btn.textContent = root.classList.contains('dark') ? '☀️' : '🌙';
+    /*  swap icon to match current state  */
+    btn.textContent = root.classList.contains('dark') ? '☀️' : '🌙';
 
-btn.addEventListener('click', () => {
-  const dark = root.classList.toggle('dark');
-  localStorage.setItem('theme', dark ? 'dark' : 'light');
-  btn.textContent = dark ? '☀️' : '🌙';
-});
-</script>
+    btn.addEventListener('click', () => {
+      const dark = root.classList.toggle('dark');
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+      btn.textContent = dark ? '☀️' : '🌙';
+    });
+  </script>
 </body>
 </html>
