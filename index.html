@@ -39,7 +39,7 @@
     // 3) Build the full page-URL (for og:url) and full preview image (for og:image)
     const pageUrl = rootUrl + (path.startsWith('/') ? path.slice(1) : path);
     //   - If path is "/Edexcel", pageUrl = "https://gradeboundaries.com/Edexcel" (or GitHub Pages equivalent).
-    const imageUrl = rootUrl + 'preview.png';
+    const imageUrl = 'https://gradeboundaries.com/' + 'preview.png';
     //   - If your preview sits at the site root, this points to e.g. "https://gradeboundaries.com/preview.png"
 
     // 4) Inject <meta> tags before the rest of the head is parsed
