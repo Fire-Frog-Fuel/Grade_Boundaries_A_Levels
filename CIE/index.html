@@ -6,7 +6,7 @@
         async src="//gc.zgo.at/count.js"></script>
     <!-- Google tag (gtag.js) -->
 
-      <script>
+ <script>
     // (1) grab the current “pathname” and “hostname”
     const host = location.hostname; 
     const path = location.pathname; 
@@ -26,12 +26,40 @@
     } else {
       myBase = '/Grade_Boundaries_A_Levels/';
     }
+    let rootUrl;
+    if (host === 'gradeboundaries.com') {
+      rootUrl = 'https://gradeboundaries.com/';
+    } else {
+      rootUrl = 'https://' + host + '/Grade_Boundaries_A_Levels/';
+    }
 
-    // (3) write the <base> tag before the browser parses any <link> or <script> tags that rely on it
-    document.write(`<base href="${myBase}">`);
+    // 3) Build the full page-URL (for og:url) and full preview image (for og:image)
+    const pageUrl = rootUrl + (path.startsWith('/') ? path.slice(1) : path);
+    //   - If path is "/Edexcel", pageUrl = "https://gradeboundaries.com/Edexcel" (or GitHub Pages equivalent).
+    const imageUrl = rootUrl + 'preview.png';
+    //   - If your preview sits at the site root, this points to e.g. "https://gradeboundaries.com/preview.png"
+
+    // 4) Inject <meta> tags before the rest of the head is parsed
+    document.write(`
+      <meta property="og:url"         content="${pageUrl}">
+      <meta property="og:image"       content="${imageUrl}">
+      <!-- If you also want Twitter cards, you can add:
+      <meta name="twitter:url"       content="${pageUrl}">
+      <meta name="twitter:image"     content="${imageUrl}">
+      -->
+    `);
   </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="A-Level Grade Boundaries 2021-2025 | CIE">
+  <meta property="og:description" content="Compare free interactive grade-boundary data for Edexcel, CIE, Oxford AQA, and OCR between 2015-2025.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A-Level Grade Boundaries 2021-2025 | CIE">
+  <meta name="twitter:description" content="Interactive tables and charts covering Edexcel, CIE, Oxford AQA & OCR A-Level grade thresholds.">
     <title>CIE Grade Boundaries</title><!-- ─── PERFORMANCE HINTS ─── -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net" />
 <link rel="preconnect" href="https://cdn.datatables.net" />
