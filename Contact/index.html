@@ -6,7 +6,30 @@
 
         async src="//gc.zgo.at/count.js"></script>
 
-  <base href="/Grade_Boundaries_A_Levels/">
+    <script>
+    // (1) grab the current “pathname” and “hostname”
+    const host = location.hostname; 
+    const path = location.pathname; 
+
+    // (2) decide which base to use
+    //    - if we’re on a custom domain (host ≠ “username.github.io”), assume "/"  
+    //    - if we’re on GitHub Pages “username.github.io”, assume repo name is “Grade_Boundaries_A_Levels”
+    let myBase;
+    if (host === 'gradeboundaries.com') {
+      // ensure the path actually starts with "/Grade_Boundaries_A_Levels"
+      if (path.startsWith('/')) {
+        myBase = '/';
+      } else {
+        // if you have deeper nested pages, you could also parse it out here…
+        myBase = '/';
+      }
+    } else {
+      myBase = '/Grade_Boundaries_A_Levels/';
+    }
+
+    // (3) write the <base> tag before the browser parses any <link> or <script> tags that rely on it
+    document.write(`<base href="${myBase}">`);
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact information</title>
