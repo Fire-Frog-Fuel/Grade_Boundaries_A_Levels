@@ -42,6 +42,7 @@
     //   - If your preview sits at the site root, this points to e.g. "https://gradeboundaries.com/preview.png"
 
     // 4) Inject <meta> tags before the rest of the head is parsed
+    document.write(`<base href="${myBase}">`);
     document.write(`
       <meta property="og:url"         content="${pageUrl}">
       <meta property="og:image"       content="${imageUrl}">
@@ -50,8 +51,9 @@
       <meta name="twitter:image"     content="${imageUrl}">
       -->
     `);
+    document.write(`<base href="${myBase}">`);
+    document.write(`<link rel="stylesheet" href="style.css">`);
   </script>
-        async src="//gc.zgo.at/count.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:type" content="website">
@@ -76,7 +78,6 @@
   }
 })();
     </script>
-    <link rel="stylesheet" href="style.css">
   </head>
   <body class="text-gray-800 flex flex-col min-h-screen">
     <!-- ===== HEADER ===== -->

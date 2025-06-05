@@ -47,7 +47,10 @@
       <meta name="twitter:image"     content="${imageUrl}">
       -->
     `);
+    document.write(`<base href="${myBase}">`);
+    document.write(`<link rel="stylesheet" href="style.css">`);
   </script>
+  
     <meta property="og:type" content="website">
   <meta property="og:title" content="A-Level Grade Boundaries 2015-2025 | Edexcel">
   <meta property="og:description" content="Compare free interactive grade-boundary data for Edexcel, CIE, Oxford AQA, and OCR between 2015-2025.">
@@ -129,7 +132,6 @@
 
 <!-- Tailwind -->
 <script src="https://cdn.tailwindcss.com" defer></script>
-<link rel="stylesheet" href="style.css">
 <!-- PapaParse -->
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
 
@@ -186,7 +188,7 @@
   const loadScript = (src) => new Promise((res)=>{ const s=document.createElement('script'); s.src=src; s.onload=res; document.body.appendChild(s); });
 
   window.addEventListener('DOMContentLoaded', ()=>{
-    fetch('Edexcel.csv')
+    fetch('Edexcel/Edexcel.csv')
       .then(r=>r.text())
       .then(csvText=>new Promise((resolve)=>{ Papa.parse(csvText,{header:true,dynamicTyping:true,skipEmptyLines:true,worker:true,complete:({data})=>resolve([data,csvText])}); }))
       .then(async ([parsed,csvText])=>{

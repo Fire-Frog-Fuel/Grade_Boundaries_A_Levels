@@ -40,6 +40,7 @@
     //   - If your preview sits at the site root, this points to e.g. "https://gradeboundaries.com/preview.png"
 
     // 4) Inject <meta> tags before the rest of the head is parsed
+    document.write(`<base href="${myBase}">`);
     document.write(`
       <meta property="og:url"         content="${pageUrl}">
       <meta property="og:image"       content="${imageUrl}">
@@ -48,7 +49,11 @@
       <meta name="twitter:image"     content="${imageUrl}">
       -->
     `);
+    document.write(`<base href="${myBase}">`);
+    document.write(`<link rel="stylesheet" href="style.css">`);
+    
   </script>
+  
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
       <!-- Open Graph / Facebook -->
@@ -76,7 +81,7 @@
 </script>
 <!-- Tailwind (small – safe to defer) -->
 <script src="https://cdn.tailwindcss.com" defer></script>
-<link rel="stylesheet" href="style.css">
+
     
 <!-- PapaParse (needed before fetching/parsing CSV) -->
 <script
@@ -226,7 +231,7 @@
   });
 
   window.addEventListener('DOMContentLoaded', () => {
-    fetch('CIE.csv')
+    fetch('CIE/CIE.csv')
       .then((r) => r.text())
       .then((csvText) => new Promise((resolve) => {
         Papa.parse(csvText, {
