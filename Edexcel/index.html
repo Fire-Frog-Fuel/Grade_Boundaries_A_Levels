@@ -175,12 +175,10 @@
       .then(csvText=>new Promise((resolve)=>{ Papa.parse(csvText,{header:true,dynamicTyping:true,skipEmptyLines:true,worker:true,complete:({data})=>resolve([data,csvText])}); }))
       .then(async ([parsed,csvText])=>{
         await loadScript('https://code.jquery.com/jquery-3.6.0.min.js');
-        await Promise.all([
-          loadScript('https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js'),
-          loadScript('https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js'),
-          loadScript('https://cdn.jsdelivr.net/npm/chart.js')
-        ]);
-        initPage(parsed,csvText);
+        await loadScript('https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js');      // line 237
+        await loadScript('https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js'); // line 238
+        await loadScript('https://cdn.jsdelivr.net/npm/chart.js');                              // line 239
+        initPage(parsed, csvText);  
       })
       .catch(err=>{ console.error(err); document.getElementById('EdexcelTable').innerHTML='<tbody><tr><td colspan="10" class="text-center py-4">Failed to load data.</td></tr></tbody>'; });
   });
