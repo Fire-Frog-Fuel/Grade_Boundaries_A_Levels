@@ -27,31 +27,13 @@
     } else {
       myBase = '/Grade_Boundaries_A_Levels/';
     }
-    let rootUrl;
-    if (host === 'gradeboundaries.com') {
-      rootUrl = 'https://gradeboundaries.com/';
-    } else {
-      rootUrl = 'https://' + host + '/Grade_Boundaries_A_Levels/';
-    }
-
-    // 3) Build the full page-URL (for og:url) and full preview image (for og:image)
-    const pageUrl = rootUrl + (path.startsWith('/') ? path.slice(1) : path);
-    //   - If path is "/Edexcel", pageUrl = "https://gradeboundaries.com/Edexcel" (or GitHub Pages equivalent).
-    const imageUrl = 'https://gradeboundaries.com/' + 'preview.png';
-    //   - If your preview sits at the site root, this points to e.g. "https://gradeboundaries.com/preview.png"
-
-    // 4) Inject <meta> tags before the rest of the head is parsed
-    document.write(`
-      <meta property="og:url"         content="${pageUrl}">
-      <meta property="og:image"       content="${imageUrl}">
-      <!-- If you also want Twitter cards, you can add:
-      <meta name="twitter:url"       content="${pageUrl}">
-      <meta name="twitter:image"     content="${imageUrl}">
-      -->
-    `);
     document.write(`<base href="${myBase}">`);
     document.write(`<link rel="stylesheet" href="style.css">`);
   </script>
+  <meta name="twitter:url"       content="https://gradeboundaries.com">
+    <meta name="twitter:image"     content="https://gradeboundaries.com/preview.png">
+    <meta property="og:url"         content="https://gradeboundaries.com">
+    <meta property="og:image"     content="https://gradeboundaries.com/preview.png">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:type" content="website">
@@ -272,299 +254,270 @@
     </footer>
 
     <!-- ─── PAGE SCRIPT ─── -->
-    <script defer>
-      // Helper to load external scripts dynamically
-      const loadScript = (src) =>
-        new Promise((resolve) => {
-          const s = document.createElement('script');
-          s.src = src;
-          s.onload = resolve;
-          document.body.appendChild(s);
-        });
+<script defer>
+  // Helper to load external scripts dynamically
+  const loadScript = (src) =>
+    new Promise((resolve) => {
+      const s = document.createElement('script');
+      s.src = src;
+      s.onload = resolve;
+      document.body.appendChild(s);
+    });
 
-      window.addEventListener('DOMContentLoaded', () => {
-        fetch('OCR/OCR.csv')
-          .then((r) => r.text())
-          .then(
-            (csvText) =>
-              new Promise((resolve) => {
-                Papa.parse(csvText, {
-                  header: true,
-                  dynamicTyping: true,
-                  skipEmptyLines: true,
-                  worker: true,
-                  complete: ({ data }) => resolve([data, csvText]),
-                });
-              })
-          )
-          .then(async ([parsed, csvText]) => {
-            await loadScript('https://code.jquery.com/jquery-3.6.0.min.js');
-            await Promise.all([
-              loadScript(
-                'https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js'
-              ),
-              loadScript(
-                'https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js'
-              ),
-              loadScript('https://cdn.jsdelivr.net/npm/chart.js'),
-            ]);
-            initPage(parsed, csvText);
+  window.addEventListener('DOMContentLoaded', () => {
+    fetch('OCR/OCR.csv')
+      .then((r) => r.text())
+      .then(
+        (csvText) =>
+          new Promise((resolve) => {
+            Papa.parse(csvText, {
+              header: true,
+              dynamicTyping: true,
+              skipEmptyLines: true,
+              worker: true,
+              complete: ({ data }) => resolve([data, csvText]),
+            });
           })
-          .catch((err) => {
-            console.error(err);
-            document.getElementById('OCRTable').innerHTML =
-              '<tbody><tr><td colspan="12" class="text-center py-4">Failed to load data.</td></tr></tbody>';
-          });
+      )
+      .then(async ([parsed, csvText]) => {
+        await loadScript('https://code.jquery.com/jquery-3.6.0.min.js');
+        await Promise.all([
+          loadScript(
+            'https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js'
+          ),
+          loadScript(
+            'https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js'
+          ),
+          loadScript('https://cdn.jsdelivr.net/npm/chart.js'),
+        ]);
+        initPage(parsed, csvText);
+      })
+      .catch((err) => {
+        console.error(err);
+        document.getElementById('OCRTable').innerHTML =
+          '<tbody><tr><td colspan="12" class="text-center py-4">Failed to load data.</td></tr></tbody>';
+      });
+  });
+
+  function initPage(parsed, csvText) {
+    const tableEl = $('#OCRTable');
+
+    // Build DataTable columns from CSV headers
+    const headers = Object.keys(parsed[0] || {});
+    const dtColumns = headers.map((h) => ({ data: h, title: h }));
+
+    // Initialize DataTable
+    const dataTable = tableEl.DataTable({
+      data: parsed,
+      columns: dtColumns,
+      responsive: true,
+      autoWidth: false,
+      deferRender: true,
+      pageLength: 10,
+    });
+
+    // Add “Component” filter next to the default table filter if a component column exists:
+    const compHeaderAliases = [
+      'component',
+      'Component',
+      'ComponentCode',
+      'component_code',
+    ];
+    const componentColIdx = headers.findIndex((h) =>
+      compHeaderAliases.includes(h)
+    );
+    if (componentColIdx !== -1) {
+      const componentSet = new Set(
+        parsed
+          .map((row) => row[headers[componentColIdx]])
+          .filter(Boolean)
+      );
+      const filterDiv = $('#OCRTable_filter');
+      filterDiv.append(
+        `<label style="margin-left:1rem;font-weight:600;">Component:&nbsp;<input type="text" id="componentTableSearch" list="componentTableList" placeholder="component" class="border rounded px-2 py-1 w-24 sm:w-32"></label>`
+      );
+      $('body').append('<datalist id="componentTableList"></datalist>');
+      componentSet.forEach((c) =>
+        $('#componentTableList').append(`<option value="${c}"></option>`)
+      );
+      $('#componentTableSearch').on('input', function () {
+        dataTable.column(componentColIdx).search(this.value).draw();
+      });
+    }
+
+    // Build a nested data structure keyed by [code][component]["YYYY MMM"]
+    const ocrByCodeComp = {};
+    const gradeList = ['a*', 'a', 'b', 'c', 'd', 'e', 'u'];
+    // Use full month names so they match your session strings
+    const monthOrder = {
+      January:   1, February:  2, March:     3, April:    4,
+      May:       5, June:      6, July:      7, August:   8,
+      September: 9, October:  10, November: 11, December: 12,
+    };
+
+    parsed.forEach((row) => {
+      const yearStr = String(row['year'] || '').trim();
+      const sessionStr = String(row['session'] || '').trim();
+      const codeStr = String(row['code'] || '').trim();
+      const compStr = String(row['component'] || '').trim();
+      if (!yearStr || !sessionStr || !codeStr) return;
+
+      const sessionKey = `${yearStr} ${sessionStr}`;
+
+      ocrByCodeComp[codeStr] ??= {};
+      ocrByCodeComp[codeStr][compStr || 'ALL'] ??= {};
+      ocrByCodeComp[codeStr][compStr || 'ALL'][sessionKey] ??= {};
+
+      gradeList.forEach((g) => {
+        const val = parseFloat(row[g.toUpperCase()] ?? row[g] ?? '');
+        if (!isNaN(val)) {
+          ocrByCodeComp[codeStr][compStr || 'ALL'][sessionKey][g] = val;
+        }
+      });
+      const maxMarkVal = parseFloat(row['max_mark'] ?? '');
+      if (!isNaN(maxMarkVal)) {
+        ocrByCodeComp[codeStr][compStr || 'ALL'][sessionKey]['max_mark'] = maxMarkVal;
+      }
+    });
+
+    const codeInput = document.getElementById('ocrCodeSearch');
+    const componentInput = document.getElementById('ocrComponentSearch');
+    const codeList = document.getElementById('ocrCodeList');
+    const componentList = document.getElementById('ocrComponentList');
+
+    const uniqueCodes = new Set(parsed.map((r) => String(r['code'] || '').trim()).filter(Boolean));
+    Array.from(uniqueCodes)
+      .sort()
+      .forEach((c) => {
+        codeList.appendChild(Object.assign(document.createElement('option'), { value: c }));
       });
 
-      function initPage(parsed, csvText) {
-        const tableEl = $('#OCRTable');
+    function populateComponentsForCode(code) {
+      componentList.innerHTML = '';
+      componentInput.value = '';
+      componentInput.disabled = true;
+      if (!code || !ocrByCodeComp[code]) return;
 
-        // Build DataTable columns from CSV headers
-        const headers = Object.keys(parsed[0] || {});
-        const dtColumns = headers.map((h) => ({ data: h, title: h }));
+      const comps = Object.keys(ocrByCodeComp[code]).sort();
+      if (!comps.length) return;
 
-        // Initialize DataTable
-        const dataTable = tableEl.DataTable({
-          data: parsed,
-          columns: dtColumns,
-          responsive: true,
-          autoWidth: false,
-          deferRender: true,
-          pageLength: 10,
-        });
+      componentInput.disabled = false;
+      comps.forEach((compVal) => {
+        componentList.appendChild(Object.assign(document.createElement('option'), { value: compVal }));
+      });
+      componentInput.value = comps[0];
+    }
 
-        // Add “Component” filter next to the default table filter if a component column exists:
-        const compHeaderAliases = [
-          'component',
-          'Component',
-          'ComponentCode',
-          'component_code',
-        ];
-        const componentColIdx = headers.findIndex((h) =>
-          compHeaderAliases.includes(h)
-        );
-        if (componentColIdx !== -1) {
-          const componentSet = new Set(
-            parsed
-              .map((row) => row[headers[componentColIdx]])
-              .filter(Boolean)
-          );
-          const filterDiv = $('#OCRTable_filter');
-          filterDiv.append(
-            `<label style="margin-left:1rem;font-weight:600;">Component:&nbsp;<input type="text" id="componentTableSearch" list="componentTableList" placeholder="component" class="border rounded px-2 py-1 w-24 sm:w-32"></label>`
-          );
-          $('body').append('<datalist id="componentTableList"></datalist>');
-          componentSet.forEach((c) =>
-            $('#componentTableList').append(`<option value="${c}"></option>`)
-          );
-          $('#componentTableSearch').on('input', function () {
-            dataTable.column(componentColIdx).search(this.value).draw();
-          });
+    const ctx = document.getElementById('OCRChart').getContext('2d');
+    let chart = null;
+    const gradeColors = {
+      'a*': '#2ECC71',
+      a: '#F4A261',
+      b: '#E9C46A',
+      c: '#E63946',
+      d: '#264653',
+      e: '#6D597A',
+      u: '#999999',
+    };
+    const maxMarkColor = '#555555';
+
+    function updateChart() {
+      const codeVal = codeInput.value.trim();
+      const compVal = componentInput.value.trim();
+      if (!codeVal || !compVal || !ocrByCodeComp[codeVal] || !ocrByCodeComp[codeVal][compVal]) {
+        if (chart) {
+          chart.destroy();
+          chart = null;
         }
-
-        // Build a nested data structure keyed by [code][component][“YYYY MMM”]
-        //
-        // Example:
-        //   ocrByCodeComp['H407']['11']['2023 June'] = {
-        //     'a*': 82, 'a': 71, …, 'u': 0, max_mark: 98
-        //   }
-        const ocrByCodeComp = {};
-        const gradeList = ['a*', 'a', 'b', 'c', 'd', 'e', 'u'];
-        const monthOrder = {
-          Jan: 1,
-          Feb: 2,
-          Mar: 3,
-          Apr: 4,
-          May: 5,
-          Jun: 6,
-          Jul: 7,
-          Aug: 8,
-          Sep: 9,
-          Oct: 10,
-          Nov: 11,
-          Dec: 12,
-        };
-
-        parsed.forEach((row) => {
-          // Coerce everything to string before trimming, so no .trim() errors
-          const yearStr = String(row['year'] || '').trim();
-          const sessionStr = String(row['session'] || '').trim();
-          const codeStr = String(row['code'] || '').trim();
-          const compStr = String(row['component'] || '').trim();
-          if (!yearStr || !sessionStr || !codeStr) return;
-
-          // “2023 June”, “2024 November”, etc.
-          const sessionKey = `${yearStr} ${sessionStr}`;
-
-          ocrByCodeComp[codeStr] ??= {};
-          ocrByCodeComp[codeStr][compStr || 'ALL'] ??= {};
-          ocrByCodeComp[codeStr][compStr || 'ALL'][sessionKey] ??= {};
-
-          // Collect each grade boundary
-          gradeList.forEach((g) => {
-            const val = parseFloat(row[g.toUpperCase()] ?? row[g] ?? '');
-            if (!isNaN(val)) {
-              ocrByCodeComp[codeStr][compStr || 'ALL'][sessionKey][g] = val;
-            }
-          });
-          // Also record max_mark if present
-          const maxMarkVal = parseFloat(row['max_mark'] ?? '');
-          if (!isNaN(maxMarkVal)) {
-            ocrByCodeComp[codeStr][compStr || 'ALL'][sessionKey]['max_mark'] = maxMarkVal;
-          }
-        });
-
-        // References to our two inputs and datalists:
-        const codeInput = document.getElementById('ocrCodeSearch');
-        const componentInput = document.getElementById('ocrComponentSearch');
-
-        const codeList = document.getElementById('ocrCodeList');
-        const componentList = document.getElementById('ocrComponentList');
-
-        // Populate the “Code” datalist with every unique code from the CSV:
-        const uniqueCodes = new Set(parsed.map((r) => String(r['code'] || '').trim()).filter(Boolean));
-        Array.from(uniqueCodes)
-          .sort()
-          .forEach((c) => {
-            codeList.appendChild(Object.assign(document.createElement('option'), { value: c }));
-          });
-
-        // When a code is selected, populate “Component” datalist with all components for that code:
-        function populateComponentsForCode(code) {
-          componentList.innerHTML = '';
-          componentInput.value = '';
-          componentInput.disabled = true;
-          if (!code || !ocrByCodeComp[code]) return;
-
-          // All components (including “ALL” if some rows have no component)
-          const comps = Object.keys(ocrByCodeComp[code]).sort();
-          if (!comps.length) return;
-
-          componentInput.disabled = false;
-          comps.forEach((compVal) => {
-            componentList.appendChild(Object.assign(document.createElement('option'), { value: compVal }));
-          });
-          // Default to the first component in alphabetical order
-          componentInput.value = comps[0];
-        }
-
-        // Chart setup
-        const ctx = document.getElementById('OCRChart').getContext('2d');
-        let chart = null;
-        const gradeColors = {
-          'a*': '#2ECC71',
-          a: '#F4A261',
-          b: '#E9C46A',
-          c: '#E63946',
-          d: '#264653',
-          e: '#6D597A',
-          u: '#999999',
-        };
-        const maxMarkColor = '#555555';
-
-        function updateChart() {
-          const codeVal = codeInput.value.trim();
-          const compVal = componentInput.value.trim();
-          if (!codeVal || !compVal || !ocrByCodeComp[codeVal] || !ocrByCodeComp[codeVal][compVal]) {
-            if (chart) {
-              chart.destroy();
-              chart = null;
-            }
-            return;
-          }
-          const dataObj = ocrByCodeComp[codeVal][compVal];
-          const sessions = Object.keys(dataObj);
-          if (!sessions.length) {
-            if (chart) {
-              chart.destroy();
-              chart = null;
-            }
-            return;
-          }
-          // Sort “2023 June”, “2023 November”, “2024 June” by year, then by month:
-          sessions.sort((a, b) => {
-            // a = “YYYY MMM”
-            const [ay, am] = a.split('\u00A0'); // split on non-breaking space
-            const [by, bm] = b.split('\u00A0');
-            const diffYear = +ay - +by;
-            if (diffYear !== 0) return diffYear;
-            return (monthOrder[am] || 0) - (monthOrder[bm] || 0);
-          });
-
-          // Check if any session has an “a*” boundary
-          const hasAstar = sessions.some((sess) => 'a*' in dataObj[sess]);
-          const gradesToPlot = gradeList.filter((g) => g !== 'a*' || hasAstar);
-
-          // Build a dataset for each grade letter
-          const datasets = gradesToPlot.map((g) => ({
-            label: g.toUpperCase(),
-            data: sessions.map((sess) => dataObj[sess][g] ?? null),
-            borderColor: gradeColors[g],
-            tension: 0.2,
-            fill: false,
-          }));
-          // Add “Max mark” as a dashed line
-          datasets.push({
-            label: 'Max mark',
-            data: sessions.map((sess) => dataObj[sess]['max_mark'] ?? null),
-            borderColor: maxMarkColor,
-            borderDash: [5, 5],
-            borderWidth: 1,
-            pointRadius: 0,
-            fill: false,
-          });
-
-          if (chart) chart.destroy();
-          chart = new Chart(ctx, {
-            type: 'line',
-            data: {
-              labels: sessions,
-              datasets,
-            },
-            options: {
-              responsive: true,
-              maintainAspectRatio: false,
-              plugins: {
-                title: {
-                  display: true,
-                  text: `Grade Boundaries — ${codeVal} (${compVal})`,
-                },
-                legend: { position: 'bottom' },
-              },
-              scales: {
-                x: { title: { display: true, text: 'Exam Session (Year Month)' } },
-                y: { beginAtZero: true, title: { display: true, text: 'Marks' } },
-              },
-            },
-          });
-        }
-
-        // Event listeners:
-        codeInput.addEventListener('input', () => {
-          populateComponentsForCode(codeInput.value.trim());
-          updateChart();
-        });
-        componentInput.addEventListener('input', updateChart);
-
-        // Initialize with the first available code & component
-        const firstCode = Array.from(uniqueCodes).sort()[0] || '';
-        codeInput.value = firstCode;
-        populateComponentsForCode(firstCode);
-        updateChart();
-
-        // CSV download
-        document.getElementById('downloadCSV').addEventListener('click', () => {
-          const blob = new Blob([csvText], { type: 'text/csv' });
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = 'OCR.csv';
-          a.click();
-          URL.revokeObjectURL(url);
-        });
+        return;
       }
-    </script>
+      const dataObj = ocrByCodeComp[codeVal][compVal];
+      const sessions = Object.keys(dataObj);
+      if (!sessions.length) {
+        if (chart) {
+          chart.destroy();
+          chart = null;
+        }
+        return;
+      }
+
+      // Sort "YYYY Month" by year then by full month name
+      sessions.sort((a, b) => {
+        const [ay, am] = a.split(/\s+/);
+        const [by, bm] = b.split(/\s+/);
+        const diffYear = +ay - +by;
+        if (diffYear !== 0) return diffYear;
+        return (monthOrder[am] || 0) - (monthOrder[bm] || 0);
+      });
+
+      const hasAstar = sessions.some((sess) => 'a*' in dataObj[sess]);
+      const gradesToPlot = gradeList.filter((g) => g !== 'a*' || hasAstar);
+
+      const datasets = gradesToPlot.map((g) => ({
+        label: g.toUpperCase(),
+        data: sessions.map((sess) => dataObj[sess][g] ?? null),
+        borderColor: gradeColors[g],
+        tension: 0.2,
+        fill: false,
+      }));
+      datasets.push({
+        label: 'Max mark',
+        data: sessions.map((sess) => dataObj[sess]['max_mark'] ?? null),
+        borderColor: maxMarkColor,
+        borderDash: [5, 5],
+        borderWidth: 1,
+        pointRadius: 0,
+        fill: false,
+      });
+
+      if (chart) chart.destroy();
+      chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: sessions,
+          datasets,
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: true,
+              text: `Grade Boundaries — ${codeVal} (${compVal})`,
+            },
+            legend: { position: 'bottom' },
+          },
+          scales: {
+            x: { title: { display: true, text: 'Exam Session (Year Month)' } },
+            y: { beginAtZero: true, title: { display: true, text: 'Marks' } },
+          },
+        },
+      });
+    }
+
+    codeInput.addEventListener('input', () => {
+      populateComponentsForCode(codeInput.value.trim());
+      updateChart();
+    });
+    componentInput.addEventListener('input', updateChart);
+
+    const firstCode = Array.from(uniqueCodes).sort()[0] || '';
+    codeInput.value = firstCode;
+    populateComponentsForCode(firstCode);
+    updateChart();
+
+    document.getElementById('downloadCSV').addEventListener('click', () => {
+      const blob = new Blob([csvText], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'OCR.csv';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+  }
+</script>
+
     <!-- 🟢 put this at the BOTTOM of <body> -->
 
     <script>
