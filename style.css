@@ -337,3 +337,36 @@ footer{
 .link-in-privacy:hover {
   color: var(--link-in-privacy);
 }
+
+#about-project {
+  /* a very soft gray background */
+  background-color: #ffffff;    /* ↔ Tailwind’s gray-100 */
+  /* dark gray text for good contrast */
+  color:            #1f2937;    /* ↔ gray-800 */
+}
+
+#about-project a {
+  /* your teal brand → keeps it on-brand */
+  color:            #347470;    /* ↔ var(--brand-500) */
+}
+#about-project a:hover {
+  /* lighten on hover so it still pops */
+  color:            #000000;    /* ↔ var(--brand-600) */
+}
+
+/* Dark mode */
+.dark #about-project {
+  /* deep slate background */
+  background-color: #1f2937;    /* ↔ slate-800 */
+  /* near-white text for readability */
+  color:            #e5e7eb;    /* ↔ slate-200 */
+}
+
+.dark #about-project a {
+  /* a softer sky-blue fits the dark palette */
+  color:            #38bdf8;    /* ↔ sky-400 */
+}
+.dark #about-project a:hover {
+  /* very light on hover */
+  color:            #38bdf8;   /* ↔ sky-300 */
+}
