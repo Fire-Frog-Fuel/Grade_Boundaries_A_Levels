@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style id="css-cloak">
+    html:not(.css-loaded) body > * { display: none; }
+  </style>
+  
     <script defer data-domain="gradeboundaries.com" src="https://plausible.io/js/script.js"></script>
     <script data-goatcounter="https://gradeboundaries.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
     <!-- Google tag (gtag.js) -->
-    <script>
-      // decide base href
-      const host = location.hostname;
-      const myBase = host === "gradeboundaries.com" ? "/" : "/Grade_Boundaries_A_Levels/";
-      document.write(`<base href="${myBase}">`);
-      document.write(`<link rel="stylesheet" href="style.css">`);
-    </script>
+  <script>
+    function uncloak() {
+      document.documentElement.classList.add("css-loaded");
+      const cloak = document.getElementById("css-cloak");
+      if (cloak) cloak.remove();
+    }
+    // 1) compute your base href
+    const host   = location.hostname;
+    const myBase = host === "gradeboundaries.com"
+                 ? "/"
+                 : "/Grade_Boundaries_A_Levels/";
 
+    // 2) inject <base>
+    const baseEl = document.createElement("base");
+    baseEl.href  = myBase;
+    document.head.appendChild(baseEl);
+
+    // 3) inject your stylesheet link
+    const linkEl = document.createElement("link");
+    linkEl.rel   = "stylesheet";
+    linkEl.href  = "dist/output.css";
+    document.head.appendChild(linkEl);
+    
+    // 4) inject style.css stylesheet link
+    const linkEle = document.createElement("link");
+    linkEle.rel   = "stylesheet";
+    linkEle.href  = "style.css";
+    linkEle.onload = uncloak;
+    document.head.appendChild(linkEle);
+
+  </script>
+  
     <!-- Meta tags omitted for brevity -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CIE Grade Boundaries</title>
-
     <!-- Perf hints -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link rel="preconnect" href="https://cdn.datatables.net" />
@@ -34,7 +61,6 @@
     </script>
 
     <!-- Libs -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" />

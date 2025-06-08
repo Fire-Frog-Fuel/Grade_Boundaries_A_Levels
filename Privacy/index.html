@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style id="css-cloak">
+    html:not(.css-loaded) body > * { display: none; }
+  </style>
     <!-- ===================================================== -->
     <!--  Privacy Notice – Grade Boundaries Explorer           -->
     <!--  Last updated: 4 June 2025                           -->
@@ -8,28 +11,36 @@
 
     <script data-goatcounter="https://gradeboundaries.goatcounter.com/count"></script>
 
-       <script>
-    // (1) grab the current “pathname” and “hostname”
-    const host = location.hostname; 
-    const path = location.pathname; 
-
-    // (2) decide which base to use
-    //    - if we’re on a custom domain (host ≠ “username.github.io”), assume "/"  
-    //    - if we’re on GitHub Pages “username.github.io”, assume repo name is “Grade_Boundaries_A_Levels”
-    let myBase;
-    if (host === 'gradeboundaries.com') {
-      // ensure the path actually starts with "/Grade_Boundaries_A_Levels"
-      if (path.startsWith('/')) {
-        myBase = '/';
-      } else {
-        // if you have deeper nested pages, you could also parse it out here…
-        myBase = '/';
-      }
-    } else {
-      myBase = '/Grade_Boundaries_A_Levels/';
+    <script>
+    function uncloak() {
+      document.documentElement.classList.add("css-loaded");
+      const cloak = document.getElementById("css-cloak");
+      if (cloak) cloak.remove();
     }
-    document.write(`<base href="${myBase}">`);
-    document.write(`<link rel="stylesheet" href="style.css">`);
+    // 1) compute your base href
+    const host   = location.hostname;
+    const myBase = host === "gradeboundaries.com"
+                 ? "/"
+                 : "/Grade_Boundaries_A_Levels/";
+
+    // 2) inject <base>
+    const baseEl = document.createElement("base");
+    baseEl.href  = myBase;
+    document.head.appendChild(baseEl);
+
+    // 3) inject your stylesheet link
+    const linkEl = document.createElement("link");
+    linkEl.rel   = "stylesheet";
+    linkEl.href  = "dist/output.css";
+    document.head.appendChild(linkEl);
+    
+    // 4) inject style.css stylesheet link
+    const linkEle = document.createElement("link");
+    linkEle.rel   = "stylesheet";
+    linkEle.href  = "style.css";
+    linkEle.onload = uncloak;
+    document.head.appendChild(linkEle);
+
   </script>
     <meta name="twitter:url"       content="https://gradeboundaries.com">
     <meta name="twitter:image"     content="https://gradeboundaries.com/preview.png">
@@ -48,7 +59,6 @@
     <title>Privacy Notice | Grade Boundaries Explorer</title>
 
     <!-- Tailwind (kept defer so it does not block first paint) -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <script>
 /* Instant-load theme so there’s zero flash of wrong colour */
 (() => {

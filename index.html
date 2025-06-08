@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+  <style id="css-cloak">
+    html:not(.css-loaded) body > * { display: none; }
+  </style>
   
   <script defer data-domain="gradeboundaries.com" src="https://plausible.io/js/script.js"></script>
 
@@ -9,28 +11,36 @@
 
         async src="//gc.zgo.at/count.js"></script>
   <!-- Basic Meta Tags -->
-  <script>
-    // (1) grab the current “pathname” and “hostname”
-    const host = location.hostname; 
-    const path = location.pathname; 
-
-    // (2) decide which base to use
-    //    - if we’re on a custom domain (host ≠ “username.github.io”), assume "/"  
-    //    - if we’re on GitHub Pages “username.github.io”, assume repo name is “Grade_Boundaries_A_Levels”
-    let myBase;
-    if (host === 'gradeboundaries.com') {
-      // ensure the path actually starts with "/Grade_Boundaries_A_Levels"
-      if (path.startsWith('/')) {
-        myBase = '/';
-      } else {
-        // if you have deeper nested pages, you could also parse it out here…
-        myBase = '/';
-      }
-    } else {
-      myBase = '/Grade_Boundaries_A_Levels/';
+<script>
+    function uncloak() {
+      document.documentElement.classList.add("css-loaded");
+      const cloak = document.getElementById("css-cloak");
+      if (cloak) cloak.remove();
     }
-    document.write(`<base href="${myBase}">`);
-    document.write(`<link rel="stylesheet" href="style.css">`);
+    // 1) compute your base href
+    const host   = location.hostname;
+    const myBase = host === "gradeboundaries.com"
+                 ? "/"
+                 : "/Grade_Boundaries_A_Levels/";
+
+    // 2) inject <base>
+    const baseEl = document.createElement("base");
+    baseEl.href  = myBase;
+    document.head.appendChild(baseEl);
+
+    // 3) inject your stylesheet link
+    const linkEl = document.createElement("link");
+    linkEl.rel   = "stylesheet";
+    linkEl.href  = "dist/output.css";
+    document.head.appendChild(linkEl);
+    
+    // 4) inject style.css stylesheet link
+    const linkEle = document.createElement("link");
+    linkEle.rel   = "stylesheet";
+    linkEle.href  = "style.css";
+    linkEle.onload = uncloak;
+    document.head.appendChild(linkEle);
+
   </script>
   <meta name="twitter:url"       content="https://gradeboundaries.com">
     <meta name="twitter:image"     content="https://gradeboundaries.com/preview.png">
@@ -57,7 +67,6 @@
   <meta name="twitter:description" content="Interactive tables and charts covering Edexcel, CIE, Oxford AQA & OCR A-Level grade thresholds.">
 
   <!-- TailwindCSS (kept in <head> for first-paint styling) -->
-  <script src="https://cdn.tailwindcss.com"></script>
   
   <!-- Schema.org structured data -->
   <script type="application/ld+json">
@@ -100,8 +109,6 @@
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin defer></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin defer></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
-  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js" defer></script>
   
   <!-- Custom Styles / Scripts -->
   
@@ -176,11 +183,32 @@
   </main>
 
   <!-- Footer -->
-  <footer class="text-white text-center py-4 mt-10" role="contentinfo">
-    <p>Grade-Boundary Explorer by <a href="https://github.com/Fire-Frog-Fuel" class="underline hover:text-gray-200" rel="noopener" target="_blank">Fire-Frog-Fuel</a> and <a href="https://github.com/ChessMastermind" class="underline hover:text-gray-200" rel="noopener" target="_blank">ChessMastermind</a></p>
-    <p><a href="Contact" class="underline hover:text-gray-200">Contact&nbsp;us</a></p>
-    <p><a href="Privacy" class="underline hover:text-gray-200">Privacy</a></p>
-  </footer>
+  <footer class="mt-12" role="contentinfo">
+  <div class="container mx-auto flex flex-col items-center py-6 px-4">
+
+    <!-- Utility links -->
+    <nav aria-label="Footer links">
+      <ul class="flex space-x-4 text-lg">
+        <li>
+          <a href="Contact"
+             class="underline">
+            Contact us
+          </a>
+        </li>
+        <li>
+          <span class="text-gray-300">&nbsp;|&nbsp;</span>
+        </li>
+        <li>
+          <a href="Privacy"
+             class="underline">
+            Privacy Notice
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
 
   <!-- Noscript fallback -->
   <noscript>

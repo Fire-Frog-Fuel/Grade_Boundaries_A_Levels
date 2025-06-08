@@ -20,7 +20,7 @@
   /* Typography */
   --text-body:      #1f2937; /* gray-800 */
   --text-heading:   #111827; /* gray-900 */
-  --text-link:      var(--brand-500);
+  --text-link:      #ffffff;
   --text-link-hover:#ffffff;
 
   /* Buttons & inputs */
@@ -52,7 +52,7 @@
 
   --text-body:      #cbd5e1; /* slate-300 */
   --text-heading:   #f1f5f9; /* slate-100 */
-  --text-link:      #38bdf8; /* sky-400 */
+  --text-link:      #ffffff; /* sky-400 */
   --text-link-hover:#f2f7fa; /* sky-300 */
 
   --title-text: #bdcdcc;
@@ -332,6 +332,9 @@ footer{
 .dark .page-title {
   /* For instance, keep it “near white” if your header is still teal in dark mode: */
   color: var(--text-heading); /* slate-100 or a custom token */
+}
+.link-in-privacy {
+  color: var(--link-in-privacy);
 }
 
 .link-in-privacy:hover {

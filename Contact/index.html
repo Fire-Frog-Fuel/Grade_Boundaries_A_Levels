@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style id="css-cloak">
+    html:not(.css-loaded) body > * { display: none; }
+  </style>
 <script defer data-domain="gradeboundaries.com" src="https://plausible.io/js/script.js"></script>
 <script data-goatcounter="https://gradeboundaries.goatcounter.com/count"
 
         async src="//gc.zgo.at/count.js"></script>
 
-     <script>
-    // (1) grab the current “pathname” and “hostname”
-    const host = location.hostname; 
-    const path = location.pathname; 
-
-    // (2) decide which base to use
-    //    - if we’re on a custom domain (host ≠ “username.github.io”), assume "/"  
-    //    - if we’re on GitHub Pages “username.github.io”, assume repo name is “Grade_Boundaries_A_Levels”
-    let myBase;
-    if (host === 'gradeboundaries.com') {
-      // ensure the path actually starts with "/Grade_Boundaries_A_Levels"
-      if (path.startsWith('/')) {
-        myBase = '/';
-      } else {
-        // if you have deeper nested pages, you could also parse it out here…
-        myBase = '/';
-      }
-    } else {
-      myBase = '/Grade_Boundaries_A_Levels/';
+<script>
+    function uncloak() {
+      document.documentElement.classList.add("css-loaded");
+      const cloak = document.getElementById("css-cloak");
+      if (cloak) cloak.remove();
     }
-    document.write(`<base href="${myBase}">`);
-    document.write(`<link rel="stylesheet" href="style.css">`);
+    // 1) compute your base href
+    const host   = location.hostname;
+    const myBase = host === "gradeboundaries.com"
+                 ? "/"
+                 : "/Grade_Boundaries_A_Levels/";
+
+    // 2) inject <base>
+    const baseEl = document.createElement("base");
+    baseEl.href  = myBase;
+    document.head.appendChild(baseEl);
+
+    // 3) inject your stylesheet link
+    const linkEl = document.createElement("link");
+    linkEl.rel   = "stylesheet";
+    linkEl.href  = "dist/output.css";
+    document.head.appendChild(linkEl);
+    
+    // 4) inject style.css stylesheet link
+    const linkEle = document.createElement("link");
+    linkEle.rel   = "stylesheet";
+    linkEle.href  = "style.css";
+    linkEle.onload = uncloak;
+    document.head.appendChild(linkEle);
+
   </script>
   <meta name="twitter:url"       content="https://gradeboundaries.com">
     <meta name="twitter:image"     content="https://gradeboundaries.com/preview.png">
@@ -46,7 +57,6 @@
   <title>Contact information</title>
 
   <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com" defer></script>
   <!-- DataTables CSS -->
   <link
     rel="stylesheet"
@@ -94,13 +104,10 @@
 
   <main class="flex-1 max-w-6xl mx-auto p-6">
     <section class="bg-white rounded-lg shadow-md p-6">
-      <p class="mb-2">For issues or inquiries, please reach out via:</p>
+      <p class="mb-2">For issues or suggestions, please reach out via:</p>
       <ul class="list-disc list-inside">
-        <li>Issues with website: <a href="https://github.com/fire-frog-fuel" class="link-in-privacy underline">fire-frog-fuel</a></li>
-        <li>Issues with database: <a href="https://github.com/ChessMastermind" class="link-in-privacy underline">ChessMastermind</a></li>
-        <li>Contact via email: <a href="mailto:allgradeboundaries@gmail.com" class="underline link-in-privacy">allgradeboundaries@gmail.com</a></li>
+        <li>Email: <a href="mailto:allgradeboundaries@gmail.com" class="underline link-in-privacy">allgradeboundaries@gmail.com</a></li>
       </ul>
-
     </section>
   </main>
 
