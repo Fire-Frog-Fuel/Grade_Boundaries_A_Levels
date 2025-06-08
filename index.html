@@ -1,85 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+<html lang="en">
 <head>
+  <!-- ✨ SEO & performance enhancements (no functional changes) ✨ -->
   <style id="css-cloak">
     html:not(.css-loaded) body > * { display: none; }
   </style>
-  
+
+  <!-- Preconnect to third‑party origins for quicker handshake -->
+  <link rel="preconnect" href="https://plausible.io">
+  <link rel="preconnect" href="https://gc.zgo.at">
+  <link rel="preconnect" href="https://unpkg.com">
+
+  <!-- Lightweight, privacy‑friendly analytics (kept) -->
   <script defer data-domain="gradeboundaries.com" src="https://plausible.io/js/script.js"></script>
+  <script data-goatcounter="https://gradeboundaries.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
-  <script data-goatcounter="https://gradeboundaries.goatcounter.com/count"
-
-        async src="//gc.zgo.at/count.js"></script>
-  <!-- Basic Meta Tags -->
-<script>
+  <!-- Base‑href, Tailwind & custom CSS injection (unchanged) -->
+  <script>
     function uncloak() {
       document.documentElement.classList.add("css-loaded");
       const cloak = document.getElementById("css-cloak");
       if (cloak) cloak.remove();
     }
-    // 1) compute your base href
     const host   = location.hostname;
-    const myBase = host === "gradeboundaries.com"
-                 ? "/"
-                 : "/Grade_Boundaries_A_Levels/";
-
-    // 2) inject <base>
+    const myBase = host === "gradeboundaries.com" ? "/" : "/Grade_Boundaries_A_Levels/";
     const baseEl = document.createElement("base");
     baseEl.href  = myBase;
     document.head.appendChild(baseEl);
-
-    // 3) inject your stylesheet link
     const linkEl = document.createElement("link");
     linkEl.rel   = "stylesheet";
     linkEl.href  = "dist/output.css";
     document.head.appendChild(linkEl);
-    
-    // 4) inject style.css stylesheet link
     const linkEle = document.createElement("link");
     linkEle.rel   = "stylesheet";
     linkEle.href  = "style.css";
     linkEle.onload = uncloak;
     document.head.appendChild(linkEle);
-
   </script>
-  <meta name="twitter:url"       content="https://gradeboundaries.com">
-    <meta name="twitter:image"     content="https://gradeboundaries.com/preview.png">
-    <meta property="og:url"         content="https://gradeboundaries.com">
-    <meta property="og:image"     content="https://gradeboundaries.com/preview.png">
+
+  <!-- Primary meta tags -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A-Level Grade Boundaries 2015-2025 | Edexcel · CIE · Oxford AQA · OCR</title>
-  <meta name="description" content="Explore interactive tables, animated charts and downloadable datasets of A-Level grade boundaries for Edexcel, CIE, Oxford AQA, and OCR">
-  <meta name="keywords" content="A Level grade boundaries, Edexcel grade thresholds, CIE grade boundaries, Oxford AQA, OCR grade boundaries, exam results, UK A-Levels, 2025">
-  <meta name="author" content="Fire-Frog-Fuel">
+  <title>A‑Level Grade Boundaries 2015‑2025 | Edexcel · CIE · Oxford AQA · OCR</title>
+  <meta name="description" content="All A-Level grade boundaries in one place – instantly compare Edexcel, Cambridge (CIE), Oxford AQA & OCR thresholds from 2015 to 2025 with free interactive tables, charts & CSV downloads.">
+  <meta name="keywords" content="A Level grade boundaries, Edexcel grade thresholds, CIE grade boundaries, Oxford AQA, OCR grade boundaries, exam results, UK A‑Levels, 2025">
+  <meta name="author" content="Fire‑Frog‑Fuel">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.gradeboundaries.com/">
+  <meta name="theme-color" content="#111827">
+
+  <!-- Canonical & hreflang (domain normalised to non‑www) -->
+  <link rel="canonical" href="https://gradeboundaries.com/">
+  <link rel="alternate" hreflang="en‑gb" href="https://gradeboundaries.com/">
+  <link rel="alternate" hreflang="x‑default" href="https://gradeboundaries.com/">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="A-Level Grade Boundaries 2015-2025 | Edexcel, CIE, Oxford AQA, OCR">
-  <meta property="og:description" content="Compare free interactive grade-boundary data for Edexcel, CIE, Oxford AQA, and OCR between 2015-2025.">
+  <meta property="og:site_name" content="Grade‑Boundary Explorer">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://gradeboundaries.com/">
+  <meta property="og:title" content="A‑Level Grade Boundaries 2015‑2025 | Edexcel · CIE · Oxford AQA · OCR">
+  <meta property="og:description" content="Compare free interactive grade‑boundary data for Edexcel, CIE, Oxford AQA & OCR between 2015‑2025.">
+  <meta property="og:image" content="https://gradeboundaries.com/preview.png">
+  <meta property="og:image:alt" content="Screenshot of Grade‑Boundary Explorer homepage">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="A-Level Grade Boundaries 2015-2025">
-  <meta name="twitter:description" content="Interactive tables and charts covering Edexcel, CIE, Oxford AQA & OCR A-Level grade thresholds.">
+  <meta name="twitter:url" content="https://gradeboundaries.com/">
+  <meta name="twitter:title" content="A‑Level Grade Boundaries 2015‑2025">
+  <meta name="twitter:description" content="Interactive tables and charts covering Edexcel, CIE, Oxford AQA & OCR A‑Level grade thresholds.">
+  <meta name="twitter:image" content="https://gradeboundaries.com/preview.png">
 
-  <!-- TailwindCSS (kept in <head> for first-paint styling) -->
-  
   <!-- Schema.org structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "A-Level Grade Boundaries",
-    "url": "https://www.gradeboundaries.com/",
-    "author": {
-      "@type": "Person",
-      "name": "ChessMastermind",
-      "url": "https://github.com/ChessMastermind"
-    }
+    "name": "Grade‑Boundary Explorer",
+    "url": "https://gradeboundaries.com/"
   }
   </script>
   <script type="application/ld+json">
@@ -87,31 +86,41 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gradeboundaries.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Edexcel", "item": "https://www.gradeboundaries.com//Edexcel"},
-      {"@type": "ListItem", "position": 3, "name": "CIE", "item": "https://www.gradeboundaries.com//CIE"},
-      {"@type": "ListItem", "position": 4, "name": "Oxford AQA", "item": "https://www.gradeboundaries.com//OxfordAqa"},
-      {"@type": "ListItem", "position": 5, "name": "OCR", "item": "https://www.gradeboundaries.com//OCR"}
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gradeboundaries.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Edexcel", "item": "https://gradeboundaries.com/Edexcel"},
+      {"@type": "ListItem", "position": 3, "name": "CIE", "item": "https://gradeboundaries.com/CIE"},
+      {"@type": "ListItem", "position": 4, "name": "Oxford AQA", "item": "https://gradeboundaries.com/OxfordAqa"},
+      {"@type": "ListItem", "position": 5, "name": "OCR", "item": "https://gradeboundaries.com/OCR"}
     ]
   }
   </script>
-  <script>
-  /* Instant-load theme so there’s zero flash of wrong colour */
-  (() => {
-    const saved = localStorage.getItem('theme');
-    if (saved === 'dark' ||
-        (!saved && matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-    }
-  })();
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Grade‑Boundary Explorer",
+    "url": "https://gradeboundaries.com/",
+    "sameAs": [
+      "https://github.com/Fire-Frog-Fuel",
+      "https://github.com/ChessMastermind"
+    ]
+  }
   </script>
-  <!-- Defer non-critical JS for better LCP -->
+
+  <!-- Instant‑load theme (kept) -->
+  <script>
+    (() => {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark' || (!saved && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+
+  <!-- Defer non‑critical JS for better LCP (unchanged) -->
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin defer></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin defer></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js" defer></script>
-  
-  <!-- Custom Styles / Scripts -->
-  
   <script src="script.js" defer></script>
 </head>
 
@@ -163,23 +172,10 @@
       </article>
     </div>
 <section id="about-project" class="mt-12 p-6 rounded-lg text-center donate-section shadow-md">
-  <h2 class="text-2xl font-semibold mb-4">About This Project</h2>
-  <p class="text-lg mb-6">
-    This little site was built by two A-Level students as a fun project to visualise and compare
-    A-Level grade boundaries. We’re both studying A-Levels ourselves, so we know how
-    useful it can be to see trends across exam boards. Enjoy!
-  </p>
-
-  <!-- 🤫 Subtle support link -->
-  <p class="text-sm text-gray-600 dark:text-gray-400">
-    ☕ If you’ve found this useful, you can <a
-      href="https://ko-fi.com/gradeboundariescom"
-      target="_blank"
-      rel="noopener"
-      class="underline transition"
-    >buy us a coffee</a> — every donation counts!
-  </p>
-</section>
+      <h2 class="text-2xl font-semibold mb-4">About This Project</h2>
+      <p class="text-lg mb-6">This little site was built by two A‑Level students as a fun project to visualise and compare A‑Level grade boundaries. We’re both studying A‑Levels ourselves, so we know how useful it can be to see trends across exam boards. Enjoy!</p>
+      <p class="text-sm text-gray-600 dark:text-gray-400">☕ If you’ve found this useful, you can <a href="https://ko-fi.com/gradeboundariescom" target="_blank" rel="noopener noreferrer" class="underline transition">buy us a coffee</a> — every donation counts!</p>
+    </section>
   </main>
 
   <!-- Footer -->

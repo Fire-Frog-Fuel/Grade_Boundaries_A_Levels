@@ -1,141 +1,136 @@
 <!DOCTYPE html><html lang="en">
-  <head>
-    <style id="css-cloak">
-    html:not(.css-loaded) body > * { display: none; }
-  </style>
+  <style id="css-cloak">html:not(.css-loaded) body > * { display: none; }</style>
+
+  <!-- 🔗 Preconnect for quicker handshake -->
+  <link rel="preconnect" href="https://plausible.io">
+  <link rel="preconnect" href="https://gc.zgo.at">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdn.datatables.net">
+  <link rel="preconnect" href="https://code.jquery.com">
+
+  <!-- 📈 Privacy-friendly analytics -->
   <script defer data-domain="gradeboundaries.com" src="https://plausible.io/js/script.js"></script>
+  <script async data-goatcounter="https://gradeboundaries.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
 
-  <script data-goatcounter="https://gradeboundaries.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-
-<script>
+  <!-- 🧩 Base-href and CSS injection (kept exactly as before) -->
+  <script>
     function uncloak() {
-      document.documentElement.classList.add("css-loaded");
-      const cloak = document.getElementById("css-cloak");
-      if (cloak) cloak.remove();
+      document.documentElement.classList.add('css-loaded');
+      const c = document.getElementById('css-cloak');
+      if (c) c.remove();
     }
-    // 1) compute your base href
-    const host   = location.hostname;
-    const myBase = host === "gradeboundaries.com"
-                 ? "/"
-                 : "/Grade_Boundaries_A_Levels/";
+    const host = location.hostname;
+    const myBase = host === 'gradeboundaries.com' ? '/' : '/Grade_Boundaries_A_Levels/';
+    const base = Object.assign(document.createElement('base'), { href: myBase });
+    document.head.appendChild(base);
 
-    // 2) inject <base>
-    const baseEl = document.createElement("base");
-    baseEl.href  = myBase;
-    document.head.appendChild(baseEl);
+    const tw = Object.assign(document.createElement('link'), { rel: 'stylesheet', href: 'dist/output.css' });
+    document.head.appendChild(tw);
 
-    // 3) inject your stylesheet link
-    const linkEl = document.createElement("link");
-    linkEl.rel   = "stylesheet";
-    linkEl.href  = "dist/output.css";
-    document.head.appendChild(linkEl);
-    
-    // 4) inject style.css stylesheet link
-    const linkEle = document.createElement("link");
-    linkEle.rel   = "stylesheet";
-    linkEle.href  = "style.css";
-    linkEle.onload = uncloak;
-    document.head.appendChild(linkEle);
-
+    const local = Object.assign(document.createElement('link'), {
+      rel: 'stylesheet',
+      href: 'style.css',
+      onload: uncloak
+    });
+    document.head.appendChild(local);
   </script>
-  <meta name="twitter:url"       content="https://gradeboundaries.com">
-    <meta name="twitter:image"     content="https://gradeboundaries.com/preview.png">
-    <meta property="og:url"         content="https://gradeboundaries.com">
-    <meta property="og:image"     content="https://gradeboundaries.com/preview.png">
-    <meta property="og:type" content="website">
-  <meta property="og:title" content="A-Level Grade Boundaries 2015-2025 | Edexcel">
-  <meta property="og:description" content="Compare free interactive grade-boundary data for Edexcel, CIE, Oxford AQA, and OCR between 2015-2025.">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="A-Level Grade Boundaries 2015-2025 | Edexcel">
-  <meta name="twitter:description" content="Interactive tables and charts covering Edexcel, CIE, Oxford AQA & OCR A-Level grade thresholds.">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Edexcel Grade Boundaries</title><!-- ─── INLINE CRITICAL CSS ─── -->
-<!--- <style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom, #def2f1, #ffffff);
-    margin: 0;
-  }
-  header {
-    background-color: #3aafa9;
-    color: white;
-    text-align: center;
-    padding: 1.5rem 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  header h1 {
-    font-size: 1.875rem;
-    font-weight: 700;
-    margin: 0;
-  }
-  nav a {
-    margin: 0 1rem;
-    font-size: 1rem;
-    text-decoration: none;
-    color: white;
-  }
-  nav a:hover {
-    border-bottom: 2px solid #feffff;
-  }
-  .table-wrapper {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    background: #fff;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1.5rem;
-  }
-  .chart-container {
-    position: relative;
-    width: 100%;
-    min-height: 550px;
-    height: 80vw;
-    max-height: 900px;
-    background: #fff;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  }
-  .chart-container canvas {
-    position: absolute;
-    inset: 0;
-    width: 100% !important;
-    height: 100% !important;
-  }
-</style> --->
-<script>
-/* Instant-load theme so there’s zero flash of wrong colour */
-(() => {
-  const saved = localStorage.getItem('theme');
-  if (saved === 'dark' ||
-      (!saved && matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark');
-  }
-})();
-</script>
-<!-- ─── PERFORMANCE HINTS ─── -->
-<link rel="preconnect" href="https://cdn.jsdelivr.net" />
-<link rel="preconnect" href="https://cdn.datatables.net" />
-<link rel="preconnect" href="https://code.jquery.com" />
+  <!-- 🌐 Core meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edexcel A-Level Grade Boundaries 2015-2025 | Interactive Tables & CSV</title>
+  <meta name="description"
+        content="Edexcel A-Level grade boundaries (2015-2025) — explore them alongside every other UK board on Grade-Boundary Explorer. Interactive tables, trend charts & free CSV downloads: all grade boundaries in one place.">
+  <meta name="keywords" content="Edexcel grade boundaries, A Level grade thresholds, Edexcel 2025, exam results, UK A-Levels">
+  <meta name="author" content="Fire-Frog-Fuel">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#111827">
 
-<!-- Tailwind -->
-<!-- PapaParse -->
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
+  <!-- 🔗 Canonical & hreflang -->
+  <link rel="canonical" href="https://gradeboundaries.com/Edexcel">
+  <link rel="alternate" hreflang="en-gb" href="https://gradeboundaries.com/Edexcel">
+  <link rel="alternate" hreflang="x-default" href="https://gradeboundaries.com/Edexcel">
 
-<!-- DataTables CSS (preload) -->
-<link rel="preload" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" as="style" onload="this.rel='stylesheet'" />
-<noscript><link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" /></noscript>
-<link rel="preload" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" as="style" onload="this.rel='stylesheet'" />
-<noscript><link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" /></noscript>
+  <!-- 🏷️ Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="Grade-Boundary Explorer">
+  <meta property="og:locale"      content="en_GB">
+  <meta property="og:url"         content="https://gradeboundaries.com/Edexcel">
+  <meta property="og:title"       content="Edexcel A-Level Grade Boundaries 2015-2025 | Download CSV & Charts">
+  <meta property="og:description" content="All UK A-Level grade boundaries in one place — dive into Edexcel data with interactive tables, charts & CSV export.">
+  <meta property="og:image"       content="https://gradeboundaries.com/preview.png">
+  <meta property="og:image:alt"   content="Screenshot of Edexcel grade boundaries page">
 
-<!-- Table overrides -->
+  <!-- 🐦 Twitter -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:url"         content="https://gradeboundaries.com/Edexcel">
+  <meta name="twitter:title"       content="Edexcel A-Level Grade Boundaries 2015-2025">
+  <meta name="twitter:description" content="Explore Edexcel grade boundaries — plus every other board — on Grade-Boundary Explorer. Free charts & CSV.">
+  <meta name="twitter:image"       content="https://gradeboundaries.com/preview.png">
 
+  <!-- 📊 Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Edexcel Grade Boundaries",
+    "url": "https://gradeboundaries.com/Edexcel",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",   "item": "https://gradeboundaries.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Edexcel","item": "https://gradeboundaries.com/Edexcel" }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "Edexcel A-Level Grade Boundaries 2015-2025",
+    "description": "Dataset of Edexcel A-Level grade-boundary marks for all units and exam sessions between 2015 and 2025.",
+    "url": "https://gradeboundaries.com/Edexcel",
+    "keywords": ["Edexcel", "A Level", "grade boundaries", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
+    "temporalCoverage": "2015-01-01/2025-12-31",
+    "isAccessibleForFree": true,
+    "creator": {
+      "@type": "Person",
+      "name": "ChessMastermind",
+      "url": "https://github.com/ChessMastermind"
+    }
+  }
+  </script>
 
-  </head>  <body class="text-gray-800 flex flex-col min-h-screen">
+  <!-- 🌙 Instant theme toggle (unchanged) -->
+  <script>
+    (() => {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark' || (!saved && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+
+  <!-- ⚡ Performance hints (kept) -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdn.datatables.net">
+  <link rel="preconnect" href="https://code.jquery.com">
+
+  <!-- PapaParse -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
+
+  <!-- DataTables CSS (preload, with noscript fallback) -->
+  <link rel="preload" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
+        as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet"
+                  href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"></noscript>
+  <link rel="preload" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css"
+        as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet"
+                  href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css"></noscript>
+</head>
+  <body class="text-gray-800 flex flex-col min-h-screen">
     <header class="text-white text-center py-6 shadow-lg">
       <h1 class="page-title">Edexcel Grade Boundaries</h1>
       <button id="theme-toggle" class="absolute top-4 right-4">🌙</button>

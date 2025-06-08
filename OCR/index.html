@@ -1,162 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <style id="css-cloak">
-    html:not(.css-loaded) body > * { display: none; }
-  </style>
-    <script defer data-domain="gradeboundaries.com" src="https://plausible.io/js/script.js"></script>
-    <script data-goatcounter="https://gradeboundaries.goatcounter.com/count"
+<head>
+  <!-- ✨ SEO & performance enhancements for OCR page (no functional changes) ✨ -->
+  <style id="css-cloak">html:not(.css-loaded) body > * { display: none; }</style>
 
-        async src="//gc.zgo.at/count.js"></script>
-    <!-- Google tag (gtag.js) -->
+  <!-- Preconnect hints for faster TTFB on third‑party assets -->
+  <link rel="preconnect" href="https://plausible.io">
+  <link rel="preconnect" href="https://gc.zgo.at">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdn.datatables.net">
+  <link rel="preconnect" href="https://code.jquery.com">
 
-<script>
-    function uncloak() {
-      document.documentElement.classList.add("css-loaded");
-      const cloak = document.getElementById("css-cloak");
-      if (cloak) cloak.remove();
-    }
-    // 1) compute your base href
-    const host   = location.hostname;
-    const myBase = host === "gradeboundaries.com"
-                 ? "/"
-                 : "/Grade_Boundaries_A_Levels/";
+  <!-- Analytics (kept) -->
+  <script defer data-domain="gradeboundaries.com" src="https://plausible.io/js/script.js"></script>
+  <script data-goatcounter="https://gradeboundaries.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
-    // 2) inject <base>
-    const baseEl = document.createElement("base");
-    baseEl.href  = myBase;
-    document.head.appendChild(baseEl);
-
-    // 3) inject your stylesheet link
-    const linkEl = document.createElement("link");
-    linkEl.rel   = "stylesheet";
-    linkEl.href  = "dist/output.css";
-    document.head.appendChild(linkEl);
-    
-    // 4) inject style.css stylesheet link
-    const linkEle = document.createElement("link");
-    linkEle.rel   = "stylesheet";
-    linkEle.href  = "style.css";
-    linkEle.onload = uncloak;
-    document.head.appendChild(linkEle);
-
+  <!-- Base‑href and CSS injection (unchanged) -->
+  <script>
+    function uncloak(){document.documentElement.classList.add("css-loaded");const c=document.getElementById("css-cloak");if(c)c.remove();}
+    const host=location.hostname;
+    const myBase=host==="gradeboundaries.com"?"/":"/Grade_Boundaries_A_Levels/";
+    const base=document.createElement("base");base.href=myBase;document.head.appendChild(base);
+    const tail=document.createElement("link");tail.rel="stylesheet";tail.href="dist/output.css";document.head.appendChild(tail);
+    const style=document.createElement("link");style.rel="stylesheet";style.href="style.css";style.onload=uncloak;document.head.appendChild(style);
   </script>
-  <meta name="twitter:url"       content="https://gradeboundaries.com">
-    <meta name="twitter:image"     content="https://gradeboundaries.com/preview.png">
-    <meta property="og:url"         content="https://gradeboundaries.com">
-    <meta property="og:image"     content="https://gradeboundaries.com/preview.png">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta property="og:type" content="website">
-  <meta property="og:title" content="A-Level Grade Boundaries 2015-2025 | OCR">
-  <meta property="og:description" content="Compare free interactive grade-boundary data for Edexcel, CIE, Oxford AQA, and OCR between 2015-2025.">
+
+  <!-- Primary meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OCR A‑Level Grade Boundaries 2015‑2025 | Interactive Tables & CSV</title>
+  <meta name="description" content="Explore interactive tables, charts and downloadable CSVs of OCR A‑Level grade boundaries for exam sessions 2015‑2025.">
+  <meta name="keywords" content="OCR grade boundaries, A Level grade thresholds, OCR 2025, exam results, UK A‑Levels">
+  <meta name="author" content="Fire-Frog-Fuel">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#111827">
+
+  <!-- Canonical & hreflang -->
+  <link rel="canonical" href="https://gradeboundaries.com/OCR">
+  <link rel="alternate" hreflang="en-gb" href="https://gradeboundaries.com/OCR">
+  <link rel="alternate" hreflang="x-default" href="https://gradeboundaries.com/OCR">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Grade-Boundary Explorer">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://gradeboundaries.com/OCR">
+  <meta property="og:title" content="OCR A‑Level Grade Boundaries 2015‑2025 | Download CSV & Charts">
+  <meta property="og:description" content="Free interactive OCR grade‑boundary data (2015‑2025) with table view, trend charts & CSV download.">
+  <meta property="og:image" content="https://gradeboundaries.com/preview.png">
+  <meta property="og:image:alt" content="Screenshot of OCR grade boundaries page">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="A-Level Grade Boundaries 2015-2025 | OCR">
-  <meta name="twitter:description" content="Interactive tables and charts covering Edexcel, CIE, Oxford AQA & OCR A-Level grade thresholds.">
-    <title>OCR Grade Boundaries</title>
-    <!-- ─── PERFORMANCE HINTS ─── -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-    <link rel="preconnect" href="https://cdn.datatables.net" />
-    <link rel="preconnect" href="https://code.jquery.com" />
-    <script>
-      /* Instant-load theme so there’s zero flash of wrong colour */
-      (() => {
-        const saved = localStorage.getItem('theme');
-        if (
-          saved === 'dark' ||
-          (!saved && matchMedia('(prefers-color-scheme: dark)').matches)
-        ) {
-          document.documentElement.classList.add('dark');
-        }
-      })();
-    </script>
-    <!-- Tailwind (safe to defer) -->
+  <meta name="twitter:url" content="https://gradeboundaries.com/OCR">
+  <meta name="twitter:title" content="OCR A‑Level Grade Boundaries 2015‑2025">
+  <meta name="twitter:description" content="Interactive OCR grade‑boundary tables, charts & CSV download.">
+  <meta name="twitter:image" content="https://gradeboundaries.com/preview.png">
 
-    <!-- PapaParse (needed before fetching/parsing CSV) -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"
-      defer
-    ></script>
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "OCR Grade Boundaries",
+    "url": "https://gradeboundaries.com/OCR",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://gradeboundaries.com/"},
+        {"@type":"ListItem","position":2,"name":"OCR","item":"https://gradeboundaries.com/OCR"}
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "OCR A‑Level Grade Boundaries 2015‑2025",
+    "description": "Dataset of OCR A‑Level grade‑boundary marks for all available units and exam sessions between 2015 and 2025.",
+    "url": "https://gradeboundaries.com/OCR",
+    "keywords": ["OCR", "A Level", "grade boundaries", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
+    "temporalCoverage": "2015-01-01/2025-12-31",
+    "isAccessibleForFree": true,
+    "creator": {
+      "@type": "Person",
+      "name": "ChessMastermind",
+      "url": "https://github.com/ChessMastermind"
+    }
+  }
+  </script>
 
-    <!-- DataTables CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css"
-    />
-    <!--
-    <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(to bottom, #def2f1, #ffffff);
-      }
-      header {
-        background-color: #3aafa9;
-      }
-      nav a:hover {
-        color: #ffffff;
-        border-bottom: 2px solid #feffff;
-      }
-      table.dataTable thead th {
-        background-color: #3aafa9;
-        color: white;
-      }
-      table.dataTable tbody tr:hover {
-        background-color: #dff6f5;
-      }
+  <!-- Instant theme (kept) -->
+  <script>
+    (()=>{const s=localStorage.getItem('theme');if(s==='dark'||(!s&&matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}})();
+  </script>
 
-      /* ─── MOBILE-FRIENDLY TABLE ─── */
-      .table-wrapper {
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-      table.dataTable th,
-      table.dataTable td {
-        padding: 0.25rem 0.5rem !important;
-        line-height: 1.2;
-      }
-      table.dataTable th {
-        font-size: clamp(0.875rem, 2vw, 1.25rem);
-        white-space: nowrap;
-      }
-      table.dataTable td {
-        font-size: clamp(0.75rem, 1.2vw, 1rem);
-      }
-      table.dataTable {
-        width: 100%;
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-      @media (max-width: 400px) {
-        table.dataTable th,
-        table.dataTable td {
-          padding: 0.125rem 0.25rem !important;
-        }
-      }
+<!-- ─── PERFORMANCE HINTS ─── -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="preconnect" href="https://cdn.datatables.net" />
+<link rel="preconnect" href="https://code.jquery.com" />
 
-      /* ─── RESPONSIVE CHART ─── */
-      .chart-container {
-        position: relative;
-        width: 100%;
-        /* Even taller graph */
-        min-height: 450px;
-        height: 70vw; /* scales with screen width on mobiles */
-        max-height: 800px; /* avoids being massive on desktops */
-      }
-      .chart-container canvas {
-        position: absolute;
-        inset: 0;
-        width: 100% !important;
-        height: 100% !important;
-      }
-    </style> -->
-  </head>
+<!-- PapaParse -->
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
+
+<!-- DataTables CSS (preload) -->
+<link rel="preload" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" as="style" onload="this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" /></noscript>
+<link rel="preload" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" as="style" onload="this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" /></noscript>
+
+  <!-- Tailwind & other runtime JS left untouched -->
+</head>
+
 
   <body class="text-gray-800 flex flex-col min-h-screen">
     <header class="text-white text-center py-6 shadow-lg">
