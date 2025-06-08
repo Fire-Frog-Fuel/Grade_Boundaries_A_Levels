@@ -6,7 +6,7 @@
   <style id="css-cloak">
     html:not(.css-loaded) body > * { display: none; }
   </style>
-
+  
   <!-- Preconnect to third‑party origins for quicker handshake -->
   <link rel="preconnect" href="https://plausible.io">
   <link rel="preconnect" href="https://gc.zgo.at">
@@ -14,7 +14,8 @@
 
   <!-- Lightweight, privacy‑friendly analytics (kept) -->
   <script defer data-domain="gradeboundaries.com" src="https://plausible.io/js/script.js"></script>
-  <script data-goatcounter="https://gradeboundaries.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://gradeboundaries.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 
   <!-- Base‑href, Tailwind & custom CSS injection (unchanged) -->
   <script>
@@ -176,6 +177,67 @@
       <p class="text-lg mb-6">This little site was built by two A‑Level students as a fun project to visualise and compare A‑Level grade boundaries. We’re both studying A‑Levels ourselves, so we know how useful it can be to see trends across exam boards. Enjoy!</p>
       <p class="text-sm text-gray-600 dark:text-gray-400">☕ If you’ve found this useful, you can <a href="https://ko-fi.com/gradeboundariescom" target="_blank" rel="noopener noreferrer" class="underline transition">buy us a coffee</a> — every donation counts!</p>
     </section>
+<style>
+    :root {
+      /* badge container */
+      --badge-bg: rgba(255, 255, 255, 0.7);
+      --badge-border: rgba(45, 212, 191, 0.7);
+      --badge-ring: rgba(45, 212, 191, 0.4);
+      --badge-shadow: rgba(167, 243, 208, 0.8);
+
+      /* comet accent */
+      --badge-accent: rgba(45, 212, 191, 0.7);
+
+      /* text */
+      --badge-text: #0f766e;         /* teal-900 */
+      --badge-text-strong: #0f766e;  /* teal-900 (light mode strong) */
+    }
+
+    .dark {
+      --badge-bg: rgba(45, 212, 191, 0.1);    /* teal-500/10 */
+      --badge-border: rgba(22, 78, 64, 0.6);  /* teal-600/60 */
+      --badge-ring: rgba(0, 0, 0, 0.4);
+      --badge-shadow: rgba(0, 0, 0, 0.4);
+
+      --badge-accent: rgba(45, 212, 191, 0.7);
+
+      --badge-text: #f0fdf4;           /* teal-100 */
+      --badge-text-strong: #f0fdf0;    /* teal-50 */
+    }
+  </style>
+<div class="mx-auto mt-12 w-max">
+    <div
+      class="
+        relative flex items-center gap-3 px-5 py-2 rounded-full
+        bg-[var(--badge-bg)] backdrop-blur-sm
+        border border-[var(--badge-border)]
+        ring-1 ring-inset ring-[var(--badge-ring)]
+        shadow-md shadow-[var(--badge-shadow)]
+      ">
+
+      <!-- comet accent -->
+      
+
+      <span
+        class="
+          text-sm font-medium
+          text-[var(--badge-text)]
+        "
+      >
+        Site visits so far:
+      </span>
+
+      <span
+        id="total-visits"
+        class="
+          font-mono font-semibold tabular-nums text-base tracking-tight
+          text-[var(--badge-text-strong)]
+        "
+      >
+        …
+      </span>
+    </div>
+  </div>
   </main>
 
   <!-- Footer -->
@@ -191,7 +253,7 @@
           </a>
         </li>
         <li>
-          <span class="text-gray-300">&nbsp;and&nbsp;</span>
+          <span>&nbsp;and&nbsp;</span>
         </li>
         <li>
           <a href="https://github.com/ChessMastermind"
@@ -212,7 +274,7 @@
           </a>
         </li>
         <li>
-          <span class="text-gray-300">&nbsp;|&nbsp;</span>
+          <span>&nbsp;|&nbsp;</span>
         </li>
         <li>
           <a href="Privacy"
@@ -245,5 +307,30 @@
       btn.textContent = dark ? '☀️' : '🌙';
     });
   </script>
+
+  <!-- 🐐 Visitor counter logic -->
+<script>
+(async () => {
+  /* hit GoatCounter without using any cache */
+  const url   = `https://gradeboundaries.goatcounter.com/counter/TOTAL.json?ts=${Date.now()}`;
+  const res   = await fetch(url, { cache: 'no-store' });
+  if (!res.ok) return console.error('visit-counter failed', res.status);
+
+  /* strip spaces / NBSP & co -> pure number */
+  const visits = + (await res.json()).count.replace(/[^\d]/g, '');
+  const el     = document.getElementById('total-visits');
+
+  /* smooth count-up (300 ms) */
+  const frames = 20, inc = visits / frames;
+  let cur = 0, i = 0;
+  const step = () => {
+    i++;
+    cur = i < frames ? Math.round(inc * i) : visits;
+    el.textContent = cur;
+    if (i < frames) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+})();
+</script>
 </body>
 </html>
