@@ -14,13 +14,26 @@
 
   <!-- CIE section -->
   <url>
-    <loc>https://gradeboundaries.com/CIE/index.html</loc>
+    <loc>https://gradeboundaries.com/International_A_levels/CIE/index.html</loc>
     <lastmod>2025-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gradeboundaries.com/CIE/CIE.csv</loc>
+    <loc>https://gradeboundaries.com/International_A_levels/CIE/CIE.csv</loc>
+    <lastmod>2025-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Edexcel IAL section -->
+  <url>
+    <loc>https://gradeboundaries.com/International_A_levels/Edexcel/index.html</loc>
+    <lastmod>2025-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gradeboundaries.com/International_A_levels/Edexcel/Edexcel.csv</loc>
     <lastmod>2025-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -36,13 +49,13 @@
 
   <!-- Edexcel section -->
   <url>
-    <loc>https://gradeboundaries.com/Edexcel/index.html</loc>
+    <loc>https://gradeboundaries.com/A_levels/Edexcel/index.html</loc>
     <lastmod>2025-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gradeboundaries.com/Edexcel/Edexcel.csv</loc>
+    <loc>https://gradeboundaries.com/A_levels/Edexcel/Edexcel.csv</loc>
     <lastmod>2025-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -50,13 +63,13 @@
 
   <!-- OCR section -->
   <url>
-    <loc>https://gradeboundaries.com/OCR/index.html</loc>
+    <loc>https://gradeboundaries.com/A_levels/OCR/index.html</loc>
     <lastmod>2025-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gradeboundaries.com/OCR/OCR.csv</loc>
+    <loc>https://gradeboundaries.com/A_levels/OCR/OCR.csv</loc>
     <lastmod>2025-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -64,13 +77,13 @@
 
   <!-- OxfordAqa section -->
   <url>
-    <loc>https://gradeboundaries.com/OxfordAqa/index.html</loc>
+    <loc>https://gradeboundaries.com/International_A_levels/OxfordAqa/index.html</loc>
     <lastmod>2025-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gradeboundaries.com/OxfordAqa/OxfordAqa.csv</loc>
+    <loc>https://gradeboundaries.com/International_A_levels/OxfordAqa/OxfordAqa.csv</loc>
     <lastmod>2025-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

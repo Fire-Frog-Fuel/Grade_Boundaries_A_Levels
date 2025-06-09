@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- 🔒 Flash-free cloak (unchanged) -->
+    <style id="css-cloak">
+      html:not(.css-loaded) body > * {
+        display: none;
+      }
+    </style>
+
+    <!-- 🔗 Preconnects for faster handshakes -->
+    <link rel="preconnect" href="https://plausible.io" />
+    <link rel="preconnect" href="https://gc.zgo.at" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdn.datatables.net" />
+    <link rel="preconnect" href="https://code.jquery.com" />
+
+    <!-- 📈 Privacy-friendly analytics -->
+    <script
+      defer
+      data-domain="gradeboundaries.com"
+      src="https://plausible.io/js/script.js"
+    ></script>
+    <script
+      async
+      data-goatcounter="https://gradeboundaries.goatcounter.com/count"
+      src="//gc.zgo.at/count.js"
+    ></script>
+
+    <!-- 🧩 Base-href & CSS injection (same logic as before) -->
+    <script>
+      function uncloak() {
+        document.documentElement.classList.add("css-loaded");
+        const c = document.getElementById("css-cloak");
+        if (c) c.remove();
+      }
+      const host = location.hostname;
+      const myBase =
+        host === "gradeboundaries.com" ? "/" : "/Grade_Boundaries_A_Levels/";
+      const base = Object.assign(document.createElement("base"), {
+        href: myBase,
+      });
+      document.head.appendChild(base);
+
+      const tw = Object.assign(document.createElement("link"), {
+        rel: "stylesheet",
+        href: "dist/output.css",
+      });
+      document.head.appendChild(tw);
+
+      const local = Object.assign(document.createElement("link"), {
+        rel: "stylesheet",
+        href: "style.css",
+        onload: uncloak,
+      });
+      document.head.appendChild(local);
+    </script>
+
+    <!-- 🌐 Core meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      CIE A-Level Grade Boundaries 2021-2025 | Interactive Tables & CSV
+    </title>
+    <meta
+      name="description"
+      content="Cambridge International (CIE) A-Level grade boundaries 2021-2025 — part of Grade-Boundary Explorer, your one-stop hub where every UK exam board’s thresholds live together. Interactive tables, trend charts & free CSV downloads."
+    />
+    <meta
+      name="keywords"
+      content="CIE grade boundaries, Cambridge International A Level, grade thresholds, CIE 2025, exam results, UK A-Levels"
+    />
+    <meta name="author" content="Fire-Frog-Fuel" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#111827" />
+
+    <!-- 🔗 Canonical & hreflang -->
+    <link rel="canonical" href="https://gradeboundaries.com/International_A_levels/CIE" />
+    <link
+      rel="alternate"
+      hreflang="en-gb"
+      href="https://gradeboundaries.com/International_A_levels/CIE"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://gradeboundaries.com/International_A_levels/CIE"
+    />
+
+    <!-- 🏷️ Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Grade-Boundary Explorer" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content="https://gradeboundaries.com/International_A_levels/CIE" />
+    <meta
+      property="og:title"
+      content="CIE A-Level Grade Boundaries 2021-2025 | Download CSV & Charts"
+    />
+    <meta
+      property="og:description"
+      content="All UK A-Level grade boundaries in one place — dive into Cambridge International data with interactive tables, charts & CSV export."
+    />
+    <meta
+      property="og:image"
+      content="https://gradeboundaries.com/preview.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Screenshot of CIE grade boundaries page"
+    />
+
+    <!-- 🐦 Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://gradeboundaries.com/International_A_levels/CIE" />
+    <meta
+      name="twitter:title"
+      content="CIE A-Level Grade Boundaries 2021-2025"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore Cambridge International grade boundaries — plus every other board — on Grade-Boundary Explorer. Free charts & CSV."
+    />
+    <meta
+      name="twitter:image"
+      content="https://gradeboundaries.com/preview.png"
+    />
+
+    <!-- 📊 Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Cambridge International Grade Boundaries",
+        "url": "https://gradeboundaries.com/International_A_levels/CIE",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://gradeboundaries.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "CIE",
+              "item": "https://gradeboundaries.com/International_A_levels/CIE"
+            }
+          ]
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Dataset",
+        "name": "CIE A-Level Grade Boundaries 2021-2025",
+        "description": "Dataset of Cambridge International A-Level grade-boundary marks for all available subjects and exam sessions between 2021 and 2025.",
+        "url": "https://gradeboundaries.com/International_A_levels/CIE",
+        "keywords": [
+          "CIE",
+          "Cambridge International",
+          "A Level",
+          "grade boundaries",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "temporalCoverage": "2021-01-01/2025-12-31",
+        "isAccessibleForFree": true,
+        "creator": {
+          "@type": "Person",
+          "name": "ChessMastermind",
+          "url": "https://github.com/ChessMastermind"
+        }
+      }
+    </script>
+
+    <!-- 🌙 Instant theme toggle (unchanged) -->
+    <script>
+      (() => {
+        const saved = localStorage.getItem("theme");
+        if (
+          saved === "dark" ||
+          (!saved && matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+
+    <!-- ⚡ Performance hints (kept) -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdn.datatables.net" />
+    <link rel="preconnect" href="https://code.jquery.com" />
+
+    <!-- PapaParse -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"
+      defer
+    ></script>
+
+    <!-- DataTables CSS (regular link is fine here) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css"
+    />
+  </head>
+  <body class="text-gray-800 flex flex-col min-h-screen">
+    <header class="text-white text-center py-6 shadow-lg relative">
+      <h1 class="page-title">Cambridge International Grade Boundaries</h1>
+      <button id="theme-toggle" class="absolute top-4 right-4">🌙</button>
+      <nav
+        class="mt-4 flex flex-col md:flex-row items-center justify-center gap-2"
+        aria-label="Primary"
+      >
+        <a href="" class="nav-link mx-4 text-base sm:text-lg hover:text-white transition" title="Home">Home</a>
+        <a
+          href="International_A_levels/Edexcel"
+          class="nav-link mx-4 text-base sm:text-lg hover:text-white transition"
+          title="Edexcel A-Level grade boundaries 2015-2025"
+          >Edexcel</a
+        >
+        <a
+          href="International_A_levels/CIE"
+          class="nav-link mx-4 text-base sm:text-lg hover:text-white transition"
+          title="CIE (Cambridge International) A-Level grade boundaries"
+          >CIE</a
+        >
+        <a
+          href="International_A_levels/OxfordAqa"
+          class="nav-link mx-4 text-base sm:text-lg hover:text-white transition"
+          title="Oxford AQA A-Level grade boundaries 2020-2025"
+          >Oxford AQA</a
+        >
+      </nav>
+    </header>
+
+    <main class="flex-1 w-full px-4">
+      <section
+        class="bg-white rounded-lg shadow-md p-6 w-full max-w-7xl mx-auto"
+      >
+        <h2 class="text-2xl font-semibold mb-4">
+          Cambridge International Grade Boundaries
+        </h2>
+
+        <!-- TABLE -->
+        <div class="table-wrapper mb-6">
+          <table
+            id="CIETable"
+            class="display nowrap responsive w-full"
+            aria-describedby="grade-boundaries-caption"
+          >
+            <caption id="grade-boundaries-caption" class="sr-only">
+              Cambridge grade boundaries per unit / component code
+            </caption>
+            <thead>
+              <tr></tr>
+            </thead>
+          </table>
+        </div>
+
+        <!-- CSV download -->
+        <div class="text-right my-4">
+          <button
+            id="downloadCSV"
+            class="class-button px-4 py-2 rounded hover:bg-[#2b7a78] transition"
+          >
+            Download CSV
+          </button>
+        </div>
+
+        <!-- Controls -->
+        <div id="cie-controls" class="flex flex-wrap gap-4 mb-6 items-center">
+          <label for="cieSubjectSearch" class="font-semibold"
+            >Subject&nbsp;Code:</label
+          >
+          <input
+            id="cieSubjectSearch"
+            list="cieSubjectList"
+            placeholder="e.g. 9709"
+            class="border rounded px-2 py-1 w-32 sm:w-auto"
+          />
+          <datalist id="cieSubjectList"></datalist>
+
+          <label for="cieComponentSearch" class="font-semibold"
+            >Component&nbsp;(for&nbsp;graph):</label
+          >
+          <input
+            id="cieComponentSearch"
+            list="cieComponentList"
+            placeholder="select component"
+            class="border rounded px-2 py-1 w-24 sm:w-32"
+            disabled
+          />
+          <datalist id="cieComponentList"></datalist>
+        </div>
+
+        <!-- Chart -->
+        <div class="chart-container"><canvas id="CIEChart"></canvas></div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+<footer class="mt-12" role="contentinfo">
+      <div class="container mx-auto flex flex-col items-center py-6 px-4">
+        <p class="text-lg">Created by</p>
+        <nav aria-label="Created by">
+          <ul class="flex space-x-4 text-lg">
+            <li>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://github.com/Fire-Frog-Fuel/" class="underline">
+                Fire-Frog-Fuel
+              </a></p>
+            </li>
+            <li>
+              <span>&nbsp;and&nbsp;</span>
+            </li>
+            <li>
+              <a href="https://github.com/ChessMastermind" class="underline">
+                ChessMastermind
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Utility links -->
+        <nav aria-label="Footer links">
+          <ul class="flex space-x-4 text-lg">
+            <li>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="Contact" class="underline"> Contact us </a></p>
+            </li>
+            <li>
+              <span>&nbsp;|&nbsp;</span>
+            </li>
+            <li>
+              <a href="Privacy" class="underline"> Privacy Notice </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- PAGE SCRIPT -->
+    <script defer>
+      const loadScript = (src) =>
+        new Promise((res) => {
+          const s = document.createElement("script");
+          s.src = src;
+          s.onload = res;
+          document.body.appendChild(s);
+        });
+
+      window.addEventListener("DOMContentLoaded", () => {
+        fetch("csv/International_A_levels/CIE.csv")
+          .then((r) => r.text())
+          .then(
+            (csv) =>
+              new Promise((resolve) => {
+                Papa.parse(csv, {
+                  header: true,
+                  dynamicTyping: true,
+                  skipEmptyLines: true,
+                  worker: true,
+                  complete: ({ data }) => resolve([data, csv]),
+                });
+              }),
+          )
+          .then(async ([parsed, csvText]) => {
+            await loadScript("https://code.jquery.com/jquery-3.6.0.min.js");
+            await loadScript(
+              "https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js",
+            );
+            await loadScript(
+              "https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js",
+            );
+            await loadScript("https://cdn.jsdelivr.net/npm/chart.js");
+            initPage(parsed, csvText);
+          })
+          .catch((err) => {
+            console.error(err);
+            document.getElementById("CIETable").innerHTML =
+              '<tbody><tr><td colspan="10" class="text-center py-4">Failed to load data.</td></tr></tbody>';
+          });
+      });
+
+      function initPage(parsed, csvText) {
+        const headers = Object.keys(parsed[0] || {});
+        const dtColumns = headers.map((h) => ({ data: h, title: h }));
+        const tableEl = $("#CIETable");
+
+        // Month map - lowercase keys for easy lookup
+        const monthOrder = {
+          jan: 1,
+          feb: 2,
+          mar: 3,
+          apr: 4,
+          may: 5,
+          jun: 6,
+          jul: 7,
+          aug: 8,
+          sep: 9,
+          oct: 10,
+          nov: 11,
+          dec: 12,
+        };
+
+        // Custom chronological sorter that handles both "2025 mar" and "march-2025"
+        jQuery.fn.dataTable.ext.type.order["session-pre"] = function (cell) {
+          if (!cell) return 0;
+          let str = String(cell).toLowerCase().trim();
+          str = str.replace(/[-_]/g, " ");
+          const tokens = str.split(/\s+/);
+          if (tokens.length < 2) return 0;
+          let year, monthToken;
+          if (/^\d{4}$/.test(tokens[0])) {
+            year = parseInt(tokens[0], 10);
+            monthToken = tokens[1];
+          } else if (/^\d{4}$/.test(tokens[1])) {
+            year = parseInt(tokens[1], 10);
+            monthToken = tokens[0];
+          } else {
+            return 0;
+          }
+          const mon = monthOrder[monthToken.slice(0, 3)] || 0;
+          return year * 100 + mon;
+        };
+
+        const sessionColIdx = headers.findIndex((h) =>
+          ["Series", "session", "Session"].includes(h),
+        );
+
+        const dataTable = tableEl.DataTable({
+          data: parsed,
+          columns: dtColumns,
+          columnDefs: [{ targets: sessionColIdx, type: "session" }],
+          order: [[sessionColIdx, "asc"]],
+          responsive: true,
+          autoWidth: false,
+          deferRender: true,
+          pageLength: 10,
+        });
+
+        // Component filter
+        const compAliases = [
+          "Component",
+          "component",
+          "ComponentCode",
+          "component_code",
+        ];
+        const compIdx = headers.findIndex((h) => compAliases.includes(h));
+        if (compIdx !== -1) {
+          const comps = new Set(
+            parsed.map((r) => r[headers[compIdx]]).filter(Boolean),
+          );
+          $("#CIETable_filter").append(
+            `<label style="margin-left:1rem;font-weight:600;">Component:&nbsp;<input id="componentTableSearch" list="componentTableList" placeholder="component" class="border rounded px-2 py-1 w-24 sm:w-32"></label>`,
+          );
+          $("body").append('<datalist id="componentTableList"></datalist>');
+          comps.forEach((c) =>
+            $("#componentTableList").append(`<option value="${c}"></option>`),
+          );
+          $("#componentTableSearch").on("input", function () {
+            dataTable.column(compIdx).search(this.value).draw();
+          });
+        }
+
+        // Chart data
+        const cieData = {};
+        const grades = ["a*", "a", "b", "c", "d", "e"];
+
+        parsed.forEach((row) => {
+          const raw = row["Series"] || row["session"] || row["Session"] || "";
+          const subject =
+            row["SubjectCode"] || row["code"] || row["subject"] || "";
+          const component =
+            row["Component"] ||
+            row["component"] ||
+            row["ComponentCode"] ||
+            row["component_code"] ||
+            "";
+          if (!raw || !subject) return;
+
+          // normalise to "YYYY mon"
+          let session = raw.trim().toLowerCase().replace(/[-_]/g, " ");
+          const t = session.split(/\s+/);
+          if (t.length === 2) {
+            if (/^\d{4}$/.test(t[0])) {
+              session = `${t[0]} ${t[1].slice(0, 3)}`;
+            } else if (/^\d{4}$/.test(t[1])) {
+              session = `${t[1]} ${t[0].slice(0, 3)}`;
+            }
+          }
+
+          const compKey = component || "ALL";
+          cieData[subject] ??= {};
+          cieData[subject][compKey] ??= {};
+          cieData[subject][compKey][session] ??= {};
+
+          grades.forEach((g) => {
+            const v = parseFloat(row[g.toUpperCase()] ?? row[g] ?? "");
+            if (!isNaN(v)) cieData[subject][compKey][session][g] = v;
+          });
+          const maxMark = parseFloat(row["MaxMark"] || row["max_mark"] || "");
+          if (!isNaN(maxMark))
+            cieData[subject][compKey][session].max_mark = maxMark;
+        });
+
+        // controls + chart
+        const subjectInput = document.getElementById("cieSubjectSearch");
+        const componentInput = document.getElementById("cieComponentSearch");
+        const subjectList = document.getElementById("cieSubjectList");
+        const componentList = document.getElementById("cieComponentList");
+
+        Object.keys(cieData)
+          .sort()
+          .forEach((code) =>
+            subjectList.appendChild(
+              Object.assign(document.createElement("option"), { value: code }),
+            ),
+          );
+
+        function populateComponents(subj) {
+          componentList.innerHTML = "";
+          componentInput.value = "";
+          componentInput.disabled = true;
+          if (!subj || !cieData[subj]) return;
+          const comps = Object.keys(cieData[subj]).filter((c) => c !== "ALL");
+          if (!comps.length) return;
+          componentInput.disabled = false;
+          comps
+            .sort()
+            .forEach((c) =>
+              componentList.appendChild(
+                Object.assign(document.createElement("option"), { value: c }),
+              ),
+            );
+          componentInput.value = comps[0];
+        }
+
+        const ctx = document.getElementById("CIEChart").getContext("2d");
+        let chart = null;
+        const gradeColors = {
+          "a*": "#2ECC71",
+          a: "#F4A261",
+          b: "#E9C46A",
+          c: "#E63946",
+          d: "#264653",
+          e: "#6D597A",
+        };
+        const maxColor = "#999999";
+
+        function updateChart() {
+          const subj = subjectInput.value.trim();
+          const comp = componentInput.value.trim();
+          if (!subj || !comp || !cieData[subj] || !cieData[subj][comp]) {
+            if (chart) {
+              chart.destroy();
+              chart = null;
+            }
+            return;
+          }
+          const dataObj = cieData[subj][comp];
+          const sessions = Object.keys(dataObj);
+          if (!sessions.length) {
+            if (chart) {
+              chart.destroy();
+              chart = null;
+            }
+            return;
+          }
+          sessions.sort((a, b) => {
+            const [ya, ma] = a.split(" ");
+            const [yb, mb] = b.split(" ");
+            return +ya - +yb || monthOrder[ma] - monthOrder[mb];
+          });
+
+          const hasAStar = sessions.some((s) => "a*" in dataObj[s]);
+          const ds = grades
+            .filter((g) => g != "a*" || hasAStar)
+            .map((g) => ({
+              label: g.toUpperCase(),
+              data: sessions.map((s) => dataObj[s][g] ?? null),
+              borderColor: gradeColors[g],
+              tension: 0.2,
+              fill: false,
+            }));
+          ds.push({
+            label: "Max Mark",
+            data: sessions.map((s) => dataObj[s].max_mark ?? null),
+            borderColor: maxColor,
+            borderDash: [5, 5],
+            borderWidth: 1,
+            pointRadius: 0,
+            fill: false,
+          });
+
+          if (chart) chart.destroy();
+          chart = new Chart(ctx, {
+            type: "line",
+            data: { labels: sessions, datasets: ds },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                title: {
+                  display: true,
+                  text: `Grade Boundaries — ${subj} (${comp})`,
+                },
+                legend: { position: "bottom" },
+              },
+              scales: {
+                x: { title: { display: true, text: "Exam Session" } },
+                y: {
+                  beginAtZero: true,
+                  title: { display: true, text: "Marks" },
+                },
+              },
+            },
+          });
+        }
+
+        subjectInput.addEventListener("input", () => {
+          populateComponents(subjectInput.value.trim());
+          updateChart();
+        });
+        componentInput.addEventListener("input", updateChart);
+        subjectInput.value = Object.keys(cieData)[0] || "";
+        populateComponents(subjectInput.value);
+        updateChart();
+
+        document.getElementById("downloadCSV").addEventListener("click", () => {
+          const blob = new Blob([csvText], { type: "text/csv" });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = "CIE.csv";
+          a.click();
+          URL.revokeObjectURL(url);
+        });
+      }
+    </script>
+
+    <!-- theme toggle -->
+    <script>
+      const btn = document.getElementById("theme-toggle");
+      btn.textContent = document.documentElement.classList.contains("dark")
+        ? "☀️"
+        : "🌙";
+      btn.addEventListener("click", () => {
+        const dark = document.documentElement.classList.toggle("dark");
+        localStorage.setItem("theme", dark ? "dark" : "light");
+        btn.textContent = dark ? "☀️" : "🌙";
+      });
+    </script>
+  </body>
+</html>

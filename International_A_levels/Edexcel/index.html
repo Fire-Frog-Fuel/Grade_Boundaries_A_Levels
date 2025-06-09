@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <style id="css-cloak">
+      html:not(.css-loaded) body > * {
+        display: none;
+      }
+    </style>
+
+    <!-- 🔗 Preconnect for quicker handshake -->
+    <link rel="preconnect" href="https://plausible.io" />
+    <link rel="preconnect" href="https://gc.zgo.at" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdn.datatables.net" />
+    <link rel="preconnect" href="https://code.jquery.com" />
+
+    <!-- 📈 Privacy-friendly analytics -->
+    <script
+      defer
+      data-domain="gradeboundaries.com"
+      src="https://plausible.io/js/script.js"
+    ></script>
+    <script
+      async
+      data-goatcounter="https://gradeboundaries.goatcounter.com/count"
+      src="//gc.zgo.at/count.js"
+    ></script>
+
+    <!-- 🧩 Base-href and CSS injection (kept exactly as before) -->
+    <script>
+      function uncloak() {
+        document.documentElement.classList.add("css-loaded");
+        const c = document.getElementById("css-cloak");
+        if (c) c.remove();
+      }
+      const host = location.hostname;
+      const myBase =
+        host === "gradeboundaries.com" ? "/" : "/Grade_Boundaries_A_Levels/";
+      const base = Object.assign(document.createElement("base"), {
+        href: myBase,
+      });
+      document.head.appendChild(base);
+
+      const tw = Object.assign(document.createElement("link"), {
+        rel: "stylesheet",
+        href: "dist/output.css",
+      });
+      document.head.appendChild(tw);
+
+      const local = Object.assign(document.createElement("link"), {
+        rel: "stylesheet",
+        href: "style.css",
+        onload: uncloak,
+      });
+      document.head.appendChild(local);
+    </script>
+
+    <!-- 🌐 Core meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Edexcel International A-Level Grade Boundaries 2015-2025 | Interactive Tables & CSV
+    </title>
+    <meta
+      name="description"
+      content="Edexcel International A-Level grade boundaries (2015-2025) — explore them alongside every other UK board on Grade-Boundary Explorer. Interactive tables, trend charts & free CSV downloads: all grade boundaries in one place."
+    />
+    <meta
+      name="keywords"
+      content="Edexcel grade boundaries, International A Level grade thresholds, Edexcel 2025, exam results, UK A-Levels"
+    />
+    <meta name="author" content="Fire-Frog-Fuel" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#111827" />
+
+    <!-- 🔗 Canonical & hreflang -->
+    <link rel="canonical" href="https://gradeboundaries.com/International_A_levels/Edexcel" />
+    <link
+      rel="alternate"
+      hreflang="en-gb"
+      href="https://gradeboundaries.com/International_A_levels/Edexcel"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://gradeboundaries.com/International_A_levels/Edexcel"
+    />
+
+    <!-- 🏷️ Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Grade-Boundary Explorer" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content="https://gradeboundaries.com/International_A_levels/Edexcel" />
+    <meta
+      property="og:title"
+      content="Edexcel International A-Level Grade Boundaries 2015-2025 | Download CSV & Charts"
+    />
+    <meta
+      property="og:description"
+      content="All UK A-Level grade boundaries in one place — dive into Edexcel data with interactive tables, charts & CSV export."
+    />
+    <meta
+      property="og:image"
+      content="https://gradeboundaries.com/preview.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Screenshot of Edexcel grade boundaries page"
+    />
+
+    <!-- 🐦 Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://gradeboundaries.com/International_A_levels/Edexcel" />
+    <meta
+      name="twitter:title"
+      content="Edexcel International A-Level Grade Boundaries 2015-2025"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore Edexcel grade boundaries — plus every other board — on Grade-Boundary Explorer. Free charts & CSV."
+    />
+    <meta
+      name="twitter:image"
+      content="https://gradeboundaries.com/preview.png"
+    />
+
+    <!-- 📊 Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Edexcel Grade Boundaries",
+        "url": "https://gradeboundaries.com/International_A_levels/Edexcel",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://gradeboundaries.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Edexcel",
+              "item": "https://gradeboundaries.com/International_A_levels/Edexcel"
+            }
+          ]
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Dataset",
+        "name": "Edexcel International A-Level Grade Boundaries 2015-2025",
+        "description": "Dataset of Edexcel International A-Level grade-boundary marks for all units and exam sessions between 2015 and 2025.",
+        "url": "https://gradeboundaries.com/International_A_levels/Edexcel",
+        "keywords": [
+          "Edexcel",
+          "A Level",
+          "grade boundaries",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "temporalCoverage": "2015-01-01/2025-12-31",
+        "isAccessibleForFree": true,
+        "creator": {
+          "@type": "Person",
+          "name": "ChessMastermind",
+          "url": "https://github.com/ChessMastermind"
+        }
+      }
+    </script>
+
+    <!-- 🌙 Instant theme toggle (unchanged) -->
+    <script>
+      (() => {
+        const saved = localStorage.getItem("theme");
+        if (
+          saved === "dark" ||
+          (!saved && matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+
+    <!-- ⚡ Performance hints (kept) -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdn.datatables.net" />
+    <link rel="preconnect" href="https://code.jquery.com" />
+
+    <!-- PapaParse -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"
+      defer
+    ></script>
+
+    <!-- DataTables CSS (preload, with noscript fallback) -->
+    <link
+      rel="preload"
+      href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
+      as="style"
+      onload="this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
+    /></noscript>
+    <link
+      rel="preload"
+      href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css"
+      as="style"
+      onload="this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css"
+    /></noscript>
+  </head>
+  <body class="text-gray-800 flex flex-col min-h-screen">
+    <header class="text-white text-center py-6 shadow-lg">
+      <h1 class="page-title">Edexcel Grade Boundaries</h1>
+      <button id="theme-toggle" class="absolute top-4 right-4">🌙</button>
+      <nav
+        class="mt-4 flex flex-col md:flex-row items-center justify-center gap-2"
+        aria-label="Primary"
+      >
+        <a href="" class="nav-link mx-4 text-base sm:text-lg hover:text-white transition" title="Home">Home</a>
+        <a
+          href="International_A_levels/Edexcel"
+          class="nav-link mx-4 text-base sm:text-lg hover:text-white transition"
+          title="Edexcel International A-Level grade boundaries 2015-2025"
+          >Edexcel</a
+        >
+        <a
+          href="International_A_levels/CIE"
+          class="nav-link mx-4 text-base sm:text-lg hover:text-white transition"
+          title="CIE (Cambridge International) A-Level grade boundaries"
+          >CIE</a
+        >
+        <a
+          href="International_A_levels/OxfordAqa"
+          class="nav-link mx-4 text-base sm:text-lg hover:text-white transition"
+          title="Oxford AQA A-Level grade boundaries 2020-2025"
+          >Oxford AQA</a
+        >
+      </nav>
+    </header>
+    <main class="flex-1 w-full px-4">
+      <section
+        class="bg-white rounded-lg shadow-md p-6 w-full max-w-7xl mx-auto"
+      >
+        <h2 class="text-2xl font-semibold mb-4">Edexcel Grade Boundaries</h2>
+
+        <div class="table-wrapper mb-6">
+          <table
+            id="EdexcelTable"
+            class="display nowrap responsive w-full"
+            aria-describedby="grade-boundaries-caption"
+          >
+            <caption id="grade-boundaries-caption" class="sr-only">
+              Edexcel grade boundaries (unit‑level)
+            </caption>
+            <thead>
+              <tr></tr>
+            </thead>
+          </table>
+        </div>
+
+        <div class="text-right my-4">
+          <button
+            id="downloadCSV"
+            class="class-button text-white px-4 py-2 rounded hover:bg-[#2b7a78] transition"
+          >
+            Download CSV
+          </button>
+        </div>
+
+        <div
+          id="edexcel-controls"
+          class="flex flex-wrap gap-4 mb-6 items-center"
+        >
+          <label for="edexcelUnitSearch" class="font-semibold"
+            >Unit&nbsp;Code:</label
+          >
+          <input
+            type="text"
+            id="edexcelUnitSearch"
+            placeholder="e.g. WPH14"
+            class="border rounded px-2 py-1 w-36 sm:w-auto"
+            list="edexcelUnitList"
+          />
+          <datalist id="edexcelUnitList"></datalist>
+        </div>
+
+        <div class="chart-container"><canvas id="EdexcelChart"></canvas></div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+<footer class="mt-12" role="contentinfo">
+      <div class="container mx-auto flex flex-col items-center py-6 px-4">
+        <p class="text-lg">Created by</p>
+        <nav aria-label="Created by">
+          <ul class="flex space-x-4 text-lg">
+            <li>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://github.com/Fire-Frog-Fuel/" class="underline">
+                Fire-Frog-Fuel
+              </a></p>
+            </li>
+            <li>
+              <span>&nbsp;and&nbsp;</span>
+            </li>
+            <li>
+              <a href="https://github.com/ChessMastermind" class="underline">
+                ChessMastermind
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Utility links -->
+        <nav aria-label="Footer links">
+          <ul class="flex space-x-4 text-lg">
+            <li>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="Contact" class="underline"> Contact us </a></p>
+            </li>
+            <li>
+              <span>&nbsp;|&nbsp;</span>
+            </li>
+            <li>
+              <a href="Privacy" class="underline"> Privacy Notice </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+    <!-- PAGE SCRIPT -->
+    <script defer>
+      const loadScript = (src) =>
+        new Promise((res) => {
+          const s = document.createElement("script");
+          s.src = src;
+          s.onload = res;
+          document.body.appendChild(s);
+        });
+
+      window.addEventListener("DOMContentLoaded", () => {
+        fetch("csv/International_A_levels/Edexcel.csv")
+          .then((r) => r.text())
+          .then(
+            (csvText) =>
+              new Promise((resolve) => {
+                Papa.parse(csvText, {
+                  header: true,
+                  dynamicTyping: true,
+                  skipEmptyLines: true,
+                  worker: true,
+                  complete: ({ data }) => resolve([data, csvText]),
+                });
+              }),
+          )
+          .then(async ([parsed, csvText]) => {
+            await loadScript("https://code.jquery.com/jquery-3.6.0.min.js");
+            await loadScript(
+              "https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js",
+            ); // line 237
+            await loadScript(
+              "https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js",
+            ); // line 238
+            await loadScript("https://cdn.jsdelivr.net/npm/chart.js"); // line 239
+            initPage(parsed, csvText);
+          })
+          .catch((err) => {
+            console.error(err);
+            document.getElementById("EdexcelTable").innerHTML =
+              '<tbody><tr><td colspan="10" class="text-center py-4">Failed to load data.</td></tr></tbody>';
+          });
+      });
+
+      function initPage(parsed, csvText) {
+        // Columns: drop anything that looks like a component column
+        const componentAliases = [
+          "component",
+          "Component",
+          "component_code",
+          "paper",
+        ];
+        const headers = Object.keys(parsed[0] || {}).filter(
+          (h) => !componentAliases.includes(h),
+        );
+        const dtColumns = headers.map((h) => ({ data: h, title: h }));
+        $("#EdexcelTable").DataTable({
+          data: parsed,
+          columns: dtColumns,
+          responsive: true,
+          autoWidth: false,
+          deferRender: true,
+          pageLength: 10,
+        });
+
+        // Structure: unitCode -> session -> grades
+        const gradeList = ["a*", "a", "b", "c", "d", "e"];
+        const dataByUnit = {};
+        parsed.forEach((r) => {
+          const unit = r.code || r.UnitCode || r.unit || r.subject || "";
+          const sessionRaw =
+            `${r.year || ""} ${(r.session || "").trim()}`.trim();
+          if (!unit || !sessionRaw) return;
+          const session = sessionRaw;
+          dataByUnit[unit] ??= {};
+          dataByUnit[unit][session] ??= {};
+          gradeList.forEach((g) => {
+            const v = parseFloat(r[g]);
+            if (!isNaN(v)) dataByUnit[unit][session][g] = v;
+          });
+          const mm = parseFloat(r.max_mark);
+          if (!isNaN(mm)) dataByUnit[unit][session].max_mark = mm;
+        });
+
+        // Populate unit datalist
+        const unitInput = document.getElementById("edexcelUnitSearch");
+        const unitList = document.getElementById("edexcelUnitList");
+        Object.keys(dataByUnit)
+          .sort()
+          .forEach((u) =>
+            unitList.appendChild(
+              Object.assign(document.createElement("option"), { value: u }),
+            ),
+          );
+
+        // Chart setup
+        const ctx = document.getElementById("EdexcelChart").getContext("2d");
+        let chart = null;
+        const gradeColors = {
+          "a*": "#2ECC71",
+          a: "#F4A261",
+          b: "#E9C46A",
+          c: "#E63946",
+          d: "#264653",
+          e: "#6D597A",
+        };
+        const maxMarkColor = "#999999";
+        const monthOrder = {
+          Jan: 1,
+          Feb: 2,
+          Mar: 3,
+          Apr: 4,
+          May: 5,
+          Jun: 6,
+          Jul: 7,
+          Aug: 8,
+          Sep: 9,
+          Oct: 10,
+          Nov: 11,
+          Dec: 12,
+        };
+
+        function updateChart() {
+          const unit = unitInput.value.trim();
+          if (!dataByUnit[unit]) {
+            if (chart) {
+              chart.destroy();
+              chart = null;
+            }
+            return;
+          }
+          const dataObj = dataByUnit[unit];
+          const sessions = Object.keys(dataObj);
+          if (!sessions.length) {
+            if (chart) {
+              chart.destroy();
+              chart = null;
+            }
+            return;
+          }
+          sessions.sort((a, b) => {
+            const [ya, ma] = a.split(" ");
+            const [yb, mb] = b.split(" ");
+            return +ya - +yb || monthOrder[ma] - monthOrder[mb];
+          });
+          const hasAStar = sessions.some((s) => "a*" in dataObj[s]);
+          const grades = gradeList.filter((g) => g !== "a*" || hasAStar);
+          const datasets = grades.map((g) => ({
+            label: g.toUpperCase(),
+            data: sessions.map((s) => dataObj[s][g] ?? null),
+            borderColor: gradeColors[g],
+            tension: 0.2,
+            fill: false,
+          }));
+          datasets.push({
+            label: "Max Mark",
+            data: sessions.map((s) => dataObj[s].max_mark ?? null),
+            borderColor: maxMarkColor,
+            borderDash: [5, 5],
+            borderWidth: 1,
+            pointRadius: 0,
+            fill: false,
+          });
+          if (chart) chart.destroy();
+          chart = new Chart(ctx, {
+            type: "line",
+            data: { labels: sessions, datasets },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                title: { display: true, text: `Grade Boundaries — ${unit}` },
+                legend: { position: "bottom" },
+              },
+              scales: {
+                x: { title: { display: true, text: "Exam Session" } },
+                y: {
+                  beginAtZero: true,
+                  title: { display: true, text: "Marks" },
+                },
+              },
+            },
+          });
+        }
+
+        unitInput.addEventListener("input", updateChart);
+        unitInput.value = Object.keys(dataByUnit)[0] || "";
+        updateChart();
+
+        // CSV download
+        document.getElementById("downloadCSV").addEventListener("click", () => {
+          const blob = new Blob([csvText], { type: "text/csv" });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = "Edexcel.csv";
+          a.click();
+          URL.revokeObjectURL(url);
+        });
+      }
+    </script>
+
+    <script>
+      const btn = document.getElementById("theme-toggle");
+      const root = document.documentElement;
+
+      /*  swap icon to match current state  */
+      btn.textContent = root.classList.contains("dark") ? "☀️" : "🌙";
+
+      btn.addEventListener("click", () => {
+        const dark = root.classList.toggle("dark");
+        localStorage.setItem("theme", dark ? "dark" : "light");
+        btn.textContent = dark ? "☀️" : "🌙";
+      });
+    </script>
+  </body>
+</html>

@@ -53,16 +53,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>
-        Grade Boundary Explorer | Choose Qualification
-      </title>
-      <meta
-        name="description"
-        content="Browse grade boundaries for A-Level, International A-Level, GCSE and IGCSE qualifications."
-      />
+    <title>
+      IGCSE Grade Boundaries | Coming Soon
+    </title>
+    <meta
+      name="description"
+      content="All IGCSE grade boundaries in one place – instantly compare Edexcel, Cambridge (CIE), Oxford AQA & more from 2015 to 2025 with free interactive tables, charts & CSV downloads."
+    />
     <meta
       name="keywords"
-      content="grade boundaries, A Level, GCSE, IGCSE, International A Level"
+      content="IGCSE grade boundaries, Edexcel grade thresholds, CIE grade boundaries, Oxford AQA grade thresholds, exam results, IGCSE 2025"
     />
     <meta name="author" content="Fire‑Frog‑Fuel" />
     <meta name="robots" content="index, follow" />
@@ -88,11 +88,11 @@
     <meta property="og:url" content="https://gradeboundaries.com/" />
     <meta
       property="og:title"
-      content="Grade Boundary Explorer | Choose Qualification"
+      content="IGCSE Grade Boundaries 2015‑2025 | Edexcel · CIE · Oxford AQA"
     />
     <meta
       property="og:description"
-      content="Compare free interactive grade‑boundary data for Edexcel, CIE, Oxford AQA & OCR between 2015‑2025. Select your qualification type to explore the data."
+      content="Compare free interactive grade‑boundary data for Edexcel, CIE and Oxford AQA between 2015‑2025."
     />
     <meta
       property="og:image"
@@ -106,10 +106,10 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://gradeboundaries.com/" />
-    <meta name="twitter:title" content="Grade Boundary Explorer" />
+    <meta name="twitter:title" content="IGCSE Grade Boundaries 2015‑2025" />
     <meta
       name="twitter:description"
-      content="Select your qualification type to explore grade boundary data."
+      content="Interactive tables and charts covering Edexcel, CIE and Oxford AQA IGCSE grade thresholds."
     />
     <meta
       name="twitter:image"
@@ -210,128 +210,23 @@
   <body>
     <!-- Header -->
     <header class="text-white text-center py-6 shadow-lg">
-      <h1 class="page-title">Grade Boundaries</h1>
+      <h1 class="page-title">IGCSE Grade Boundaries</h1>
       <nav
         class="mt-4 flex flex-col md:flex-row items-center justify-center gap-2"
         aria-label="Primary"
         >
-        <a href="A_levels" class="nav-link mx-4 text-base sm:text-lg hover:text-white transition">A-Levels</a>
-        <a href="International_A_levels" class="nav-link mx-4 text-base sm:text-lg hover:text-white transition">International&nbsp;A-Levels</a>
-        <a href="GCSE" class="nav-link mx-4 text-base sm:text-lg hover:text-white transition">GCSE</a>
-        <a href="IGCSE" class="nav-link mx-4 text-base sm:text-lg hover:text-white transition">IGCSE</a>
+        <a href="" class="nav-link mx-4 text-base sm:text-lg hover:text-white transition" title="Home">Home</a>
       </nav>
     </header>
 
     <!-- Main content -->
-    <main class="flex-1 max-w-6xl mx-auto p-6" id="main-content">
-      <h2 class="text-3xl font-semibold mb-4">
-        Welcome to Grade-Boundary Explorer
-      </h2>
-      <p class="text-lg mb-4">
-        This site offers a <strong>free</strong>, open-access way to explore grade boundaries across multiple qualifications. Choose a category below to begin.
-      </p>
-
-        <h2 id="datasets-heading" class="sr-only">Available datasets</h2>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <article class="bg-white shadow-md rounded-lg p-6 flex flex-col h-70 text-center">
-            <h3 class="text-xl font-bold mb-2">A-Levels</h3>
-            <p class="text-sm mb-4" itemprop="description">
-            OCR 
-            </p>
-            <a href="A_levels" class="class-button inline-block mt-auto mb-0 px-4 py-2 rounded text-center">Explore A-Level data</a>
-          </article>
-          <article class="bg-white shadow-md rounded-lg p-6 flex flex-col  h-70 text-center">
-            <h3 class="text-xl font-bold mb-0">International</h3>
-            <h3 class="text-xl font-bold mb-2">A-Levels</h3>
-            <p class="text-sm mb-4" itemprop="description">
-            Edexcel OxfordAQA CIE 
-            </p>
-            <a href="International_A_levels" class="class-button inline-block mt-auto mb-0 px-4 py-2 rounded text-center">Explore IAL data</a>
-          </article>
-          <article class="bg-white shadow-md rounded-lg p-6 flex flex-col  h-70 text-center">
-            <h3 class="text-xl font-bold mb-2">GCSE</h3>
-            <p class="text-sm mb-4" itemprop="description">
-            Coming Soon 
-            </p>
-            <a href="GCSE" class="class-button inline-block mt-auto mb-0 px-4 py-2 rounded text-center">Explore GCSE data</a>
-          </article>
-          <article class="bg-white shadow-md rounded-lg p-6 flex flex-col  h-70 text-center">
-            <h3 class="text-xl font-bold mb-2">IGCSE</h3>
-            <p class="text-sm mb-4" itemprop="description">
-            Coming Soon 
-            </p>
-            <a href="IGCSE" class="class-button inline-block mt-auto mb-0 px-4 py-2 rounded text-center">Explore IGCSE data</a>
-          </article>
-        </div>
-      <section
-        id="about-project"
-        class="mt-12 p-6 rounded-lg text-center donate-section shadow-md"
-      >
-        <h2 class="text-2xl font-semibold mb-4">About This Project</h2>
-        <p class="text-lg mb-6">
-          This little site was built by two students as a fun project to visualise and compare grade boundaries across exam boards. Enjoy!
-        </p>
-          ☕ If you’ve found this useful, you can
-          <a
-            href="https://ko-fi.com/gradeboundariescom"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="underline transition"
-            >buy us a coffee</a
-          >
-          — every donation counts!
-        </p>
-      </section>
-      <style>
-        :root {
-          /* badge container */
-          --badge-bg: rgba(255, 255, 255, 0.7);
-          --badge-border: rgba(45, 212, 191, 0.7);
-          --badge-ring: rgba(45, 212, 191, 0.4);
-          --badge-shadow: rgba(167, 243, 208, 0.8);
-
-          /* comet accent */
-          --badge-accent: rgba(45, 212, 191, 0.7);
-
-          /* text */
-          --badge-text: #0f766e; /* teal-900 */
-          --badge-text-strong: #0f766e; /* teal-900 (light mode strong) */
-        }
-
-        .dark {
-          --badge-bg: rgba(45, 212, 191, 0.1); /* teal-500/10 */
-          --badge-border: rgba(22, 78, 64, 0.6); /* teal-600/60 */
-          --badge-ring: rgba(0, 0, 0, 0.4);
-          --badge-shadow: rgba(0, 0, 0, 0.4);
-
-          --badge-accent: rgba(45, 212, 191, 0.7);
-
-          --badge-text: #f0fdf4; /* teal-100 */
-          --badge-text-strong: #f0fdf0; /* teal-50 */
-        }
-      </style>
-      <div class="mx-auto mt-12 w-max">
-        <div
-          class="relative flex items-center gap-3 px-5 py-2 rounded-full bg-[var(--badge-bg)] backdrop-blur-sm border border-[var(--badge-border)] ring-1 ring-inset ring-[var(--badge-ring)] shadow-md shadow-[var(--badge-shadow)]"
-        >
-          <!-- comet accent -->
-
-          <span class="text-sm font-medium text-[var(--badge-text)]">
-            Site visits so far:
-          </span>
-
-          <span
-            id="total-visits"
-            class="font-mono font-semibold tabular-nums text-base tracking-tight text-[var(--badge-text-strong)]"
-          >
-            …
-          </span>
-        </div>
-      </div>
+    <main class="flex-1 max-w-6xl mx-auto p-6 text-center">
+      <h2 class="text-3xl font-semibold mb-4">Coming Soon</h2>
+      <p class="text-lg mb-4">IGCSE grade boundary data will be available here soon.</p>
     </main>
 
     <!-- Footer -->
-    <footer class="mt-12" role="contentinfo">
+<footer class="mt-12" role="contentinfo">
       <div class="container mx-auto flex flex-col items-center py-6 px-4">
         <p class="text-lg">Created by</p>
         <nav aria-label="Created by">
@@ -395,31 +290,5 @@
       });
     </script>
 
-    <!-- 🐐 Visitor counter logic -->
-    <script>
-      (async () => {
-        /* hit GoatCounter without using any cache */
-        const url = `https://gradeboundaries.goatcounter.com/counter/TOTAL.json?ts=${Date.now()}`;
-        const res = await fetch(url, { cache: "no-store" });
-        if (!res.ok) return console.error("visit-counter failed", res.status);
-
-        /* strip spaces / NBSP & co -> pure number */
-        const visits = +(await res.json()).count.replace(/[^\d]/g, "");
-        const el = document.getElementById("total-visits");
-
-        /* smooth count-up (300 ms) */
-        const frames = 20,
-          inc = visits / frames;
-        let cur = 0,
-          i = 0;
-        const step = () => {
-          i++;
-          cur = i < frames ? Math.round(inc * i) : visits;
-          el.textContent = cur;
-          if (i < frames) requestAnimationFrame(step);
-        };
-        requestAnimationFrame(step);
-      })();
-    </script>
   </body>
 </html>
