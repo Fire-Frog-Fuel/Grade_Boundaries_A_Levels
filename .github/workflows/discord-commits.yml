@@ -1,0 +1,18 @@
+name: Notify Discord on Any Push
+
+on:
+  push:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send commit to Discord
+        run: |
+          echo '{
+            "content": "**New commit pushed by '${{ github.actor }}'**\nBranch: `${{ github.ref_name }}`\nCommit: [${{ github.event.head_commit.id }}](${{ github.event.head_commit.url }})\nMessage: ${{ github.event.head_commit.message }}"
+          }' > payload.json
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d @payload.json \
+               ${{ secrets.DISCORD_WEBHOOK_URL }}
